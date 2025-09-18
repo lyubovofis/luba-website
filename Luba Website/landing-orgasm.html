@@ -578,12 +578,18 @@
     </script>
 
     <!-- Tracking Scripts -->
+    <!-- TikTok Pixel Fix ОБЯЗАТЕЛЬНО -->
+    <script src="/js/tiktok-pixel-fix.js"></script>
+    
     <script>
-        // Track page view
+        // Track page view с обязательными полями
         if (typeof ttq !== 'undefined') {
             ttq.track('ViewContent', {
-                content_type: 'landing_page',
-                content_name: 'money_pleasure'
+                content_id: 'landing_orgasm',
+                content_type: 'product',
+                content_name: 'money_pleasure',
+                value: 2000,
+                currency: 'EUR'
             });
         }
 
