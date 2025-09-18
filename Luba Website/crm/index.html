@@ -416,6 +416,7 @@
             }
         }
     </style>
+    <script src="export-lookalike.js"></script>
 </head>
 <body>
     <div class="container">
@@ -496,13 +497,6 @@
                     <!-- Динамически заполняется -->
                 </ul>
             </div>
-            
-            <div class="analytics-card">
-                <h3>🎬 Топ видео TikTok</h3>
-                <ul class="top-videos" id="topVideos">
-                    <!-- Динамически заполняется -->
-                </ul>
-            </div>
         </div>
         
         <!-- Pipeline -->
@@ -543,6 +537,10 @@
                 <div class="form-group">
                     <label class="form-label">Имя*</label>
                     <input type="text" class="form-input" id="leadName" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email*</label>
+                    <input type="email" class="form-input" id="leadEmail" placeholder="email@example.com" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label">WhatsApp*</label>
@@ -1065,6 +1063,7 @@
         const newLead = {
             id: Date.now(),
             name: document.getElementById('leadName').value,
+            email: document.getElementById('leadEmail').value,
             phone: document.getElementById('leadPhone').value,
             source: document.getElementById('leadSource').value,
             utm: document.getElementById('leadUTM').value,
