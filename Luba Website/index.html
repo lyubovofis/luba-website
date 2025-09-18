@@ -2044,5 +2044,58 @@
     <script src="/js/gdpr.js"></script>
     <!-- WhatsApp Tracking -->
     <script src="/js/whatsapp-tracking.js"></script>
+
+<!-- UTM Tracking for WhatsApp -->
+<script>
+function getUTMParams() {
+    const params = new URLSearchParams(window.location.search);
+    const utm = {
+        source: params.get('utm_source') || '',
+        medium: params.get('utm_medium') || '',
+        campaign: params.get('utm_campaign') || ''
+    };
+    if(utm.source || utm.medium) {
+        localStorage.setItem('utm_params', JSON.stringify(utm));
+    }
+    return utm;
+}
+
+function updateWhatsAppLinks() {
+    const utmData = JSON.parse(localStorage.getItem('utm_params') || '{}');
+    let customMessage = '';
+    
+    // Определяем источник на русском
+    if(utmData.source === 'tiktok' || utmData.source === 'tt') {
+        customMessage = 'Здравствуйте! Увидела вашу рекламу в TikTok. ';
+    } else if(utmData.source === 'facebook' || utmData.source === 'fb') {
+        customMessage = 'Здравствуйте! Увидела вашу рекламу в Facebook. ';
+    } else if(utmData.source === 'instagram' || utmData.source === 'ig') {
+        customMessage = 'Здравствуйте! Увидела вашу рекламу в Instagram. ';
+    } else if(utmData.source === 'google') {
+        customMessage = 'Здравствуйте! Нашла вас в Google. ';
+    } else if(utmData.source === 'youtube' || utmData.source === 'yt') {
+        customMessage = 'Здравствуйте! Увидела ваше видео на YouTube. ';
+    } else {
+        // Без UTM = органический трафик
+        customMessage = 'Здравствуйте! ';
+    }
+    
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+        const href = link.getAttribute('href');
+        // Заменяем стандартное приветствие
+        if(href.includes('text=')) {
+            const newHref = href.replace(/text=[^&]*/, 'text=' + encodeURIComponent(customMessage + 'Хочу записаться на бесплатную консультацию'));
+        } else {
+            link.setAttribute('href', href + '?text=' + encodeURIComponent(customMessage + 'Хочу записаться на бесплатную консультацию'));
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    getUTMParams();
+    updateWhatsAppLinks();
+});
+</script>
+
 </body>
 </html>
