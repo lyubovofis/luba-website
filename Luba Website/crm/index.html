@@ -1131,37 +1131,22 @@
         // Show selected tab
         document.getElementById(tabName + '-tab').classList.add('active');
         document.querySelector(`[onclick="showTab('${tabName}')"]`).classList.add('active');
-        
-        if (tabName === 'quiz') {
-            loadQuizSection();
-        }
     }
     
-    function loadQuizSection() {
-        fetch('/crm/quiz-section.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('quiz-tab').innerHTML = html;
-            })
-            .catch(() => {
-                document.getElementById('quiz-tab').innerHTML = `
-                    <div style="text-align: center; padding: 40px;">
-                        <h3>Квиз секция временно недоступна</h3>
-                        <p>Загрузка данных из localStorage...</p>
-                    </div>
-                `;
-            });
-    }
+    // Make function global
+    window.showTab = showTab;
+    
     </script>
     
     <!-- Supabase CRM Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-crm.js"></script>
 </body>
 </html>
 
 <!-- Quiz Tab Content -->
 <div id="quiz-tab" class="tab-content">
-    <iframe src="/crm/quiz-section.html" style="width: 100%; height: 800px; border: none; border-radius: 10px;"></iframe>
+    <iframe src="quiz-section.html" style="width: 100%; height: 800px; border: none; border-radius: 10px;"></iframe>
 </div>
 
             </div>

@@ -388,7 +388,18 @@ function showNotification(message, type = 'info') {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
-    loadQuizData();
+    // Проверяем доступность Supabase
+    if (!window.supabase) {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+        script.onload = () => {
+            supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            loadQuizData();
+        };
+        document.head.appendChild(script);
+    } else {
+        loadQuizData();
+    }
     
     // Setup filters
     const blockFilter = document.getElementById('blockFilter');
@@ -396,8 +407,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchQuiz = document.getElementById('searchQuiz');
     
     [blockFilter, periodFilter, searchQuiz].forEach(element => {
-        element.addEventListener('change', applyFilters);
-        element.addEventListener('input', applyFilters);
+        if (element) {
+            element.addEventListener('change', applyFilters);
+            element.addEventListener('input', applyFilters);
+        }
     });
 });
 
