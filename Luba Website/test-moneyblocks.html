@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест: Ваши денежные блоки | Любовь Лукащук</title>
+    <meta name="description" content="Узнайте какие денежные блоки мешают вам зарабатывать больше. Пройдите бесплатный тест за 3 минуты.">
+    
+    <!-- Стили -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/mobile-optimization.css">
+    
+    <!-- Пиксели отслеживания -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    
+    <style>
+        /* Специальные стили для квиза */
+        .quiz-container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .quiz-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .quiz-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .progress-container {
+            background: #f0f0f0;
+            border-radius: 10px;
+            height: 8px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+        
+        .question-card {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .question-card.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .question-number {
+            background: var(--gradient);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .question-text {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+        
+        .answers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .answer-option {
+            background: #f8f9fa;
+            border: 2px solid transparent;
+            padding: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        
+        .answer-option:hover {
+            background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+            border-color: var(--primary-color);
+            transform: translateX(10px);
+        }
+        
+        .answer-option.selected {
+            background: var(--gradient);
+            color: white;
+            transform: scale(1.02);
+        }
+        
+        /* Форма захвата лидов */
+        .contact-form {
+            text-align: center;
+        }
+        
+        .form-title {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .form-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .form-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 400px;
+            margin: 0 auto 30px;
+        }
+        
+        .form-input {
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-input.required {
+            border-color: #ff4757;
+        }
+        
+        .submit-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102,126,234,0.4);
+        }
+        
+        .privacy-text {
+            font-size: 12px;
+            color: #999;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+        
+        .privacy-text a {
+            color: var(--primary-color);
+        }
+        
+        .loading-animation {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Мобильная адаптивность */
+        @media (max-width: 768px) {
+            .quiz-container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+            
+            .quiz-title {
+                font-size: 28px;
+            }
+            
+            .question-text {
+                font-size: 20px;
+            }
+            
+            .answer-option {
+                padding: 15px;
+                font-size: 14px;
+            }
+            
+            .form-fields {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .quiz-title {
+                font-size: 24px;
+            }
+            
+            .question-text {
+                font-size: 18px;
+            }
+            
+            .answer-option:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1 class="quiz-title">Тест: Ваши денежные блоки</h1>
+            <p class="quiz-subtitle">Узнайте, какие установки из детства мешают вам зарабатывать больше</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+        
+        <div id="quizContent">
+            <!-- Вопрос 1 -->
+            <div class="question-card active" data-question="1">
+                <div class="question-number">1</div>
+                <h2 class="question-text">Что чаще всего говорили ваши родители о деньгах?</h2>
+                <div class="answers-list">
+                    <div class="answer-option" data-value="lack">
+                        "Денег у нас всегда не хватает" / "Деньги не растут на деревьях"
+                    </div>
+                    <div class="answer-option" data-value="evil">
+                        "Деньги - это зло" / "Богатые люди плохие"
+                    </div>
+                    <div class="answer-option" data-value="hard">
+                        "Деньги достаются тяжелым трудом" / "Легких денег не бывает"
+                    </div>
+                    <div class="answer-option" data-value="shame">
+                        "О деньгах говорить неприлично" / "Не хвастайся доходами"
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 2 -->
+            <div class="question-card" data-question="2">
+                <div class="question-number">2</div>
+                <h2 class="question-text">Как в вашей семье относились к успешным людям?</h2>
+                <div class="answers-list">
+                    <div class="answer-option" data-value="criticism">
+                        Критиковали: "Наверняка нечестно заработал" / "Показуха"
+                    </div>
+                    <div class="answer-option" data-value="envy">
+                        Завидовали молча, но я чувствовал(а) напряжение
+                    </div>
+                    <div class="answer-option" data-value="distance">
+                        "Это не наш уровень" / "Нам такое не светит"
+                    </div>
+                    <div class="answer-option" data-value="respect">
+                        С уважением, но считали недосягаемыми
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 3 -->
+            <div class="question-card" data-question="3">
+                <div class="question-number">3</div>
+                <h2 class="question-text">Что происходило, когда вы просили дорогую вещь?</h2>
+                <div class="answers-list">
+                    <div class="answer-option" data-value="guilt">
+                        "Мы не можем себе это позволить, не мучай нас"
+                    </div>
+                    <div class="answer-option" data-value="earn">
+                        "Хочешь - сам заработай" в негативном тоне
+                    </div>
+                    <div class="answer-option" data-value="sacrifice">
+                        "Придется экономить на еде" с мученическим видом
+                    </div>
+                    <div class="answer-option" data-value="postpone">
+                        "Потерпи, может когда-нибудь купим"
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 4 -->
+            <div class="question-card" data-question="4">
+                <div class="question-number">4</div>
+                <h2 class="question-text">Какие фразы вы слышали чаще всего?</h2>
+                <div class="answers-list">
+                    <div class="answer-option" data-value="modest">
+                        "Будь скромнее" / "Не высовывайся"
+                    </div>
+                    <div class="answer-option" data-value="grateful">
+                        "Будь благодарен за то, что есть"
+                    </div>
+                    <div class="answer-option" data-value="realistic">
+                        "Не мечтай о несбыточном" / "Будь реалистом"
+                    </div>
+                    <div class="answer-option" data-value="suffer">
+                        "Жизнь - это борьба" / "Без страданий ничего не получишь"
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 5 -->
+            <div class="question-card" data-question="5">
+                <div class="question-number">5</div>
+                <h2 class="question-text">Как реагировали на ваши успехи в детстве?</h2>
+                <div class="answers-list">
+                    <div class="answer-option" data-value="downplay">
+                        Принижали: "Не зазнавайся" / "Это еще ничего не значит"
+                    </div>
+                    <div class="answer-option" data-value="fear">
+                        Боялись сглаза: "Тихо, не хвастайся"
+                    </div>
+                    <div class="answer-option" data-value="expect">
+                        "Теперь всегда должен быть лучшим" - давили ожиданиями
+                    </div>
+                    <div class="answer-option" data-value="ignore">
+                        Игнорировали или воспринимали как должное
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 6 -->
+            <div class="question-card" data-question="6">
+                <div class="question-number">6</div>
+                <h2 class="question-text">Что говорили о женщинах и деньгах?</h2>
+                <div class="answers-list">
+                    <div class="answer-option" data-value="depend">
+                        "Женщина должна быть обеспечена мужчиной"
+                    </div>
+                    <div class="answer-option" data-value="secondary">
+                        "Карьера - это второстепенно, главное - семья"
+                    </div>
+                    <div class="answer-option" data-value="dangerous">
+                        "Слишком успешная женщина - плохо для семьи"
+                    </div>
+                    <div class="answer-option" data-value="masculine">
+                        "Заработок - мужское дело" / "Не мужественно жить на женские деньги"
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 7 -->
+            <div class="question-card" data-question="7">
+                <div class="question-number">7</div>
+                <h2 class="question-text">Какую самую сильную установку о деньгах вы получили от родителей?</h2>
+                <div class="answers-list">
+                    <div class="answer-option" data-value="unworthy">
+                        "Ты не заслуживаешь большего" / "Знай свое место"
+                    </div>
+                    <div class="answer-option" data-value="security">
+                        "Главное - стабильность" / "Лучше синица в руках"
+                    </div>
+                    <div class="answer-option" data-value="others">
+                        "Сначала другие, потом ты" / "Жертвенность - это добродетель"
+                    </div>
+                    <div class="answer-option" data-value="dangerous">
+                        "Деньги портят человека" / "Богатство развращает"
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Форма захвата лидов -->
+        <div id="contactForm" style="display: none;">
+            <div class="contact-form">
+                <h2 class="form-title">Узнайте ваш результат!</h2>
+                <p class="form-subtitle">Получите персональный анализ ваших денежных блоков и рекомендации по их проработке</p>
+                
+                <form id="leadForm">
+                    <div class="form-fields">
+                        <input type="text" 
+                               id="fullName" 
+                               name="fullName" 
+                               class="form-input" 
+                               placeholder="Ваше имя*" 
+                               required>
+                        
+                        <input type="tel" 
+                               id="phone" 
+                               name="phone" 
+                               class="form-input" 
+                               placeholder="WhatsApp номер*" 
+                               required>
+                        
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               class="form-input" 
+                               placeholder="Email (необязательно)">
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Получить результат бесплатно
+                    </button>
+                    
+                    <p class="privacy-text">
+                        Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html">политикой конфиденциальности</a><br>
+                        Мы не передаем данные третьим лицам и не спамим
+                    </p>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Анимация загрузки -->
+        <div id="loadingAnimation" class="loading-animation">
+            <div class="spinner"></div>
+            <p>Анализируем ваши ответы...</p>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 7;
+        let answers = {};
+        
+        // Обновление прогресс-бара
+        function updateProgress() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+        
+        // Показ следующего вопроса
+        function showNextQuestion() {
+            // Скрываем текущий вопрос
+            const current = document.querySelector(`.question-card[data-question="${currentQuestion}"]`);
+            if (current) current.classList.remove('active');
+            
+            currentQuestion++;
+            
+            if (currentQuestion <= totalQuestions) {
+                // Показываем следующий вопрос
+                const next = document.querySelector(`.question-card[data-question="${currentQuestion}"]`);
+                if (next) {
+                    setTimeout(() => {
+                        next.classList.add('active');
+                        updateProgress();
+                    }, 300);
+                }
+            } else {
+                // Показываем форму
+                setTimeout(() => {
+                    document.getElementById('quizContent').style.display = 'none';
+                    document.getElementById('contactForm').style.display = 'block';
+                    updateProgress();
+                }, 300);
+            }
+        }
+        
+        // Обработка выбора ответа
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('answer-option')) {
+                // Убираем выделение с других ответов
+                const currentCard = e.target.closest('.question-card');
+                currentCard.querySelectorAll('.answer-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                
+                // Выделяем выбранный ответ
+                e.target.classList.add('selected');
+                
+                // Сохраняем ответ
+                const questionNum = parseInt(currentCard.dataset.question);
+                answers[questionNum] = e.target.dataset.value;
+                
+                // Трекинг события
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Quiz Answer', {
+                        question: questionNum,
+                        answer: e.target.dataset.value
+                    });
+                }
+                
+                // Переходим к следующему вопросу через 1 секунду
+                setTimeout(() => {
+                    showNextQuestion();
+                }, 800);
+            }
+        });
+        
+        // Обработка отправки формы
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            
+            // Валидация
+            if (!name || !phone) {
+                alert('Пожалуйста, заполните обязательные поля (имя и телефон)');
+                return;
+            }
+            
+            // Показываем загрузку
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('loadingAnimation').style.display = 'block';
+            
+            // Подготавливаем данные
+            const leadData = {
+                name: name,
+                phone: phone,
+                email: email,
+                answers: answers,
+                source: 'money-blocks-quiz',
+                timestamp: new Date().toISOString()
+            };
+            
+            // Трекинг лида
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: 'Money Blocks Quiz',
+                    content_category: 'Quiz Lead'
+                });
+            }
+            
+            // Отправка в CRM (здесь нужно настроить ваш endpoint)
+            fetch('/api/submit-lead', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(leadData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Перенаправляем на страницу результата
+                window.location.href = `/quiz-result?id=${data.leadId}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // В случае ошибки все равно перенаправляем
+                window.location.href = '/quiz-result';
+            });
+            
+            // Резервный редирект через 3 секунды
+            setTimeout(() => {
+                if (window.location.pathname === '/test-moneyblocks.html') {
+                    window.location.href = '/quiz-result';
+                }
+            }, 3000);
+        });
+        
+        // Инициализация
+        updateProgress();
+        
+        // Форматирование телефона
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0 && !value.startsWith('38')) {
+                value = '38' + value;
+            }
+            e.target.value = '+' + value;
+        });
+        
+        // Трекинг начала квиза
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Quiz Started', {
+                content_name: 'Money Blocks Quiz'
+            });
+        }
+    </script>
+    
+    <!-- Cookie Consent -->
+    <script>
+        if (!localStorage.getItem('cookieConsent')) {
+            const consent = confirm('Этот сайт использует cookies для улучшения пользовательского опыта. Продолжая использование сайта, вы соглашаетесь с нашей политикой конфиденциальности.');
+            if (consent) {
+                localStorage.setItem('cookieConsent', 'true');
+            }
+        }
+    </script>
+</body>
+</html>
