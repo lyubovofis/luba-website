@@ -672,37 +672,18 @@
             
             // Сохраняем в CRM
             try {
-                // Сначала пытаемся сохранить в Supabase
-                const supabaseSuccess = await saveToSupabase(leadData);
-                
-                // Также сохраняем в localStorage для CRM
-                const existingLeads = JSON.parse(localStorage.getItem('crmLeads') || '[]');
-                
-                // Создаем новый лид
-                const newLead = {
-                    id: Date.now(),
-                    name: leadData.name,
-                    phone: leadData.phone,
-                    email: leadData.email || '',
-                    source: 'Квиз: Денежные блоки',
-                    status: 'Новый лид',
-                    date: new Date().toLocaleDateString('ru-RU'),
-                    time: new Date().toLocaleTimeString('ru-RU'),
-                    answers: leadData.answers,
-                    notes: 'Прошел тест на денежные блоки'
-                };
-                
-                // Добавляем в начало массива
-                existingLeads.unshift(newLead);
-                
-                // Сохраняем обратно
-                localStorage.setItem('crmLeads', JSON.stringify(existingLeads));
-                
+            // Сначала сохраняем в Supabase
+            const supabaseSuccess = await saveToSupabase(leadData);
+            
+            if (supabaseSuccess) {
                 // Сохраняем ответы для страницы результата
                 localStorage.setItem('quizAnswers', JSON.stringify(leadData.answers));
                 
                 // Перенаправляем на страницу результата
                 window.location.href = `/quiz-result.html`;
+            } else {
+                alert('Ошибка сохранения данных. Попробуйте еще раз.');
+            }
                 
             } catch (error) {
                 console.error('Error saving to CRM:', error);
@@ -741,12 +722,61 @@
     </script>
     
     <!-- Cookie Consent -->
+    <div id="cookieConsent" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        max-width: 400px;
+        z-index: 10000;
+        display: none;
+        font-family: 'Montserrat', sans-serif;
+    ">
+        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+            <span style="font-size: 24px; margin-right: 10px;">🍪</span>
+            <h4 style="margin: 0; font-size: 18px;">Мы используем cookies</h4>
+        </div>
+        <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.4; opacity: 0.9;">
+            Для улучшения работы сайта и персонализации контента. Продолжая использование, вы соглашаетесь с этим.
+        </p>
+        <div style="display: flex; gap: 10px;">
+            <button onclick="acceptCookies()" style="
+                background: white;
+                color: #667eea;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 14px;
+                flex: 1;
+                transition: all 0.3s ease;
+            ">✓ Принять</button>
+            <a href="/privacy.html" style="
+                color: white;
+                text-decoration: underline;
+                font-size: 12px;
+                align-self: center;
+                opacity: 0.8;
+            ">Подробнее</a>
+        </div>
+    </div>
+    
     <script>
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'true');
+            document.getElementById('cookieConsent').style.display = 'none';
+        }
+        
+        // Показываем cookie popup если не было согласия
         if (!localStorage.getItem('cookieConsent')) {
-            const consent = confirm('Этот сайт использует cookies для улучшения пользовательского опыта. Продолжая использование сайта, вы соглашаетесь с нашей политикой конфиденциальности.');
-            if (consent) {
-                localStorage.setItem('cookieConsent', 'true');
-            }
+            setTimeout(() => {
+                document.getElementById('cookieConsent').style.display = 'block';
+            }, 1000);
         }
     </script>
 </body>
