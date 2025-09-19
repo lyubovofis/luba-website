@@ -28,6 +28,9 @@
     <!-- TikTok Pixel Fix - Добавляет content_id и value -->
     <script src="/js/tiktok-pixel-fix.js"></script>
     
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
     <style>
         * {
             margin: 0;
@@ -363,6 +366,64 @@
         let currentStep = 1;
         const totalSteps = 7;
         
+        // Supabase Configuration
+        const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
+        
+        // Initialize Supabase client
+        const { createClient } = supabase;
+        const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        // Function to save lead to Supabase
+        async function saveLeadToSupabase(leadData) {
+            try {
+                const { data, error } = await supabaseClient
+                    .from('crm_leads')
+                    .insert({
+                        name: leadData.name,
+                        email: leadData.email,
+                        phone: leadData.whatsapp,
+                        stage: 'new',
+                        source: 'quiz',
+                        note: `Результат квиза: ${document.getElementById('resultTitle').textContent}`,
+                        created_at: new Date().toISOString()
+                    })
+                    .select();
+                
+                if (error) {
+                    console.error('Error saving to Supabase:', error);
+                    // Fallback to localStorage
+                    saveToLocalStorage(leadData);
+                } else {
+                    console.log('Lead saved to Supabase:', data);
+                }
+            } catch (error) {
+                console.error('Error saving lead:', error);
+                // Fallback to localStorage
+                saveToLocalStorage(leadData);
+            }
+        }
+        
+        // Fallback function to save to localStorage
+        function saveToLocalStorage(leadData) {
+            try {
+                const leads = JSON.parse(localStorage.getItem('crmLeads') || '[]');
+                leads.push({
+                    name: leadData.name,
+                    phone: leadData.whatsapp,
+                    email: leadData.email,
+                    status: 'Новый лид',
+                    source: 'quiz',
+                    notes: `Результат квиза: ${document.getElementById('resultTitle').textContent}`,
+                    date: new Date().toLocaleDateString('ru-RU')
+                });
+                localStorage.setItem('crmLeads', JSON.stringify(leads));
+                console.log('Lead saved to localStorage as fallback');
+            } catch (error) {
+                console.error('Error saving to localStorage:', error);
+            }
+        }
+        
         // Handle option selection
         document.querySelectorAll('.option').forEach(option => {
             option.addEventListener('click', function() {
@@ -481,8 +542,8 @@
             // Show result
             nextStep(6);
             
-            // Send data (in real implementation, this would send to backend)
-            console.log('Quiz completed:', quizData);
+            // Save to Supabase
+            saveLeadToSupabase(quizData);
             
             // Track conversion
             if (typeof fbq !== 'undefined') {
