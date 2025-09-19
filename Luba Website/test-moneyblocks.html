@@ -25,6 +25,18 @@
     fbq('track', 'PageView');
     </script>
     
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Supabase конфигурация
+        const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
+        
+        // Инициализация Supabase
+        const { createClient } = supabase;
+        const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    </script>
+    
     <style>
         /* Специальные стили для квиза */
         .quiz-container {
@@ -454,21 +466,6 @@
                         Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html">политикой конфиденциальности</a><br>
                         Мы не передаем данные третьим лицам и не спамим
                     </p>
-                    
-                    <!-- Кнопка на главную -->
-                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
-                        <a href="/" style="
-                            display: inline-flex;
-                            align-items: center;
-                            gap: 8px;
-                            color: #667eea;
-                            text-decoration: none;
-                            font-weight: 600;
-                            transition: all 0.3s ease;
-                        " onmouseover="this.style.color='#764ba2'" onmouseout="this.style.color='#667eea'">
-                            ← Вернуться на главную
-                        </a>
-                    </div>
                 </form>
             </div>
         </div>
@@ -585,9 +582,100 @@
                 });
             }
             
+            // Функция определения основного блока
+            function determineMainBlock(answers) {
+                const scores = {
+                    scarcity: 0, guilt: 0, fear: 0, unworthiness: 0,
+                    sacrifice: 0, control: 0, shame: 0
+                };
+                
+                if (answers[1] === 'lack') scores.scarcity += 3;
+                if (answers[1] === 'evil') scores.fear += 2;
+                if (answers[1] === 'hard') scores.control += 3;
+                if (answers[1] === 'shame') scores.shame += 3;
+                
+                if (answers[2] === 'criticism') scores.fear += 2;
+                if (answers[2] === 'envy') scores.guilt += 2;
+                if (answers[2] === 'distance') scores.unworthiness += 3;
+                
+                if (answers[3] === 'guilt') scores.guilt += 3;
+                if (answers[3] === 'sacrifice') scores.sacrifice += 2;
+                
+                if (answers[4] === 'modest') scores.unworthiness += 2;
+                if (answers[4] === 'grateful') scores.sacrifice += 2;
+                if (answers[4] === 'realistic') scores.unworthiness += 2;
+                if (answers[4] === 'suffer') scores.control += 3;
+                
+                if (answers[5] === 'downplay') scores.guilt += 2;
+                if (answers[5] === 'fear') scores.shame += 2;
+                if (answers[5] === 'ignore') scores.unworthiness += 2;
+                
+                if (answers[6] === 'depend') scores.sacrifice += 2;
+                if (answers[6] === 'secondary') scores.sacrifice += 2;
+                
+                if (answers[7] === 'unworthy') scores.unworthiness += 3;
+                if (answers[7] === 'security') scores.fear += 2;
+                if (answers[7] === 'others') scores.sacrifice += 3;
+                if (answers[7] === 'dangerous') scores.fear += 2;
+                
+                let maxScore = 0;
+                let mainBlock = 'scarcity';
+                
+                for (const [block, score] of Object.entries(scores)) {
+                    if (score > maxScore) {
+                        maxScore = score;
+                        mainBlock = block;
+                    }
+                }
+                
+                return mainBlock;
+            }
+            
+            // Сохранение в Supabase
+            async function saveToSupabase(leadData) {
+                try {
+                    const mainBlock = determineMainBlock(leadData.answers);
+                    const urlParams = new URLSearchParams(window.location.search);
+                    
+                    const supabaseData = {
+                        name: leadData.name,
+                        phone: leadData.phone,
+                        email: leadData.email || null,
+                        quiz_answers: leadData.answers,
+                        main_block: mainBlock,
+                        source: 'Quiz: Money Blocks',
+                        status: 'Новый лид',
+                        utm_source: urlParams.get('utm_source'),
+                        utm_medium: urlParams.get('utm_medium'),
+                        utm_campaign: urlParams.get('utm_campaign'),
+                        user_agent: navigator.userAgent
+                    };
+                    
+                    const { data, error } = await supabaseClient
+                        .from('quiz_leads')
+                        .insert([supabaseData])
+                        .select();
+                    
+                    if (error) {
+                        console.error('Supabase error:', error);
+                        return false;
+                    }
+                    
+                    console.log('Lead saved to Supabase:', data);
+                    return true;
+                    
+                } catch (error) {
+                    console.error('Error saving to Supabase:', error);
+                    return false;
+                }
+            }
+            
             // Сохраняем в CRM
             try {
-                // Получаем существующие лиды из localStorage
+                // Сначала пытаемся сохранить в Supabase
+                const supabaseSuccess = await saveToSupabase(leadData);
+                
+                // Также сохраняем в localStorage для CRM
                 const existingLeads = JSON.parse(localStorage.getItem('crmLeads') || '[]');
                 
                 // Создаем новый лид

@@ -1,0 +1,565 @@
+<!-- Quiz Section for CRM -->
+<div class="quiz-section">
+    <div class="quiz-header">
+        <h3>📊 Результаты квиза "Денежные блоки"</h3>
+        <div class="quiz-actions">
+            <button onclick="exportQuizData()" class="export-btn">📄 Экспорт CSV</button>
+            <button onclick="refreshQuizData()" class="refresh-btn">🔄 Обновить</button>
+        </div>
+    </div>
+    
+    <!-- Статистика -->
+    <div class="quiz-stats">
+        <div class="stat-card">
+            <div class="stat-number" id="totalQuizLeads">0</div>
+            <div class="stat-label">Всего прошли</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="todayQuizLeads">0</div>
+            <div class="stat-label">Сегодня</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="weekQuizLeads">0</div>
+            <div class="stat-label">За неделю</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="topBlock">-</div>
+            <div class="stat-label">Топ блок</div>
+        </div>
+    </div>
+    
+    <!-- Фильтры -->
+    <div class="quiz-filters">
+        <select id="blockFilter">
+            <option value="">Все блоки</option>
+            <option value="scarcity">Блок Дефицита</option>
+            <option value="guilt">Блок Вины</option>
+            <option value="fear">Блок Страха</option>
+            <option value="unworthiness">Блок Недостойности</option>
+            <option value="sacrifice">Блок Жертвенности</option>
+            <option value="control">Блок Контроля</option>
+            <option value="shame">Блок Стыда</option>
+        </select>
+        
+        <select id="periodFilter">
+            <option value="all">Все время</option>
+            <option value="today">Сегодня</option>
+            <option value="week">За неделю</option>
+            <option value="month">За месяц</option>
+        </select>
+        
+        <input type="text" id="searchQuiz" placeholder="Поиск по имени/телефону">
+    </div>
+    
+    <!-- Таблица данных -->
+    <div class="quiz-table-container">
+        <table class="quiz-table">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Имя</th>
+                    <th>Телефон</th>
+                    <th>Email</th>
+                    <th>Основной блок</th>
+                    <th>Ответы</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody id="quizTableBody">
+                <!-- Данные загружаются JS -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+.quiz-section {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.quiz-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.export-btn, .refresh-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.export-btn {
+    background: #10b981;
+    color: white;
+}
+
+.refresh-btn {
+    background: #667eea;
+    color: white;
+}
+
+.quiz-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.quiz-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.quiz-filters select,
+.quiz-filters input {
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    min-width: 150px;
+}
+
+.quiz-table-container {
+    overflow-x: auto;
+}
+
+.quiz-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.quiz-table th,
+.quiz-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.quiz-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+.quiz-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.block-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.block-scarcity { background: #ef4444; }
+.block-guilt { background: #f59e0b; }
+.block-fear { background: #8b5cf6; }
+.block-unworthiness { background: #06b6d4; }
+.block-sacrifice { background: #10b981; }
+.block-control { background: #f97316; }
+.block-shame { background: #ec4899; }
+
+.action-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+}
+
+.view-btn {
+    background: #667eea;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .quiz-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .quiz-filters {
+        flex-direction: column;
+    }
+    
+    .quiz-table {
+        font-size: 12px;
+    }
+    
+    .quiz-table th,
+    .quiz-table td {
+        padding: 8px;
+    }
+}
+</style>
+
+<script>
+// Названия блоков
+const blockNames = {
+    scarcity: 'Блок Дефицита',
+    guilt: 'Блок Вины',
+    fear: 'Блок Страха',
+    unworthiness: 'Блок Недостойности',
+    sacrifice: 'Блок Жертвенности',
+    control: 'Блок Контроля',
+    shame: 'Блок Стыда'
+};
+
+// Загрузка данных квиза
+function loadQuizData() {
+    try {
+        const localLeads = JSON.parse(localStorage.getItem('crmLeads') || '[]');
+        const quizLeads = localLeads.filter(lead => lead.source && lead.source.includes('Квиз'));
+        
+        displayQuizStats(quizLeads);
+        displayQuizTable(quizLeads);
+        
+    } catch (error) {
+        console.error('Error loading quiz data:', error);
+    }
+}
+
+// Отображение статистики
+function displayQuizStats(leads) {
+    const today = new Date().toLocaleDateString('ru-RU');
+    const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    
+    const todayLeads = leads.filter(lead => lead.date === today);
+    const weekLeads = leads.filter(lead => {
+        const leadDate = new Date(lead.date.split('.').reverse().join('-'));
+        return leadDate >= weekAgo;
+    });
+    
+    // Топ блок
+    const blockCounts = {};
+    leads.forEach(lead => {
+        if (lead.answers) {
+            const answers = typeof lead.answers === 'string' ? JSON.parse(lead.answers) : lead.answers;
+            const block = determineMainBlock(answers);
+            blockCounts[block] = (blockCounts[block] || 0) + 1;
+        }
+    });
+    
+    const topBlock = Object.keys(blockCounts).reduce((a, b) => 
+        blockCounts[a] > blockCounts[b] ? a : b, 'scarcity');
+    
+    document.getElementById('totalQuizLeads').textContent = leads.length;
+    document.getElementById('todayQuizLeads').textContent = todayLeads.length;
+    document.getElementById('weekQuizLeads').textContent = weekLeads.length;
+    document.getElementById('topBlock').textContent = blockNames[topBlock] || '-';
+}
+
+// Отображение таблицы
+function displayQuizTable(leads) {
+    const tbody = document.getElementById('quizTableBody');
+    tbody.innerHTML = '';
+    
+    leads.forEach(lead => {
+        const mainBlock = lead.answers ? determineMainBlock(
+            typeof lead.answers === 'string' ? JSON.parse(lead.answers) : lead.answers
+        ) : 'unknown';
+        
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${lead.date} ${lead.time}</td>
+            <td><strong>${lead.name}</strong></td>
+            <td>${lead.phone}</td>
+            <td>${lead.email || '-'}</td>
+            <td><span class="block-badge block-${mainBlock}">${blockNames[mainBlock] || 'Неизвестно'}</span></td>
+            <td><button class="action-btn view-btn" onclick="viewAnswers(${lead.id})">👁️ Ответы</button></td>
+            <td>
+                <button class="action-btn whatsapp-btn" onclick="contactWhatsApp('${lead.phone}', '${lead.name}')">💬 WhatsApp</button>
+            </td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+// Функция определения блока (копия из квиза)
+function determineMainBlock(answers) {
+    const scores = {
+        scarcity: 0, guilt: 0, fear: 0, unworthiness: 0,
+        sacrifice: 0, control: 0, shame: 0
+    };
+    
+    if (answers[1] === 'lack') scores.scarcity += 3;
+    if (answers[1] === 'evil') scores.fear += 2;
+    if (answers[1] === 'hard') scores.control += 3;
+    if (answers[1] === 'shame') scores.shame += 3;
+    
+    if (answers[2] === 'criticism') scores.fear += 2;
+    if (answers[2] === 'envy') scores.guilt += 2;
+    if (answers[2] === 'distance') scores.unworthiness += 3;
+    
+    if (answers[3] === 'guilt') scores.guilt += 3;
+    if (answers[3] === 'sacrifice') scores.sacrifice += 2;
+    
+    if (answers[4] === 'modest') scores.unworthiness += 2;
+    if (answers[4] === 'grateful') scores.sacrifice += 2;
+    if (answers[4] === 'realistic') scores.unworthiness += 2;
+    if (answers[4] === 'suffer') scores.control += 3;
+    
+    if (answers[5] === 'downplay') scores.guilt += 2;
+    if (answers[5] === 'fear') scores.shame += 2;
+    if (answers[5] === 'ignore') scores.unworthiness += 2;
+    
+    if (answers[6] === 'depend') scores.sacrifice += 2;
+    if (answers[6] === 'secondary') scores.sacrifice += 2;
+    
+    if (answers[7] === 'unworthy') scores.unworthiness += 3;
+    if (answers[7] === 'security') scores.fear += 2;
+    if (answers[7] === 'others') scores.sacrifice += 3;
+    if (answers[7] === 'dangerous') scores.fear += 2;
+    
+    let maxScore = 0;
+    let mainBlock = 'scarcity';
+    
+    for (const [block, score] of Object.entries(scores)) {
+        if (score > maxScore) {
+            maxScore = score;
+            mainBlock = block;
+        }
+    }
+    
+    return mainBlock;
+}
+
+// Просмотр ответов
+function viewAnswers(leadId) {
+    const leads = JSON.parse(localStorage.getItem('crmLeads') || '[]');
+    const lead = leads.find(l => l.id === leadId);
+    
+    if (!lead || !lead.answers) {
+        alert('Ответы не найдены');
+        return;
+    }
+    
+    const answers = typeof lead.answers === 'string' ? JSON.parse(lead.answers) : lead.answers;
+    const questions = [
+        '', // 0 - пустой
+        'Что чаще всего говорили ваши родители о деньгах?',
+        'Как в вашей семье относились к успешным людям?',
+        'Что происходило, когда вы просили дорогую вещь?',
+        'Какие фразы вы слышали чаще всего?',
+        'Как реагировали на ваши успехи в детстве?',
+        'Что говорили о женщинах и деньгах?',
+        'Какую самую сильную установку о деньгах вы получили от родителей?'
+    ];
+    
+    let answersText = `Ответы ${lead.name}:\n\n`;
+    Object.keys(answers).forEach(key => {
+        if (questions[key]) {
+            answersText += `${key}. ${questions[key]}\nОтвет: ${answers[key]}\n\n`;
+        }
+    });
+    
+    alert(answersText);
+}
+
+// Контакт через WhatsApp
+function contactWhatsApp(phone, name) {
+    const message = `Здравствуйте, ${name}! Вы прошли тест на денежные блоки. Хочу предложить бесплатную консультацию.`;
+    const url = `https://wa.me/34654420334?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+// Экспорт данных
+function exportQuizData() {
+    const leads = JSON.parse(localStorage.getItem('crmLeads') || '[]');
+    const quizLeads = leads.filter(lead => lead.source && lead.source.includes('Квиз'));
+    
+    if (quizLeads.length === 0) {
+        alert('Нет данных для экспорта');
+        return;
+    }
+    
+    // Подготовка CSV
+    const headers = ['Дата', 'Время', 'Имя', 'Телефон', 'Email', 'Основной блок', 'Вопрос 1', 'Вопрос 2', 'Вопрос 3', 'Вопрос 4', 'Вопрос 5', 'Вопрос 6', 'Вопрос 7'];
+    let csv = headers.join(',') + '\n';
+    
+    quizLeads.forEach(lead => {
+        const answers = lead.answers ? 
+            (typeof lead.answers === 'string' ? JSON.parse(lead.answers) : lead.answers) : {};
+        const mainBlock = blockNames[determineMainBlock(answers)] || 'Неизвестно';
+        
+        const row = [
+            lead.date,
+            lead.time,
+            `"${lead.name}"`,
+            lead.phone,
+            lead.email || '',
+            `"${mainBlock}"`,
+            answers[1] || '',
+            answers[2] || '',
+            answers[3] || '',
+            answers[4] || '',
+            answers[5] || '',
+            answers[6] || '',
+            answers[7] || ''
+        ];
+        
+        csv += row.join(',') + '\n';
+    });
+    
+    // Скачивание файла
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `quiz_leads_${new Date().toISOString().split('T')[0]}.csv`;
+    link.click();
+}
+
+// Обновление данных
+function refreshQuizData() {
+    loadQuizData();
+    showNotification('Данные обновлены', 'success');
+}
+
+// Фильтрация
+document.addEventListener('DOMContentLoaded', function() {
+    // Загружаем данные при загрузке
+    loadQuizData();
+    
+    // Настройка фильтров
+    const blockFilter = document.getElementById('blockFilter');
+    const periodFilter = document.getElementById('periodFilter');
+    const searchQuiz = document.getElementById('searchQuiz');
+    
+    [blockFilter, periodFilter, searchQuiz].forEach(element => {
+        element.addEventListener('change', applyFilters);
+        element.addEventListener('input', applyFilters);
+    });
+});
+
+function applyFilters() {
+    const blockFilter = document.getElementById('blockFilter').value;
+    const periodFilter = document.getElementById('periodFilter').value;
+    const searchQuery = document.getElementById('searchQuiz').value.toLowerCase();
+    
+    let leads = JSON.parse(localStorage.getItem('crmLeads') || '[]');
+    leads = leads.filter(lead => lead.source && lead.source.includes('Квиз'));
+    
+    // Фильтр по блоку
+    if (blockFilter) {
+        leads = leads.filter(lead => {
+            if (!lead.answers) return false;
+            const answers = typeof lead.answers === 'string' ? JSON.parse(lead.answers) : lead.answers;
+            return determineMainBlock(answers) === blockFilter;
+        });
+    }
+    
+    // Фильтр по периоду
+    if (periodFilter !== 'all') {
+        const now = new Date();
+        leads = leads.filter(lead => {
+            const leadDate = new Date(lead.date.split('.').reverse().join('-'));
+            
+            switch (periodFilter) {
+                case 'today':
+                    return leadDate.toDateString() === now.toDateString();
+                case 'week':
+                    const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                    return leadDate >= weekAgo;
+                case 'month':
+                    const monthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+                    return leadDate >= monthAgo;
+                default:
+                    return true;
+            }
+        });
+    }
+    
+    // Поиск
+    if (searchQuery) {
+        leads = leads.filter(lead => 
+            lead.name.toLowerCase().includes(searchQuery) ||
+            lead.phone.includes(searchQuery) ||
+            (lead.email && lead.email.toLowerCase().includes(searchQuery))
+        );
+    }
+    
+    displayQuizTable(leads);
+}
+
+// Уведомления
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#10b981' : '#667eea'};
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
+// CSS анимация
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+`;
+document.head.appendChild(style);
+</script>
