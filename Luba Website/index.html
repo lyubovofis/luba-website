@@ -127,6 +127,14 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Mobile hidden header */
+        @media (max-width: 768px) {
+            nav.hidden {
+                transform: translateY(-100%);
+            }
         }
         
         .nav-content {
@@ -2115,6 +2123,22 @@ function updateWhatsAppLinks() {
 document.addEventListener('DOMContentLoaded', function() {
     getUTMParams();
     updateWhatsAppLinks();
+});
+
+// Mobile header hide on scroll
+let lastScrollTop = 0;
+window.addEventListener('scroll', function() {
+    if (window.innerWidth <= 768) {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const nav = document.querySelector('nav');
+        
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            nav.classList.add('hidden');
+        } else {
+            nav.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+    }
 });
 </script>
 

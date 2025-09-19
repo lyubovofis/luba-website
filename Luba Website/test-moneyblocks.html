@@ -516,33 +516,60 @@
         }
         
         // Обработка выбора ответа
+        let isProcessing = false; // Флаг для предотвращения двойных кликов
+        
+        function handleAnswerSelection(target) {
+            if (isProcessing) return;
+            isProcessing = true;
+            
+            // Убираем выделение с других ответов
+            const currentCard = target.closest('.question-card');
+            currentCard.querySelectorAll('.answer-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Выделяем выбранный ответ
+            target.classList.add('selected');
+            
+            // Сохраняем ответ
+            const questionNum = parseInt(currentCard.dataset.question);
+            answers[questionNum] = target.dataset.value;
+            
+            // Трекинг события
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Quiz Answer', {
+                    question: questionNum,
+                    answer: target.dataset.value
+                });
+            }
+            
+            // Переходим к следующему вопросу через 800мс
+            setTimeout(() => {
+                showNextQuestion();
+                isProcessing = false;
+            }, 800);
+        }
+        
         document.addEventListener('click', function(e) {
             if (e.target.classList.contains('answer-option')) {
-                // Убираем выделение с других ответов
-                const currentCard = e.target.closest('.question-card');
-                currentCard.querySelectorAll('.answer-option').forEach(option => {
-                    option.classList.remove('selected');
-                });
-                
-                // Выделяем выбранный ответ
-                e.target.classList.add('selected');
-                
-                // Сохраняем ответ
-                const questionNum = parseInt(currentCard.dataset.question);
-                answers[questionNum] = e.target.dataset.value;
-                
-                // Трекинг события
-                if (typeof fbq !== 'undefined') {
-                    fbq('track', 'Quiz Answer', {
-                        question: questionNum,
-                        answer: e.target.dataset.value
-                    });
-                }
-                
-                // Переходим к следующему вопросу через 1 секунду
-                setTimeout(() => {
-                    showNextQuestion();
-                }, 800);
+                e.preventDefault();
+                handleAnswerSelection(e.target);
+            }
+        });
+        
+        // Дополнительная обработка для touch устройств
+        document.addEventListener('touchstart', function(e) {
+            if (e.target.classList.contains('answer-option')) {
+                e.preventDefault();
+                e.target.classList.add('touching');
+            }
+        });
+        
+        document.addEventListener('touchend', function(e) {
+            if (e.target.classList.contains('answer-option')) {
+                e.preventDefault();
+                e.target.classList.remove('touching');
+                handleAnswerSelection(e.target);
             }
         });
         
