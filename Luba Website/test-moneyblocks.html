@@ -464,22 +464,31 @@
                 return;
             }
             
-            // Данные лида
-            const leadData = { name, phone, email, answers };
+            // Показать загрузку
+            const btn = e.target.querySelector('.submit-btn');
+            btn.textContent = 'Сохраняем...';
+            btn.disabled = true;
             
-            // Сохраняем в Supabase
-            const saved = await saveToSupabase(leadData);
-            
-            if (!saved) {
-                alert('Ошибка сохранения данных. Попробуйте еще раз.');
-                return;
+            try {
+                // Данные лида
+                const leadData = { name, phone, email, answers };
+                
+                // Сохраняем в Supabase
+                const saved = await saveToSupabase(leadData);
+                
+                // Для результатов сохраняем в localStorage
+                localStorage.setItem('quizAnswers', JSON.stringify(answers));
+                
+                // Переходим к результатам (независимо от Supabase)
+                window.location.href = 'quiz-result.html';
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                
+                // В случае ошибки все равно показываем результат
+                localStorage.setItem('quizAnswers', JSON.stringify(answers));
+                window.location.href = 'quiz-result.html';
             }
-            
-            // Только для результатов сохраняем в localStorage
-            localStorage.setItem('quizAnswers', JSON.stringify(answers));
-            
-            // Переходим к результатам
-            window.location.href = 'quiz-result.html';
         });
         
         // Инициализация
