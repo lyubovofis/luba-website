@@ -1087,6 +1087,17 @@
     </script>
 </head>
 <body>
+    <!-- Подключаем хедер -->
+    <div id="header-container"></div>
+    
+    <script>
+        // Загружаем хедер
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            });
+    </script>
     <div class="wrapper">
         <!-- Navigation -->
         <nav>
@@ -1101,6 +1112,7 @@
                     <li><a href="#testimonials">Отзывы</a></li>
                     <li><a href="#pricing">Стоимость</a></li>
                 </ul>
+                <a href="/test-moneyblocks.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 14px; margin-right: 15px;">🧠 Тест</a>
                 <a href="https://wa.me/34654420334?text=Здравствуйте! Хочу записаться на бесплатную консультацию" class="nav-cta">Записаться</a>
             </div>
         </nav>
@@ -1939,6 +1951,23 @@
         <!-- Footer -->
         <footer>
             <div class="footer-content">
+                <!-- Кнопка теста в футере -->
+                <div style="margin-bottom: 30px; text-align: center;">
+                    <a href="/test-moneyblocks.html" style="
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        color: white;
+                        padding: 15px 30px;
+                        border-radius: 50px;
+                        text-decoration: none;
+                        font-weight: 700;
+                        font-size: 16px;
+                        display: inline-block;
+                        transition: transform 0.3s ease;
+                        box-shadow: 0 10px 30px rgba(102,126,234,0.3);
+                    ">🧠 Тест: Ваши денежные блоки</a>
+                    <p style="font-size: 14px; margin-top: 10px; opacity: 0.8;">Узнайте что мешает вам зарабатывать больше за 3 минуты</p>
+                </div>
+                
                 <p><strong>© 2025 ФОП Лукащук Любов | Денежный Водопад</strong></p>
                 <p>Мастер трансформации сознания | Проводник в реальность изобилия</p>
                 <p style="margin: 15px 0;">

@@ -37,6 +37,8 @@ C:\Luba Website\
 │       └── landing-detailed1.html  # Детальный лендинг
 │
 ├── 📝 КВИЗЫ
+│   ├── test-moneyblocks.html   # Тест денежных блоков (7 вопросов)
+│   ├── quiz-result.html        # Результаты теста блоков
 │   ├── quiz/index.html         # 5 вопросов, поэтапный сбор
 │   └── quiz-invest/            # Квиз инвестиция
 │       ├── index.html

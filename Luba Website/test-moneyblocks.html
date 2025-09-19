@@ -454,6 +454,21 @@
                         Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html">политикой конфиденциальности</a><br>
                         Мы не передаем данные третьим лицам и не спамим
                     </p>
+                    
+                    <!-- Кнопка на главную -->
+                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+                        <a href="/" style="
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                            color: #667eea;
+                            text-decoration: none;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.color='#764ba2'" onmouseout="this.style.color='#667eea'">
+                            ← Вернуться на главную
+                        </a>
+                    </div>
                 </form>
             </div>
         </div>
@@ -570,29 +585,49 @@
                 });
             }
             
-            // Отправка в CRM (здесь нужно настроить ваш endpoint)
-            fetch('/api/submit-lead', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(leadData)
-            })
-            .then(response => response.json())
-            .then(data => {
+            // Сохраняем в CRM
+            try {
+                // Получаем существующие лиды из localStorage
+                const existingLeads = JSON.parse(localStorage.getItem('crmLeads') || '[]');
+                
+                // Создаем новый лид
+                const newLead = {
+                    id: Date.now(),
+                    name: leadData.name,
+                    phone: leadData.phone,
+                    email: leadData.email || '',
+                    source: 'Квиз: Денежные блоки',
+                    status: 'Новый лид',
+                    date: new Date().toLocaleDateString('ru-RU'),
+                    time: new Date().toLocaleTimeString('ru-RU'),
+                    answers: leadData.answers,
+                    notes: 'Прошел тест на денежные блоки'
+                };
+                
+                // Добавляем в начало массива
+                existingLeads.unshift(newLead);
+                
+                // Сохраняем обратно
+                localStorage.setItem('crmLeads', JSON.stringify(existingLeads));
+                
+                // Сохраняем ответы для страницы результата
+                localStorage.setItem('quizAnswers', JSON.stringify(leadData.answers));
+                
                 // Перенаправляем на страницу результата
-                window.location.href = `/quiz-result?id=${data.leadId}`;
-            })
-            .catch(error => {
-                console.error('Error:', error);
+                window.location.href = `/quiz-result.html`;
+                
+            } catch (error) {
+                console.error('Error saving to CRM:', error);
                 // В случае ошибки все равно перенаправляем
-                window.location.href = '/quiz-result';
-            });
+                localStorage.setItem('quizAnswers', JSON.stringify(leadData.answers));
+                window.location.href = '/quiz-result.html';
+            }
             
             // Резервный редирект через 3 секунды
             setTimeout(() => {
                 if (window.location.pathname === '/test-moneyblocks.html') {
-                    window.location.href = '/quiz-result';
+                    localStorage.setItem('quizAnswers', JSON.stringify(leadData.answers));
+                    window.location.href = '/quiz-result.html';
                 }
             }, 3000);
         });

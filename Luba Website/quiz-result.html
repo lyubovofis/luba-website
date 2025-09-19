@@ -241,8 +241,15 @@
         <!-- Социальный шеринг -->
         <div class="social-share">
             <p><strong>Поделитесь тестом с подругами:</strong></p>
-            <a href="https://t.me/share/url?url=https://lubadyengi.site/test-moneyblocks&text=Прошла%20тест%20на%20денежные%20блоки%20-%20очень%20точно!%20Попробуй%20тоже" target="_blank" style="margin: 0 10px; color: var(--primary-color);">Telegram</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://lubadyengi.site/test-moneyblocks" target="_blank" style="margin: 0 10px; color: var(--primary-color);">Facebook</a>
+            <a href="#" id="telegramShare" style="margin: 0 10px; color: var(--primary-color);">Telegram</a>
+            <a href="#" id="whatsappShare" style="margin: 0 10px; color: var(--primary-color);">WhatsApp</a>
+            <a href="#" id="facebookShare" style="margin: 0 10px; color: var(--primary-color);">Facebook</a>
+            
+            <!-- Навигация -->
+            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+                <a href="/" style="margin: 0 15px; color: #667eea; text-decoration: none; font-weight: 600;">← Главная</a>
+                <a href="/test-moneyblocks.html" style="margin: 0 15px; color: #667eea; text-decoration: none; font-weight: 600;">🔄 Пройти тест еще раз</a>
+            </div>
         </div>
     </div>
 
@@ -484,15 +491,36 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Получаем ответы из localStorage или URL параметров
             let answers = JSON.parse(localStorage.getItem('quizAnswers') || '{}');
+            let currentBlockKey = 'scarcity'; // по умолчанию
             
             // Если ответов нет, показываем дефолтный блок
             if (Object.keys(answers).length === 0) {
-                // Можно перенаправить обратно на квиз или показать общий результат
                 displayResult('scarcity');
             } else {
                 const mainBlock = determineMainBlock(answers);
+                currentBlockKey = mainBlock;
                 displayResult(mainBlock);
             }
+            
+            // Настройка ссылок шаринга
+            const baseUrl = 'https://lyubovpsy.com';
+            const shareUrl = `${baseUrl}/test-moneyblocks.html`;
+            const resultUrl = `${baseUrl}/quiz-result.html?block=${currentBlockKey}`;
+            
+            const blockName = moneyBlocks[currentBlockKey].name;
+            const shareText = `Прошла тест на денежные блоки - у меня "${blockName}"! Очень точно! Попробуй тоже:`;
+            
+            // Telegram
+            document.getElementById('telegramShare').href = 
+                `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
+            
+            // WhatsApp  
+            document.getElementById('whatsappShare').href = 
+                `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
+            
+            // Facebook
+            document.getElementById('facebookShare').href = 
+                `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
             
             // Очищаем ответы из localStorage после использования
             localStorage.removeItem('quizAnswers');
@@ -512,6 +540,14 @@
                 displayResult(mainBlock);
             } catch (e) {
                 console.error('Error parsing answers from URL');
+                displayResult('scarcity');
+            }
+        } else if (urlParams.get('block')) {
+            // Показываем конкретный блок если передан в URL
+            const blockKey = urlParams.get('block');
+            if (moneyBlocks[blockKey]) {
+                displayResult(blockKey);
+            } else {
                 displayResult('scarcity');
             }
         }
