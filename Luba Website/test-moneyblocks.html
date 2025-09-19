@@ -316,8 +316,32 @@
         
         // Инициализация Supabase
         let supabaseClient;
-        if (typeof supabase !== 'undefined') {
-            supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        // Загружаем Supabase если еще не загружен
+        async function initSupabase() {
+            if (!window.supabase) {
+                try {
+                    const script = document.createElement('script');
+                    script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+                    document.head.appendChild(script);
+                    
+                    await new Promise((resolve) => {
+                        script.onload = resolve;
+                    });
+                } catch (error) {
+                    console.error('Failed to load Supabase:', error);
+                    return false;
+                }
+            }
+            
+            try {
+                const { createClient } = supabase;
+                supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                return true;
+            } catch (error) {
+                console.error('Failed to initialize Supabase client:', error);
+                return false;
+            }
         }
         
         // Определение основного блока
@@ -460,32 +484,32 @@
             const email = document.getElementById('email').value.trim();
             
             if (!name || !phone) {
-                alert('Пожалуйста, заполните имя и телефон');
+                alert('Заполните имя и телефон');
                 return;
             }
             
-            // Показать загрузку
             const btn = e.target.querySelector('.submit-btn');
             btn.textContent = 'Сохраняем...';
             btn.disabled = true;
             
             try {
-                // Данные лида
-                const leadData = { name, phone, email, answers };
+                // Инициализируем Supabase
+                const supabaseReady = await initSupabase();
                 
-                // Сохраняем в Supabase
-                const saved = await saveToSupabase(leadData);
+                if (supabaseReady) {
+                    const leadData = { name, phone, email, answers };
+                    const saved = await saveToSupabase(leadData);
+                    console.log('Supabase save result:', saved);
+                }
                 
-                // Для результатов сохраняем в localStorage
+                // Сохраняем ответы для результатов
                 localStorage.setItem('quizAnswers', JSON.stringify(answers));
                 
-                // Переходим к результатам (независимо от Supabase)
+                // Переходим к результатам
                 window.location.href = 'quiz-result.html';
                 
             } catch (error) {
-                console.error('Form submission error:', error);
-                
-                // В случае ошибки все равно показываем результат
+                console.error('Form error:', error);
                 localStorage.setItem('quizAnswers', JSON.stringify(answers));
                 window.location.href = 'quiz-result.html';
             }
