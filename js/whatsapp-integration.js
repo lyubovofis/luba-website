@@ -2,8 +2,9 @@
 // Добавить в /js/whatsapp-integration.js
 
 const WHATSAPP_CONFIG = {
-    phoneNumber: '380507260235',
-    businessId: '', // Получите из WhatsApp Business
+    phoneNumber: '34654420334',
+    businessId: '335106425840322',
+    phoneNumberId: '722548377617608',
     apiToken: '', // Получите из Facebook Developer Console
     webhookUrl: 'https://lyubovpsy.com/api/whatsapp-webhook'
 };

@@ -1,0 +1,24 @@
+# Development files
+*.py
+*.log
+*.tmp
+.DS_Store
+*.md
+!README.md
+
+# Local folders
+node_modules/
+.vscode/
+test/
+docs/
+tiktok-integration/
+Best pages/
+
+# Scripts
+*.sh
+*.bat
+
+# Backup files
+*backup*
+*old*
+*.bak
