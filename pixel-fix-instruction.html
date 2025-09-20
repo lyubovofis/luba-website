@@ -1,0 +1,44 @@
+<!-- Добавьте этот код в <head> ВСЕХ страниц сразу после TikTok Pixel -->
+<!-- КРИТИЧЕСКИ ВАЖНО для исправления проблем с пикселем -->
+
+<script src="/js/tiktok-pixel-fix.js"></script>
+
+<script>
+// Автоматическое добавление content_id и value
+document.addEventListener('DOMContentLoaded', function() {
+    // ViewContent при загрузке любой страницы
+    if (typeof ttq !== 'undefined') {
+        const pageName = window.location.pathname.replace('/', '') || 'home';
+        ttq.track('ViewContent', {
+            content_id: pageName,
+            content_type: 'product',
+            value: 2000,
+            currency: 'EUR'
+        });
+    }
+    
+    // Отслеживание кликов по WhatsApp
+    document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"], .whatsapp-button').forEach(link => {
+        link.addEventListener('click', function() {
+            ttq.track('Contact', {
+                content_id: 'whatsapp_click',
+                content_type: 'product',
+                value: 2000,
+                currency: 'EUR'
+            });
+        });
+    });
+    
+    // Отслеживание форм
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            ttq.track('CompleteRegistration', {
+                content_id: 'form_submit',
+                content_type: 'product',
+                value: 2000,
+                currency: 'EUR'
+            });
+        });
+    });
+});
+</script>

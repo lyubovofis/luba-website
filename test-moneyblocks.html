@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест: Ваши денежные блоки | Любовь Лукащук</title>
+    
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .quiz-title {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .quiz-subtitle {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .progress {
+            background: #f0f0f0;
+            height: 8px;
+            border-radius: 10px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            width: 14%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .question {
+            display: none;
+        }
+        
+        .question.active {
+            display: block;
+        }
+        
+        .question-number {
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        
+        .answer {
+            background: #f8f9fa;
+            border: 2px solid transparent;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .answer:hover {
+            background: #e9ecef;
+            border-color: #667eea;
+        }
+        
+        .answer.selected {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .form-section {
+            display: none;
+            text-align: center;
+        }
+        
+        .form-section.active {
+            display: block;
+        }
+        
+        .form-title {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .form-subtitle {
+            color: #666;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102,126,234,0.3);
+        }
+        
+        .privacy-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 15px;
+        }
+        
+        .privacy-note a {
+            color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .quiz-container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .quiz-title {
+                font-size: 24px;
+            }
+            
+            .question-text {
+                font-size: 18px;
+            }
+            
+            .answer {
+                padding: 15px;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1 class="quiz-title">Тест: Ваши денежные блоки</h1>
+            <p class="quiz-subtitle">Узнайте, что мешает вам зарабатывать больше</p>
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+        
+        <div class="questions-section" id="questionsSection">
+            <!-- Вопрос 1 -->
+            <div class="question active" data-question="1">
+                <div class="question-number">Вопрос 1 из 7</div>
+                <h2 class="question-text">Что чаще всего говорили ваши родители о деньгах?</h2>
+                <div class="answer" data-value="lack">"Денег у нас всегда не хватает" / "Деньги не растут на деревьях"</div>
+                <div class="answer" data-value="evil">"Деньги - это зло" / "Богатые люди плохие"</div>
+                <div class="answer" data-value="hard">"Деньги достаются тяжелым трудом" / "Легких денег не бывает"</div>
+                <div class="answer" data-value="shame">"О деньгах говорить неприлично" / "Не хвастайся доходами"</div>
+            </div>
+            
+            <!-- Вопрос 2 -->
+            <div class="question" data-question="2">
+                <div class="question-number">Вопрос 2 из 7</div>
+                <h2 class="question-text">Как в вашей семье относились к успешным людям?</h2>
+                <div class="answer" data-value="criticism">Критиковали: "Наверняка нечестно заработал" / "Показуха"</div>
+                <div class="answer" data-value="envy">Завидовали молча, но я чувствовал(а) напряжение</div>
+                <div class="answer" data-value="distance">"Это не наш уровень" / "Нам такое не светит"</div>
+                <div class="answer" data-value="respect">С уважением, но считали недосягаемыми</div>
+            </div>
+            
+            <!-- Вопрос 3 -->
+            <div class="question" data-question="3">
+                <div class="question-number">Вопрос 3 из 7</div>
+                <h2 class="question-text">Что происходило, когда вы просили дорогую вещь?</h2>
+                <div class="answer" data-value="guilt">"Мы не можем себе это позволить, не мучай нас"</div>
+                <div class="answer" data-value="earn">"Хочешь - сам заработай" в негативном тоне</div>
+                <div class="answer" data-value="sacrifice">"Придется экономить на еде" с мученическим видом</div>
+                <div class="answer" data-value="postpone">"Потерпи, может когда-нибудь купим"</div>
+            </div>
+            
+            <!-- Вопрос 4 -->
+            <div class="question" data-question="4">
+                <div class="question-number">Вопрос 4 из 7</div>
+                <h2 class="question-text">Какие фразы вы слышали чаще всего?</h2>
+                <div class="answer" data-value="modest">"Будь скромнее" / "Не высовывайся"</div>
+                <div class="answer" data-value="grateful">"Будь благодарен за то, что есть"</div>
+                <div class="answer" data-value="realistic">"Не мечтай о несбыточном" / "Будь реалистом"</div>
+                <div class="answer" data-value="suffer">"Жизнь - это борьба" / "Без страданий ничего не получишь"</div>
+            </div>
+            
+            <!-- Вопрос 5 -->
+            <div class="question" data-question="5">
+                <div class="question-number">Вопрос 5 из 7</div>
+                <h2 class="question-text">Как реагировали на ваши успехи в детстве?</h2>
+                <div class="answer" data-value="downplay">Принижали: "Не зазнавайся" / "Это еще ничего не значит"</div>
+                <div class="answer" data-value="fear">Боялись сглаза: "Тихо, не хвастайся"</div>
+                <div class="answer" data-value="expect">"Теперь всегда должен быть лучшим" - давили ожиданиями</div>
+                <div class="answer" data-value="ignore">Игнорировали или воспринимали как должное</div>
+            </div>
+            
+            <!-- Вопрос 6 -->
+            <div class="question" data-question="6">
+                <div class="question-number">Вопрос 6 из 7</div>
+                <h2 class="question-text">Что говорили о женщинах и деньгах?</h2>
+                <div class="answer" data-value="depend">"Женщина должна быть обеспечена мужчиной"</div>
+                <div class="answer" data-value="secondary">"Карьера - это второстепенно, главное - семья"</div>
+                <div class="answer" data-value="dangerous">"Слишком успешная женщина - плохо для семьи"</div>
+                <div class="answer" data-value="masculine">"Заработок - мужское дело" / "Не мужественно жить на женские деньги"</div>
+            </div>
+            
+            <!-- Вопрос 7 -->
+            <div class="question" data-question="7">
+                <div class="question-number">Вопрос 7 из 7</div>
+                <h2 class="question-text">Какую самую сильную установку о деньгах вы получили от родителей?</h2>
+                <div class="answer" data-value="unworthy">"Ты не заслуживаешь большего" / "Знай свое место"</div>
+                <div class="answer" data-value="security">"Главное - стабильность" / "Лучше синица в руках"</div>
+                <div class="answer" data-value="others">"Сначала другие, потом ты" / "Жертвенность - это добродетель"</div>
+                <div class="answer" data-value="dangerous">"Деньги портят человека" / "Богатство развращает"</div>
+            </div>
+        </div>
+        
+        <!-- Форма -->
+        <div class="form-section" id="formSection">
+            <h2 class="form-title">Узнайте ваш результат!</h2>
+            <p class="form-subtitle">Получите персональный анализ ваших денежных блоков</p>
+            
+            <form id="leadForm">
+                <div class="form-group">
+                    <input type="text" id="fullName" class="form-input" placeholder="Ваше имя*" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" class="form-input" placeholder="WhatsApp номер*" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="form-input" placeholder="Email (необязательно)">
+                </div>
+                
+                <button type="submit" class="submit-btn">Получить результат бесплатно</button>
+                
+                <p class="privacy-note">
+                    Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html">политикой конфиденциальности</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 7;
+        let answers = {};
+        
+        // Supabase конфигурация
+        const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
+        
+        // Инициализация Supabase
+        let supabaseClient;
+        
+        // Загружаем Supabase если еще не загружен
+        async function initSupabase() {
+            if (!window.supabase) {
+                try {
+                    const script = document.createElement('script');
+                    script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+                    document.head.appendChild(script);
+                    
+                    await new Promise((resolve) => {
+                        script.onload = resolve;
+                    });
+                } catch (error) {
+                    console.error('Failed to load Supabase:', error);
+                    return false;
+                }
+            }
+            
+            try {
+                const { createClient } = supabase;
+                supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                return true;
+            } catch (error) {
+                console.error('Failed to initialize Supabase client:', error);
+                return false;
+            }
+        }
+        
+        // Определение основного блока
+        function determineMainBlock(answers) {
+            const scores = { scarcity: 0, guilt: 0, fear: 0, unworthiness: 0, sacrifice: 0, control: 0, shame: 0 };
+            
+            if (answers[1] === 'lack') scores.scarcity += 3;
+            if (answers[1] === 'evil') scores.fear += 2;
+            if (answers[1] === 'hard') scores.control += 3;
+            if (answers[1] === 'shame') scores.shame += 3;
+            
+            if (answers[2] === 'criticism') scores.fear += 2;
+            if (answers[2] === 'envy') scores.guilt += 2;
+            if (answers[2] === 'distance') scores.unworthiness += 3;
+            
+            if (answers[3] === 'guilt') scores.guilt += 3;
+            if (answers[3] === 'sacrifice') scores.sacrifice += 2;
+            
+            if (answers[4] === 'modest') scores.unworthiness += 2;
+            if (answers[4] === 'grateful') scores.sacrifice += 2;
+            if (answers[4] === 'realistic') scores.unworthiness += 2;
+            if (answers[4] === 'suffer') scores.control += 3;
+            
+            if (answers[5] === 'downplay') scores.guilt += 2;
+            if (answers[5] === 'fear') scores.shame += 2;
+            if (answers[5] === 'ignore') scores.unworthiness += 2;
+            
+            if (answers[6] === 'depend') scores.sacrifice += 2;
+            if (answers[6] === 'secondary') scores.sacrifice += 2;
+            
+            if (answers[7] === 'unworthy') scores.unworthiness += 3;
+            if (answers[7] === 'security') scores.fear += 2;
+            if (answers[7] === 'others') scores.sacrifice += 3;
+            if (answers[7] === 'dangerous') scores.fear += 2;
+            
+            let maxScore = 0;
+            let mainBlock = 'scarcity';
+            
+            for (const [block, score] of Object.entries(scores)) {
+                if (score > maxScore) {
+                    maxScore = score;
+                    mainBlock = block;
+                }
+            }
+            return mainBlock;
+        }
+        
+        // Сохранение в Supabase
+        async function saveToSupabase(leadData) {
+            if (!supabaseClient) return false;
+            
+            try {
+                const mainBlock = determineMainBlock(leadData.answers);
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                const supabaseData = {
+                    name: leadData.name,
+                    phone: leadData.phone,
+                    email: leadData.email || null,
+                    quiz_answers: leadData.answers,
+                    main_block: mainBlock,
+                    source: 'Quiz: Money Blocks',
+                    status: 'Новый лид',
+                    utm_source: urlParams.get('utm_source'),
+                    utm_medium: urlParams.get('utm_medium'),
+                    utm_campaign: urlParams.get('utm_campaign'),
+                    user_agent: navigator.userAgent
+                };
+                
+                const { data, error } = await supabaseClient
+                    .from('quiz_leads')
+                    .insert([supabaseData])
+                    .select();
+                
+                if (error) {
+                    console.error('Supabase error:', error);
+                    return false;
+                }
+                
+                console.log('Lead saved to Supabase:', data);
+                return true;
+                
+            } catch (error) {
+                console.error('Error saving to Supabase:', error);
+                return false;
+            }
+        }
+        
+        // Обновление прогресс-бара
+        function updateProgress() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+        
+        // Показ следующего вопроса
+        function showNextQuestion() {
+            const current = document.querySelector('.question.active');
+            current.classList.remove('active');
+            
+            currentQuestion++;
+            
+            if (currentQuestion <= totalQuestions) {
+                const next = document.querySelector(`[data-question="${currentQuestion}"]`);
+                next.classList.add('active');
+                updateProgress();
+            } else {
+                document.getElementById('questionsSection').style.display = 'none';
+                document.getElementById('formSection').classList.add('active');
+                updateProgress();
+            }
+        }
+        
+        // Обработка клика по ответу
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('answer')) {
+                const question = e.target.closest('.question');
+                const questionNum = parseInt(question.dataset.question);
+                const answerValue = e.target.dataset.value;
+                
+                // Убираем выделение с других ответов
+                question.querySelectorAll('.answer').forEach(a => a.classList.remove('selected'));
+                
+                // Выделяем выбранный
+                e.target.classList.add('selected');
+                
+                // Сохраняем ответ
+                answers[questionNum] = answerValue;
+                
+                // Переходим дальше через 600ms
+                setTimeout(showNextQuestion, 600);
+            }
+        });
+        
+        // Отправка формы
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            
+            if (!name || !phone) {
+                alert('Заполните имя и телефон');
+                return;
+            }
+            
+            const btn = e.target.querySelector('.submit-btn');
+            btn.textContent = 'Сохраняем...';
+            btn.disabled = true;
+            
+            try {
+                // Инициализируем Supabase
+                const supabaseReady = await initSupabase();
+                
+                if (supabaseReady) {
+                    const leadData = { name, phone, email, answers };
+                    const saved = await saveToSupabase(leadData);
+                    console.log('Supabase save result:', saved);
+                }
+                
+                // Сохраняем ответы для результатов
+                localStorage.setItem('quizAnswers', JSON.stringify(answers));
+                
+                // Переходим к результатам
+                window.location.href = 'quiz-result.html';
+                
+            } catch (error) {
+                console.error('Form error:', error);
+                localStorage.setItem('quizAnswers', JSON.stringify(answers));
+                window.location.href = 'quiz-result.html';
+            }
+        });
+        
+        // Инициализация
+        updateProgress();
+    </script>
+</body>
+</html>
