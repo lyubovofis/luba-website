@@ -138,7 +138,7 @@ window.TikTokTracking.trackTikTokEvent('Purchase', {
 
 ## ⚠️ КРИТИЧЕСКИЕ ЗАМЕЧАНИЯ
 
-1. **WhatsApp номер:** +380507260235 - убедитесь, что он активен и настроен WhatsApp Business
+1. **WhatsApp номер:** +34654420334 - убедитесь, что он активен и настроен WhatsApp Business
 
 2. **Скорость загрузки:** Рекомендую оптимизировать изображения (WebP формат)
 
@@ -151,7 +151,7 @@ window.TikTokTracking.trackTikTokEvent('Purchase', {
 ## 📞 КОНТАКТЫ ДЛЯ ПОДДЕРЖКИ
 
 **Email:** care@lyubovpsy.com
-**WhatsApp:** +380507260235
+**WhatsApp:** +34654420334
 **Сайт:** https://lyubovpsy.com/
 
 ---
