@@ -1,0 +1,29 @@
+<!-- ИСПРАВЛЕННЫЙ PIXEL КОД для сайта -->
+<script>
+// Правильная установка TikTok Pixel с Content ID и Value
+ttq.track('ViewContent', {
+    content_id: 'package_2000', // ID пакета
+    content_type: 'product',
+    content_name: 'Денежная трансформация',
+    value: 2000,
+    currency: 'EUR'
+});
+
+// При покупке/регистрации
+ttq.track('CompleteRegistration', {
+    content_id: 'package_2000',
+    content_type: 'product', 
+    content_name: 'Денежная трансформация 8 сессий',
+    value: 2000,
+    currency: 'EUR'
+});
+
+// Для Purchase события
+ttq.track('Purchase', {
+    content_id: 'package_2000',
+    content_type: 'product',
+    value: 2000.00, // ОБЯЗАТЕЛЬНО число, не строка
+    currency: 'EUR',
+    content_name: 'Пакет 8 сессий'
+});
+</script>
