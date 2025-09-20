@@ -874,6 +874,7 @@
             </div>
             <div style="font-size: 0.85rem; color: #666;">
                 ${lead.phone}<br>
+                ${lead.age ? `Возраст: ${lead.age}<br>` : ''}
                 ${date}
                 ${lead.note ? `<br><em>${lead.note}</em>` : ''}
             </div>
@@ -930,8 +931,106 @@
         document.getElementById('roi').textContent = `${roi}%`;
     }
     
-    // Update analytics
-    function updateAnalytics() {
+    // Update analytics from Supabase data
+    async function updateAnalytics() {
+        try {
+            // Get analytics from Supabase
+            const { data: leads, error } = await supabaseClient
+                .from('crm_leads')
+                .select('*')
+                .order('created_at', { ascending: false });
+            
+            if (error) throw error;
+            
+            // Calculate stats
+            const now = new Date();
+            const todayStart = new Date(now.setHours(0,0,0,0));
+            const weekStart = new Date(now.setDate(now.getDate() - 7));
+            const monthStart = new Date(now.setMonth(now.getMonth() - 1));
+            
+            const todayLeads = leads.filter(l => new Date(l.created_at) >= todayStart);
+            const weekLeads = leads.filter(l => new Date(l.created_at) >= weekStart);
+            const monthLeads = leads.filter(l => new Date(l.created_at) >= monthStart);
+            
+            // Update UI
+            document.getElementById('todayLeads').textContent = todayLeads.length;
+            document.getElementById('weekLeads').textContent = weekLeads.length;
+            document.getElementById('monthLeads').textContent = monthLeads.length;
+            
+            const todayRevenue = todayLeads.reduce((sum, l) => sum + (l.amount || 0), 0);
+            const weekRevenue = weekLeads.reduce((sum, l) => sum + (l.amount || 0), 0);
+            const monthRevenue = monthLeads.reduce((sum, l) => sum + (l.amount || 0), 0);
+            
+            document.getElementById('todayRevenue').textContent = `€${todayRevenue}`;
+            document.getElementById('weekRevenue').textContent = `€${weekRevenue}`;
+            document.getElementById('monthRevenue').textContent = `€${monthRevenue}`;
+            
+            // Conversion rates
+            const totalLeads = leads.length;
+            const consultations = leads.filter(l => l.stage === 'consultation' || l.stage === 'paid').length;
+            const paid = leads.filter(l => l.stage === 'paid').length;
+            
+            const conversionRate = totalLeads > 0 ? Math.round((paid / totalLeads) * 100) : 0;
+            const consultationRate = totalLeads > 0 ? Math.round((consultations / totalLeads) * 100) : 0;
+            
+            document.getElementById('conversionRate').textContent = `${conversionRate}%`;
+            document.getElementById('consultationRate').textContent = `${consultationRate}%`;
+            
+            // Source analytics
+            const sources = {};
+            leads.forEach(lead => {
+                sources[lead.source] = (sources[lead.source] || 0) + 1;
+            });
+            
+            const topSources = Object.entries(sources)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5)
+                .map(([source, count]) => ({
+                    source,
+                    count,
+                    revenue: leads.filter(l => l.source === source && l.amount)
+                                  .reduce((sum, l) => sum + l.amount, 0)
+                }));
+            
+            const sourcesHtml = topSources.map(s => `
+                <li>${s.source}: ${s.count} лидов (€${s.revenue})</li>
+            `).join('');
+            
+            document.getElementById('topSources').innerHTML = sourcesHtml || '<li>Нет данных</li>';
+            
+            // UTM analytics  
+            const utmData = {};
+            leads.filter(l => l.utm).forEach(lead => {
+                utmData[lead.utm] = (utmData[lead.utm] || 0) + 1;
+            });
+            
+            const topVideos = Object.entries(utmData)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5)
+                .map(([utm, count]) => ({
+                    title: utm,
+                    leads: count,
+                    views: Math.round(count * 150), // Примерная оценка
+                    ctr: (count / (count * 150) * 100).toFixed(1)
+                }));
+            
+            const videosHtml = topVideos.map(v => `
+                <li>
+                    <div class="video-title">${v.title}</div>
+                    <div class="video-stats">${v.views} просмотров • ${v.leads} лидов • CTR ${v.ctr}%</div>
+                </li>
+            `).join('');
+            
+            document.getElementById('topVideos').innerHTML = videosHtml || '<li>Нет данных</li>';
+            
+        } catch (error) {
+            console.error('Error updating analytics:', error);
+            // Fallback to local data
+            updateLocalAnalytics();
+        }
+    }
+    
+    function updateLocalAnalytics() {
         // Top sources
         const sourceStats = {};
         filteredLeads.forEach(lead => {

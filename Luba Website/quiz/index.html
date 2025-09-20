@@ -259,6 +259,38 @@
             }
         }
     </style>
+    
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
+        const { createClient } = supabase;
+        const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        async function saveLeadToSupabase(data) {
+            try {
+                const leadData = {
+                    name: data.name,
+                    email: data.email,
+                    phone: data.whatsapp,
+                    status: 'new',
+                    source: 'quiz',
+                    quiz_answers: data.answers,
+                    created_at: new Date().toISOString()
+                };
+                
+                const { error } = await supabaseClient
+                    .from('crm_leads')
+                    .insert([leadData]);
+                
+                if (error) console.error('Supabase error:', error);
+                else console.log('Lead saved to Supabase');
+            } catch (err) {
+                console.error('Error saving to Supabase:', err);
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="quiz-container">
