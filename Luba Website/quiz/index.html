@@ -360,11 +360,21 @@
             answers: {},
             email: '',
             name: '',
-            whatsapp: ''
+            age: null,
+            whatsapp: '',
+            utm_source: '',
+            utm_medium: '',
+            utm_campaign: ''
         };
         
         let currentStep = 1;
         const totalSteps = 7;
+        
+        // Capture UTM parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        quizData.utm_source = urlParams.get('utm_source') || '';
+        quizData.utm_medium = urlParams.get('utm_medium') || '';
+        quizData.utm_campaign = urlParams.get('utm_campaign') || '';
         
         // Supabase Configuration
         const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
@@ -377,29 +387,63 @@
         // Function to save lead to Supabase
         async function saveLeadToSupabase(leadData) {
             try {
-                const { data, error } = await supabaseClient
-                    .from('crm_leads')
+                // Get the full result text
+                const resultTitle = document.getElementById('resultTitle').textContent;
+                const resultDescription = document.getElementById('resultDescription').textContent;
+                const fullResult = `${resultTitle}. ${resultDescription}`;
+                
+                // Save to quiz_leads
+                const { data: quizData, error: quizError } = await supabaseClient
+                    .from('quiz_leads')
                     .insert({
                         name: leadData.name,
                         email: leadData.email,
                         phone: leadData.whatsapp,
-                        stage: 'new',
-                        source: 'quiz',
-                        note: `Результат квиза: ${document.getElementById('resultTitle').textContent}`,
+                        age: leadData.age || null,
+                        quiz_answers: JSON.stringify(leadData.answers),
+                        main_block: resultTitle,
                         created_at: new Date().toISOString()
                     })
                     .select();
                 
-                if (error) {
-                    console.error('Error saving to Supabase:', error);
-                    // Fallback to localStorage
+                if (quizError) console.error('Quiz save error:', quizError);
+                
+                // Save to crm_leads
+                const { data: crmData, error: crmError } = await supabaseClient
+                    .from('crm_leads')
+                    .insert({
+                        name: leadData.name,
+                        phone: leadData.whatsapp,
+                        email: leadData.email || null,
+                        age: leadData.age || null,
+                        stage: 'new',
+                        amount: 0,
+                        source: 'Quiz: Money Blocks',
+                        utm_source: leadData.utm_source || null,
+                        utm_medium: leadData.utm_medium || null,
+                        utm_campaign: leadData.utm_campaign || null,
+                        created_at: new Date().toISOString()
+                    })
+                    .select();
+                
+                if (crmError) {
+                    console.error('CRM save error details:', {
+                        error: crmError,
+                        data: {
+                            name: leadData.name,
+                            phone: leadData.whatsapp,
+                            email: leadData.email || null,
+                            stage: 'new',
+                            amount: 0,
+                            source: 'Quiz: Money Blocks'
+                        }
+                    });
                     saveToLocalStorage(leadData);
                 } else {
-                    console.log('Lead saved to Supabase:', data);
+                    console.log('Saved successfully to both tables', crmData);
                 }
             } catch (error) {
-                console.error('Error saving lead:', error);
-                // Fallback to localStorage
+                console.error('Save error:', error);
                 saveToLocalStorage(leadData);
             }
         }
