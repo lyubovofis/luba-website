@@ -1,0 +1,911 @@
+/* Основные переменные */
+:root {
+    --primary-color: #D4AF37; /* Золотой */
+    --secondary-color: #8B008B; /* Фиолетовый */
+    --accent-color: #FF69B4; /* Розовый */
+    --dark-color: #1a1a1a;
+    --light-color: #ffffff;
+    --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero секция */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+}
+
+.hero-content {
+    color: white;
+    flex: 1;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}.hero-title .highlight {
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.hero-bullets {
+    margin-bottom: 40px;
+}
+
+.bullet {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: var(--dark-color);
+    border: none;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+.button-subtitle {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.social-proof {
+    margin-top: 20px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}/* Секция болей */
+.pain-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.pain-section h2 {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pain-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pain-card:hover {
+    transform: translateY(-5px);
+}
+
+.pain-emoji {
+    font-size: 48px;
+    margin-bottom: 20px;
+}/* Секция решения */
+.solution {
+    padding: 80px 0;
+}
+
+.solution h2 {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.solution-intro {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.benefits-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefit {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.benefit-icon {
+    font-size: 36px;
+    margin-right: 20px;
+}/* Секция теста */
+.test-section {
+    padding: 80px 0;
+    background: var(--gradient);
+}
+
+.test-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.test-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.test-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: #666;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}.progress-fill {
+    width: 20%;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+.question h3 {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.answer-btn {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+}.answer-btn:hover {
+    background: var(--gradient);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Форма захвата лидов */
+.lead-form {
+    text-align: center;
+}
+
+.lead-form h3 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.lead-form p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contactForm input {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}.privacy-note {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+.privacy-note a {
+    color: var(--secondary-color);
+}
+
+/* Секция отзывов */
+.testimonials {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.testimonials h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-with-photo {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-with-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.testimonial-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.result-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto 15px;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.testimonial-content {
+    flex: 1;
+}
+
+.testimonial {
+    background: linear-gradient(135deg, rgba(102,126,234,0.05) 0%, rgba(118,75,162,0.05) 100%);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-color);
+    margin: 30px 0;
+    position: relative;
+}
+
+.testimonial::before {
+    content: """;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 60px;
+    color: var(--primary-color);
+    opacity: 0.3;
+}
+
+.testimonial .author {
+    margin-top: 15px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 16px;
+}.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.location {
+    color: #999;
+    font-size: 14px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.result-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--gradient);
+    color: white;
+    border-radius: 20px;
+    font-weight: 700;
+}/* Секция программы */
+.program {
+    padding: 80px 0;
+}
+
+.program h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.program-subtitle {
+    text-align: center;
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.program-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.week {
+    text-align: center;
+    padding: 25px 15px;
+    background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+    border-radius: 15px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}.week-number {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.week h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.week p {
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.program-includes {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.program-includes h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.program-includes ul {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+}
+
+.program-includes li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+}.program-includes li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Финальный CTA */
+.final-cta {
+    padding: 100px 0;
+    background: var(--gradient);
+    text-align: center;
+    color: white;
+}
+
+.final-cta h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.cta-subtitle {
+    font-size: 24px;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.cta-button.large {
+    font-size: 24px;
+    padding: 25px 50px;
+}.urgency {
+    margin-top: 30px;
+    font-size: 20px;
+    background: rgba(255,255,255,0.2);
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+
+/* Футер */
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-column h4 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.footer-column p {
+    margin-bottom: 10px;
+    color: #ccc;
+}.footer-column a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+}
+
+.disclaimer {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 32px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .hero-image {
+        display: none;
+    }
+    
+    .testimonials-grid,
+    .program-timeline {
+        grid-template-columns: 1fr;
+    }
+    
+    .test-container {
+        padding: 30px 20px;
+    }
+}/* Расширенная адаптивность для всех устройств */
+
+/* Большие десктопы (1920px+) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero-title {
+        font-size: 56px;
+    }
+}
+
+/* Стандартные десктопы (1200px - 1919px) */
+@media (max-width: 1199px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    .hero-image {
+        max-width: 350px;
+        margin: 30px auto 0;
+    }
+    
+    .hero-image img {
+        max-height: 450px;
+    }
+}
+
+/* Планшеты в ландшафте (992px - 1199px) */
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .pain-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .program-timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .week h3 {
+        font-size: 16px;
+    }
+    
+    .week p {
+        font-size: 13px;
+    }
+}/* Планшеты в портрете (768px - 991px) */
+@media (max-width: 767px) {
+    .hero {
+        padding: 20px 0;
+        min-height: auto;
+    }
+    
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .hero-image {
+        max-width: 280px;
+        margin-top: 30px;
+    }
+    
+    .hero-image img {
+        max-height: 350px;
+    }
+    
+    .cta-button {
+        font-size: 16px;
+        padding: 15px 30px;
+    }
+    
+    .pain-grid,
+    .testimonials-grid,
+    .program-timeline {
+        grid-template-columns: 1fr;
+    }
+    
+    .test-container {
+        padding: 30px 20px;
+    }
+    
+    .answer-btn {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+}/* Мобильные устройства (576px - 767px) */
+@media (max-width: 575px) {
+    .hero-title {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .hero-bullets {
+        font-size: 14px;
+    }
+    
+    .bullet {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .pain-section h2,
+    .solution h2,
+    .testimonials h2,
+    .program h2 {
+        font-size: 28px;
+    }
+    
+    .week-number {
+        font-size: 28px;
+    }
+    
+    .cta-button.large {
+        font-size: 18px;
+        padding: 20px 30px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}/* Маленькие мобильные (до 575px) */
+@media (max-width: 374px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 20px;
+    }
+    
+    .cta-button {
+        font-size: 14px;
+        padding: 12px 20px;
+        width: 100%;
+    }
+    
+    .test-container {
+        padding: 20px 15px;
+    }
+    
+    .question h3 {
+        font-size: 18px;
+    }
+    
+    .answer-btn {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+}
+
+/* Улучшения для touch-устройств */
+@media (hover: none) and (pointer: coarse) {
+    .cta-button,
+    .answer-btn {
+        min-height: 44px; /* Минимальный размер для touch */
+    }
+    
+    .answer-btn:active {
+        background: var(--gradient);
+        color: white;
+    }
+}
+
+/* Безопасная зона для iPhone X+ */
+@supports (padding: max(0px)) {
+    .hero,
+    footer {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+    }
+}/* Специальные стили для фото героя */
+.hero-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+/* Адаптивные пропорции для фото */
+@media (min-width: 1200px) {
+    .hero-image img {
+        object-fit: cover;
+        object-position: center top;
+        height: 550px;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-image {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+    
+    .hero-image img {
+        max-height: 300px;
+        object-fit: cover;
+        object-position: center 20%;
+    }
+}
+
+/* Альтернативный вариант с круглой обрезкой для мобильных */
+@media (max-width: 375px) {
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center 25%;
+    }
+}/* Дополнительные стили для предотвращения переполнения текста */
+.week {
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.pain-card h3,
+.benefit h3,
+.testimonial-card h4 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Мобильные устройства - уменьшаем размеры текста */
+@media (max-width: 575px) {
+    .week {
+        padding: 20px 10px;
+        min-height: 180px;
+    }
+    
+    .week-number {
+        font-size: 28px;
+    }
+    
+    .week h3 {
+        font-size: 15px;
+    }
+    
+    .week p {
+        font-size: 12px;
+        padding: 0 5px;
+    }
+    
+    .program-timeline {
+        gap: 20px;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 374px) {
+    .program-timeline {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .week {
+        min-height: auto;
+        padding: 15px 10px;
+    }
+}
