@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в CRM - Денежный Водопад</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .logo {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .title {
+            text-align: center;
+            color: #6b46c1;
+            margin-bottom: 30px;
+        }
+        .error {
+            background: #fee2e2;
+            color: #dc2626;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .error.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">💰</div>
+        <h1 class="title">CRM Денежный Водопад</h1>
+        
+        <div class="error" id="error"></div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" id="email" value="lyubov.ofis@gmail.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Пароль</label>
+                <input type="password" class="form-input" id="password" value="Luba1488@" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%">Войти</button>
+        </form>
+    </div>
+    
+    <script>
+        const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('error');
+            
+            try {
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
+                
+                if (error) throw error;
+                
+                // Success - redirect to dashboard
+                window.location.href = 'dashboard-new.html';
+                
+            } catch (error) {
+                errorDiv.textContent = error.message || 'Ошибка входа';
+                errorDiv.classList.add('active');
+            }
+        });
+        
+        // Check if already logged in
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            if (session) {
+                window.location.href = 'dashboard-new.html';
+            }
+        });
+    </script>
+</body>
+</html>
