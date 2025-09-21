@@ -54,12 +54,12 @@
         <form id="loginForm">
             <div class="form-group">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-input" id="email" value="lyubov.ofis@gmail.com" required>
+                <input type="email" class="form-input" id="email" required>
             </div>
             
             <div class="form-group">
                 <label class="form-label">Пароль</label>
-                <input type="password" class="form-input" id="password" value="Luba1488@" required>
+                <input type="password" class="form-input" id="password" required>
             </div>
             
             <button type="submit" class="btn btn-primary" style="width: 100%">Войти</button>
@@ -86,8 +86,9 @@
                 
                 if (error) throw error;
                 
-                // Success - redirect to dashboard
-                window.location.href = 'dashboard-new.html';
+                // Success - redirect to dashboard  
+                localStorage.setItem('supabase_session', JSON.stringify(data));
+                window.location.href = 'dashboard-supabase.html';
                 
             } catch (error) {
                 errorDiv.textContent = error.message || 'Ошибка входа';
