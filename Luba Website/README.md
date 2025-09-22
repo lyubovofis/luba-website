@@ -2,6 +2,10 @@
 
 Сайт для психологической трансформации денежных блоков.
 
+## Контакты
+- WhatsApp: +34654420334
+- Telegram: @lubawaterfall
+
 ## Технологии
 - HTML/CSS/JavaScript
 - Supabase для CRM
