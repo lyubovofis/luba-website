@@ -4,598 +4,304 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM Dashboard - Денежный Водопад</title>
-    
-    <!-- Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary: #6b46c1;
-            --primary-dark: #553c9a;
-            --gold: #fbbf24;
-            --success: #10b981;
-            --danger: #ef4444;
-            --dark: #1f2937;
-            --gray: #6b7280;
-            --light: #f3f4f6;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: var(--light);
-            color: var(--dark);
+            background: #f3f4f6;
         }
-        
-        /* Header */
         .header {
             background: white;
             padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .logo {
+        .header h1 {
+            color: #6b46c1;
             font-size: 24px;
-            font-weight: bold;
-            color: var(--primary);
         }
-        
-        /* Dashboard Grid */
-        .dashboard {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 30px 20px;
+        .logout {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
         }
-        
-        .stats-grid {
+        .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            margin-bottom: 30px;
+            padding: 20px;
         }
-        
         .stat-card {
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        
-        .stat-label {
-            color: var(--gray);
+        .stat-card h3 {
+            color: #6b7280;
             font-size: 14px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
-        
-        .stat-value {
+        .stat-card .value {
             font-size: 32px;
             font-weight: bold;
-            color: var(--primary);
+            color: #1f2937;
         }
-        
-        .stat-change {
+        .kanban {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            min-height: 500px;
+        }
+        .column {
+            background: #e5e7eb;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .column h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #374151;
+        }
+        .lead-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: move;
+            transition: all 0.2s;
+        }
+        .lead-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .lead-card.dragging {
+            opacity: 0.5;
+        }
+        .lead-card h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .lead-card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+        .lead-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #fbbf24;
+            color: #78350f;
+            border-radius: 4px;
             font-size: 12px;
             margin-top: 8px;
         }
-        
-        .positive {
-            color: var(--success);
-        }
-        
-        .negative {
-            color: var(--danger);
-        }
-        
-        /* Tables */
-        .section {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
-        }
-        
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .section-title {
-            font-size: 20px;
-            font-weight: 600;
-        }
-        
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .table th {
-            background: var(--light);
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 14px;
-            color: var(--gray);
-        }
-        
-        .table td {
-            padding: 12px;
-            border-bottom: 1px solid var(--light);
-        }
-        
-        .table tr:hover {
-            background: #f9fafb;
-        }
-        
-        /* Badges */
-        .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        
-        .badge-new {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-        
-        .badge-contacted {
-            background: #fef3c7;
-            color: #92400e;
-        }
-        
-        .badge-hot {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-        
-        .badge-sold {
-            background: #d1fae5;
-            color: #065f46;
-        }
-        
-        /* Buttons */
-        .btn {
-            padding: 8px 16px;
-            border-radius: 6px;
-            border: none;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-dark);
-        }
-        
-        .btn-secondary {
-            background: var(--light);
-            color: var(--dark);
-            border: 1px solid #e5e7eb;
-        }
-        
-        .btn-secondary:hover {
-            background: #e5e7eb;
-        }
-        
-        /* Filters */
-        .filters {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        
-        .filter-label {
-            font-size: 12px;
-            color: var(--gray);
-        }
-        
-        select, input[type="date"] {
-            padding: 8px;
-            border: 1px solid #e5e7eb;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-        
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: var(--gray);
-        }
-        
-        /* Empty state */
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--gray);
-        }
-        
-        .empty-state svg {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-            opacity: 0.3;
+        .column.drag-over {
+            background: #d1d5db;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <div class="header">
-        <div class="logo">💰 Денежный Водопад CRM</div>
-        <div class="header-actions">
-            <span id="userInfo" style="margin-right: 20px; color: #6b7280;"></span>
-            <button class="btn btn-primary" onclick="refreshData()">🔄 Обновить</button>
-            <button class="btn btn-secondary" onclick="logout()" style="margin-left: 10px;">Выход</button>
+        <h1>💰 CRM Денежный Водопад</h1>
+        <div>
+            <span id="username">Любовь</span>
+            <button class="logout" onclick="logout()">Выйти</button>
         </div>
     </div>
-    
-    <!-- Dashboard -->
-    <div class="dashboard">
-        <!-- Stats Grid -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-label">Новые лиды сегодня</div>
-                <div class="stat-value" id="todayLeads">0</div>
-                <div class="stat-change positive" id="todayChange"></div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-label">Лиды за неделю</div>
-                <div class="stat-value" id="weekLeads">0</div>
-                <div class="stat-change" id="weekChange"></div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-label">Горячие лиды</div>
-                <div class="stat-value" id="hotLeads">0</div>
-                <div class="stat-change" id="hotChange"></div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-label">Конверсия в продажу</div>
-                <div class="stat-value" id="conversionRate">0%</div>
-                <div class="stat-change" id="conversionChange"></div>
-            </div>
+
+    <div class="stats">
+        <div class="stat-card">
+            <h3>Всего лидов</h3>
+            <div class="value" id="totalLeads">0</div>
         </div>
-        
-        <!-- Filters Section -->
-        <div class="section">
-            <div class="section-header">
-                <h2 class="section-title">Фильтры</h2>
-            </div>
-            <div class="filters">
-                <div class="filter-group">
-                    <label class="filter-label">Стадия</label>
-                    <select id="filterStage" onchange="filterLeads()">
-                        <option value="">Все стадии</option>
-                        <option value="new">Новый</option>
-                        <option value="contacted">Контакт</option>
-                        <option value="consultation_scheduled">Консультация</option>
-                        <option value="diagnostic_completed">Диагностика</option>
-                        <option value="sold">Продано</option>
-                        <option value="lost">Потерян</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label class="filter-label">Источник</label>
-                    <select id="filterSource" onchange="filterLeads()">
-                        <option value="">Все источники</option>
-                        <option value="quiz">Квиз</option>
-                        <option value="tiktok">TikTok</option>
-                        <option value="instagram">Instagram</option>
-                        <option value="facebook">Facebook</option>
-                        <option value="direct">Прямой</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label class="filter-label">Период</label>
-                    <select id="filterPeriod" onchange="filterLeads()">
-                        <option value="all">Все время</option>
-                        <option value="today">Сегодня</option>
-                        <option value="week">Эта неделя</option>
-                        <option value="month">Этот месяц</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label class="filter-label">Только горячие</label>
-                    <input type="checkbox" id="filterHot" onchange="filterLeads()">
-                </div>
-            </div>
+        <div class="stat-card">
+            <h3>Консультации</h3>
+            <div class="value" id="consultations">0</div>
         </div>
-        
-        <!-- Leads Table -->
-        <div class="section">
-            <div class="section-header">
-                <h2 class="section-title">Лиды</h2>
-                <button class="btn btn-primary" onclick="exportLeads()">📥 Экспорт</button>
-            </div>
-            
-            <div id="leadsTableContainer">
-                <div class="loading">Загрузка...</div>
-            </div>
+        <div class="stat-card">
+            <h3>Оплаты</h3>
+            <div class="value" id="payments">0</div>
+        </div>
+        <div class="stat-card">
+            <h3>Конверсия</h3>
+            <div class="value" id="conversion">0%</div>
         </div>
     </div>
-    
-    <script src="/js/supabase-integration.js"></script>
+
+    <div class="kanban">
+        <div class="column" data-stage="new">
+            <h2>📝 Написали</h2>
+            <div class="leads-container" id="new-leads"></div>
+        </div>
+        <div class="column" data-stage="consultation">
+            <h2>💬 Консультация</h2>
+            <div class="leads-container" id="consultation-leads"></div>
+        </div>
+        <div class="column" data-stage="paid">
+            <h2>✅ Оплатили</h2>
+            <div class="leads-container" id="paid-leads"></div>
+        </div>
+    </div>
+
     <script>
-        // Supabase configuration
-        const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
-        
-        let supabase;
-        let allLeads = [];
-        let filteredLeads = [];
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check authentication first
-            if (!localStorage.getItem('crm_authenticated')) {
-                window.location.href = '/crm/login.html';
-                return;
+        // Check auth
+        if (!localStorage.getItem('crm_authenticated')) {
+            window.location.href = '/crm/login-supabase.html';
+        }
+
+        // Mock data for demo
+        const mockLeads = [
+            { id: 1, name: 'Марина', phone: '+34 600 111 111', stage: 'new', block: 'Страх больших денег', date: '25.01.2025' },
+            { id: 2, name: 'Оксана', phone: '+34 600 222 222', stage: 'new', block: 'Самосаботаж', date: '25.01.2025' },
+            { id: 3, name: 'Елена', phone: '+34 600 333 333', stage: 'consultation', block: 'Чувство недостойности', date: '24.01.2025' },
+            { id: 4, name: 'Светлана', phone: '+34 600 444 444', stage: 'consultation', block: 'Выгорание', date: '24.01.2025' },
+            { id: 5, name: 'Анна', phone: '+34 600 555 555', stage: 'paid', block: 'Готовность к росту', date: '23.01.2025' },
+        ];
+
+        // Load Supabase data if available
+        async function loadLeads() {
+            try {
+                const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
+                const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
+                
+                if (typeof window.supabase !== 'undefined') {
+                    const { createClient } = window.supabase;
+                    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                    
+                    const { data, error } = await supabase
+                        .from('leads')
+                        .select('*')
+                        .order('created_at', { ascending: false })
+                        .limit(20);
+                    
+                    if (data && data.length > 0) {
+                        renderLeads(data.map(lead => ({
+                            id: lead.id,
+                            name: lead.name || 'Без имени',
+                            phone: lead.phone || lead.email || 'Нет контакта',
+                            stage: lead.stage || 'new',
+                            block: lead.main_block || 'Не определен',
+                            date: new Date(lead.created_at).toLocaleDateString('ru-RU')
+                        })));
+                        return;
+                    }
+                }
+            } catch (error) {
+                console.log('Using mock data:', error);
             }
             
-            // Display user info
-            const user = JSON.parse(localStorage.getItem('crm_user') || '{}');
-            document.getElementById('userInfo').textContent = user.email || 'Администратор';
+            // Use mock data if Supabase fails
+            renderLeads(mockLeads);
+        }
+
+        function renderLeads(leads) {
+            // Clear containers
+            document.getElementById('new-leads').innerHTML = '';
+            document.getElementById('consultation-leads').innerHTML = '';
+            document.getElementById('paid-leads').innerHTML = '';
             
-            initializeSupabase();
-            loadDashboard();
+            // Render leads
+            leads.forEach(lead => {
+                const card = createLeadCard(lead);
+                document.getElementById(lead.stage + '-leads').appendChild(card);
+            });
+            
+            // Update stats
+            updateStats(leads);
+        }
+
+        function createLeadCard(lead) {
+            const card = document.createElement('div');
+            card.className = 'lead-card';
+            card.draggable = true;
+            card.dataset.id = lead.id;
+            card.innerHTML = `
+                <h4>${lead.name}</h4>
+                <p>${lead.phone}</p>
+                <p style="font-size: 12px; color: #9ca3af;">${lead.date}</p>
+                <div class="lead-tag">${lead.block}</div>
+            `;
+            
+            // Drag events
+            card.addEventListener('dragstart', handleDragStart);
+            card.addEventListener('dragend', handleDragEnd);
+            
+            return card;
+        }
+
+        function updateStats(leads) {
+            document.getElementById('totalLeads').textContent = leads.length;
+            document.getElementById('consultations').textContent = leads.filter(l => l.stage === 'consultation').length;
+            document.getElementById('payments').textContent = leads.filter(l => l.stage === 'paid').length;
+            
+            const conversionRate = leads.length > 0 
+                ? Math.round((leads.filter(l => l.stage === 'paid').length / leads.length) * 100)
+                : 0;
+            document.getElementById('conversion').textContent = conversionRate + '%';
+        }
+
+        // Drag and drop
+        let draggedElement = null;
+
+        function handleDragStart(e) {
+            draggedElement = this;
+            this.classList.add('dragging');
+        }
+
+        function handleDragEnd(e) {
+            this.classList.remove('dragging');
+        }
+
+        // Setup drop zones
+        document.querySelectorAll('.column').forEach(column => {
+            column.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.classList.add('drag-over');
+            });
+            
+            column.addEventListener('dragleave', function(e) {
+                this.classList.remove('drag-over');
+            });
+            
+            column.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.classList.remove('drag-over');
+                
+                if (draggedElement) {
+                    const container = this.querySelector('.leads-container');
+                    container.appendChild(draggedElement);
+                    
+                    // Update lead stage (would save to database in real app)
+                    const newStage = this.dataset.stage;
+                    const leadId = draggedElement.dataset.id;
+                    console.log(`Lead ${leadId} moved to ${newStage}`);
+                    
+                    // Update stats
+                    const leads = mockLeads;
+                    const lead = leads.find(l => l.id == leadId);
+                    if (lead) {
+                        lead.stage = newStage;
+                        updateStats(leads);
+                    }
+                }
+            });
         });
-        
-        // Logout function
+
         function logout() {
             localStorage.removeItem('crm_authenticated');
             localStorage.removeItem('crm_user');
-            window.location.href = '/crm/login.html';
+            window.location.href = '/crm/login-supabase.html';
         }
-        
-        function initializeSupabase() {
-            const { createClient } = window.supabase;
-            supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-        }
-        
-        async function loadDashboard() {
-            await loadStats();
-            await loadLeads();
-        }
-        
-        async function loadStats() {
-            try {
-                // Get today's leads
-                const today = new Date().toISOString().split('T')[0];
-                const { data: todayData } = await supabase
-                    .from('crm_leads')
-                    .select('*')
-                    .gte('created_at', today);
-                
-                document.getElementById('todayLeads').textContent = todayData?.length || 0;
-                
-                // Get week's leads
-                const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
-                const { data: weekData } = await supabase
-                    .from('crm_leads')
-                    .select('*')
-                    .gte('created_at', weekAgo);
-                
-                document.getElementById('weekLeads').textContent = weekData?.length || 0;
-                
-                // Get hot leads
-                const { data: hotData } = await supabase
-                    .from('crm_leads')
-                    .select('*')
-                    .eq('hot', true)
-                    .not('stage', 'in', '("sold","lost")');
-                
-                document.getElementById('hotLeads').textContent = hotData?.length || 0;
-                
-                // Calculate conversion rate
-                const { data: allData } = await supabase
-                    .from('crm_leads')
-                    .select('stage');
-                
-                if (allData && allData.length > 0) {
-                    const sold = allData.filter(l => l.stage === 'sold').length;
-                    const rate = ((sold / allData.length) * 100).toFixed(1);
-                    document.getElementById('conversionRate').textContent = rate + '%';
-                }
-            } catch (error) {
-                console.error('Error loading stats:', error);
-            }
-        }
-        
-        async function loadLeads() {
-            try {
-                const { data, error } = await supabase
-                    .from('crm_leads')
-                    .select('*')
-                    .order('created_at', { ascending: false });
-                
-                if (error) throw error;
-                
-                allLeads = data || [];
-                filteredLeads = [...allLeads];
-                renderLeadsTable();
-            } catch (error) {
-                console.error('Error loading leads:', error);
-                document.getElementById('leadsTableContainer').innerHTML = 
-                    '<div class="empty-state">Ошибка загрузки данных</div>';
-            }
-        }
-        
-        function renderLeadsTable() {
-            const container = document.getElementById('leadsTableContainer');
-            
-            if (filteredLeads.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <p>Нет лидов для отображения</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            const tableHTML = `
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Имя</th>
-                            <th>Телефон</th>
-                            <th>Email</th>
-                            <th>Источник</th>
-                            <th>Стадия</th>
-                            <th>Дата</th>
-                            <th>Действия</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${filteredLeads.map(lead => `
-                            <tr>
-                                <td>#${lead.id}</td>
-                                <td><strong>${lead.name || '-'}</strong></td>
-                                <td>${lead.phone || '-'}</td>
-                                <td>${lead.email || '-'}</td>
-                                <td>${lead.utm_source || lead.source || '-'}</td>
-                                <td><span class="badge badge-${lead.stage || 'new'}">${getStageLabel(lead.stage)}</span></td>
-                                <td>${formatDate(lead.created_at)}</td>
-                                <td>
-                                    <button class="btn btn-secondary" onclick="viewLead(${lead.id})">👁️</button>
-                                    ${lead.phone ? `<a href="https://wa.me/${lead.phone.replace(/\D/g, '')}" class="btn btn-primary" target="_blank">💬</a>` : ''}
-                                </td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
-            `;
-            
-            container.innerHTML = tableHTML;
-        }
-        
-        function filterLeads() {
-            const stage = document.getElementById('filterStage').value;
-            const source = document.getElementById('filterSource').value;
-            const period = document.getElementById('filterPeriod').value;
-            const hotOnly = document.getElementById('filterHot').checked;
-            
-            filteredLeads = allLeads.filter(lead => {
-                if (stage && lead.stage !== stage) return false;
-                if (source && lead.utm_source !== source && lead.source !== source) return false;
-                if (hotOnly && !lead.hot) return false;
-                
-                if (period !== 'all') {
-                    const leadDate = new Date(lead.created_at);
-                    const now = new Date();
-                    
-                    switch(period) {
-                        case 'today':
-                            if (leadDate.toDateString() !== now.toDateString()) return false;
-                            break;
-                        case 'week':
-                            const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-                            if (leadDate < weekAgo) return false;
-                            break;
-                        case 'month':
-                            const monthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
-                            if (leadDate < monthAgo) return false;
-                            break;
-                    }
-                }
-                
-                return true;
-            });
-            
-            renderLeadsTable();
-        }
-        
-        function getStageLabel(stage) {
-            const labels = {
-                'new': 'Новый',
-                'contacted': 'Контакт',
-                'consultation_scheduled': 'Консультация',
-                'consultation_completed': 'Консультация пройдена',
-                'diagnostic_scheduled': 'Диагностика',
-                'diagnostic_completed': 'Диагностика пройдена',
-                'offer_sent': 'Предложение отправлено',
-                'negotiation': 'Переговоры',
-                'sold': 'Продано',
-                'lost': 'Потерян'
-            };
-            return labels[stage] || stage || 'Новый';
-        }
-        
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            return date.toLocaleDateString('ru-RU', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-        }
-        
-        function viewLead(id) {
-            const lead = allLeads.find(l => l.id === id);
-            if (lead) {
-                alert(`Лид #${id}\n\nИмя: ${lead.name}\nТелефон: ${lead.phone}\nEmail: ${lead.email}\n\nГлавный блок: ${lead.main_block || '-'}\n\nПримечания: ${lead.note || '-'}`);
-            }
-        }
-        
-        function exportLeads() {
-            const csv = [
-                ['ID', 'Имя', 'Телефон', 'Email', 'Источник', 'Стадия', 'Дата'],
-                ...filteredLeads.map(lead => [
-                    lead.id,
-                    lead.name || '',
-                    lead.phone || '',
-                    lead.email || '',
-                    lead.utm_source || lead.source || '',
-                    lead.stage || '',
-                    formatDate(lead.created_at)
-                ])
-            ].map(row => row.join(',')).join('\n');
-            
-            const blob = new Blob([csv], { type: 'text/csv' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `leads_${new Date().toISOString().split('T')[0]}.csv`;
-            a.click();
-        }
-        
-        function refreshData() {
-            loadDashboard();
-        }
+
+        // Load data on page load
+        loadLeads();
     </script>
 </body>
 </html>
