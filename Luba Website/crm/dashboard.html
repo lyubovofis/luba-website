@@ -190,6 +190,11 @@
         .btn-secondary {
             background: var(--light);
             color: var(--dark);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .btn-secondary:hover {
+            background: #e5e7eb;
         }
         
         /* Filters */
@@ -245,7 +250,9 @@
     <div class="header">
         <div class="logo">💰 Денежный Водопад CRM</div>
         <div class="header-actions">
+            <span id="userInfo" style="margin-right: 20px; color: #6b7280;"></span>
             <button class="btn btn-primary" onclick="refreshData()">🔄 Обновить</button>
+            <button class="btn btn-secondary" onclick="logout()" style="margin-left: 10px;">Выход</button>
         </div>
     </div>
     
@@ -351,9 +358,26 @@
         
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication first
+            if (!localStorage.getItem('crm_authenticated')) {
+                window.location.href = '/crm/login.html';
+                return;
+            }
+            
+            // Display user info
+            const user = JSON.parse(localStorage.getItem('crm_user') || '{}');
+            document.getElementById('userInfo').textContent = user.email || 'Администратор';
+            
             initializeSupabase();
             loadDashboard();
         });
+        
+        // Logout function
+        function logout() {
+            localStorage.removeItem('crm_authenticated');
+            localStorage.removeItem('crm_user');
+            window.location.href = '/crm/login.html';
+        }
         
         function initializeSupabase() {
             const { createClient } = window.supabase;

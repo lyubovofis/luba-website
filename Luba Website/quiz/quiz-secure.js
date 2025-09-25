@@ -328,7 +328,7 @@ async function submitQuiz() {
         
         // Still redirect to WhatsApp
         setTimeout(() => {
-            window.location.href = `https://wa.me/380507260235?text=Здравствуйте! Я прошла тест. Мой главный блок: ${quizState.userData.mainBlock}. Хочу записаться на бесплатную консультацию.`;
+            window.location.href = `https://wa.me/34654420334?text=Здравствуйте! Я прошла тест. Мой главный блок: ${quizState.userData.mainBlock}. Хочу записаться на бесплатную консультацию.`;
         }, 3000);
     } finally {
         // Reset button
