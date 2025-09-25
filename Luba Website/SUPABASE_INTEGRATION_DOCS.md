@@ -131,7 +131,7 @@ const result = await window.SupabaseIntegration.scheduleConsultation(consultatio
 
 ### Доступ к панели управления:
 ```
-https://lubawaterfall.com/crm/dashboard.html
+https://lyubovpsy.com/crm/dashboard.html
 ```
 
 ### Функции панели:
@@ -164,7 +164,7 @@ https://lubawaterfall.com/crm/dashboard.html
 
 ### Страница тестирования:
 ```
-https://lubawaterfall.com/test-supabase.html
+https://lyubovpsy.com/test-supabase.html
 ```
 
 ### Что можно протестировать:

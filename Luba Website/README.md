@@ -1,48 +1,48 @@
-# Luba Website - Денежный Водопад
+# 💰 Денежный Водопад - lyubovpsy.com
 
-Сайт для психологической трансформации денежных блоков.
+## 🚀 Быстрый старт
 
-## Контакты
+### Основные ссылки
+- **Сайт:** https://lyubovpsy.com
+- **CRM:** https://lyubovpsy.com/crm/login.html
+- **Квиз:** https://lyubovpsy.com/quiz/
+
+### Доступы CRM
+- Email: `admin@lyubovpsy.com`
+- Пароль: `admin123`
+
+### Контакты
 - WhatsApp: +34654420334
-- Telegram: @lubawaterfall
+- Email: admin@lyubovpsy.com
 
-## Технологии
-- HTML/CSS/JavaScript
-- Supabase для CRM
-- Vercel для хостинга
-- GitHub для контроля версий
+## 📁 Структура проекта
 
-## Деплой
-
-### Деплой через Vercel CLI (основной метод)
-GitHub отключен. Используем только локальный деплой.
-
-```bash
-cd "C:\Luba Website"
-vercel --prod
+```
+├── index.html              # Главная страница
+├── /quiz/                  # Квиз определения денежного блока
+├── /crm/                   # CRM система
+│   ├── login.html         # Вход в CRM
+│   └── dashboard.html     # Панель управления
+├── /js/                   # JavaScript файлы
+├── /css/                  # Стили
+├── /images/               # Изображения
+└── /_archive/             # Архивные документы
 ```
 
-При вопросах выбирайте:
-- Link to existing project? **Y**
-- Project name: **luba-website**
+## 📚 Документация
 
-### Первая настройка Vercel CLI
-```bash
-npm install -g vercel
-vercel login
-vercel
-# Выберите: Link to existing project -> luba-website
-```
+- **claude.md** - Полная документация проекта
+- **SUPABASE_INTEGRATION_DOCS.md** - Документация по базе данных
+- **ARCHIVE_DOCS.md** - Объединенная техническая документация
 
-## Структура проекта
-- `/crm` - CRM система
-- `/quiz` - Квиз для сбора лидов  
-- `/images` - Изображения
-- `/js` - JavaScript файлы
-- `/css` - Стили
+## 🔧 Технологии
 
-## Домен
-lyubovpsy.com - DNS настроен через Netlify, хостинг на Vercel
+- Supabase (База данных)
+- Google Analytics (G-ZWF15D45V8)
+- Facebook Pixel (2067039850492790)
+- TikTok Pixel (D3460MRC77U1O98E3OGG)
+- Hotjar (6520317)
 
-## База данных
-Supabase - таблицы `crm_leads` и `quiz_leads`
+## ✅ Статус
+
+Проект полностью настроен и готов к работе.
