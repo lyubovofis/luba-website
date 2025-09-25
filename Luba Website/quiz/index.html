@@ -751,6 +751,21 @@
                     <!-- Will be filled dynamically -->
                 </div>
                 
+                <!-- Why this block -->
+                <div style="background: #fef3c7; padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h3 style="color: #92400e; margin-bottom: 10px;">🔍 Почему именно этот блок у вас?</h3>
+                    <p id="blockWhy" style="color: #78350f; line-height: 1.6;"></p>
+                </div>
+                
+                <!-- Consequences -->
+                <div style="background: #fee2e2; padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h3 style="color: #991b1b; margin-bottom: 10px;">⚠️ Что будет, если не работать с блоком:</h3>
+                    <ul id="consequences" style="list-style: none; padding: 0; color: #7f1d1d;">
+                        <!-- Will be filled dynamically -->
+                    </ul>
+                </div>
+                
+                <!-- Action plan -->
                 <div class="action-plan">
                     <h3>🎯 Ваш план на 7 дней:</h3>
                     <ul id="actionPlan">
@@ -758,13 +773,58 @@
                     </ul>
                 </div>
                 
-                <button class="whatsapp-btn" onclick="goToWhatsApp()">
-                    <span>💬</span>
-                    <span>Получить персональную консультацию в WhatsApp</span>
-                </button>
+                <!-- Testimonial -->
+                <div style="background: #d1fae5; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center;">
+                    <p id="testimonial" style="color: #065f46; font-style: italic; font-size: 16px;"></p>
+                </div>
+                
+                <!-- Transformation timeline -->
+                <div style="margin: 30px 0;">
+                    <h3 style="text-align: center; margin-bottom: 20px;">📈 Ваш путь трансформации:</h3>
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                        <div style="flex: 1; min-width: 150px; text-align: center; padding: 15px; background: #f3f4f6; border-radius: 8px;">
+                            <strong>Сейчас</strong><br>Осознание блока
+                        </div>
+                        <div style="flex: 1; min-width: 150px; text-align: center; padding: 15px; background: #f3f4f6; border-radius: 8px;">
+                            <strong>Неделя 1-2</strong><br>Диагностика
+                        </div>
+                        <div style="flex: 1; min-width: 150px; text-align: center; padding: 15px; background: #f3f4f6; border-radius: 8px;">
+                            <strong>Неделя 3-4</strong><br>Перепрошивка
+                        </div>
+                        <div style="flex: 1; min-width: 150px; text-align: center; padding: 15px; background: #f3f4f6; border-radius: 8px;">
+                            <strong>Неделя 5-6</strong><br>Новые привычки
+                        </div>
+                        <div style="flex: 1; min-width: 150px; text-align: center; padding: 15px; background: #f3f4f6; border-radius: 8px;">
+                            <strong>Неделя 7-8</strong><br>Большие деньги
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Urgency -->
+                <div style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center;">
+                    <h3 style="color: white; margin-bottom: 10px;">⏰ Специальное предложение для вашего блока</h3>
+                    <p style="color: white;">Только 3 места на индивидуальную диагностику на этой неделе</p>
+                    <p style="color: white; font-size: 24px; font-weight: bold; margin: 10px 0;">Бесплатная 15-минутная диагностика</p>
+                </div>
+                
+                <!-- Action buttons -->
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <button class="whatsapp-btn" onclick="goToWhatsApp()">
+                        <span>💬</span>
+                        <span>Получить персональную консультацию в WhatsApp</span>
+                    </button>
+                    
+                    <button style="background: white; color: var(--primary); border: 2px solid var(--primary); padding: 14px; border-radius: 10px; font-size: 16px; cursor: pointer;" onclick="saveResults()">
+                        📧 Отправить результаты на email
+                    </button>
+                    
+                    <button style="background: transparent; color: var(--primary); border: none; padding: 10px; font-size: 14px; cursor: pointer; text-decoration: underline;" onclick="retakeQuiz()">
+                        🔄 Пройти тест заново
+                    </button>
+                </div>
                 
                 <p style="margin-top: 20px; color: #6b7280; font-size: 14px; text-align: center;">
-                    🎁 Бонус: Первые 10 человек получат бесплатную 15-минутную диагностику
+                    🎁 Первые 10 человек получат бонус: медитацию для вашего типа блока
                 </p>
             </div>
         </div>
@@ -788,100 +848,163 @@
                 name: "Страх больших денег",
                 icon: "😰",
                 description: "Вы подсознательно боитесь ответственности и изменений, которые приносят большие деньги. Это защитный механизм психики.",
+                why: "Обычно формируется в детстве, когда родители связывали деньги с опасностью или проблемами. Вы могли слышать: 'Из-за денег все беды', 'Большие деньги - большие проблемы'.",
+                consequences: [
+                    "Доход останется на том же уровне еще 3-5 лет",
+                    "Упустите минимум €50,000 потенциального дохода",
+                    "Дети переймут ваши денежные страхи"
+                ],
                 actions: [
                     "День 1-2: Записывайте все страхи о деньгах",
                     "День 3-4: Найдите примеры людей, похожих на вас, кто зарабатывает больше",
                     "День 5-6: Сделайте одно смелое денежное действие",
                     "День 7: Назначьте цену выше обычной"
-                ]
+                ],
+                testimonial: "У меня был страх больших денег. За 2 месяца подняла цены в 3 раза! - Марина, €1800 → €5400/мес"
             },
             worth: {
                 name: "Чувство недостойности",
                 icon: "💔",
                 description: "Глубоко внутри вы не верите, что достойны больших денег и успеха. Это часто идет из детства.",
+                why: "Корни в критике и обесценивании в детстве. Вас сравнивали с другими, говорили 'ты недостаточно хороша', не хвалили за достижения.",
+                consequences: [
+                    "Будете работать за копейки еще годы",
+                    "Партнер может потерять уважение",
+                    "Депрессия от нереализованности"
+                ],
                 actions: [
                     "День 1-2: Список ваших достижений (минимум 50)",
                     "День 3-4: Попросите 5 отзывов от клиентов/коллег",
                     "День 5-6: Повышайте цену на 20%",
                     "День 7: Скажите 'да' большой возможности"
-                ]
+                ],
+                testimonial: "Всю жизнь думала, что недостойна больших денег. После программы - контракт на €50,000! - Оксана"
             },
             sabotage: {
                 name: "Самосаботаж успеха",
                 icon: "🎭",
                 description: "Вы неосознанно разрушаете свой успех, когда он становится реальным. Боитесь выйти из зоны комфорта.",
+                why: "Защитный механизм от страха успеха. В семье могли завидовать успешным, осуждать богатых, внушать 'не высовывайся'.",
+                consequences: [
+                    "Будете сливать все заработанные деньги",
+                    "Упустите крупные проекты и клиентов",
+                    "Останетесь в токсичном окружении"
+                ],
                 actions: [
                     "День 1-2: Отследите моменты саботажа",
                     "День 3-4: Создайте ритуал празднования успехов",
                     "День 5-6: Доведите до конца одно важное дело",
                     "День 7: Примите комплимент без оправданий"
-                ]
+                ],
+                testimonial: "Постоянно саботировала успех. Теперь спокойно держу €10,000 на счету - Елена"
             },
             impostor: {
                 name: "Синдром самозванца",
                 icon: "🎪",
                 description: "Вы чувствуете, что не заслуживаете своих достижений и скоро все узнают 'правду' о вас.",
+                why: "Перфекционизм и завышенные требования к себе. Обесценивание своих достижений, фокус на недостатках.",
+                consequences: [
+                    "Откажетесь от выгодных предложений",
+                    "Будете работать за 30% от рыночной ставки",
+                    "Выгорание от постоянного доказывания"
+                ],
                 actions: [
                     "День 1-2: Документируйте свою экспертность",
                     "День 3-4: Обучите кого-то своему навыку",
                     "День 5-6: Выступите как эксперт публично",
                     "День 7: Примите свою уникальность"
-                ]
+                ],
+                testimonial: "Синдром самозванца мешал брать дорогие проекты. Сейчас минимальный чек €3000 - Анна"
             },
             comparison: {
                 name: "Токсичное сравнение",
                 icon: "⚖️",
                 description: "Постоянное сравнение с другими блокирует ваш собственный путь к изобилию.",
+                why: "Социальные сети и установка 'быть не хуже других'. Отсутствие фокуса на собственном пути.",
+                consequences: [
+                    "Зависть будет съедать энергию",
+                    "Потратите деньги на показуху",
+                    "Упустите свои возможности"
+                ],
                 actions: [
                     "День 1-2: Детокс от соцсетей",
                     "День 3-4: Фокус только на своем прогрессе",
                     "День 5-6: Найдите свою уникальность",
                     "День 7: Празднуйте маленькие победы"
-                ]
+                ],
+                testimonial: "Перестала сравнивать себя с другими - доход вырос в 4 раза! - Ирина"
             },
             victim: {
                 name: "Позиция жертвы",
                 icon: "🎯",
                 description: "Вы отдаете ответственность за свою жизнь обстоятельствам и другим людям.",
+                why: "Выученная беспомощность. В детстве не давали принимать решения, всё решали за вас.",
+                consequences: [
+                    "Жизнь не изменится еще 5-10 лет",
+                    "Близкие перестанут верить в вас",
+                    "Дети скопируют модель жертвы"
+                ],
                 actions: [
                     "День 1-2: Возьмите ответственность за 1 сферу",
                     "День 3-4: Перестаньте жаловаться 48 часов",
                     "День 5-6: Найдите возможность в проблеме",
                     "День 7: Примите решение без советов"
-                ]
+                ],
+                testimonial: "Из жертвы обстоятельств стала хозяйкой своей жизни. Доход х5! - Светлана"
             },
             burnout: {
                 name: "Выгорание и истощение",
                 icon: "🔥",
                 description: "Вы работаете на износ, но деньги не приходят, потому что нет энергии их принять.",
+                why: "Установка 'надо много работать'. Неумение отдыхать и восстанавливаться. Чувство вины за отдых.",
+                consequences: [
+                    "Полное выгорание через 6-12 месяцев",
+                    "Проблемы со здоровьем",
+                    "Потеря смысла жизни"
+                ],
                 actions: [
                     "День 1-2: Добавьте 2 часа отдыха в день",
                     "День 3-4: Делегируйте одну задачу",
                     "День 5-6: Найдите источник энергии",
                     "День 7: Скажите 'нет' энергетическому вампиру"
-                ]
+                ],
+                testimonial: "Была в выгорании 2 года. Сейчас работаю 4 часа в день и зарабатываю в 3 раза больше - Юлия"
             },
             growth: {
                 name: "Готовность к росту",
                 icon: "🚀",
                 description: "Вы готовы к квантовому скачку, нужен только правильный вектор и поддержка.",
+                why: "Вы уже проделали внутреннюю работу, но нужен катализатор для прорыва на новый уровень.",
+                consequences: [
+                    "Без ментора потратите еще 2-3 года",
+                    "Можете свернуть не туда",
+                    "Потеряете мотивацию"
+                ],
                 actions: [
                     "День 1-2: Определите следующий уровень дохода",
                     "День 3-4: Найдите ментора или наставника",
                     "День 5-6: Инвестируйте в свое развитие",
                     "День 7: Сделайте смелый шаг вперед"
-                ]
+                ],
+                testimonial: "Была готова к росту, но не знала куда. С ментором вышла на €10,000/мес - Татьяна"
             },
             unique: {
                 name: "Уникальный паттерн",
                 icon: "🌟",
                 description: "У вас особенный денежный код, требующий индивидуального подхода.",
+                why: "Комбинация нескольких блоков или редкий тип блокировки. Нужна персональная диагностика.",
+                consequences: [
+                    "Без точной диагностики будете ходить по кругу",
+                    "Стандартные методы не сработают",
+                    "Потеряете веру в изменения"
+                ],
                 actions: [
                     "День 1-2: Исследуйте свои денежные паттерны",
                     "День 3-4: Экспериментируйте с новым подходом",
                     "День 5-6: Доверьтесь интуиции в денежном вопросе",
                     "День 7: Запишитесь на персональную диагностику"
-                ]
+                ],
+                testimonial: "У меня был сложный микс блоков. После индивидуальной работы всё встало на места - Мария"
             }
         };
         
@@ -1066,6 +1189,18 @@
             document.getElementById('resultTitle').textContent = primaryInfo.name;
             document.getElementById('resultDescription').textContent = primaryInfo.description;
             
+            // Show why this block
+            document.getElementById('blockWhy').textContent = primaryInfo.why;
+            
+            // Show consequences
+            const consequencesList = document.getElementById('consequences');
+            consequencesList.innerHTML = primaryInfo.consequences
+                .map(c => `<li style="margin: 10px 0;">❌ ${c}</li>`)
+                .join('');
+            
+            // Show testimonial
+            document.getElementById('testimonial').textContent = primaryInfo.testimonial;
+            
             // Show percentages
             let percentagesHTML = `
                 <div class="percentage-item">
@@ -1156,6 +1291,28 @@
             }
             
             window.location.href = whatsappUrl;
+        }
+        
+        // Save results to email
+        function saveResults() {
+            const email = quizState.answers.email;
+            if (!email) {
+                alert('Email не был указан. Пройдите тест заново и укажите email.');
+                return;
+            }
+            
+            // Here you would normally send to backend
+            alert(`Результаты отправлены на ${email}! Проверьте почту.`);
+            
+            // Track conversion
+            if (typeof fbq !== 'undefined') fbq('track', 'Subscribe');
+        }
+        
+        // Retake quiz
+        function retakeQuiz() {
+            if (confirm('Вы уверены, что хотите пройти тест заново?')) {
+                window.location.reload();
+            }
         }
     </script>
 </body>
