@@ -79,6 +79,27 @@
     </div>
     
     <script>
+        // Check if already authenticated
+        window.addEventListener('DOMContentLoaded', function() {
+            const isAuthenticated = localStorage.getItem('crm_authenticated');
+            const authExpiration = localStorage.getItem('crm_auth_expiration');
+            
+            if (isAuthenticated && authExpiration) {
+                const now = new Date().getTime();
+                const expiration = parseInt(authExpiration);
+                
+                if (now < expiration) {
+                    // Still valid, redirect to dashboard
+                    window.location.href = '/crm/dashboard.html';
+                } else {
+                    // Expired, clear auth
+                    localStorage.removeItem('crm_authenticated');
+                    localStorage.removeItem('crm_auth_expiration');
+                    localStorage.removeItem('crm_user');
+                }
+            }
+        });
+        
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -87,7 +108,12 @@
             const errorDiv = document.getElementById('error');
             
             if (email === 'Luba' && password === 'Luba1488@') {
+                // Set expiration to 14 days from now
+                const expirationDate = new Date();
+                expirationDate.setDate(expirationDate.getDate() + 14);
+                
                 localStorage.setItem('crm_authenticated', 'true');
+                localStorage.setItem('crm_auth_expiration', expirationDate.getTime());
                 localStorage.setItem('crm_user', JSON.stringify({
                     email: 'Luba',
                     role: 'admin',
