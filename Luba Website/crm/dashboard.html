@@ -847,7 +847,45 @@
         </div>
     </div>
     
-    <script>        // Check auth with expiration
+    <script>        // Define all functions first
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            const clickedTab = document.querySelector(`.tab-btn[onclick="showTab('${tabName}')"]`);
+            if (clickedTab) clickedTab.classList.add('active');
+            const content = document.getElementById(tabName);
+            if (content) content.classList.add('active');
+        }
+
+        function showAddLeadModal() {
+            const modal = document.getElementById('addLeadModal');
+            if (modal) modal.classList.add('active');
+        }
+
+        function closeAddLeadModal() {
+            const modal = document.getElementById('addLeadModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.getElementById('addLeadForm').reset();
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('crm_authenticated');
+            localStorage.removeItem('crm_auth_expiration');
+            localStorage.removeItem('crm_user');
+            window.location.href = '/crm/login-supabase.html';
+        }
+
+        // Make functions globally available BEFORE DOM loads
+        window.showTab = showTab;
+        window.showAddLeadModal = showAddLeadModal;
+        window.closeAddLeadModal = closeAddLeadModal;
+        window.logout = logout;
         const checkAuth = () => {
             const isAuthenticated = localStorage.getItem('crm_authenticated');
             const authExpiration = localStorage.getItem('crm_auth_expiration');
@@ -881,7 +919,7 @@
         let quizLeadsNotInFunnel = [];
         let draggedElement = null;
         const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtpcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI2MzY0MjYsImV4cCI6MjA0ODIxMjQyNn0.oaBupXryNkc1NlPV7qlanC8KFBydPygR1lncVl1qzfE';
         
         // Initialize when DOM loaded
         window.addEventListener('DOMContentLoaded', async function() {
