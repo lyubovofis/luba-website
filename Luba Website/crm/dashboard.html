@@ -5,172 +5,796 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM Dashboard - Денежный Водопад</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #6b46c1;
+            --primary-dark: #553c9a;
+            --secondary: #fbbf24;
+            --success: #10b981;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            --dark: #1f2937;
+            --gray: #6b7280;
+            --light: #f3f4f6;
+            --white: #ffffff;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: #f3f4f6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
+        
         .header {
-            background: white;
-            padding: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 25px 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .header h1 {
-            color: #6b46c1;
-            font-size: 24px;
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .logout {
-            background: #ef4444;
+        
+        .logo h1 {
+            font-size: 26px;
+            font-weight: 700;
+        }
+        
+        .logo-icon {
+            font-size: 35px;
+        }
+        
+        .user-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logout-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .logout-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .nav-tabs {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .tabs-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+        
+        .tabs-left {
+            display: flex;
+            gap: 0;
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 18px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--gray);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tab-btn:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        
+        .add-lead-btn {
+            background: var(--success);
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 8px;
             cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
         }
-        .stats {
+        
+        .add-lead-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        
+        .content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            padding: 20px;
+            margin-bottom: 30px;
         }
+        
         .stat-card {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
-        .stat-card h3 {
-            color: #6b7280;
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .stat-label {
+            color: var(--gray);
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
-        .stat-card .value {
+        
+        .stat-value {
             font-size: 32px;
-            font-weight: bold;
-            color: #1f2937;
+            font-weight: 700;
+            color: var(--dark);
         }
-        .kanban {
+        
+        .kanban-board {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .kanban-column {
+            background: white;
+            border-radius: 15px;
             padding: 20px;
             min-height: 500px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
         }
-        .column {
-            background: #e5e7eb;
+        
+        .column-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .column-title {
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .column-count {
+            background: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .lead-card {
+            background: linear-gradient(135deg, #f6f8fb 0%, white 100%);
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: move;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .lead-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+        
+        .lead-card.from-quiz {
+            border-left: 4px solid var(--success);
+        }
+        
+        .lead-card.manual {
+            border-left: 4px solid var(--info);
+        }
+        
+        .lead-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+        }
+        
+        .lead-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        .lead-name:hover {
+            color: var(--primary);
+        }
+        
+        .lead-actions {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .quick-action {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.2s;
+        }
+        
+        .quick-action:hover {
+            transform: scale(1.2);
+        }
+        
+        .lead-info {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+        
+        .lead-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .tag {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .tag.block {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: white;
+        }
+        
+        .tag.source {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+        }
+        
+        .tag.quiz {
+            background: var(--success);
+            color: white;
+        }
+        
+        .tag.manual {
+            background: var(--info);
+            color: white;
+        }
+        
+        .quiz-section {
+            background: #f0fdf4;
+            border: 1px solid #86efac;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quiz-lead-card {
+            background: white;
             border-radius: 10px;
             padding: 15px;
-        }
-        .column h2 {
-            font-size: 18px;
             margin-bottom: 15px;
-            color: #374151;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        .lead-card {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            cursor: move;
-            transition: all 0.2s;
+        
+        .quiz-lead-info {
+            flex: 1;
         }
-        .lead-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .lead-card.dragging {
-            opacity: 0.5;
-        }
-        .lead-card h4 {
+        
+        .quiz-lead-name {
+            font-weight: 600;
             font-size: 16px;
             margin-bottom: 5px;
         }
-        .lead-card p {
-            color: #6b7280;
+        
+        .quiz-lead-details {
             font-size: 14px;
+            color: var(--gray);
         }
-        .lead-tag {
-            display: inline-block;
-            padding: 4px 8px;
-            background: #fbbf24;
+        
+        .quiz-lead-block {
+            background: var(--secondary);
             color: #78350f;
-            border-radius: 4px;
-            font-size: 12px;
-            margin-top: 8px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 10px;
         }
-        .column.drag-over {
-            background: #d1d5db;
+        
+        .quiz-lead-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .action-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .action-btn.primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .action-btn.success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 25px;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-title {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        
+        .modal-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .modal-close:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        
+        .form-input, .form-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .detail-section {
+            margin-bottom: 30px;
+        }
+        
+        .detail-section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 15px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--gray);
+        }
+        
+        .detail-value {
+            color: var(--dark);
+        }
+        
+        .quiz-answers {
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+        
+        .answer-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+        }
+        
+        .answer-question {
+            font-weight: 600;
+            color: var(--gray);
+        }
+        
+        .answer-value {
+            color: var(--primary);
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>💰 CRM Денежный Водопад</h1>
-        <div>
-            <span id="username">Любовь</span>
-            <button class="logout" onclick="logout()">Выйти</button>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💰</div>
+                <h1>CRM Денежный Водопад</h1>
+            </div>
+            <div class="user-section">
+                <div class="user-info">
+                    <div class="user-name">Любовь Лукащук</div>
+                </div>
+                <button class="logout-btn" onclick="logout()">Выйти</button>
+            </div>
         </div>
     </div>
-
-    <div class="stats">
-        <div class="stat-card">
-            <h3>Всего лидов</h3>
-            <div class="value" id="totalLeads">0</div>
-        </div>
-        <div class="stat-card">
-            <h3>Консультации</h3>
-            <div class="value" id="consultations">0</div>
-        </div>
-        <div class="stat-card">
-            <h3>Оплаты</h3>
-            <div class="value" id="payments">0</div>
-        </div>
-        <div class="stat-card">
-            <h3>Конверсия</h3>
-            <div class="value" id="conversion">0%</div>
+    
+    <div class="nav-tabs">
+        <div class="tabs-container">
+            <div class="tabs-left">
+                <button class="tab-btn active" onclick="showTab('kanban')">📋 Воронка</button>
+                <button class="tab-btn" onclick="showTab('quiz')">🎯 Квиз лиды</button>
+                <button class="tab-btn" onclick="showTab('analytics')">📊 Аналитика</button>
+            </div>
+            <button class="add-lead-btn" onclick="showAddLeadModal()">+ Добавить лида</button>
         </div>
     </div>
-
-    <div class="kanban">
-        <div class="column" data-stage="new">
-            <h2>📝 Написали</h2>
-            <div class="leads-container" id="new-leads"></div>
+    
+    <div class="content">
+        <!-- Kanban Tab -->
+        <div id="kanban" class="tab-content active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Всего лидов</div>
+                    <div class="stat-value" id="totalLeads">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Консультации</div>
+                    <div class="stat-value" id="consultations">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Оплаты</div>
+                    <div class="stat-value" id="payments">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Конверсия</div>
+                    <div class="stat-value" id="conversion">0%</div>
+                </div>
+            </div>
+            
+            <div class="kanban-board">
+                <div class="kanban-column" data-stage="new">
+                    <div class="column-header">
+                        <div class="column-title">
+                            <span>📝</span>
+                            <span>Написали</span>
+                        </div>
+                        <span class="column-count" id="count-new">0</span>
+                    </div>
+                    <div class="leads-container" id="new-leads"></div>
+                </div>
+                
+                <div class="kanban-column" data-stage="consultation">
+                    <div class="column-header">
+                        <div class="column-title">
+                            <span>💬</span>
+                            <span>Консультация</span>
+                        </div>
+                        <span class="column-count" id="count-consultation">0</span>
+                    </div>
+                    <div class="leads-container" id="consultation-leads"></div>
+                </div>
+                
+                <div class="kanban-column" data-stage="paid">
+                    <div class="column-header">
+                        <div class="column-title">
+                            <span>✅</span>
+                            <span>Оплатили</span>
+                        </div>
+                        <span class="column-count" id="count-paid">0</span>
+                    </div>
+                    <div class="leads-container" id="paid-leads"></div>
+                </div>
+            </div>
         </div>
-        <div class="column" data-stage="consultation">
-            <h2>💬 Консультация</h2>
-            <div class="leads-container" id="consultation-leads"></div>
+        
+        <!-- Quiz Leads Tab -->
+        <div id="quiz" class="tab-content">
+            <div class="quiz-section">
+                <div class="quiz-header">
+                    <div class="quiz-title">
+                        <span>🎯</span>
+                        <span>Новые лиды с квиза</span>
+                    </div>
+                    <button class="action-btn success" onclick="addAllToFunnel()">
+                        Добавить всех в воронку
+                    </button>
+                </div>
+                <div id="quiz-leads-list"></div>
+            </div>
         </div>
-        <div class="column" data-stage="paid">
-            <h2>✅ Оплатили</h2>
-            <div class="leads-container" id="paid-leads"></div>
+        
+        <!-- Analytics Tab -->
+        <div id="analytics" class="tab-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Всего лидов</div>
+                    <div class="stat-value" id="totalLeadsAnalytics">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">С квиза</div>
+                    <div class="stat-value" id="quizLeads">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Добавлено вручную</div>
+                    <div class="stat-value" id="manualLeads">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Средний возраст</div>
+                    <div class="stat-value" id="avgAge">-</div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <script>
-        // Check auth
+    
+    <!-- Add Lead Modal -->
+    <div id="addLeadModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Добавить нового лида</h2>
+                <button class="modal-close" onclick="closeAddLeadModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addLeadForm">
+                    <div class="form-group">
+                        <label class="form-label">Имя *</label>
+                        <input type="text" class="form-input" id="leadName" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Телефон *</label>
+                        <input type="tel" class="form-input" id="leadPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" id="leadEmail">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Возраст</label>
+                        <input type="number" class="form-input" id="leadAge" min="18" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Денежный блок</label>
+                        <select class="form-select" id="leadBlock">
+                            <option value="">Не определен</option>
+                            <option value="Страх больших денег">Страх больших денег</option>
+                            <option value="Чувство недостойности">Чувство недостойности</option>
+                            <option value="Самосаботаж">Самосаботаж</option>
+                            <option value="Синдром самозванца">Синдром самозванца</option>
+                            <option value="Выгорание">Выгорание</option>
+                            <option value="Готовность к росту">Готовность к росту</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Источник</label>
+                        <select class="form-select" id="leadSource">
+                            <option value="manual">Добавлен вручную</option>
+                            <option value="whatsapp">WhatsApp</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="referral">Рекомендация</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Этап</label>
+                        <select class="form-select" id="leadStage">
+                            <option value="new">Написали</option>
+                            <option value="consultation">Консультация</option>
+                            <option value="paid">Оплатили</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="action-btn primary" style="width: 100%; margin-top: 20px;">
+                        Добавить лида
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Lead Detail Modal -->
+    <div id="leadModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Информация о лиде</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+    
+    <script>        // Check auth
         if (!localStorage.getItem('crm_authenticated')) {
             window.location.href = '/crm/login-supabase.html';
         }
-
-        // Mock data for demo
-        const mockLeads = [
-            { id: 1, name: 'Марина', phone: '+34 600 111 111', stage: 'new', block: 'Страх больших денег', date: '25.01.2025' },
-            { id: 2, name: 'Оксана', phone: '+34 600 222 222', stage: 'new', block: 'Самосаботаж', date: '25.01.2025' },
-            { id: 3, name: 'Елена', phone: '+34 600 333 333', stage: 'consultation', block: 'Чувство недостойности', date: '24.01.2025' },
-            { id: 4, name: 'Светлана', phone: '+34 600 444 444', stage: 'consultation', block: 'Выгорание', date: '24.01.2025' },
-            { id: 5, name: 'Анна', phone: '+34 600 555 555', stage: 'paid', block: 'Готовность к росту', date: '23.01.2025' },
-        ];
-
-        // Load Supabase data if available
-        async function loadLeads() {
+        
+        let allLeads = [];
+        let quizLeadsNotInFunnel = [];
+        let draggedElement = null;
+        const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
+        
+        // Initialize
+        window.addEventListener('DOMContentLoaded', async function() {
+            await loadData();
+            setupDragAndDrop();
+            setupAddLeadForm();
+        });
+        
+        async function loadData() {
             try {
-                const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
-                const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
-                
                 if (typeof window.supabase !== 'undefined') {
                     const { createClient } = window.supabase;
                     const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -178,18 +802,20 @@
                     const { data, error } = await supabase
                         .from('leads')
                         .select('*')
-                        .order('created_at', { ascending: false })
-                        .limit(20);
+                        .order('created_at', { ascending: false });
                     
                     if (data && data.length > 0) {
-                        renderLeads(data.map(lead => ({
-                            id: lead.id,
-                            name: lead.name || 'Без имени',
-                            phone: lead.phone || lead.email || 'Нет контакта',
-                            stage: lead.stage || 'new',
-                            block: lead.main_block || 'Не определен',
-                            date: new Date(lead.created_at).toLocaleDateString('ru-RU')
-                        })));
+                        // Separate quiz leads not in funnel
+                        quizLeadsNotInFunnel = data.filter(lead => 
+                            lead.quiz_type && (!lead.stage || lead.stage === 'quiz_new')
+                        );
+                        
+                        // All leads in funnel
+                        allLeads = data.filter(lead => 
+                            lead.stage && lead.stage !== 'quiz_new'
+                        );
+                        
+                        renderAll();
                         return;
                     }
                 }
@@ -197,111 +823,435 @@
                 console.log('Using mock data:', error);
             }
             
-            // Use mock data if Supabase fails
-            renderLeads(mockLeads);
-        }
-
-        function renderLeads(leads) {
-            // Clear containers
-            document.getElementById('new-leads').innerHTML = '';
-            document.getElementById('consultation-leads').innerHTML = '';
-            document.getElementById('paid-leads').innerHTML = '';
+            // Mock data
+            quizLeadsNotInFunnel = [
+                {
+                    id: 101,
+                    name: 'Новая из квиза',
+                    phone: '+34 600 777 777',
+                    email: 'quiz@test.com',
+                    quiz_type: 'money_code',
+                    main_block: 'Страх больших денег',
+                    quiz_answers: {
+                        currentIncome: '2000',
+                        desiredIncome: '6000',
+                        q1: 'fear',
+                        q2: 'envy',
+                        q3: 'hide'
+                    },
+                    source: 'TikTok',
+                    created_at: new Date().toISOString()
+                }
+            ];
             
-            // Render leads
-            leads.forEach(lead => {
-                const card = createLeadCard(lead);
-                document.getElementById(lead.stage + '-leads').appendChild(card);
+            allLeads = [
+                {
+                    id: 1,
+                    name: 'Марина',
+                    phone: '+34 600 111 111',
+                    email: 'marina@test.com',
+                    stage: 'new',
+                    main_block: 'Страх больших денег',
+                    source: 'TikTok',
+                    quiz_type: 'money_code',
+                    quiz_answers: { currentIncome: '2000', desiredIncome: '6000' },
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 2,
+                    name: 'Оксана',
+                    phone: '+34 600 222 222',
+                    stage: 'new',
+                    main_block: 'Самосаботаж',
+                    source: 'Instagram',
+                    age: 35,
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 3,
+                    name: 'Елена',
+                    phone: '+34 600 333 333',
+                    stage: 'consultation',
+                    main_block: 'Чувство недостойности',
+                    source: 'manual',
+                    age: 28,
+                    created_at: new Date(Date.now() - 86400000).toISOString()
+                },
+                {
+                    id: 4,
+                    name: 'Светлана',
+                    phone: '+34 600 444 444',
+                    stage: 'consultation',
+                    main_block: 'Выгорание',
+                    quiz_type: 'money_code',
+                    created_at: new Date(Date.now() - 86400000).toISOString()
+                },
+                {
+                    id: 5,
+                    name: 'Анна',
+                    phone: '+34 600 555 555',
+                    stage: 'paid',
+                    main_block: 'Готовность к росту',
+                    amount: 2000,
+                    created_at: new Date(Date.now() - 172800000).toISOString()
+                }
+            ];
+            
+            renderAll();
+        }
+        
+        function renderAll() {
+            renderKanban();
+            renderQuizLeads();
+            updateStats();
+        }
+        
+        function renderKanban() {
+            const stages = ['new', 'consultation', 'paid'];
+            
+            stages.forEach(stage => {
+                const container = document.getElementById(`${stage}-leads`);
+                const leads = allLeads.filter(lead => lead.stage === stage);
+                const countEl = document.getElementById(`count-${stage}`);
+                
+                container.innerHTML = '';
+                countEl.textContent = leads.length;
+                
+                leads.forEach(lead => {
+                    const card = createLeadCard(lead);
+                    container.appendChild(card);
+                });
             });
-            
-            // Update stats
-            updateStats(leads);
         }
-
+        
         function createLeadCard(lead) {
             const card = document.createElement('div');
-            card.className = 'lead-card';
+            card.className = `lead-card ${lead.quiz_type ? 'from-quiz' : 'manual'}`;
             card.draggable = true;
             card.dataset.id = lead.id;
+            
+            const date = new Date(lead.created_at).toLocaleDateString('ru-RU');
+            
             card.innerHTML = `
-                <h4>${lead.name}</h4>
-                <p>${lead.phone}</p>
-                <p style="font-size: 12px; color: #9ca3af;">${lead.date}</p>
-                <div class="lead-tag">${lead.block}</div>
+                <div class="lead-header">
+                    <div class="lead-name" onclick="showLeadDetails(${lead.id})">${lead.name || 'Без имени'}</div>
+                    <div class="lead-actions">
+                        <button class="quick-action" onclick="contactLead('${lead.phone}')" title="WhatsApp">💬</button>
+                        <button class="quick-action" onclick="moveToNext(${lead.id})" title="Следующий этап">➡️</button>
+                    </div>
+                </div>
+                <div class="lead-info">📱 ${lead.phone || lead.email || 'Нет контакта'}</div>
+                ${lead.age ? `<div class="lead-info">👤 ${lead.age} лет</div>` : ''}
+                <div class="lead-info">📅 ${date}</div>
+                <div class="lead-tags">
+                    ${lead.main_block ? `<span class="tag block">${lead.main_block}</span>` : ''}
+                    ${lead.quiz_type ? '<span class="tag quiz">Квиз</span>' : '<span class="tag manual">Вручную</span>'}
+                    ${lead.source ? `<span class="tag source">${lead.source}</span>` : ''}
+                </div>
             `;
             
-            // Drag events
             card.addEventListener('dragstart', handleDragStart);
             card.addEventListener('dragend', handleDragEnd);
             
             return card;
         }
-
-        function updateStats(leads) {
-            document.getElementById('totalLeads').textContent = leads.length;
-            document.getElementById('consultations').textContent = leads.filter(l => l.stage === 'consultation').length;
-            document.getElementById('payments').textContent = leads.filter(l => l.stage === 'paid').length;
+        
+        function renderQuizLeads() {
+            const container = document.getElementById('quiz-leads-list');
+            container.innerHTML = '';
             
-            const conversionRate = leads.length > 0 
-                ? Math.round((leads.filter(l => l.stage === 'paid').length / leads.length) * 100)
+            if (quizLeadsNotInFunnel.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #6b7280;">Нет новых лидов с квиза</p>';
+                return;
+            }
+            
+            quizLeadsNotInFunnel.forEach(lead => {
+                const card = document.createElement('div');
+                card.className = 'quiz-lead-card';
+                
+                const date = new Date(lead.created_at).toLocaleDateString('ru-RU');
+                
+                card.innerHTML = `
+                    <div class="quiz-lead-info">
+                        <div class="quiz-lead-name">${lead.name || 'Без имени'}</div>
+                        <div class="quiz-lead-details">
+                            📱 ${lead.phone || lead.email} | 📅 ${date} | 🌐 ${lead.source || 'Direct'}
+                        </div>
+                    </div>
+                    <div class="quiz-lead-block">${lead.main_block || 'Блок не определен'}</div>
+                    <div class="quiz-lead-actions">
+                        <button class="action-btn primary" onclick="viewQuizDetails(${lead.id})">
+                            👁️ Детали
+                        </button>
+                        <button class="action-btn success" onclick="addToFunnel(${lead.id})">
+                            ➕ В воронку
+                        </button>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+        
+        function updateStats() {
+            const consultLeads = allLeads.filter(l => l.stage === 'consultation');
+            const paidLeads = allLeads.filter(l => l.stage === 'paid');
+            
+            document.getElementById('totalLeads').textContent = allLeads.length;
+            document.getElementById('consultations').textContent = consultLeads.length;
+            document.getElementById('payments').textContent = paidLeads.length;
+            
+            const conversionRate = allLeads.length > 0 
+                ? Math.round((paidLeads.length / allLeads.length) * 100)
                 : 0;
             document.getElementById('conversion').textContent = conversionRate + '%';
+            
+            // Analytics tab stats
+            document.getElementById('totalLeadsAnalytics').textContent = allLeads.length + quizLeadsNotInFunnel.length;
+            document.getElementById('quizLeads').textContent = 
+                allLeads.filter(l => l.quiz_type).length + quizLeadsNotInFunnel.length;
+            document.getElementById('manualLeads').textContent = 
+                allLeads.filter(l => !l.quiz_type).length;
+            
+            // Average age
+            const leadsWithAge = allLeads.filter(l => l.age);
+            if (leadsWithAge.length > 0) {
+                const avgAge = Math.round(
+                    leadsWithAge.reduce((sum, l) => sum + l.age, 0) / leadsWithAge.length
+                );
+                document.getElementById('avgAge').textContent = avgAge;
+            }
         }
-
-        // Drag and drop
-        let draggedElement = null;
-
+        
+        function showLeadDetails(leadId) {
+            const lead = [...allLeads, ...quizLeadsNotInFunnel].find(l => l.id == leadId);
+            if (!lead) return;
+            
+            const modal = document.getElementById('leadModal');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalBody.innerHTML = `
+                <div class="detail-section">
+                    <div class="detail-section-title">
+                        <span>👤</span>
+                        <span>Основная информация</span>
+                    </div>
+                    <div class="detail-grid">
+                        <div class="detail-label">Имя:</div>
+                        <div class="detail-value">${lead.name || 'Не указано'}</div>
+                        <div class="detail-label">Телефон:</div>
+                        <div class="detail-value">${lead.phone || 'Не указан'}</div>
+                        <div class="detail-label">Email:</div>
+                        <div class="detail-value">${lead.email || 'Не указан'}</div>
+                        ${lead.age ? `
+                            <div class="detail-label">Возраст:</div>
+                            <div class="detail-value">${lead.age} лет</div>
+                        ` : ''}
+                        <div class="detail-label">Дата:</div>
+                        <div class="detail-value">${new Date(lead.created_at).toLocaleString('ru-RU')}</div>
+                        <div class="detail-label">Источник:</div>
+                        <div class="detail-value">${lead.source || 'Direct'}</div>
+                        <div class="detail-label">Тип:</div>
+                        <div class="detail-value">${lead.quiz_type ? 'Квиз' : 'Добавлен вручную'}</div>
+                    </div>
+                </div>
+                
+                ${lead.main_block ? `
+                    <div class="detail-section">
+                        <div class="detail-section-title">
+                            <span>🧠</span>
+                            <span>Денежный блок</span>
+                        </div>
+                        <div style="font-size: 18px; color: var(--primary); font-weight: 600;">
+                            ${lead.main_block}
+                        </div>
+                    </div>
+                ` : ''}
+                
+                ${lead.quiz_answers ? `
+                    <div class="detail-section">
+                        <div class="detail-section-title">
+                            <span>📝</span>
+                            <span>Ответы на квиз</span>
+                        </div>
+                        <div class="quiz-answers">
+                            ${Object.entries(lead.quiz_answers).map(([key, value]) => `
+                                <div class="answer-item">
+                                    <span class="answer-question">${formatQuestionKey(key)}:</span>
+                                    <span class="answer-value">${value}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+                
+                <div style="display: flex; gap: 10px; margin-top: 30px;">
+                    <button class="action-btn primary" onclick="contactLead('${lead.phone}')" style="flex: 1;">
+                        💬 Написать в WhatsApp
+                    </button>
+                    ${lead.stage !== 'paid' ? `
+                        <button class="action-btn success" onclick="moveToNext(${lead.id})" style="flex: 1;">
+                            ➡️ Следующий этап
+                        </button>
+                    ` : ''}
+                </div>
+            `;
+            
+            modal.classList.add('active');
+        }
+        
+        function viewQuizDetails(leadId) {
+            showLeadDetails(leadId);
+        }
+        
+        function formatQuestionKey(key) {
+            const labels = {
+                currentIncome: 'Текущий доход',
+                desiredIncome: 'Желаемый доход',
+                q1: 'Реакция на €5000',
+                q2: 'Успех подруги',
+                q3: '€10,000 на счету',
+                q4: 'Семейные установки',
+                q5: 'Доходы',
+                q6: 'Понедельник',
+                q7: 'Что поможет'
+            };
+            return labels[key] || key;
+        }
+        
+        function closeModal() {
+            document.getElementById('leadModal').classList.remove('active');
+        }
+        
+        function contactLead(phone) {
+            if (phone) {
+                const cleanPhone = phone.replace(/\D/g, '');
+                window.open(`https://wa.me/${cleanPhone}`, '_blank');
+            }
+        }
+        
+        function moveToNext(leadId) {
+            const lead = allLeads.find(l => l.id == leadId);
+            if (!lead) return;
+            
+            const stages = ['new', 'consultation', 'paid'];
+            const currentIndex = stages.indexOf(lead.stage);
+            
+            if (currentIndex < stages.length - 1) {
+                lead.stage = stages[currentIndex + 1];
+                renderAll();
+                closeModal();
+            }
+        }
+        
+        function addToFunnel(leadId) {
+            const leadIndex = quizLeadsNotInFunnel.findIndex(l => l.id == leadId);
+            if (leadIndex > -1) {
+                const lead = quizLeadsNotInFunnel[leadIndex];
+                lead.stage = 'new';
+                allLeads.unshift(lead);
+                quizLeadsNotInFunnel.splice(leadIndex, 1);
+                renderAll();
+            }
+        }
+        
+        function addAllToFunnel() {
+            quizLeadsNotInFunnel.forEach(lead => {
+                lead.stage = 'new';
+                allLeads.unshift(lead);
+            });
+            quizLeadsNotInFunnel = [];
+            renderAll();
+        }
+        
+        function setupDragAndDrop() {
+            document.querySelectorAll('.kanban-column').forEach(column => {
+                column.addEventListener('dragover', e => {
+                    e.preventDefault();
+                    column.classList.add('drag-over');
+                });
+                
+                column.addEventListener('dragleave', e => {
+                    column.classList.remove('drag-over');
+                });
+                
+                column.addEventListener('drop', e => {
+                    e.preventDefault();
+                    column.classList.remove('drag-over');
+                    
+                    if (draggedElement) {
+                        const container = column.querySelector('.leads-container');
+                        container.appendChild(draggedElement);
+                        
+                        const leadId = draggedElement.dataset.id;
+                        const newStage = column.dataset.stage;
+                        const lead = allLeads.find(l => l.id == leadId);
+                        
+                        if (lead) {
+                            lead.stage = newStage;
+                            renderAll();
+                        }
+                    }
+                });
+            });
+        }
+        
         function handleDragStart(e) {
             draggedElement = this;
-            this.classList.add('dragging');
+            this.style.opacity = '0.5';
         }
-
+        
         function handleDragEnd(e) {
-            this.classList.remove('dragging');
+            this.style.opacity = '';
         }
-
-        // Setup drop zones
-        document.querySelectorAll('.column').forEach(column => {
-            column.addEventListener('dragover', function(e) {
-                e.preventDefault();
-                this.classList.add('drag-over');
+        
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
             });
             
-            column.addEventListener('dragleave', function(e) {
-                this.classList.remove('drag-over');
-            });
-            
-            column.addEventListener('drop', function(e) {
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+        
+        function showAddLeadModal() {
+            document.getElementById('addLeadModal').classList.add('active');
+        }
+        
+        function closeAddLeadModal() {
+            document.getElementById('addLeadModal').classList.remove('active');
+            document.getElementById('addLeadForm').reset();
+        }
+        
+        function setupAddLeadForm() {
+            document.getElementById('addLeadForm').addEventListener('submit', function(e) {
                 e.preventDefault();
-                this.classList.remove('drag-over');
                 
-                if (draggedElement) {
-                    const container = this.querySelector('.leads-container');
-                    container.appendChild(draggedElement);
-                    
-                    // Update lead stage (would save to database in real app)
-                    const newStage = this.dataset.stage;
-                    const leadId = draggedElement.dataset.id;
-                    console.log(`Lead ${leadId} moved to ${newStage}`);
-                    
-                    // Update stats
-                    const leads = mockLeads;
-                    const lead = leads.find(l => l.id == leadId);
-                    if (lead) {
-                        lead.stage = newStage;
-                        updateStats(leads);
-                    }
-                }
+                const newLead = {
+                    id: Date.now(),
+                    name: document.getElementById('leadName').value,
+                    phone: document.getElementById('leadPhone').value,
+                    email: document.getElementById('leadEmail').value,
+                    age: document.getElementById('leadAge').value ? parseInt(document.getElementById('leadAge').value) : null,
+                    main_block: document.getElementById('leadBlock').value,
+                    source: document.getElementById('leadSource').value,
+                    stage: document.getElementById('leadStage').value,
+                    created_at: new Date().toISOString()
+                };
+                
+                allLeads.unshift(newLead);
+                renderAll();
+                closeAddLeadModal();
             });
-        });
-
+        }
+        
         function logout() {
             localStorage.removeItem('crm_authenticated');
-            localStorage.removeItem('crm_user');
             window.location.href = '/crm/login-supabase.html';
         }
-
-        // Load data on page load
-        loadLeads();
     </script>
 </body>
 </html>
