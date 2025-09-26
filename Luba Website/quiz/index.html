@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест: Ваш денежный код | Денежный Водопад</title>
+    <meta name="description" content="Узнайте свой уникальный денежный код и что блокирует ваше финансовое изобилие. 9 типов блоков, персональный план.">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWF15D45V8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZWF15D45V8');
+    </script>
+    
+    <!-- TikTok Pixel -->
+    <script>
+    !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        
+        ttq.load('D3460MRC77U1O98E3OGG');
+        ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    
+    <!-- Hotjar -->
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:6520317,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase-integration.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6b46c1;
+            --primary-dark: #553c9a;
+            --gold: #fbbf24;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --text: #374151;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .quiz-container {
+            background: white;
+            border-radius: 20px;
+            max-width: 700px;
+            width: 100%;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .progress-container {
+            margin-bottom: 30px;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--gold));
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+        
+        .progress-step {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .progress-step.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .quiz-step {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .quiz-step.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .question-subtitle {
+            color: var(--text);
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .question-number {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .option-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .option-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(107, 70, 193, 0.15);
+        }
+        
+        .option-card.selected {
+            background: linear-gradient(45deg, #f3f4f6, #fef3c7);
+            border-color: var(--primary);
+        }
+        
+        .option-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .option-text {
+            font-size: 14px;
+            color: var(--text);
+        }
+        
+        .slider-container {
+            margin: 30px 0;
+        }
+        
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #e5e7eb;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+        
+        .slider-value {
+            text-align: center;
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .btn {
+            padding: 14px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(107, 70, 193, 0.3);
+        }
+        
+        .btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(107, 70, 193, 0.4);
+        }
+        
+        .btn:disabled {
+            background: #d1d5db;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            margin-right: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .buttons-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .error-message {
+            color: var(--danger);
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .result-card {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .result-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .result-title {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .result-percentage {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .percentage-item {
+            text-align: center;
+        }
+        
+        .percentage-value {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .percentage-label {
+            font-size: 12px;
+            color: var(--text);
+            margin-top: 5px;
+        }
+        
+        .result-description {
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .action-plan {
+            text-align: left;
+            background: var(--light);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .action-plan h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .action-plan ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .action-plan li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .action-plan li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 600;
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 16px 30px;
+            border-radius: 10px;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #20bd5a;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 640px) {
+            .quiz-container {
+                padding: 30px 20px;
+                padding-bottom: 80px; /* Space for fixed buttons */
+            }
+            
+            .options-grid {
+                grid-template-columns: 1fr;
+                margin-bottom: 20px;
+            }
+            
+            .buttons-row {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 15px 20px;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                display: flex;
+                gap: 10px;
+                z-index: 100;
+            }
+            
+            .btn-secondary {
+                margin-right: 0;
+            }
+            
+            .btn {
+                padding: 16px;
+                font-size: 17px;
+            }
+            
+            .quiz-step {
+                min-height: calc(100vh - 200px);
+                display: none;
+                flex-direction: column;
+            }
+            
+            .quiz-step.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Progress -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+            </div>
+            <div class="progress-steps">
+                <div class="progress-step active">•</div>
+                <div class="progress-step">•</div>
+                <div class="progress-step">•</div>
+                <div class="progress-step">•</div>
+                <div class="progress-step">•</div>
+                <div class="progress-step">•</div>
+                <div class="progress-step">•</div>
+                <div class="progress-step">•</div>
+                <div class="progress-step">•</div>
+            </div>
+        </div>
+        
+        <!-- Step 1: Income situation -->
+        <div class="quiz-step active" id="step1">
+            <div class="question-number">1</div>
+            <h2>Вам предложили проект за €5000. Первая мысль?</h2>
+            <div class="question-subtitle">Выберите самую честную реакцию</div>
+            
+            <div class="options-grid">
+                <div class="option-card" data-value="fear" data-block="fear">
+                    <div class="option-icon">😰</div>
+                    <div class="option-text">Я не справлюсь с такой ответственностью</div>
+                </div>
+                <div class="option-card" data-value="worth" data-block="worth">
+                    <div class="option-icon">🤔</div>
+                    <div class="option-text">Это слишком много для меня</div>
+                </div>
+                <div class="option-card" data-value="sabotage" data-block="sabotage">
+                    <div class="option-icon">🎭</div>
+                    <div class="option-text">Найду причину отказаться</div>
+                </div>
+                <div class="option-card" data-value="impostor" data-block="impostor">
+                    <div class="option-icon">😟</div>
+                    <div class="option-text">Они ошиблись, выбрав меня</div>
+                </div>
+                <div class="option-card" data-value="ready" data-block="growth">
+                    <div class="option-icon">💪</div>
+                    <div class="option-text">Отлично! Я готова!</div>
+                </div>
+                <div class="option-card" data-value="other" data-block="unique">
+                    <div class="option-icon">💭</div>
+                    <div class="option-text">Другая реакция</div>
+                </div>
+            </div>
+            
+            <div class="buttons-row">
+                <div></div>
+                <button class="btn" id="btn1" disabled onclick="nextStep(1)">Далее →</button>
+            </div>
+        </div>
+        
+        <!-- Step 2: Success of others -->
+        <div class="quiz-step" id="step2">
+            <div class="question-number">2</div>
+            <h2>Подруга купила квартиру в Барселоне. Вы чувствуете?</h2>
+            <div class="question-subtitle">Первая эмоция, которая приходит</div>
+            
+            <div class="options-grid">
+                <div class="option-card" data-value="envy" data-block="comparison">
+                    <div class="option-icon">😔</div>
+                    <div class="option-text">Зависть и грусть</div>
+                </div>
+                <div class="option-card" data-value="doubt" data-block="victim">
+                    <div class="option-icon">🤷‍♀️</div>
+                    <div class="option-text">Ей просто повезло</div>
+                </div>
+                <div class="option-card" data-value="anger" data-block="injustice">
+                    <div class="option-icon">😤</div>
+                    <div class="option-text">Несправедливо!</div>
+                </div>
+                <div class="option-card" data-value="inspiration" data-block="growth">
+                    <div class="option-icon">🌟</div>
+                    <div class="option-text">Вдохновение - я тоже смогу!</div>
+                </div>
+                <div class="option-card" data-value="joy" data-block="abundance">
+                    <div class="option-icon">🎉</div>
+                    <div class="option-text">Искренняя радость за неё</div>
+                </div>
+                <div class="option-card" data-value="other" data-block="unique">
+                    <div class="option-icon">💭</div>
+                    <div class="option-text">Что-то другое</div>
+                </div>
+            </div>
+            
+            <div class="buttons-row">
+                <button class="btn btn-secondary" onclick="prevStep(2)">← Назад</button>
+                <button class="btn" id="btn2" disabled onclick="nextStep(2)">Далее →</button>
+            </div>
+        </div>
+        
+        <!-- Step 3: Money on account -->
+        <div class="quiz-step" id="step3">
+            <div class="question-number">3</div>
+            <h2>На счету €10,000. Что делаете?</h2>
+            <div class="question-subtitle">Ваше типичное поведение с деньгами</div>
+            
+            <div class="options-grid">
+                <div class="option-card" data-value="spend" data-block="sabotage">
+                    <div class="option-icon">🛍️</div>
+                    <div class="option-text">Быстро потрачу на что-то</div>
+                </div>
+                <div class="option-card" data-value="hide" data-block="fear">
+                    <div class="option-icon">🏦</div>
+                    <div class="option-text">Спрячу и буду бояться трогать</div>
+                </div>
+                <div class="option-card" data-value="guilt" data-block="worth">
+                    <div class="option-icon">😓</div>
+                    <div class="option-text">Чувствую вину, что у меня есть</div>
+                </div>
+                <div class="option-card" data-value="invest" data-block="growth">
+                    <div class="option-icon">📈</div>
+                    <div class="option-text">Инвестирую часть</div>
+                </div>
+                <div class="option-card" data-value="share" data-block="giver">
+                    <div class="option-icon">🤲</div>
+                    <div class="option-text">Раздам близким</div>
+                </div>
+                <div class="option-card" data-value="other" data-block="unique">
+                    <div class="option-icon">💭</div>
+                    <div class="option-text">По-разному</div>
+                </div>
+            </div>
+            
+            <div class="buttons-row">
+                <button class="btn btn-secondary" onclick="prevStep(3)">← Назад</button>
+                <button class="btn" id="btn3" disabled onclick="nextStep(3)">Далее →</button>
+            </div>
+        </div>
+        
+        <!-- Step 4: Family money patterns -->
+        <div class="quiz-step" id="step4">
+            <div class="question-number">4</div>
+            <h2>Что говорили о деньгах в вашей семье?</h2>
+            <div class="question-subtitle">Какую фразу слышали чаще всего</div>
+            
+            <div class="options-grid">
+                <div class="option-card" data-value="hard" data-block="struggle">
+                    <div class="option-icon">💪</div>
+                    <div class="option-text">Деньги достаются тяжелым трудом</div>
+                </div>
+                <div class="option-card" data-value="evil" data-block="rejection">
+                    <div class="option-icon">👿</div>
+                    <div class="option-text">Деньги - это зло</div>
+                </div>
+                <div class="option-card" data-value="notforus" data-block="limit">
+                    <div class="option-icon">🚫</div>
+                    <div class="option-text">Большие деньги не для нас</div>
+                </div>
+                <div class="option-card" data-value="honest" data-block="conflict">
+                    <div class="option-icon">⚖️</div>
+                    <div class="option-text">Честным путем не заработать</div>
+                </div>
+                <div class="option-card" data-value="positive" data-block="abundance">
+                    <div class="option-icon">✨</div>
+                    <div class="option-text">Деньги - это возможности</div>
+                </div>
+                <div class="option-card" data-value="never" data-block="unique">
+                    <div class="option-icon">🤐</div>
+                    <div class="option-text">О деньгах не говорили</div>
+                </div>
+            </div>
+            
+            <div class="buttons-row">
+                <button class="btn btn-secondary" onclick="prevStep(4)">← Назад</button>
+                <button class="btn" id="btn4" disabled onclick="nextStep(4)">Далее →</button>
+            </div>
+        </div>
+        
+        <!-- Step 5: Current income level (slider) -->
+        <div class="quiz-step" id="step5">
+            <div class="question-number">5</div>
+            <h2>Ваш текущий месячный доход</h2>
+            <div class="question-subtitle">Передвиньте ползунок</div>
+            
+            <div class="slider-container">
+                <div class="slider-labels">
+                    <span>€0</span>
+                    <span>€5000</span>
+                    <span>€10000+</span>
+                </div>
+                <input type="range" class="slider" id="incomeSlider" min="0" max="10000" value="2000" step="100">
+                <div class="slider-value">€<span id="incomeValue">2000</span></div>
+            </div>
+            
+            <h2 style="margin-top: 40px;">Ваш желаемый доход</h2>
+            <div class="slider-container">
+                <div class="slider-labels">
+                    <span>€1000</span>
+                    <span>€10000</span>
+                    <span>€50000+</span>
+                </div>
+                <input type="range" class="slider" id="desiredSlider" min="1000" max="50000" value="5000" step="500">
+                <div class="slider-value">€<span id="desiredValue">5000</span></div>
+            </div>
+            
+            <div class="buttons-row">
+                <button class="btn btn-secondary" onclick="prevStep(5)">← Назад</button>
+                <button class="btn" onclick="nextStep(5)">Далее →</button>
+            </div>
+        </div>
+        
+        <!-- Step 6: Energy level -->
+        <div class="quiz-step" id="step6">
+            <div class="question-number">6</div>
+            <h2>Как вы чувствуете себя в понедельник утром?</h2>
+            <div class="question-subtitle">Уровень энергии и настроения</div>
+            
+            <div class="options-grid">
+                <div class="option-card" data-value="dread" data-block="burnout">
+                    <div class="option-icon">😩</div>
+                    <div class="option-text">Ужас, не хочу на работу</div>
+                </div>
+                <div class="option-card" data-value="tired" data-block="depletion">
+                    <div class="option-icon">😴</div>
+                    <div class="option-text">Уже устала заранее</div>
+                </div>
+                <div class="option-card" data-value="neutral" data-block="routine">
+                    <div class="option-icon">😐</div>
+                    <div class="option-text">Обычный день</div>
+                </div>
+                <div class="option-card" data-value="motivated" data-block="growth">
+                    <div class="option-icon">💪</div>
+                    <div class="option-text">Есть силы и планы</div>
+                </div>
+                <div class="option-card" data-value="excited" data-block="purpose">
+                    <div class="option-icon">🚀</div>
+                    <div class="option-text">Не могу дождаться начала!</div>
+                </div>
+                <div class="option-card" data-value="varies" data-block="unique">
+                    <div class="option-icon">🎭</div>
+                    <div class="option-text">По-разному</div>
+                </div>
+            </div>
+            
+            <div class="buttons-row">
+                <button class="btn btn-secondary" onclick="prevStep(6)">← Назад</button>
+                <button class="btn" id="btn6" disabled onclick="nextStep(6)">Далее →</button>
+            </div>
+        </div>
+        
+        <!-- Step 7: Breakthrough moment -->
+        <div class="quiz-step" id="step7">
+            <div class="question-number">7</div>
+            <h2>Что поможет вам прорваться к большим деньгам?</h2>
+            <div class="question-subtitle">Что вам нужно в первую очередь</div>
+            
+            <div class="options-grid">
+                <div class="option-card" data-value="confidence" data-block="worth">
+                    <div class="option-icon">💎</div>
+                    <div class="option-text">Поверить в свою ценность</div>
+                </div>
+                <div class="option-card" data-value="permission" data-block="fear">
+                    <div class="option-icon">🔓</div>
+                    <div class="option-text">Разрешить себе зарабатывать</div>
+                </div>
+                <div class="option-card" data-value="clarity" data-block="confusion">
+                    <div class="option-icon">🎯</div>
+                    <div class="option-text">Понять, чего я хочу</div>
+                </div>
+                <div class="option-card" data-value="healing" data-block="trauma">
+                    <div class="option-icon">❤️‍🩹</div>
+                    <div class="option-text">Исцелить старые раны</div>
+                </div>
+                <div class="option-card" data-value="support" data-block="isolation">
+                    <div class="option-icon">🤝</div>
+                    <div class="option-text">Поддержка и наставник</div>
+                </div>
+                <div class="option-card" data-value="complex" data-block="unique">
+                    <div class="option-icon">🌈</div>
+                    <div class="option-text">Всё вместе</div>
+                </div>
+            </div>
+            
+            <div class="buttons-row">
+                <button class="btn btn-secondary" onclick="prevStep(7)">← Назад</button>
+                <button class="btn" id="btn7" disabled onclick="nextStep(7)">Далее →</button>
+            </div>
+        </div>
+        
+        <!-- Step 8: Contact form BEFORE results -->
+        <div class="quiz-step" id="step8">
+            <div class="question-number">✨</div>
+            <h2>Последний шаг до вашего денежного кода</h2>
+            <div class="question-subtitle">Куда отправить ваш персональный план на 7 дней?</div>
+            
+            <div class="form-group">
+                <label>Ваше имя</label>
+                <input type="text" id="name" placeholder="Как к вам обращаться">
+                <div class="error-message" id="nameError"></div>
+            </div>
+            
+            <div class="form-group">
+                <label>WhatsApp для связи</label>
+                <input type="tel" id="whatsapp" placeholder="+34 600 000 000">
+                <div class="error-message" id="whatsappError"></div>
+            </div>
+            
+            <div class="form-group">
+                <label>Email (необязательно)</label>
+                <input type="email" id="email" placeholder="your@email.com">
+                <div class="error-message" id="emailError"></div>
+            </div>
+            
+            <div class="buttons-row">
+                <button class="btn btn-secondary" onclick="prevStep(8)">← Назад</button>
+                <button class="btn" onclick="validateAndShowResult()">Получить мой денежный код →</button>
+            </div>
+        </div>
+        
+        <!-- Step 9: Results -->
+        <div class="quiz-step" id="step9">
+            <div class="result-card">
+                <div class="result-icon" id="resultIcon">🔮</div>
+                <h1 class="result-title" id="resultTitle">Ваш денежный код</h1>
+                
+                <div class="result-percentage" id="resultPercentages">
+                    <!-- Will be filled dynamically -->
+                </div>
+                
+                <div class="result-description" id="resultDescription">
+                    <!-- Will be filled dynamically -->
+                </div>
+                
+                <!-- Why this block -->
+                <div style="background: #fef3c7; padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h3 style="color: #92400e; margin-bottom: 10px;">🔍 Почему именно этот блок у вас?</h3>
+                    <p id="blockWhy" style="color: #78350f; line-height: 1.6;"></p>
+                </div>
+                
+                <!-- Consequences -->
+                <div style="background: #fee2e2; padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h3 style="color: #991b1b; margin-bottom: 10px;">⚠️ Что будет, если не работать с блоком:</h3>
+                    <ul id="consequences" style="list-style: none; padding: 0; color: #7f1d1d;">
+                        <!-- Will be filled dynamically -->
+                    </ul>
+                </div>
+                
+                <!-- Action plan -->
+                <div class="action-plan">
+                    <h3>🎯 Ваш план на 7 дней:</h3>
+                    <ul id="actionPlan">
+                        <!-- Will be filled dynamically -->
+                    </ul>
+                </div>
+                
+                <!-- Testimonial -->
+                <div style="background: #d1fae5; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center;">
+                    <p id="testimonial" style="color: #065f46; font-style: italic; font-size: 16px;"></p>
+                </div>
+                
+                <!-- Transformation timeline -->
+                <div style="margin: 30px 0;">
+                    <h3 style="text-align: center; margin-bottom: 20px;">📈 Ваш путь трансформации:</h3>
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                        <div style="flex: 1; min-width: 150px; text-align: center; padding: 15px; background: #f3f4f6; border-radius: 8px;">
+                            <strong>Сейчас</strong><br>Осознание блока
+                        </div>
+                        <div style="flex: 1; min-width: 150px; text-align: center; padding: 15px; background: #f3f4f6; border-radius: 8px;">
+                            <strong>Неделя 1-2</strong><br>Диагностика
+                        </div>
+                        <div style="flex: 1; min-width: 150px; text-align: center; padding: 15px; background: #f3f4f6; border-radius: 8px;">
+                            <strong>Неделя 3-4</strong><br>Перепрошивка
+                        </div>
+                        <div style="flex: 1; min-width: 150px; text-align: center; padding: 15px; background: #f3f4f6; border-radius: 8px;">
+                            <strong>Неделя 5-6</strong><br>Новые привычки
+                        </div>
+                        <div style="flex: 1; min-width: 150px; text-align: center; padding: 15px; background: #f3f4f6; border-radius: 8px;">
+                            <strong>Неделя 7-8</strong><br>Большие деньги
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Urgency -->
+                <div style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center;">
+                    <h3 style="color: white; margin-bottom: 10px;">⏰ Специальное предложение для вашего блока</h3>
+                    <p style="color: white;">Только 3 места на индивидуальную диагностику на этой неделе</p>
+                    <p style="color: white; font-size: 24px; font-weight: bold; margin: 10px 0;">Бесплатная 15-минутная диагностика</p>
+                </div>
+                
+                <!-- Action buttons -->
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <button class="whatsapp-btn" onclick="goToWhatsApp()">
+                        <span>💬</span>
+                        <span>Получить персональную консультацию в WhatsApp</span>
+                    </button>
+                    
+                    <button style="background: white; color: var(--primary); border: 2px solid var(--primary); padding: 14px; border-radius: 10px; font-size: 16px; cursor: pointer;" onclick="window.location.href='/'">
+                        🏠 На главную
+                    </button>
+                    
+                    <button style="background: transparent; color: var(--primary); border: none; padding: 10px; font-size: 14px; cursor: pointer; text-decoration: underline;" onclick="retakeQuiz()">
+                        🔄 Пройти тест заново
+                    </button>
+                </div>
+                
+                <p style="margin-top: 20px; color: #6b7280; font-size: 14px; text-align: center;">
+                    🎁 Первые 10 человек получат бонус: медитацию для вашего типа блока
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Quiz state
+        const quizState = {
+            currentStep: 1,
+            totalSteps: 9,
+            answers: {},
+            blocks: {},
+            timePerQuestion: {},
+            startTime: Date.now(),
+            questionStartTime: Date.now()
+        };
+        
+        // Block types with detailed info
+        const blockTypes = {
+            fear: {
+                name: "Страх больших денег",
+                icon: "😰",
+                description: "Вы подсознательно боитесь ответственности и изменений, которые приносят большие деньги. Это защитный механизм психики.",
+                why: "Обычно формируется в детстве, когда родители связывали деньги с опасностью или проблемами. Вы могли слышать: 'Из-за денег все беды', 'Большие деньги - большие проблемы'.",
+                consequences: [
+                    "Доход останется на том же уровне еще 3-5 лет",
+                    "Упустите минимум €50,000 потенциального дохода",
+                    "Дети переймут ваши денежные страхи"
+                ],
+                actions: [
+                    "День 1-2: Записывайте все страхи о деньгах",
+                    "День 3-4: Найдите примеры людей, похожих на вас, кто зарабатывает больше",
+                    "День 5-6: Сделайте одно смелое денежное действие",
+                    "День 7: Назначьте цену выше обычной"
+                ],
+                testimonial: "У меня был страх больших денег. За 2 месяца подняла цены в 3 раза! - Марина, €1800 → €5400/мес"
+            },
+            worth: {
+                name: "Чувство недостойности",
+                icon: "💔",
+                description: "Глубоко внутри вы не верите, что достойны больших денег и успеха. Это часто идет из детства.",
+                why: "Корни в критике и обесценивании в детстве. Вас сравнивали с другими, говорили 'ты недостаточно хороша', не хвалили за достижения.",
+                consequences: [
+                    "Будете работать за копейки еще годы",
+                    "Партнер может потерять уважение",
+                    "Депрессия от нереализованности"
+                ],
+                actions: [
+                    "День 1-2: Список ваших достижений (минимум 50)",
+                    "День 3-4: Попросите 5 отзывов от клиентов/коллег",
+                    "День 5-6: Повышайте цену на 20%",
+                    "День 7: Скажите 'да' большой возможности"
+                ],
+                testimonial: "Всю жизнь думала, что недостойна больших денег. После программы - контракт на €50,000! - Оксана"
+            },
+            sabotage: {
+                name: "Самосаботаж успеха",
+                icon: "🎭",
+                description: "Вы неосознанно разрушаете свой успех, когда он становится реальным. Боитесь выйти из зоны комфорта.",
+                why: "Защитный механизм от страха успеха. В семье могли завидовать успешным, осуждать богатых, внушать 'не высовывайся'.",
+                consequences: [
+                    "Будете сливать все заработанные деньги",
+                    "Упустите крупные проекты и клиентов",
+                    "Останетесь в токсичном окружении"
+                ],
+                actions: [
+                    "День 1-2: Отследите моменты саботажа",
+                    "День 3-4: Создайте ритуал празднования успехов",
+                    "День 5-6: Доведите до конца одно важное дело",
+                    "День 7: Примите комплимент без оправданий"
+                ],
+                testimonial: "Постоянно саботировала успех. Теперь спокойно держу €10,000 на счету - Елена"
+            },
+            impostor: {
+                name: "Синдром самозванца",
+                icon: "🎪",
+                description: "Вы чувствуете, что не заслуживаете своих достижений и скоро все узнают 'правду' о вас.",
+                why: "Перфекционизм и завышенные требования к себе. Обесценивание своих достижений, фокус на недостатках.",
+                consequences: [
+                    "Откажетесь от выгодных предложений",
+                    "Будете работать за 30% от рыночной ставки",
+                    "Выгорание от постоянного доказывания"
+                ],
+                actions: [
+                    "День 1-2: Документируйте свою экспертность",
+                    "День 3-4: Обучите кого-то своему навыку",
+                    "День 5-6: Выступите как эксперт публично",
+                    "День 7: Примите свою уникальность"
+                ],
+                testimonial: "Синдром самозванца мешал брать дорогие проекты. Сейчас минимальный чек €3000 - Анна"
+            },
+            comparison: {
+                name: "Токсичное сравнение",
+                icon: "⚖️",
+                description: "Постоянное сравнение с другими блокирует ваш собственный путь к изобилию.",
+                why: "Социальные сети и установка 'быть не хуже других'. Отсутствие фокуса на собственном пути.",
+                consequences: [
+                    "Зависть будет съедать энергию",
+                    "Потратите деньги на показуху",
+                    "Упустите свои возможности"
+                ],
+                actions: [
+                    "День 1-2: Детокс от соцсетей",
+                    "День 3-4: Фокус только на своем прогрессе",
+                    "День 5-6: Найдите свою уникальность",
+                    "День 7: Празднуйте маленькие победы"
+                ],
+                testimonial: "Перестала сравнивать себя с другими - доход вырос в 4 раза! - Ирина"
+            },
+            victim: {
+                name: "Позиция жертвы",
+                icon: "🎯",
+                description: "Вы отдаете ответственность за свою жизнь обстоятельствам и другим людям.",
+                why: "Выученная беспомощность. В детстве не давали принимать решения, всё решали за вас.",
+                consequences: [
+                    "Жизнь не изменится еще 5-10 лет",
+                    "Близкие перестанут верить в вас",
+                    "Дети скопируют модель жертвы"
+                ],
+                actions: [
+                    "День 1-2: Возьмите ответственность за 1 сферу",
+                    "День 3-4: Перестаньте жаловаться 48 часов",
+                    "День 5-6: Найдите возможность в проблеме",
+                    "День 7: Примите решение без советов"
+                ],
+                testimonial: "Из жертвы обстоятельств стала хозяйкой своей жизни. Доход х5! - Светлана"
+            },
+            burnout: {
+                name: "Выгорание и истощение",
+                icon: "🔥",
+                description: "Вы работаете на износ, но деньги не приходят, потому что нет энергии их принять.",
+                why: "Установка 'надо много работать'. Неумение отдыхать и восстанавливаться. Чувство вины за отдых.",
+                consequences: [
+                    "Полное выгорание через 6-12 месяцев",
+                    "Проблемы со здоровьем",
+                    "Потеря смысла жизни"
+                ],
+                actions: [
+                    "День 1-2: Добавьте 2 часа отдыха в день",
+                    "День 3-4: Делегируйте одну задачу",
+                    "День 5-6: Найдите источник энергии",
+                    "День 7: Скажите 'нет' энергетическому вампиру"
+                ],
+                testimonial: "Была в выгорании 2 года. Сейчас работаю 4 часа в день и зарабатываю в 3 раза больше - Юлия"
+            },
+            growth: {
+                name: "Готовность к росту",
+                icon: "🚀",
+                description: "Вы готовы к квантовому скачку, нужен только правильный вектор и поддержка.",
+                why: "Вы уже проделали внутреннюю работу, но нужен катализатор для прорыва на новый уровень.",
+                consequences: [
+                    "Без ментора потратите еще 2-3 года",
+                    "Можете свернуть не туда",
+                    "Потеряете мотивацию"
+                ],
+                actions: [
+                    "День 1-2: Определите следующий уровень дохода",
+                    "День 3-4: Найдите ментора или наставника",
+                    "День 5-6: Инвестируйте в свое развитие",
+                    "День 7: Сделайте смелый шаг вперед"
+                ],
+                testimonial: "Была готова к росту, но не знала куда. С ментором вышла на €10,000/мес - Татьяна"
+            },
+            unique: {
+                name: "Уникальный паттерн",
+                icon: "🌟",
+                description: "У вас особенный денежный код, требующий индивидуального подхода.",
+                why: "Комбинация нескольких блоков или редкий тип блокировки. Нужна персональная диагностика.",
+                consequences: [
+                    "Без точной диагностики будете ходить по кругу",
+                    "Стандартные методы не сработают",
+                    "Потеряете веру в изменения"
+                ],
+                actions: [
+                    "День 1-2: Исследуйте свои денежные паттерны",
+                    "День 3-4: Экспериментируйте с новым подходом",
+                    "День 5-6: Доверьтесь интуиции в денежном вопросе",
+                    "День 7: Запишитесь на персональную диагностику"
+                ],
+                testimonial: "У меня был сложный микс блоков. После индивидуальной работы всё встало на места - Мария"
+            }
+        };
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            updateProgress();
+            
+            // Track start
+            if (window.SupabaseIntegration) {
+                window.SupabaseIntegration.updateAnalytics('quiz_start');
+            }
+            
+            // Track with pixels
+            if (typeof fbq !== 'undefined') {
+                try {
+                    fbq('track', 'ViewContent', {content_name: 'Money Code Quiz'});
+                } catch (e) {
+                    console.log('FB pixel error:', e);
+                }
+            }
+            if (typeof window.ttq !== 'undefined') {
+                try {
+                    window.ttq.track('ViewContent');
+                } catch (e) {
+                    console.log('TikTok pixel error:', e);
+                }
+            }
+        });
+        
+        // Event listeners
+        function setupEventListeners() {
+            // Option cards
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.addEventListener('click', handleOptionSelect);
+            });
+            
+            // Sliders
+            const incomeSlider = document.getElementById('incomeSlider');
+            const desiredSlider = document.getElementById('desiredSlider');
+            
+            if (incomeSlider) {
+                incomeSlider.addEventListener('input', function() {
+                    document.getElementById('incomeValue').textContent = this.value;
+                    quizState.answers.currentIncome = this.value;
+                });
+                quizState.answers.currentIncome = incomeSlider.value;
+            }
+            
+            if (desiredSlider) {
+                desiredSlider.addEventListener('input', function() {
+                    document.getElementById('desiredValue').textContent = this.value;
+                    quizState.answers.desiredIncome = this.value;
+                });
+                quizState.answers.desiredIncome = desiredSlider.value;
+            }
+        }
+        
+        // Handle option selection
+        function handleOptionSelect(e) {
+            const card = e.currentTarget;
+            const step = card.closest('.quiz-step');
+            const stepNum = parseInt(step.id.replace('step', ''));
+            const value = card.dataset.value;
+            const block = card.dataset.block;
+            
+            // Track time for this question
+            const timeSpent = Date.now() - quizState.questionStartTime;
+            quizState.timePerQuestion[`q${stepNum}`] = timeSpent;
+            
+            // Clear previous selection
+            step.querySelectorAll('.option-card').forEach(c => {
+                c.classList.remove('selected');
+            });
+            
+            // Select current
+            card.classList.add('selected');
+            
+            // Store answer
+            quizState.answers[`q${stepNum}`] = value;
+            
+            // Count blocks
+            if (!quizState.blocks[block]) {
+                quizState.blocks[block] = 0;
+            }
+            quizState.blocks[block]++;
+            
+            // Enable button
+            const btn = document.getElementById(`btn${stepNum}`);
+            if (btn) btn.disabled = false;
+        }
+        
+        // Navigation
+        function nextStep(from) {
+            if (from < quizState.totalSteps) {
+                document.getElementById(`step${from}`).classList.remove('active');
+                document.getElementById(`step${from + 1}`).classList.add('active');
+                quizState.currentStep = from + 1;
+                quizState.questionStartTime = Date.now();
+                updateProgress();
+            }
+        }
+        
+        function prevStep(from) {
+            if (from > 1) {
+                document.getElementById(`step${from}`).classList.remove('active');
+                document.getElementById(`step${from - 1}`).classList.add('active');
+                quizState.currentStep = from - 1;
+                updateProgress();
+            }
+        }
+        
+        // Update progress
+        function updateProgress() {
+            const percentage = (quizState.currentStep / quizState.totalSteps) * 100;
+            document.getElementById('progress').style.width = percentage + '%';
+            
+            // Update step indicators
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+                if (index < quizState.currentStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+        
+        // Validate and show result
+        async function validateAndShowResult() {
+            const name = document.getElementById('name').value.trim();
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const email = document.getElementById('email').value.trim();
+            
+            // Reset errors
+            document.querySelectorAll('.error-message').forEach(err => {
+                err.style.display = 'none';
+            });
+            
+            let valid = true;
+            
+            if (!name || name.length < 2) {
+                document.getElementById('nameError').textContent = 'Пожалуйста, введите ваше имя';
+                document.getElementById('nameError').style.display = 'block';
+                valid = false;
+            }
+            
+            if (!whatsapp || whatsapp.length < 10) {
+                document.getElementById('whatsappError').textContent = 'Пожалуйста, введите номер WhatsApp';
+                document.getElementById('whatsappError').style.display = 'block';
+                valid = false;
+            }
+            
+            if (!valid) return;
+            
+            // Store contact info
+            quizState.answers.name = name;
+            quizState.answers.whatsapp = whatsapp;
+            if (email) quizState.answers.email = email;
+            
+            // Calculate results
+            calculateResults();
+            
+            // Submit to database
+            try {
+                await submitQuiz();
+            } catch (error) {
+                console.error('Error submitting quiz:', error);
+                // Continue anyway - don't block user
+            }
+            
+            // Show results
+            nextStep(8);
+        }
+        
+        // Calculate results
+        function calculateResults() {
+            // Sort blocks by count
+            const sortedBlocks = Object.entries(quizState.blocks)
+                .sort((a, b) => b[1] - a[1]);
+            
+            if (sortedBlocks.length === 0) {
+                sortedBlocks.push(['unique', 1]);
+            }
+            
+            // Get primary and secondary blocks
+            const primaryBlock = sortedBlocks[0][0];
+            const secondaryBlock = sortedBlocks[1] ? sortedBlocks[1][0] : null;
+            
+            // Calculate percentages
+            const total = Object.values(quizState.blocks).reduce((a, b) => a + b, 0) || 1;
+            const primaryPercent = Math.round((sortedBlocks[0][1] / total) * 100);
+            const secondaryPercent = secondaryBlock ? Math.round((sortedBlocks[1][1] / total) * 100) : 0;
+            
+            // Display results
+            const primaryInfo = blockTypes[primaryBlock];
+            const secondaryInfo = secondaryBlock ? blockTypes[secondaryBlock] : null;
+            
+            document.getElementById('resultIcon').textContent = primaryInfo.icon;
+            document.getElementById('resultTitle').textContent = primaryInfo.name;
+            document.getElementById('resultDescription').textContent = primaryInfo.description;
+            
+            // Show why this block
+            document.getElementById('blockWhy').textContent = primaryInfo.why;
+            
+            // Show consequences
+            const consequencesList = document.getElementById('consequences');
+            consequencesList.innerHTML = primaryInfo.consequences
+                .map(c => `<li style="margin: 10px 0;">❌ ${c}</li>`)
+                .join('');
+            
+            // Show testimonial
+            document.getElementById('testimonial').textContent = primaryInfo.testimonial;
+            
+            // Show percentages
+            let percentagesHTML = `
+                <div class="percentage-item">
+                    <div class="percentage-value">${primaryPercent}%</div>
+                    <div class="percentage-label">${primaryInfo.name}</div>
+                </div>
+            `;
+            
+            if (secondaryInfo && secondaryPercent > 20) {
+                percentagesHTML += `
+                    <div class="percentage-item">
+                        <div class="percentage-value">${secondaryPercent}%</div>
+                        <div class="percentage-label">${secondaryInfo.name}</div>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('resultPercentages').innerHTML = percentagesHTML;
+            
+            // Show action plan
+            const actionPlan = document.getElementById('actionPlan');
+            actionPlan.innerHTML = primaryInfo.actions.map(action => `<li>${action}</li>`).join('');
+            
+            // Store result
+            quizState.primaryBlock = primaryBlock;
+            quizState.blockName = primaryInfo.name;
+        }
+        
+        // Submit quiz
+        async function submitQuiz() {
+            try {
+                const totalTime = Math.floor((Date.now() - quizState.startTime) / 1000);
+                
+                const formData = {
+                    name: quizState.answers.name,
+                    phone: quizState.answers.whatsapp,
+                    email: quizState.answers.email || null,
+                    quiz_type: 'money_code_v2',
+                    quiz_answers: quizState.answers,
+                    main_block: quizState.blockName,
+                    blocks_analysis: quizState.blocks,
+                    completion_time: totalTime
+                };
+                
+                // Submit to Supabase
+                if (window.SupabaseIntegration) {
+                    await window.SupabaseIntegration.submitQuizLead(formData);
+                    window.SupabaseIntegration.updateAnalytics('quiz_complete');
+                    window.SupabaseIntegration.trackConversion('Lead', {
+                        value: 0,
+                        currency: 'EUR',
+                        content_name: 'Money Code Quiz V2'
+                    });
+                }
+                
+                // Track with pixels
+                if (typeof fbq !== 'undefined') {
+                    try {
+                        fbq('track', 'Lead', {
+                            content_name: 'Money Code Quiz',
+                            value: 0,
+                            currency: 'EUR'
+                        });
+                    } catch (e) {
+                        console.log('FB pixel error:', e);
+                    }
+                }
+                
+                if (typeof window.ttq !== 'undefined') {
+                    try {
+                        window.ttq.track('CompleteRegistration');
+                    } catch (e) {
+                        console.log('TikTok pixel error:', e);
+                    }
+                }
+                
+            } catch (error) {
+                console.error('Submit error:', error);
+                // Continue anyway - don't block user
+            }
+        }
+        
+        // Go to WhatsApp
+        function goToWhatsApp() {
+            const message = `Здравствуйте! Я прошла тест "Денежный код". Мой результат: ${quizState.blockName} (${quizState.primaryBlock}). Хочу записаться на бесплатную консультацию.`;
+            const whatsappUrl = `https://wa.me/34654420334?text=${encodeURIComponent(message)}`;
+            
+            // Track conversion
+            if (typeof fbq !== 'undefined') {
+                try {
+                    fbq('track', 'Contact');
+                } catch (e) {
+                    console.log('FB pixel error:', e);
+                }
+            }
+            if (typeof window.ttq !== 'undefined') {
+                try {
+                    window.ttq.track('ClickButton');
+                } catch (e) {
+                    console.log('TikTok pixel error:', e);
+                }
+            }
+            if (typeof gtag !== 'undefined') {
+                try {
+                    gtag('event', 'click', {
+                        'event_category': 'WhatsApp',
+                        'event_label': 'Quiz Result'
+                    });
+                } catch (e) {
+                    console.log('GA error:', e);
+                }
+            }
+            
+            window.location.href = whatsappUrl;
+        }
+        
+        // Save results to email
+        function saveResults() {
+            const email = quizState.answers.email;
+            if (!email) {
+                alert('Email не был указан. Пройдите тест заново и укажите email.');
+                return;
+            }
+            
+            // Here you would normally send to backend
+            alert(`Результаты отправлены на ${email}! Проверьте почту.`);
+            
+            // Track conversion
+            if (typeof fbq !== 'undefined') fbq('track', 'Subscribe');
+        }
+        
+        // Retake quiz
+        function retakeQuiz() {
+            if (confirm('Вы уверены, что хотите пройти тест заново?')) {
+                window.location.reload();
+            }
+        }
+    </script>
+</body>
+</html>

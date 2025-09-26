@@ -1,0 +1,165 @@
+/* Mobile Optimization Styles for Денежный Водопад */
+/* Улучшенная мобильная адаптация для всех устройств */
+
+/* ========== Базовые мобильные стили ========== */
+@media screen and (max-width: 768px) {
+    /* Предотвращаем горизонтальный скролл */
+    body {
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .wrapper {
+        box-shadow: none;
+        width: 100%;
+    }
+    
+    /* Навигация для мобильных */
+    nav {
+        padding: 10px 15px;
+    }
+    
+    .nav-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        width: 100%;
+    }    
+    .nav-cta {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        font-size: 16px;
+    }
+    
+    /* Hero секция */
+    .hero {
+        padding: 40px 20px;
+    }
+    
+    .hero h1 {
+        font-size: 28px !important;
+        line-height: 1.2;
+        word-wrap: break-word;
+    }
+    
+    .hero .subtitle {
+        font-size: 16px !important;
+        padding: 0 10px;
+    }
+    
+    /* Кнопки */
+    .cta-button, .btn-primary {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto;
+        padding: 18px 30px !important;        font-size: 16px !important;
+        min-height: 50px;
+        touch-action: manipulation;
+    }
+    
+    /* Проблемы */
+    .problems {
+        padding: 40px 15px;
+    }
+    
+    .problems-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .problem-card {
+        padding: 20px;
+        text-align: center !important;
+    }
+    
+    .problem-icon {
+        margin: 0 auto 15px !important;
+        font-size: 48px !important;
+    }
+    
+    .problem-title {
+        text-align: center !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .problem-text {
+        text-align: center !important;
+    }
+    
+    /* Результаты */
+    .results-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .result-item {
+        padding: 20px;
+    }
+    
+    /* Метод */    .method-steps {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .method-step {
+        padding: 20px;
+    }
+    
+    /* Отзывы */
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .testimonial-card {
+        padding: 20px;
+    }
+    
+    /* Прайсинг */
+    .pricing-cards {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .price-card {
+        padding: 30px 20px;
+    }
+    
+    .price-amount {
+        font-size: 36px !important;
+    }    
+    /* Футер */
+    footer {
+        padding: 30px 15px;
+    }
+    
+    .footer-content {
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* ========== Планшеты ========== */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .wrapper {
+        width: 100%;
+    }
+    
+    .problems-grid,
+    .results-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .method-steps {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
