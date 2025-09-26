@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат теста: Ваши денежные блоки | Любовь Лукащук</title>
+    <meta name="description" content="Ваш персональный анализ денежных блоков готов. Узнайте что мешает вам зарабатывать больше.">
+    
+    <!-- Стили -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/mobile-optimization.css">
+    
+    <style>
+        .result-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .result-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .result-title {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .result-subtitle {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .main-block {
+            background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .block-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .block-name {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .block-description {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .symptoms-section,
+        .origins-section,
+        .solution-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .symptoms-list,
+        .origins-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .symptom-item,
+        .origin-item {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            font-size: 16px;
+        }
+        
+        .cta-section {
+            background: var(--gradient);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            margin: 40px 0;
+        }
+        
+        .cta-title {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+        
+        .cta-text {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 18px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #20ba5a;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37,211,102,0.4);
+        }
+        
+        .bonus-section {
+            background: #fff8e1;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .bonus-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .social-share {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 30px;
+        }
+        
+        /* Мобильная адаптивность */
+        @media (max-width: 768px) {
+            .result-container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+            
+            .result-title {
+                font-size: 28px;
+            }
+            
+            .main-block {
+                padding: 30px 20px;
+            }
+            
+            .block-name {
+                font-size: 24px;
+            }
+            
+            .block-icon {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <div class="result-header">
+            <h1 class="result-title">Ваш результат готов!</h1>
+            <p class="result-subtitle">Персональный анализ ваших денежных блоков</p>
+        </div>
+        
+        <!-- Основной блок - будет заполняться JavaScript -->
+        <div id="mainBlock" class="main-block">
+            <div class="block-icon">🧠</div>
+            <h2 class="block-name">Определяем ваш основной блок...</h2>
+            <p class="block-description">Анализируем ваши ответы...</p>
+        </div>
+        
+        <!-- Симптомы -->
+        <div id="symptomsSection" class="symptoms-section">
+            <h3 class="section-title">🎯 Как это проявляется в жизни:</h3>
+            <ul id="symptomsList" class="symptoms-list">
+                <!-- Будет заполняться JavaScript -->
+            </ul>
+        </div>
+        
+        <!-- Происхождение -->
+        <div id="originsSection" class="origins-section">
+            <h3 class="section-title">🌱 Откуда это взялось:</h3>
+            <ul id="originsList" class="origins-list">
+                <!-- Будет заполняться JavaScript -->
+            </ul>
+        </div>
+        
+        <!-- Бонус-секция -->
+        <div class="bonus-section">
+            <h3 class="bonus-title">🎁 БОНУС: Персональная консультация</h3>
+            <p>Вы прошли тест - получите <strong>бесплатную 30-минутную консультацию</strong> для проработки именно вашего блока. Я покажу конкретные техники и дам персональные рекомендации.</p>
+        </div>
+        
+        <!-- CTA секция -->
+        <div class="cta-section">
+            <h2 class="cta-title">Готовы проработать этот блок?</h2>
+            <p class="cta-text">Запишитесь на бесплатную консультацию прямо сейчас.<br>Освободитесь от денежных ограничений за 30 минут.</p>
+            <a href="https://wa.me/34654420334?text=Прошла%20тест%20на%20денежные%20блоки,%20хочу%20записаться%20на%20бесплатную%20консультацию" 
+               class="whatsapp-btn" 
+               target="_blank">
+                📱 Записаться на консультацию
+            </a>
+        </div>
+        
+        <!-- Дополнительная секция решения -->
+        <div id="solutionSection" class="solution-section">
+            <h3 class="section-title">💡 Что делать дальше:</h3>
+            <div id="solutionContent">
+                <!-- Будет заполняться JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Социальный шеринг -->
+        <div class="social-share">
+            <p><strong>Поделитесь тестом с подругами:</strong></p>
+            <a href="#" id="telegramShare" style="margin: 0 10px; color: var(--primary-color);">Telegram</a>
+            <a href="#" id="whatsappShare" style="margin: 0 10px; color: var(--primary-color);">WhatsApp</a>
+            <a href="#" id="facebookShare" style="margin: 0 10px; color: var(--primary-color);">Facebook</a>
+            
+            <!-- Навигация -->
+            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+                <a href="/" style="margin: 0 15px; color: #667eea; text-decoration: none; font-weight: 600;">← Главная</a>
+                <a href="/test-moneyblocks.html" style="margin: 0 15px; color: #667eea; text-decoration: none; font-weight: 600;">🔄 Пройти тест еще раз</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Блоки и их описания
+        const moneyBlocks = {
+            scarcity: {
+                name: "Блок Дефицита",
+                icon: "💸",
+                description: "Глубокое убеждение, что денег всегда не хватает. Вы экономите даже когда есть деньги, боитесь тратить на себя.",
+                symptoms: [
+                    "Постоянно считаете деньги и переживаете о финансах",
+                    "Покупаете самое дешевое, даже если можете позволить лучше",
+                    "Чувствуете вину при трате денег на удовольствия",
+                    "Откладываете покупки 'на потом', даже необходимые",
+                    "Завидуете тем, кто тратит деньги свободно"
+                ],
+                origins: [
+                    "Детство в семье с постоянными финансовыми переживаниями",
+                    "Фразы родителей: 'Денег нет', 'Экономь', 'Это слишком дорого'",
+                    "Травматический опыт нехватки денег в семье",
+                    "Постоянное сравнение с другими 'богатыми' семьями"
+                ],
+                solution: "Начните с малого - позвольте себе одну небольшую 'бессмысленную' покупку в неделю. Ведите дневник изобилия - записывайте все хорошее, что у вас есть. Медитируйте на тему достатка."
+            },
+            guilt: {
+                name: "Блок Вины",
+                icon: "😔",
+                description: "Считаете, что не заслуживаете денег. Чувствуете вину за успех и доходы, особенно если зарабатываете больше родителей.",
+                symptoms: [
+                    "Занижаете свои цены и стесняетесь просить больше",
+                    "Чувствуете дискомфорт от похвалы за финансовые успехи",
+                    "Склонны помогать всем деньгами в ущерб себе",
+                    "Скрываете свои доходы от родных и друзей",
+                    "Саботируете собственный успех на подъеме"
+                ],
+                origins: [
+                    "Родители принижали ваши достижения: 'Не зазнавайся'",
+                    "Установка: 'Хорошие дети не просят дорогого'",
+                    "Чувство вины за то, что у вас больше, чем у родителей",
+                    "Страх осуждения от близких за финансовый успех"
+                ],
+                solution: "Работайте с самооценкой - составьте список своих достижений и заслуг. Практикуйте принятие комплиментов. Разрешите себе быть успешной - это не предательство семьи."
+            },
+            fear: {
+                name: "Блок Страха",
+                icon: "😰",
+                description: "Деньги ассоциируются с опасностью. Боитесь потерять деньги, быть обманутой, что успех привлечет зависть.",
+                symptoms: [
+                    "Держите деньги 'под матрасом', боитесь инвестировать",
+                    "Избегаете финансовых рисков даже минимальных",
+                    "Постоянно переживаете о финансовом будущем",
+                    "Боитесь показывать достаток, чтобы не сглазили",
+                    "Откладываете важные финансовые решения"
+                ],
+                origins: [
+                    "Фразы: 'Деньги портят людей', 'Богатых все обманывают'",
+                    "Семейные истории о потерях денег и обманах",
+                    "Страх перед завистью и сглазом из детства",
+                    "Установка что 'деньги - источник проблем'"
+                ],
+                solution: "Постепенно расширяйте зону комфорта с деньгами. Изучите финансовую грамотность. Работайте с психологом над страхами. Найдите примеры людей, которые богаты и счастливы."
+            },
+            unworthiness: {
+                name: "Блок Недостойности",
+                icon: "😞",
+                description: "Глубокая убежденность, что вы не заслуживаете больших денег и успеха. 'Это не для таких как я'.",
+                symptoms: [
+                    "Автоматически соглашаетесь на низкую оплату",
+                    "Считаете, что 'большие деньги не для простых людей'",
+                    "Саботируете возможности заработать больше",
+                    "Чувствуете себя самозванкой при повышении дохода",
+                    "Завидуете успешным, но считаете их 'особенными'"
+                ],
+                origins: [
+                    "Фразы: 'Знай свое место', 'Не высовывайся'",
+                    "Сравнения с 'успешными' людьми как с недосягаемыми",
+                    "Установка о классовых различиях в семье",
+                    "Принижение ваших способностей и талантов"
+                ],
+                solution: "Работайте с самооценкой и внутренним критиком. Ведите дневник достижений. Изучайте биографии успешных людей из простых семей. Найдите ментора или коуча."
+            },
+            sacrifice: {
+                name: "Блок Жертвенности",
+                icon: "😇",
+                description: "Убеждение, что нужно отдавать все другим. Деньги для всех, кроме себя. 'Хорошая женщина жертвует собой'.",
+                symptoms: [
+                    "Постоянно помогаете деньгами родственникам в ущерб себе",
+                    "Не можете потратить на себя без чувства вины",
+                    "Ставите финансовые потребности других выше своих",
+                    "Работаете за копейки 'ради идеи' или 'помощи людям'",
+                    "Чувствуете себя эгоисткой при трате на личные нужды"
+                ],
+                origins: [
+                    "Модель матери-мученицы, которая всё отдавала семье",
+                    "Установка: 'Хорошая женщина думает о других, не о себе'",
+                    "Похвала за жертвенность и самоотречение",
+                    "Осуждение женщин, которые тратят на себя"
+                ],
+                solution: "Научитесь говорить 'нет' финансовым просьбам. Заведите 'эгоистичный' бюджет только на себя. Работайте с границами. Помните: вы не можете помочь другим, если сами на нуле."
+            },
+            control: {
+                name: "Блок Контроля",
+                icon: "🎯",
+                description: "Деньги можно заработать только тяжелым трудом и страданиями. 'Легких денег не бывает'. Постоянное напряжение.",
+                symptoms: [
+                    "Работаете на износ, боитесь делегировать",
+                    "Недоверие к 'легким' способам заработка",
+                    "Чувствуете вину, если работа приносит удовольствие",
+                    "Считаете, что за всё нужно 'бороться'",
+                    "Отвергаете возможности пассивного дохода"
+                ],
+                origins: [
+                    "Установка: 'Без труда не выловишь рыбку из пруда'",
+                    "Модель родителей-трудоголиков",
+                    "Осуждение тех, кто 'легко получает деньги'",
+                    "Страх показаться ленивой или нечестной"
+                ],
+                solution: "Позвольте себе получать удовольствие от работы. Изучите концепцию потока и легкости. Найдите способы автоматизировать доходы. Работайте с убеждениями о труде."
+            },
+            shame: {
+                name: "Блок Стыда",
+                icon: "🙈",
+                description: "О деньгах неприлично говорить. Финансовый успех нужно скрывать. Деньги - это что-то постыдное и грязное.",
+                symptoms: [
+                    "Избегаете разговоров о деньгах и зарплате",
+                    "Стесняетесь демонстрировать достаток",
+                    "Чувствуете дискомфорт при обсуждении цен",
+                    "Скрываете покупки от близких",
+                    "Неловко чувствуете себя в дорогих местах"
+                ],
+                origins: [
+                    "Табу на разговоры о деньгах в семье",
+                    "Установка: 'О деньгах говорить неприлично'",
+                    "Стыд родителей за свое финансовое положение",
+                    "Осуждение тех, кто 'показывает богатство'"
+                ],
+                solution: "Начните открыто говорить о деньгах с близкими. Изучите финансовую грамотность. Найдите сообщество людей, которые нормально относятся к деньгам. Работайте со стыдом в терапии."
+            }
+        };
+        
+        // Функция определения основного блока на основе ответов
+        function determineMainBlock(answers) {
+            const scores = {
+                scarcity: 0,
+                guilt: 0,
+                fear: 0,
+                unworthiness: 0,
+                sacrifice: 0,
+                control: 0,
+                shame: 0
+            };
+            
+            // Анализируем ответы (упрощенная логика)
+            if (answers[1] === 'lack') scores.scarcity += 3;
+            if (answers[1] === 'evil') scores.fear += 2;
+            if (answers[1] === 'hard') scores.control += 3;
+            if (answers[1] === 'shame') scores.shame += 3;
+            
+            if (answers[2] === 'criticism') scores.fear += 2;
+            if (answers[2] === 'envy') scores.guilt += 2;
+            if (answers[2] === 'distance') scores.unworthiness += 3;
+            
+            if (answers[3] === 'guilt') scores.guilt += 3;
+            if (answers[3] === 'sacrifice') scores.sacrifice += 2;
+            
+            if (answers[4] === 'modest') scores.unworthiness += 2;
+            if (answers[4] === 'grateful') scores.sacrifice += 2;
+            if (answers[4] === 'realistic') scores.unworthiness += 2;
+            if (answers[4] === 'suffer') scores.control += 3;
+            
+            if (answers[5] === 'downplay') scores.guilt += 2;
+            if (answers[5] === 'fear') scores.shame += 2;
+            if (answers[5] === 'ignore') scores.unworthiness += 2;
+            
+            if (answers[6] === 'depend') scores.sacrifice += 2;
+            if (answers[6] === 'secondary') scores.sacrifice += 2;
+            
+            if (answers[7] === 'unworthy') scores.unworthiness += 3;
+            if (answers[7] === 'security') scores.fear += 2;
+            if (answers[7] === 'others') scores.sacrifice += 3;
+            if (answers[7] === 'dangerous') scores.fear += 2;
+            
+            // Находим блок с максимальным счетом
+            let maxScore = 0;
+            let mainBlock = 'scarcity'; // по умолчанию
+            
+            for (const [block, score] of Object.entries(scores)) {
+                if (score > maxScore) {
+                    maxScore = score;
+                    mainBlock = block;
+                }
+            }
+            
+            return mainBlock;
+        }
+        
+        // Функция отображения результата
+        function displayResult(blockKey) {
+            const block = moneyBlocks[blockKey];
+            
+            // Основной блок
+            document.getElementById('mainBlock').innerHTML = `
+                <div class="block-icon">${block.icon}</div>
+                <h2 class="block-name">${block.name}</h2>
+                <p class="block-description">${block.description}</p>
+            `;
+            
+            // Симптомы
+            const symptomsList = document.getElementById('symptomsList');
+            symptomsList.innerHTML = '';
+            block.symptoms.forEach(symptom => {
+                const li = document.createElement('li');
+                li.className = 'symptom-item';
+                li.textContent = symptom;
+                symptomsList.appendChild(li);
+            });
+            
+            // Происхождение
+            const originsList = document.getElementById('originsList');
+            originsList.innerHTML = '';
+            block.origins.forEach(origin => {
+                const li = document.createElement('li');
+                li.className = 'origin-item';
+                li.textContent = origin;
+                originsList.appendChild(li);
+            });
+            
+            // Решение
+            document.getElementById('solutionContent').innerHTML = `
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 15px; border-left: 4px solid var(--primary-color);">
+                    <p><strong>Первый шаг к проработке:</strong></p>
+                    <p>${block.solution}</p>
+                </div>
+            `;
+        }
+        
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            // Получаем ответы из localStorage или URL параметров
+            let answers = JSON.parse(localStorage.getItem('quizAnswers') || '{}');
+            let currentBlockKey = 'scarcity'; // по умолчанию
+            
+            // Если ответов нет, показываем дефолтный блок
+            if (Object.keys(answers).length === 0) {
+                displayResult('scarcity');
+            } else {
+                const mainBlock = determineMainBlock(answers);
+                currentBlockKey = mainBlock;
+                displayResult(mainBlock);
+            }
+            
+            // Настройка ссылок шаринга
+            const baseUrl = 'https://lyubovpsy.com';
+            const shareUrl = `${baseUrl}/test-moneyblocks.html`;
+            const resultUrl = `${baseUrl}/quiz-result.html?block=${currentBlockKey}`;
+            
+            const blockName = moneyBlocks[currentBlockKey].name;
+            const shareText = `Прошла тест на денежные блоки - у меня "${blockName}"! Очень точно! Попробуй тоже:`;
+            
+            // Telegram
+            document.getElementById('telegramShare').href = 
+                `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
+            
+            // WhatsApp  
+            document.getElementById('whatsappShare').href = 
+                `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
+            
+            // Facebook
+            document.getElementById('facebookShare').href = 
+                `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+            
+            // Очищаем ответы из localStorage после использования
+            localStorage.removeItem('quizAnswers');
+            
+            // Трекинг просмотра результата
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Quiz Result Viewed');
+            }
+        });
+        
+        // Сохранение ответов при переходе с квиза (для совместимости)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('answers')) {
+            try {
+                const answers = JSON.parse(decodeURIComponent(urlParams.get('answers')));
+                const mainBlock = determineMainBlock(answers);
+                displayResult(mainBlock);
+            } catch (e) {
+                console.error('Error parsing answers from URL');
+                displayResult('scarcity');
+            }
+        } else if (urlParams.get('block')) {
+            // Показываем конкретный блок если передан в URL
+            const blockKey = urlParams.get('block');
+            if (moneyBlocks[blockKey]) {
+                displayResult(blockKey);
+            } else {
+                displayResult('scarcity');
+            }
+        }
+    </script>
+    
+    <!-- TikTok Enhanced Tracking v2.0 - Исправляет все проблемы с конверсиями -->
+    <script src="/js/tiktok-enhanced-tracking.js"></script>
+    
+    <!-- Google Analytics 4 Conversions -->
+    <script src="/js/ga4-conversions.js"></script>
+</body>
+</html>
