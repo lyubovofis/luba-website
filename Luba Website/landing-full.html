@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Денежный Водопад - Трансформация за 8 недель | Любовь Лукащук</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWF15D45V8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZWF15D45V8');
+    </script>
+    
+    <!-- TikTok & FB Pixels -->
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+      ttq.load('D3460MRC77U1O98E3OGG');
+      ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    
+    <!-- TikTok Pixel Fix -->
+    <script src="/js/tiktok-pixel-fix.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .yellow {
+            color: #FFD700;
+        }
+        
+        .hero-text p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .hero-bullets {
+            margin-bottom: 40px;
+        }
+        
+        .hero-bullets li {
+            margin-bottom: 15px;
+            list-style: none;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .hero-bullets li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .cta-button {
+            background: #FFD700;
+            color: #333;
+            padding: 20px 50px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+        }
+        
+        /* Problems Section */
+        .problems {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #333;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .problem-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .problem-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #764ba2;
+        }
+        
+        /* What's Possible Section */
+        .possible {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .possible-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .possible-item {
+            text-align: center;
+        }
+        
+        .possible-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        
+        .possible-item h3 {
+            font-size: 24px;
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+        
+        /* Quiz Section */
+        .quiz-section {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .quiz-box {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #333;
+        }
+        
+        .quiz-box h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-box p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        /* Results Section */
+        .results {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .result-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+        }
+        
+        .result-card h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .result-amount {
+            font-size: 24px;
+            color: #4CAF50;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        /* Program Section */
+        .program {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .program-weeks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .week-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-top: 4px solid #FFD700;
+        }
+        
+        .week-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer CTA */
+        .footer-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .footer-cta h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .urgency {
+            font-size: 24px;
+            color: #FFD700;
+            margin: 20px 0;
+        }
+        
+        /* Legal Footer */
+        footer {
+            background: #222;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-text h1 {
+                font-size: 32px;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <!-- Hotjar Tracking Code for https://lyubovpsy.com/ -->
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:6520317,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Устала работать <span class="yellow">за копейки</span>, пока подруги <span class="yellow">кайфуют</span> на Бали?</h1>
+                <p>Трансформируй отношения с деньгами за 8 недель и начни жить в потоке изобилия</p>
+                
+                <ul class="hero-bullets">
+                    <li>Работаю только индивидуально 1 на 1</li>
+                    <li>Переведу из режима выживания в режим процветания</li>
+                    <li>Результаты уже через 2 недели работы</li>
+                </ul>
+                
+                <a href="quiz-funnel/index.html" class="cta-button">Пройти тест на денежные блоки</a>
+                
+                <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
+                    357 женщин прошли тест сегодня
+                </p>
+            </div>
+            
+            <div class="hero-image">
+                <div style="position: relative;">
+                    <img src="images/luba-hero.webp" alt="Любовь Лукащук" style="width: 100%; max-width: 500px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                    <div style="position: absolute; bottom: 30px; left: 30px; right: 30px; background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; text-align: center;">
+                        <h3 style="color: #764ba2; margin-bottom: 5px;">Любовь Лукащук</h3>
+                        <p style="color: #666; margin: 0;">Мастер трансформации сознания</p>
+                        <p style="color: #FFD700; margin-top: 10px; font-weight: bold;">10 лет практики • 8000+ часов • 1000+ трансформаций</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title">Знакомо?</h2>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">😔</div>
+                    <h3>Понедельник снова</h3>
+                    <p>Ненавижу понедельники и ту работу, куда надо идти. Каждое утро заставляю себя встать с кровати</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">💔</div>
+                    <h3>Денежный потолок</h3>
+                    <p>Уже 3 года на той же зарплате. Будто невидимая стена не дает зарабатывать больше</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">😰</div>
+                    <h3>Завидуешь подругам</h3>
+                    <p>Листаешь сторис подруг из отпусков, а у тебя даже на выходные в соседний город нет</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Luba Section -->
+    <section class="about" style="padding: 80px 20px; background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Кто поможет тебе трансформироваться</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin: 40px 0;">
+                <div>
+                    <h3 style="color: #764ba2; font-size: 28px; margin-bottom: 20px;">Любовь Лукащук</h3>
+                    <p style="font-size: 18px; line-height: 1.6; margin-bottom: 15px;">
+                        <strong>Мастер трансформации сознания</strong> с 10-летним опытом
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">
+                        7 лет назад я сама работала за копейки, завидовала подругам и думала, что большие деньги — не для меня.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">
+                        Переломный момент случился, когда я попала в больницу с выгоранием. Врач сказал: "Ещё полгода — и будет инфаркт". Мне было 32.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">
+                        <strong style="color: #764ba2;">Сегодня я зарабатываю €10,000+ в месяц, путешествую 6 месяцев в году и помогаю женщинам пройти тот же путь.</strong>
+                    </p>
+                    <ul style="line-height: 1.8; margin-top: 20px;">
+                        <li>✓ 10 лет практики в трансформации сознания</li>
+                        <li>✓ 8000+ часов индивидуальных сессий</li>
+                        <li>✓ 1000+ женщин изменили свою жизнь</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="images/luba-hero.webp" alt="Любовь Лукащук" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+            
+            <!-- Галерея фото -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 40px;">
+                <img src="images/IMG_20240313_125759_602.webp" alt="Любовь на консультации" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <img src="images/IMG_20240313_125809_920.webp" alt="Любовь на семинаре" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <img src="images/IMG_20240313_125813_474.webp" alt="Любовь с клиентками" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <img src="images/IMG_20240313_125818_237.webp" alt="Любовь на мероприятии" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <img src="images/IMG_20240313_125823_512.webp" alt="Любовь проводит сессию" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <img src="images/IMG_20240313_125832_795.webp" alt="Любовь с командой" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Possible Section -->
+    <section class="possible">
+        <div class="container">
+            <h2 class="section-title">А что если можно иначе?</h2>
+            <p style="text-align: center; font-size: 20px; color: #666;">Представь, что через 8 недель ты:</p>
+            
+            <div class="possible-items">
+                <div class="possible-item">
+                    <div class="possible-icon">🔥</div>
+                    <h3>Зарабатываешь в 3-5 раз больше</h3>
+                    <p>И это легко, без страданий и надрыва</p>
+                </div>
+                
+                <div class="possible-item">
+                    <div class="possible-icon">✨</div>
+                    <h3>Живешь в потоке изобилия</h3>
+                    <p>Деньги приходят легко, как будто сами находят тебя</p>
+                </div>
+                
+                <div class="possible-item">
+                    <div class="possible-icon">🎯</div>
+                    <h3>Делаешь любимое дело</h3>
+                    <p>Просыпаешься с радостью, а не с тоской</p>
+                </div>
+                
+                <div class="possible-item">
+                    <div class="possible-icon">💎</div>
+                    <h3>Достойна лучшего</h3>
+                    <p>И больше не стесняешься просить и получать</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section">
+        <div class="quiz-box">
+            <h2>Узнай свой денежный блок за 2 минуты!</h2>
+            <p>Ответь на 5 вопросов и получи персональный анализ того, что блокирует твой денежный поток</p>
+            
+            <h3 style="margin: 30px 0; color: #764ba2;">Твой результат готов!</h3>
+            
+            <p style="font-style: italic; margin-bottom: 30px;">
+                "Честно, была в шоке от результата. Попала прямо в точку! Теперь понимаю, что мешало мне столько лет"
+            </p>
+            
+            <a href="quiz-funnel/index.html" class="cta-button">Получить результат</a>
+            
+            <p style="margin-top: 20px; font-size: 14px;">
+                Средний результат через 60 секунд. Конфиденциально.
+            </p>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results">
+        <div class="container">
+            <h2 class="section-title">Они уже в потоке изобилия</h2>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <img src="images/image for reviews Ольга.webp" alt="Ольга" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; object-position: center; margin: 0 auto 15px; border: 4px solid #FFD700; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); display: block;">
+                    <h4>Ольга, 34 года</h4>
+                    <p>Художница, Берлин</p>
+                    <div class="result-amount">€1,800 → €5,400</div>
+                    <p>Раньше стеснялась продавать картины. Теперь продаю на этапе эскиза. Очередь на полгода!</p>
+                </div>
+                
+                <div class="result-card">
+                    <img src="images/Image for reviews Антонина.webp" alt="Антонина" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; object-position: center; margin: 0 auto 15px; border: 4px solid #FFD700; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); display: block;">
+                    <h4>Антонина, 41 год</h4>
+                    <p>Предприниматель, Прага</p>
+                    <div class="result-amount">€2,000 → €8,500</div>
+                    <p>Уволилась с нелюбимой работы, открыла свое дело. Кайфую каждый день!</p>
+                </div>
+                
+                <div class="result-card">
+                    <img src="images/Image for review Даша.webp" alt="Даша" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; object-position: center; margin: 0 auto 15px; border: 4px solid #FFD700; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); display: block;">
+                    <h4>Даша, 29 лет</h4>
+                    <p>Копирайтер, Варшава</p>
+                    <div class="result-amount">€1,500 → €4,200</div>
+                    <p>Подняла цены в 3 раза. Клиенты не ушли, а новые сами находят!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section class="program">
+        <div class="container">
+            <h2 class="section-title">Программа "Денежный Водопад"</h2>
+            <p style="text-align: center; font-size: 20px; color: #666; margin-bottom: 40px;">
+                8 недель персональной трансформации 1 на 1
+            </p>
+            
+            <div class="program-weeks">
+                <div class="week-card">
+                    <div class="week-number">1-2</div>
+                    <h3>Диагностика блоков</h3>
+                    <p>Найдем и обезвредим все денежные блоки из детства</p>
+                </div>
+                
+                <div class="week-card">
+                    <div class="week-number">3-4</div>
+                    <h3>Перепрограммирование</h3>
+                    <p>Заменим старые установки на новые - изобильные</p>
+                </div>
+                
+                <div class="week-card">
+                    <div class="week-number">5-6</div>
+                    <h3>Активация потока</h3>
+                    <p>Включим денежный поток через твое предназначение</p>
+                </div>
+                
+                <div class="week-card">
+                    <div class="week-number">7-8</div>
+                    <h3>Масштабирование</h3>
+                    <p>Закрепим результат и выйдем на новый уровень</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px;">
+                <h3 style="font-size: 28px; margin-bottom: 30px;">Что входит:</h3>
+                <ul style="list-style: none; font-size: 18px; line-height: 2;">
+                    <li>✓ 8 личных сессий по 60-90 минут</li>
+                    <li>✓ Поддержка в WhatsApp 24/7</li>
+                    <li>✓ Домашние задания и практики</li>
+                    <li>✓ Доступ к закрытому сообществу</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <h2>Готова начать трансформацию?</h2>
+        <p class="urgency">Осталось только 3 места на октябрь!</p>
+        <p style="font-size: 20px; margin-bottom: 30px;">Работаю только индивидуально</p>
+        
+        <a href="quiz-funnel/index.html" class="cta-button" style="font-size: 22px; padding: 25px 60px;">
+            Пройти тест и записаться на консультацию
+        </a>
+        
+        <p style="margin-top: 30px; opacity: 0.9;">
+            Цены действительны только до 25 сентября
+        </p>
+    </section>
+
+    <!-- Legal Footer -->
+    <footer>
+        <p>© 2025 Любовь Лукащук | Денежный Водопад</p>
+        <p>Раскроем потенциал | Найдем предназначение | Не является медицинской услугой</p>
+        <p style="margin-top: 20px;">
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms of Service</a> |
+            <a href="mailto:info@moneyflow.com">Contact</a>
+        </p>
+    </footer>
+
+    <!-- TikTok Enhanced Tracking v2.0 - Исправляет все проблемы с конверсиями -->
+    <script src="/js/tiktok-enhanced-tracking.js"></script>
+    
+    <!-- Google Analytics 4 Conversions -->
+    <script src="/js/ga4-conversions.js"></script>
+
+</body>
+</html>

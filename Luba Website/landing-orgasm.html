@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Денежный Водопад - Трансформация через удовольствие | Любовь Лукащук</title>
+    <meta name="description" content="Перестаньте страдать за деньги. Найдите дело, которое приносит кайф и монетизируйте свою страсть. 8 недель индивидуальной трансформации.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Деньги как удовольствие - Трансформация с Любовью Лукащук">
+    <meta property="og:description" content="Когда вы делаете то, что любите, каждая сделка - это кульминация творческой энергии">
+    <meta property="og:image" content="https://lyubovpsy.com/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWF15D45V8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZWF15D45V8');
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- TikTok Pixel Code Start -->
+    <script>
+    !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        ttq.load('D3460MRC77U1O98E3OGG');
+        ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #E91E63;
+            --primary-dark: #C2185B;
+            --secondary: #9C27B0;
+            --accent: #FF4081;
+            --gold: #FFD700;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(102,126,234,0.9) 0%, rgba(118,75,162,0.9) 100%),
+                        url('/images/hero-bg.jpg') center/cover;
+            text-align: center;
+            color: white;
+            position: relative;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 30px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .highlight {
+            color: var(--gold);
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(255,215,0,0.5);
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            border-radius: 30px 30px 0 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            padding: 60px 20px;
+        }
+
+        .pain-block {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .pain-block h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .pain-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .provocative-text {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin: 40px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(233,30,99,0.05) 0%, rgba(156,39,176,0.05) 100%);
+            border-radius: 15px;
+        }
+
+        /* Story Block */
+        .story-block {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 700px;
+            box-shadow: var(--shadow);
+        }
+
+        .story-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .story-result {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(233,30,99,0.1) 0%, rgba(156,39,176,0.1) 100%);
+            border-radius: 30px;
+            margin: 60px auto;
+            max-width: 900px;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(233,30,99,0.3);
+            margin-bottom: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(233,30,99,0.4);
+        }
+
+        .whatsapp-button {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+        }
+
+        .whatsapp-button:hover {
+            box-shadow: 0 15px 40px rgba(37,211,102,0.4);
+        }
+
+        /* Benefits */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .benefit-text {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Transformation */
+        .transformation {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 30px;
+            margin: 60px auto;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .transformation h3 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .transformation-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.2rem;
+            line-height: 2;
+        }
+
+        .transformation-list li:before {
+            content: "✨ ";
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            max-width: 800px;
+            margin: 20px auto 0;
+            line-height: 1.5;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 20px;
+            }
+
+            .main-content {
+                padding: 40px 15px;
+            }
+
+            .story-block {
+                padding: 25px;
+            }
+
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 1.1rem;
+            }
+
+            .benefits {
+                gap: 20px;
+            }
+
+            .transformation {
+                padding: 40px 20px;
+            }
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(233,30,99,0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(233,30,99,0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(233,30,99,0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+    <!-- TikTok Pixel -->
+    <script>
+    !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+        ttq.load('YOUR_PIXEL_ID');
+        ttq.page();
+    }(window, document, 'ttq');
+    </script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Деньги как <span class="highlight">наслаждение</span></h1>
+            <p class="subtitle">Перестаньте страдать за деньги. Найдите то, что возбуждает вашу душу</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Pain Block -->
+            <div class="pain-block">
+                <h2>Да, вы правильно прочитали</h2>
+                <p class="pain-text">
+                    Деньги могут приносить такое же удовольствие. Когда вы делаете то, что любите, 
+                    каждая сделка - это кульминация творческой энергии.
+                </p>
+                
+                <div class="provocative-text">
+                    Перестаньте делать деньги через боль. Это должно быть приятно.
+                </div>
+                
+                <p class="pain-text">
+                    Найдите то, что возбуждает вашу душу, и монетизируйте этот экстаз. 
+                    Когда вы в потоке наслаждения, люди это чувствуют. Они хотят того же. 
+                    И готовы щедро платить за возможность прикоснуться к вашей страсти.
+                </p>
+            </div>
+
+            <!-- Story Block -->
+            <div class="story-block">
+                <p class="story-quote">
+                    "Создание тортов для меня - чистое наслаждение. Клиенты говорят, что 
+                    мои десерты вызывают эйфорию"
+                </p>
+                <p class="story-result">
+                    Клиентка-кондитер: Очередь на 3 месяца вперед
+                </p>
+            </div>
+
+            <!-- Transformation Section -->
+            <div class="transformation">
+                <h3>Хватит имитировать удовольствие от работы</h3>
+                <ul class="transformation-list">
+                    <li>Найдем то, что даст вам настоящий кайф</li>
+                    <li>Трансформируем вашу страсть в денежный поток</li>
+                    <li>Освободим от установки "деньги = страдание"</li>
+                    <li>Научим монетизировать ваше удовольствие</li>
+                </ul>
+            </div>
+
+            <!-- Benefits -->
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h4 class="benefit-title">Доход х3-5</h4>
+                    <p class="benefit-text">От выживания к процветанию за 8 недель</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h4 class="benefit-title">Поток кайфа</h4>
+                    <p class="benefit-text">Деньги приходят через удовольствие</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h4 class="benefit-title">Ваше дело</h4>
+                    <p class="benefit-text">То, что возбуждает душу</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h4 class="benefit-title">Без надрыва</h4>
+                    <p class="benefit-text">Легкость вместо борьбы</p>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2 class="cta-title">Давайте найдем то, что даст вам настоящий кайф</h2>
+                <p class="cta-subtitle">И денежный тоже</p>
+                
+                <a href="https://wa.me/34654420334?text=Хочу%20записаться%20на%20бесплатную%20консультацию%20по%20программе%20Денежный%20Водопад" 
+                   class="cta-button whatsapp-button pulse">
+                    📱 Записаться на бесплатную консультацию WhatsApp
+                </a>
+                
+                <p style="margin-top: 30px; color: #666;">
+                    8 недель индивидуальной работы<br>
+                    Только 3 места в месяц
+                </p>
+
+                <a href="https://lyubovpsy.com/" class="read-more-btn">
+                    Читать больше о программе →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #2b3139; color: #ffffff; padding: 40px 20px; text-align: center; margin-top: 80px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 15px;">
+                © 2025 ФОП Лукащук Любов | Денежный Водопад
+            </p>
+            <p style="font-size: 1rem; margin-bottom: 25px; opacity: 0.9;">
+                Мастер трансформации сознания | Проводник в реальность изобилия
+            </p>
+            
+            <div style="margin-bottom: 25px;">
+                <a href="/privacy.html" style="color: #ffffff; text-decoration: underline; margin: 0 10px;">Политика конфиденциальности</a>
+                <span style="color: #666;">|</span>
+                <a href="/terms.html" style="color: #ffffff; text-decoration: underline; margin: 0 10px;">Условия использования</a>
+                <span style="color: #666;">|</span>
+                <a href="/cookie-policy.html" style="color: #ffffff; text-decoration: underline; margin: 0 10px;">Cookie Policy</a>
+                <span style="color: #666;">|</span>
+                <a href="/disclaimer.html" style="color: #ffffff; text-decoration: underline; margin: 0 10px;">Disclaimer</a>
+            </div>
+            
+            <div style="margin-bottom: 25px;">
+                <p style="margin-bottom: 10px;">Email: care@lyubovpsy.com</p>
+                <p style="margin-bottom: 10px;">
+                    <a href="https://wa.me/34654420334" style="color: #25D366; text-decoration: none;">WhatsApp</a>
+                    <span style="color: #666;">|</span>
+                    <a href="https://t.me/lyubovpsy" style="color: #0088cc; text-decoration: none;">Telegram</a>
+                </p>
+                <p style="font-size: 0.9rem; opacity: 0.8;">Одесса, Украина</p>
+            </div>
+            
+            <div style="border-top: 1px solid #444; padding-top: 25px; margin-top: 25px;">
+                <p style="font-size: 0.85rem; line-height: 1.6; opacity: 0.7; max-width: 900px; margin: 0 auto 15px;">
+                    Не является медицинской услугой. Результаты индивидуальны.
+                </p>
+                <p style="font-size: 0.85rem; line-height: 1.8; opacity: 0.6; max-width: 900px; margin: 0 auto;">
+                    <strong>Отказ от ответственности:</strong> Результаты программы индивидуальны и зависят от вашей готовности к изменениям и выполнения рекомендаций. 
+                    Программа является работой с трансформацией сознания и раскрытием потенциала, не является медицинской услугой и не заменяет консультацию специалиста. 
+                    Все отзывы и истории успеха реальны, имена изменены по просьбе клиенток. 
+                    Мы не гарантируем конкретный доход, но гарантируем трансформацию при полном прохождении программы.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Денежный Водопад - Трансформация отношений с деньгами",
+        "description": "8-недельная программа трансформации денежных блоков",
+        "provider": {
+            "@type": "Person",
+            "name": "Любовь Лукащук",
+            "jobTitle": "Мастер трансформации сознания"
+        },
+        "areaServed": {
+            "@type": "Place",
+            "name": "Европа"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "2000",
+            "priceCurrency": "EUR"
+        }
+    }
+    </script>
+
+    <!-- Tracking Scripts -->
+    <!-- TikTok Pixel Fix ОБЯЗАТЕЛЬНО -->
+    <script src="/js/tiktok-pixel-fix.js"></script>
+    
+    <script>
+        // Track page view с обязательными полями
+        if (typeof ttq !== 'undefined') {
+            ttq.track('ViewContent', {
+                content_id: 'landing_orgasm',
+                content_type: 'product',
+                content_name: 'money_pleasure',
+                value: 2000,
+                currency: 'EUR'
+            });
+        }
+
+        // Track WhatsApp clicks
+        document.querySelectorAll('.whatsapp-button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (typeof ttq !== 'undefined') {
+                    ttq.track('Contact', {
+                        content_name: 'whatsapp_consultation'
+                    });
+                }
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'WhatsApp',
+                        'event_label': 'Consultation Request'
+                    });
+                }
+            });
+        });
+
+        // Track scroll depth
+        let scrollTracked = {25: false, 50: false, 75: false, 100: false};
+        
+        window.addEventListener('scroll', function() {
+            const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+            
+            [25, 50, 75, 100].forEach(threshold => {
+                if (scrollPercent >= threshold && !scrollTracked[threshold]) {
+                    scrollTracked[threshold] = true;
+                    if (typeof ttq !== 'undefined') {
+                        ttq.track('ScrollDepth', {
+                            depth: threshold
+                        });
+                    }
+                }
+            });
+        });
+
+        // Exit intent popup (optional)
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY <= 0 && !exitIntentShown) {
+                exitIntentShown = true;
+                // You can add exit intent logic here
+            }
+        });
+    
+    <!-- TikTok Events Tracking -->
+    <!-- TikTok Enhanced Tracking v2.0 - Исправляет все проблемы с конверсиями -->
+    <script src="/js/tiktok-enhanced-tracking.js"></script>
+    
+    <!-- УНИВЕРСАЛЬНЫЙ GDPR СКРИПТ -->
+    <script src="/js/gdpr.js"></script>
+    <!-- WhatsApp Tracking -->
+    <script src="/js/whatsapp-tracking.js"></script>
+</body>
+</html>
