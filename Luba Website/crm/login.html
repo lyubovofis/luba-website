@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRM Login - Денежный Водопад | lyubovpsy.com</title>
-    
-    <!-- Supabase -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
+    <title>Вход в CRM - Денежный Водопад</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg: #e0e5ec;
+            --primary: #7c3aed;
+            --primary-light: #a78bfa;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+            --shadow-inset: inset 6px 6px 10px #a3b1c6, inset -6px -6px 10px #ffffff;
+            --radius: 20px;
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -26,330 +30,293 @@
         }
         
         .login-container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 400px;
             width: 100%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 450px;
         }
         
-        .logo {
+        .login-card {
+            background: var(--bg);
+            border-radius: var(--radius);
+            padding: 50px 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .logo-section {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
         
         .logo-icon {
-            font-size: 50px;
-            margin-bottom: 10px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
         }
         
         h1 {
-            color: #6b46c1;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: var(--text-light);
+            font-size: 14px;
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
-        label {
+        .form-label {
             display: block;
-            margin-bottom: 8px;
-            color: #374151;
-            font-weight: 500;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text);
         }
         
-        input {
+        .form-input {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.2s;
+            padding: 14px 18px;
+            background: var(--bg);
+            box-shadow: var(--shadow-inset);
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            color: var(--text);
+            transition: all 0.3s;
         }
         
-        input:focus {
+        .form-input:focus {
             outline: none;
-            border-color: #6b46c1;
+            box-shadow: var(--shadow-inset), 0 0 0 3px var(--primary-light);
+        }
+        
+        .form-input::placeholder {
+            color: var(--text-light);
+            opacity: 0.6;
         }
         
         .btn {
             width: 100%;
-            padding: 14px;
-            background: #6b46c1;
-            color: white;
+            padding: 14px 24px;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: all 0.3s;
+            margin-top: 10px;
         }
         
-        .btn:hover {
-            background: #553c9a;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: var(--shadow);
         }
         
-        .btn:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(124, 58, 237, 0.3);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
         }
         
         .error-message {
-            color: #ef4444;
+            background: #fee2e2;
+            color: #dc2626;
+            padding: 12px;
+            border-radius: 10px;
             font-size: 14px;
-            margin-top: 10px;
-            text-align: center;
+            margin-bottom: 20px;
             display: none;
+            text-align: center;
         }
         
         .success-message {
-            color: #10b981;
+            background: #dcfce7;
+            color: #16a34a;
+            padding: 12px;
+            border-radius: 10px;
             font-size: 14px;
-            margin-top: 10px;
-            text-align: center;
-            display: none;
-        }
-        
-        .loading {
+            margin-bottom: 20px;
             display: none;
             text-align: center;
-            color: #6b46c1;
-            margin-top: 10px;
         }
         
-        .info-box {
-            background: #f3f4f6;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #6b7280;
+        .remember-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
         }
         
-        .info-box strong {
-            color: #374151;
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            background: var(--bg);
+            box-shadow: var(--shadow-inset);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            appearance: none;
         }
         
-        .back-link {
+        .checkbox:checked {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            box-shadow: var(--shadow);
+        }
+        
+        .checkbox:checked::after {
+            content: '✓';
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+        }
+        
+        .footer {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
+            color: var(--text-light);
+            font-size: 13px;
         }
         
-        .back-link a {
-            color: #6b46c1;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        
-        .back-link a:hover {
-            text-decoration: underline;
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 40px 30px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <div class="logo">
-            <div class="logo-icon">💰</div>
-        </div>
-        
-        <h1>CRM Денежный Водопад</h1>
-        
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    placeholder="admin@lyubovpsy.com"
-                    required
-                    autocomplete="email"
-                >
+        <div class="login-card">
+            <div class="logo-section">
+                <div class="logo-icon">💰</div>
+                <h1>CRM Pro</h1>
+                <p class="subtitle">Денежный Водопад</p>
             </div>
             
-            <div class="form-group">
-                <label for="password">Пароль</label>
-                <input 
-                    type="password" 
-                    id="password" 
-                    name="password" 
-                    placeholder="••••••••"
-                    required
-                    autocomplete="current-password"
-                >
+            <div id="errorMessage" class="error-message"></div>
+            <div id="successMessage" class="success-message"></div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Логин</label>
+                    <input type="text" class="form-input" id="username" placeholder="Введите логин" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Пароль</label>
+                    <input type="password" class="form-input" id="password" placeholder="Введите пароль" required>
+                </div>
+                
+                <div class="remember-section">
+                    <input type="checkbox" class="checkbox" id="remember">
+                    <label for="remember" style="cursor:pointer">Запомнить на 14 дней</label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    Войти в систему
+                </button>
+            </form>
+            
+            <div class="footer">
+                <p>© 2025 Любовь Лукащук</p>
             </div>
-            
-            <button type="submit" class="btn" id="loginBtn">
-                Войти
-            </button>
-            
-            <div class="error-message" id="errorMessage"></div>
-            <div class="success-message" id="successMessage"></div>
-            <div class="loading" id="loading">Проверка...</div>
-        </form>
-        
-        <div class="info-box">
-            <strong>Демо доступ:</strong><br>
-            Email: admin@lyubovpsy.com<br>
-            Пароль: admin123
-        </div>
-        
-        <div class="back-link">
-            <a href="/">← Вернуться на сайт</a>
         </div>
     </div>
     
     <script>
-        // Supabase configuration
-        const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
+        // Check if already logged in
+        const isAuthenticated = localStorage.getItem('crm_authenticated');
+        const authExpiration = localStorage.getItem('crm_auth_expiration');
         
-        let supabase;
-        
-        // Initialize Supabase
-        window.addEventListener('DOMContentLoaded', function() {
-            try {
-                const { createClient } = window.supabase;
-                supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-                    auth: {
-                        autoRefreshToken: true,
-                        persistSession: true,
-                        detectSessionInUrl: true
-                    }
-                });
-                console.log('Supabase initialized');
-                
-                // Check if already logged in
-                checkAuth();
-            } catch (error) {
-                console.error('Failed to initialize Supabase:', error);
-                showError('Ошибка инициализации. Попробуйте обновить страницу.');
-            }
-        });
-        
-        // Check authentication status
-        async function checkAuth() {
-            // First check demo auth
-            if (localStorage.getItem('crm_authenticated') === 'true') {
-                window.location.href = '/crm/dashboard.html';
-                return;
-            }
+        if (isAuthenticated && authExpiration) {
+            const now = new Date().getTime();
+            const expiration = parseInt(authExpiration);
             
-            // Then check Supabase auth
-            try {
-                const { data: { session } } = await supabase.auth.getSession();
-                if (session) {
-                    window.location.href = '/crm/dashboard.html';
-                }
-            } catch (error) {
-                console.error('Auth check error:', error);
+            if (now < expiration) {
+                window.location.href = '/crm/';
+            } else {
+                localStorage.removeItem('crm_authenticated');
+                localStorage.removeItem('crm_auth_expiration');
+                localStorage.removeItem('crm_user');
             }
         }
         
-        // Handle login form submission
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const email = document.getElementById('email').value.trim().toLowerCase();
+            const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
             
-            // Clear previous messages
-            hideMessages();
-            
-            // Show loading
-            showLoading();
-            disableForm(true);
-            
-            try {
-                // For demo purposes, accept multiple admin emails
-                const validEmails = ['admin@lyubovpsy.com', 'admin@lubawaterfall.com', 'luba', 'admin'];
-                const validPassword = 'admin123';
+            // Check credentials
+            if (username === 'Luba' && password === 'Luba1488@') {
+                // Set authentication
+                localStorage.setItem('crm_authenticated', 'true');
+                localStorage.setItem('crm_user', JSON.stringify({
+                    username: 'Luba',
+                    name: 'Любовь Лукащук',
+                    role: 'admin'
+                }));
                 
-                if ((validEmails.includes(email) || email.includes('@lyubovpsy.com')) && password === validPassword) {
-                    // Set demo session in localStorage
-                    localStorage.setItem('crm_authenticated', 'true');
-                    localStorage.setItem('crm_user', JSON.stringify({
-                        email: email,
-                        role: 'admin',
-                        name: 'Администратор'
-                    }));
-                    
-                    showSuccess('Успешный вход! Перенаправление...');
-                    
-                    // Redirect to dashboard
-                    setTimeout(() => {
-                        window.location.href = '/crm/dashboard.html';
-                    }, 1000);
+                // Set expiration based on remember checkbox
+                if (remember) {
+                    const expirationDate = new Date();
+                    expirationDate.setDate(expirationDate.getDate() + 14);
+                    localStorage.setItem('crm_auth_expiration', expirationDate.getTime());
                 } else {
-                    // Try Supabase Auth (for future real implementation)
-                    const { data, error } = await supabase.auth.signInWithPassword({
-                        email: email,
-                        password: password
-                    });
-                    
-                    if (error) {
-                        throw new Error('Неверный email или пароль');
-                    }
-                    
-                    if (data.session) {
-                        // Also set localStorage for consistency
-                        localStorage.setItem('crm_authenticated', 'true');
-                        localStorage.setItem('crm_user', JSON.stringify({
-                            email: email,
-                            role: 'admin',
-                            name: 'Администратор'
-                        }));
-                        
-                        showSuccess('Успешный вход! Перенаправление...');
-                        setTimeout(() => {
-                            window.location.href = '/crm/dashboard.html';
-                        }, 1000);
-                    }
+                    // 24 hours if not remembered
+                    const expirationDate = new Date();
+                    expirationDate.setHours(expirationDate.getHours() + 24);
+                    localStorage.setItem('crm_auth_expiration', expirationDate.getTime());
                 }
-            } catch (error) {
-                console.error('Login error:', error);
-                showError(error.message || 'Неверный email или пароль');
-            } finally {
-                hideLoading();
-                disableForm(false);
+                
+                // Show success and redirect
+                document.getElementById('successMessage').textContent = 'Вход выполнен успешно!';
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('errorMessage').style.display = 'none';
+                
+                setTimeout(() => {
+                    window.location.href = '/crm/';
+                }, 1000);
+            } else {
+                // Show error
+                document.getElementById('errorMessage').textContent = 'Неверный логин или пароль';
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+                
+                // Shake effect
+                document.querySelector('.login-card').style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    document.querySelector('.login-card').style.animation = '';
+                }, 500);
             }
         });
-        
-        // UI Helper functions
-        function showError(message) {
-            const errorEl = document.getElementById('errorMessage');
-            errorEl.textContent = message;
-            errorEl.style.display = 'block';
-        }
-        
-        function showSuccess(message) {
-            const successEl = document.getElementById('successMessage');
-            successEl.textContent = message;
-            successEl.style.display = 'block';
-        }
-        
-        function showLoading() {
-            document.getElementById('loading').style.display = 'block';
-        }
-        
-        function hideLoading() {
-            document.getElementById('loading').style.display = 'none';
-        }
-        
-        function hideMessages() {
-            document.getElementById('errorMessage').style.display = 'none';
-            document.getElementById('successMessage').style.display = 'none';
-        }
-        
-        function disableForm(disabled) {
-            document.getElementById('email').disabled = disabled;
-            document.getElementById('password').disabled = disabled;
-            document.getElementById('loginBtn').disabled = disabled;
-        }
     </script>
+    
+    <style>
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+    </style>
 </body>
 </html>
