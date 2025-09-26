@@ -1,0 +1,127 @@
+        // Initialize
+        window.addEventListener('DOMContentLoaded', async function() {
+            await loadData();
+            setupDragAndDrop();
+            setupAddLeadForm();
+            setupEditLeadForm();
+        });
+        
+        // Edit lead functions
+        function editLead(leadId) {
+            const lead = [...allLeads, ...quizLeadsNotInFunnel].find(l => l.id == leadId);
+            if (!lead) return;
+            
+            // Fill form with current data
+            document.getElementById('editLeadId').value = lead.id;
+            document.getElementById('editLeadName').value = lead.name || '';
+            document.getElementById('editLeadPhone').value = lead.phone || '';
+            document.getElementById('editLeadEmail').value = lead.email || '';
+            document.getElementById('editLeadAge').value = lead.age || '';
+            document.getElementById('editLeadBlock').value = lead.main_block || '';
+            document.getElementById('editLeadSource').value = lead.source || lead.utm_source || '';
+            document.getElementById('editLeadStage').value = lead.stage || 'new';
+            
+            // Show modal
+            document.getElementById('editLeadModal').classList.add('active');
+        }
+        
+        function closeEditModal() {
+            document.getElementById('editLeadModal').classList.remove('active');
+        }
+        
+        function setupEditLeadForm() {
+            document.getElementById('editLeadForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const leadId = parseInt(document.getElementById('editLeadId').value);
+                const updatedData = {
+                    name: document.getElementById('editLeadName').value,
+                    phone: document.getElementById('editLeadPhone').value,
+                    email: document.getElementById('editLeadEmail').value || null,
+                    age: document.getElementById('editLeadAge').value ? parseInt(document.getElementById('editLeadAge').value) : null,
+                    main_block: document.getElementById('editLeadBlock').value || null,
+                    source: document.getElementById('editLeadSource').value || null,
+                    stage: document.getElementById('editLeadStage').value
+                };
+                
+                // Update in local data
+                let lead = allLeads.find(l => l.id == leadId);
+                if (!lead) {
+                    lead = quizLeadsNotInFunnel.find(l => l.id == leadId);
+                }
+                
+                if (lead) {
+                    Object.assign(lead, updatedData);
+                    
+                    // Try to update in Supabase
+                    try {
+                        if (typeof window.supabase !== 'undefined') {
+                            const { createClient } = window.supabase;
+                            const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                            
+                            const { error } = await supabase
+                                .from('quiz_leads')
+                                .update(updatedData)
+                                .eq('id', leadId);
+                            
+                            if (error) {
+                                console.error('Error updating lead:', error);
+                                alert('Изменения сохранены локально, но не в базе данных');
+                            } else {
+                                console.log('Lead updated successfully');
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Failed to update:', error);
+                    }
+                    
+                    renderAll();
+                    closeEditModal();
+                }
+            });
+        }
+        
+        async function deleteLead() {
+            if (!confirm('Вы уверены, что хотите удалить этого лида?')) return;
+            
+            const leadId = parseInt(document.getElementById('editLeadId').value);
+            
+            // Remove from local data
+            let index = allLeads.findIndex(l => l.id == leadId);
+            if (index > -1) {
+                allLeads.splice(index, 1);
+            } else {
+                index = quizLeadsNotInFunnel.findIndex(l => l.id == leadId);
+                if (index > -1) {
+                    quizLeadsNotInFunnel.splice(index, 1);
+                }
+            }
+            
+            // Try to delete from Supabase
+            try {
+                if (typeof window.supabase !== 'undefined') {
+                    const { createClient } = window.supabase;
+                    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                    
+                    const { error } = await supabase
+                        .from('quiz_leads')
+                        .delete()
+                        .eq('id', leadId);
+                    
+                    if (error) {
+                        console.error('Error deleting lead:', error);
+                        alert('Удалено локально, но не из базы данных');
+                    } else {
+                        console.log('Lead deleted successfully');
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to delete:', error);
+            }
+            
+            renderAll();
+            closeEditModal();
+        }
+    </script>
+</body>
+</html>
