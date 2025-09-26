@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/crm",
-      "destination": "/crm/index.html"
-    }
-  ]
-}
