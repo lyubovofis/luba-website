@@ -764,6 +764,78 @@
         </div>
     </div>
     
+    <!-- Edit Lead Modal -->
+    <div id="editLeadModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Редактировать лида</h2>
+                <button class="modal-close" onclick="closeEditModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editLeadForm">
+                    <input type="hidden" id="editLeadId">
+                    <div class="form-group">
+                        <label class="form-label">Имя *</label>
+                        <input type="text" class="form-input" id="editLeadName" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Телефон *</label>
+                        <input type="tel" class="form-input" id="editLeadPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" id="editLeadEmail">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Возраст</label>
+                        <input type="number" class="form-input" id="editLeadAge" min="18" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Денежный блок</label>
+                        <select class="form-select" id="editLeadBlock">
+                            <option value="">Не определен</option>
+                            <option value="Страх больших денег">Страх больших денег</option>
+                            <option value="Чувство недостойности">Чувство недостойности</option>
+                            <option value="Самосаботаж">Самосаботаж</option>
+                            <option value="Синдром самозванца">Синдром самозванца</option>
+                            <option value="Выгорание">Выгорание</option>
+                            <option value="Готовность к росту">Готовность к росту</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Источник</label>
+                        <select class="form-select" id="editLeadSource">
+                            <option value="">Не указан</option>
+                            <option value="quiz">Квиз</option>
+                            <option value="manual">Добавлен вручную</option>
+                            <option value="whatsapp">WhatsApp</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="referral">Рекомендация</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Этап</label>
+                        <select class="form-select" id="editLeadStage">
+                            <option value="new">Написали</option>
+                            <option value="consultation">Консультация</option>
+                            <option value="paid">Оплатили</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <button type="submit" class="action-btn primary" style="flex: 1;">
+                            💾 Сохранить
+                        </button>
+                        <button type="button" class="action-btn" style="flex: 1; background: var(--danger); color: white;" onclick="deleteLead()">
+                            🗑️ Удалить
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
     <!-- Lead Detail Modal -->
     <div id="leadModal" class="modal">
         <div class="modal-content">
@@ -804,26 +876,51 @@
                         .select('*')
                         .order('created_at', { ascending: false });
                     
+                    if (error) {
+                        console.error('Supabase error:', error);
+                        loadMockData();
+                        return;
+                    }
+                    
                     if (data && data.length > 0) {
-                        // Separate quiz leads not in funnel
+                        console.log('Loaded leads from Supabase:', data);
+                        
+                        // Process all leads - set default stage if missing
+                        data.forEach(lead => {
+                            if (!lead.stage) {
+                                lead.stage = 'new';
+                            }
+                        });
+                        
+                        // Separate quiz leads not in funnel (those without stage or with quiz_new)
                         quizLeadsNotInFunnel = data.filter(lead => 
-                            lead.quiz_type && (!lead.stage || lead.stage === 'quiz_new')
+                            lead.quiz_type && lead.stage === 'quiz_new'
                         );
                         
-                        // All leads in funnel
+                        // All leads in funnel (including quiz leads that were moved to funnel)
                         allLeads = data.filter(lead => 
                             lead.stage && lead.stage !== 'quiz_new'
                         );
                         
                         renderAll();
                         return;
+                    } else {
+                        console.log('No leads in database, using mock data');
+                        loadMockData();
                     }
+                } else {
+                    console.error('Supabase library not loaded');
+                    loadMockData();
                 }
             } catch (error) {
-                console.log('Using mock data:', error);
+                console.error('Error loading data:', error);
+                loadMockData();
             }
+        }
+        
+        function loadMockData() {
+            console.log('Loading mock data for demo');
             
-            // Mock data
             quizLeadsNotInFunnel = [
                 {
                     id: 101,
@@ -847,8 +944,8 @@
             allLeads = [
                 {
                     id: 1,
-                    name: 'Марина',
-                    phone: '+34 600 111 111',
+                    name: 'Марина (Demo)',
+                    phone: '+34600111111',
                     email: 'marina@test.com',
                     stage: 'new',
                     main_block: 'Страх больших денег',
@@ -859,8 +956,8 @@
                 },
                 {
                     id: 2,
-                    name: 'Оксана',
-                    phone: '+34 600 222 222',
+                    name: 'Оксана (Demo)',
+                    phone: '+34600222222',
                     stage: 'new',
                     main_block: 'Самосаботаж',
                     source: 'Instagram',
@@ -869,8 +966,8 @@
                 },
                 {
                     id: 3,
-                    name: 'Елена',
-                    phone: '+34 600 333 333',
+                    name: 'Елена (Demo)',
+                    phone: '+34600333333',
                     stage: 'consultation',
                     main_block: 'Чувство недостойности',
                     source: 'manual',
@@ -879,8 +976,8 @@
                 },
                 {
                     id: 4,
-                    name: 'Светлана',
-                    phone: '+34 600 444 444',
+                    name: 'Светлана (Demo)',
+                    phone: '+34600444444',
                     stage: 'consultation',
                     main_block: 'Выгорание',
                     quiz_type: 'money_code',
@@ -888,8 +985,8 @@
                 },
                 {
                     id: 5,
-                    name: 'Анна',
-                    phone: '+34 600 555 555',
+                    name: 'Анна (Demo)',
+                    phone: '+34600555555',
                     stage: 'paid',
                     main_block: 'Готовность к росту',
                     amount: 2000,
@@ -936,8 +1033,9 @@
                 <div class="lead-header">
                     <div class="lead-name" onclick="showLeadDetails(${lead.id})">${lead.name || 'Без имени'}</div>
                     <div class="lead-actions">
-                        <button class="quick-action" onclick="contactLead('${lead.phone}')" title="WhatsApp">💬</button>
-                        <button class="quick-action" onclick="moveToNext(${lead.id})" title="Следующий этап">➡️</button>
+                        <button class="quick-action" onclick="event.stopPropagation(); editLead(${lead.id})" title="Редактировать">✏️</button>
+                        <button class="quick-action" onclick="event.stopPropagation(); contactLead('${lead.phone || ''}', ${lead.id})" title="Написать в WhatsApp">💬</button>
+                        <button class="quick-action" onclick="event.stopPropagation(); moveToNext(${lead.id})" title="Следующий этап">➡️</button>
                     </div>
                 </div>
                 <div class="lead-info">📱 ${lead.phone || lead.email || 'Нет контакта'}</div>
@@ -980,6 +1078,9 @@
                     </div>
                     <div class="quiz-lead-block">${lead.main_block || 'Блок не определен'}</div>
                     <div class="quiz-lead-actions">
+                        <button class="action-btn" style="background: var(--gray); color: white;" onclick="editLead(${lead.id})">
+                            ✏️ Редактировать
+                        </button>
                         <button class="action-btn primary" onclick="viewQuizDetails(${lead.id})">
                             👁️ Детали
                         </button>
@@ -1086,7 +1187,7 @@
                 ` : ''}
                 
                 <div style="display: flex; gap: 10px; margin-top: 30px;">
-                    <button class="action-btn primary" onclick="contactLead('${lead.phone}')" style="flex: 1;">
+                    <button class="action-btn primary" onclick="contactLead('${lead.phone || ''}', ${lead.id})" style="flex: 1;">
                         💬 Написать в WhatsApp
                     </button>
                     ${lead.stage !== 'paid' ? `
@@ -1123,14 +1224,52 @@
             document.getElementById('leadModal').classList.remove('active');
         }
         
-        function contactLead(phone) {
+        function contactLead(phone, leadId) {
             if (phone) {
-                const cleanPhone = phone.replace(/\D/g, '');
-                window.open(`https://wa.me/${cleanPhone}`, '_blank');
+                // Clean phone number - remove all non-digits except +
+                let cleanPhone = phone.replace(/[^\d+]/g, '');
+                
+                // If no + at start and no country code, ask user or use default
+                if (!cleanPhone.startsWith('+')) {
+                    // Check if starts with common country codes
+                    if (!cleanPhone.startsWith('34') && !cleanPhone.startsWith('7') && 
+                        !cleanPhone.startsWith('380') && !cleanPhone.startsWith('375')) {
+                        // Default to Spain if unclear
+                        cleanPhone = '34' + cleanPhone;
+                    }
+                }
+                
+                // Remove + for WhatsApp URL
+                cleanPhone = cleanPhone.replace('+', '');
+                
+                // Get lead info for message
+                const lead = [...allLeads, ...quizLeadsNotInFunnel].find(l => l.id == leadId);
+                let message = 'Здравствуйте! ';
+                
+                if (lead) {
+                    if (lead.name) {
+                        message = `Здравствуйте, ${lead.name}! `;
+                    }
+                    if (lead.main_block) {
+                        message += `Я Любовь Лукащук, специалист по денежным блокам. Вы прошли тест и ваш результат: "${lead.main_block}". Готовы обсудить, как это трансформировать?`;
+                    } else {
+                        message += `Я Любовь Лукащук. Спасибо за ваш интерес к программе "Денежный Водопад". Когда вам будет удобно провести бесплатную диагностическую консультацию?`;
+                    }
+                }
+                
+                const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+                
+                // Update lead stage if it's new
+                if (lead && lead.stage === 'new') {
+                    moveToNext(leadId);
+                }
+            } else {
+                alert('Номер телефона не указан');
             }
         }
         
-        function moveToNext(leadId) {
+        async function moveToNext(leadId) {
             const lead = allLeads.find(l => l.id == leadId);
             if (!lead) return;
             
@@ -1139,23 +1278,86 @@
             
             if (currentIndex < stages.length - 1) {
                 lead.stage = stages[currentIndex + 1];
+                
+                // Try to update in Supabase
+                try {
+                    if (typeof window.supabase !== 'undefined') {
+                        const { createClient } = window.supabase;
+                        const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                        
+                        const { error } = await supabase
+                            .from('leads')
+                            .update({ stage: lead.stage })
+                            .eq('id', leadId);
+                        
+                        if (error) {
+                            console.error('Error updating lead:', error);
+                        } else {
+                            console.log('Lead updated in database');
+                        }
+                    }
+                } catch (error) {
+                    console.error('Failed to update in database:', error);
+                }
+                
                 renderAll();
                 closeModal();
             }
         }
         
-        function addToFunnel(leadId) {
+        async function addToFunnel(leadId) {
             const leadIndex = quizLeadsNotInFunnel.findIndex(l => l.id == leadId);
             if (leadIndex > -1) {
                 const lead = quizLeadsNotInFunnel[leadIndex];
                 lead.stage = 'new';
+                
+                // Try to update in Supabase
+                try {
+                    if (typeof window.supabase !== 'undefined') {
+                        const { createClient } = window.supabase;
+                        const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                        
+                        const { error } = await supabase
+                            .from('leads')
+                            .update({ stage: 'new' })
+                            .eq('id', leadId);
+                        
+                        if (error) {
+                            console.error('Error updating lead:', error);
+                        }
+                    }
+                } catch (error) {
+                    console.error('Failed to update in database:', error);
+                }
+                
                 allLeads.unshift(lead);
                 quizLeadsNotInFunnel.splice(leadIndex, 1);
                 renderAll();
             }
         }
         
-        function addAllToFunnel() {
+        async function addAllToFunnel() {
+            const leadIds = quizLeadsNotInFunnel.map(l => l.id);
+            
+            // Try to update all in Supabase
+            try {
+                if (typeof window.supabase !== 'undefined' && leadIds.length > 0) {
+                    const { createClient } = window.supabase;
+                    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                    
+                    const { error } = await supabase
+                        .from('leads')
+                        .update({ stage: 'new' })
+                        .in('id', leadIds);
+                    
+                    if (error) {
+                        console.error('Error updating leads:', error);
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to update in database:', error);
+            }
+            
             quizLeadsNotInFunnel.forEach(lead => {
                 lead.stage = 'new';
                 allLeads.unshift(lead);
@@ -1175,7 +1377,7 @@
                     column.classList.remove('drag-over');
                 });
                 
-                column.addEventListener('drop', e => {
+                column.addEventListener('drop', async e => {
                     e.preventDefault();
                     column.classList.remove('drag-over');
                     
@@ -1183,12 +1385,34 @@
                         const container = column.querySelector('.leads-container');
                         container.appendChild(draggedElement);
                         
-                        const leadId = draggedElement.dataset.id;
+                        const leadId = parseInt(draggedElement.dataset.id);
                         const newStage = column.dataset.stage;
                         const lead = allLeads.find(l => l.id == leadId);
                         
-                        if (lead) {
+                        if (lead && lead.stage !== newStage) {
                             lead.stage = newStage;
+                            
+                            // Update in Supabase
+                            try {
+                                if (typeof window.supabase !== 'undefined') {
+                                    const { createClient } = window.supabase;
+                                    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                                    
+                                    const { error } = await supabase
+                                        .from('leads')
+                                        .update({ stage: newStage })
+                                        .eq('id', leadId);
+                                    
+                                    if (error) {
+                                        console.error('Error updating lead stage:', error);
+                                    } else {
+                                        console.log(`Lead ${leadId} moved to ${newStage}`);
+                                    }
+                                }
+                            } catch (error) {
+                                console.error('Failed to update stage:', error);
+                            }
+                            
                             renderAll();
                         }
                     }
@@ -1227,20 +1451,48 @@
         }
         
         function setupAddLeadForm() {
-            document.getElementById('addLeadForm').addEventListener('submit', function(e) {
+            document.getElementById('addLeadForm').addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
                 const newLead = {
-                    id: Date.now(),
                     name: document.getElementById('leadName').value,
                     phone: document.getElementById('leadPhone').value,
-                    email: document.getElementById('leadEmail').value,
+                    email: document.getElementById('leadEmail').value || null,
                     age: document.getElementById('leadAge').value ? parseInt(document.getElementById('leadAge').value) : null,
-                    main_block: document.getElementById('leadBlock').value,
+                    main_block: document.getElementById('leadBlock').value || null,
                     source: document.getElementById('leadSource').value,
                     stage: document.getElementById('leadStage').value,
                     created_at: new Date().toISOString()
                 };
+                
+                // Try to save to Supabase
+                try {
+                    if (typeof window.supabase !== 'undefined') {
+                        const { createClient } = window.supabase;
+                        const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                        
+                        const { data, error } = await supabase
+                            .from('leads')
+                            .insert([newLead])
+                            .select()
+                            .single();
+                        
+                        if (error) {
+                            console.error('Error adding lead:', error);
+                            // Add with temp ID if database fails
+                            newLead.id = Date.now();
+                        } else {
+                            console.log('Lead added to database:', data);
+                            newLead.id = data.id;
+                        }
+                    } else {
+                        // Add with temp ID if no Supabase
+                        newLead.id = Date.now();
+                    }
+                } catch (error) {
+                    console.error('Failed to add to database:', error);
+                    newLead.id = Date.now();
+                }
                 
                 allLeads.unshift(newLead);
                 renderAll();
