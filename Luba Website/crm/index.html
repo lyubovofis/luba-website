@@ -473,6 +473,10 @@
                         <input type="email" class="form-input" id="leadEmail">
                     </div>
                     <div class="form-group">
+                        <label class="form-label">Возраст</label>
+                        <input type="number" class="form-input" id="leadAge" min="18" max="100">
+                    </div>
+                    <div class="form-group">
                         <label class="form-label">Источник</label>
                         <select class="form-select" id="leadSource">
                             <option value="manual">Вручную</option>
@@ -616,6 +620,7 @@
                     </div>
                 </div>
                 <div class="lead-meta">📱 ${lead.phone || 'Нет телефона'}</div>
+                ${lead.age ? `<div class="lead-meta">👤 ${lead.age} лет</div>` : ''}
                 <div class="lead-meta">📅 ${new Date(lead.created_at).toLocaleDateString('ru')}</div>
                 <div class="lead-tags">
                     ${lead.main_block ? `<span class="lead-tag">${lead.main_block}</span>` : ''}
@@ -636,15 +641,34 @@
                 return;
             }
             
-            container.innerHTML = quizLeadsNotInFunnel.map(lead => `
-                <div class="lead-card">
+            container.innerHTML = quizLeadsNotInFunnel.map(lead => {
+                const date = new Date(lead.created_at).toLocaleDateString('ru');
+                return `
+                <div class="lead-card" style="margin-bottom:20px">
                     <div class="lead-header">
-                        <div class="lead-name">${lead.name || 'Без имени'}</div>
-                        <button class="btn btn-primary" onclick="addToFunnel(${lead.id})">В воронку</button>
+                        <div>
+                            <div class="lead-name">${lead.name || 'Без имени'}</div>
+                            <div class="lead-meta">📱 ${lead.phone || lead.email || 'Нет контактов'}</div>
+                            ${lead.age ? `<div class="lead-meta">👤 ${lead.age} лет</div>` : ''}
+                            <div class="lead-meta">📅 ${date}</div>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToFunnel(${lead.id})" style="padding:10px 20px">
+                            В воронку
+                        </button>
                     </div>
-                    <div class="lead-meta">📱 ${lead.phone} | 🎯 ${lead.main_block || 'Блок не определен'}</div>
+                    <div style="margin-top:15px">
+                        <div class="lead-tag" style="margin-bottom:10px">🎯 ${lead.main_block || 'Блок не определен'}</div>
+                        ${lead.quiz_answers ? `
+                            <div style="background:var(--bg);box-shadow:var(--shadow-inset);padding:15px;border-radius:10px;margin-top:10px">
+                                <div style="font-weight:600;margin-bottom:10px">Ответы на квиз:</div>
+                                ${lead.quiz_answers.currentIncome ? `<div>💰 Текущий доход: €${lead.quiz_answers.currentIncome}</div>` : ''}
+                                ${lead.quiz_answers.desiredIncome ? `<div>🎯 Желаемый доход: €${lead.quiz_answers.desiredIncome}</div>` : ''}
+                            </div>
+                        ` : ''}
+                        ${lead.source || lead.utm_source ? `<div class="lead-tag" style="margin-top:10px">📍 ${lead.source || lead.utm_source}</div>` : ''}
+                    </div>
                 </div>
-            `).join('');
+            `}).join('');
         }
         
         function updateStats() {
@@ -796,6 +820,7 @@
                     name: document.getElementById('leadName').value,
                     phone: document.getElementById('leadPhone').value,
                     email: document.getElementById('leadEmail').value || null,
+                    age: document.getElementById('leadAge').value ? parseInt(document.getElementById('leadAge').value) : null,
                     source: document.getElementById('leadSource').value,
                     stage: document.getElementById('leadStage').value,
                     created_at: new Date().toISOString()
