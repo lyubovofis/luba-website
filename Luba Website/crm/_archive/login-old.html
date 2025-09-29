@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход в CRM - Денежный Водопад</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -192,15 +193,6 @@
             font-size: 13px;
         }
         
-        .debug {
-            background: #f0f0f0;
-            padding: 10px;
-            margin-top: 20px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-family: monospace;
-        }
-        
         @media (max-width: 480px) {
             .login-card { padding: 40px 30px; }
         }
@@ -226,13 +218,13 @@
             
             <form id="loginForm">
                 <div class="form-group">
-                    <label class="form-label">Email или Username</label>
-                    <input type="text" class="form-input" id="username" placeholder="lyubov.ofis@gmail.com или Luba" required>
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" id="email" placeholder="lyubov.ofis@gmail.com" required>
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label">Пароль</label>
-                    <input type="password" class="form-input" id="password" placeholder="Luba1488@" required>
+                    <input type="password" class="form-input" id="password" placeholder="Введите пароль" required>
                 </div>
                 
                 <div class="remember-section">
@@ -245,23 +237,19 @@
                 </button>
             </form>
             
-            <div class="debug" id="debug">
-                Проверка входа...
-            </div>
-            
             <div class="footer">
                 <p>© 2025 Любовь Лукащук</p>
                 <p style="margin-top:10px;font-size:11px">
-                    Email: lyubov.ofis@gmail.com / Luba1488@<br>
-                    Username: Luba / Luba1488@
+                    Используется: lyubov.ofis@gmail.com / Luba1488@<br>
+                    или Luba / Luba1488@ (legacy)
                 </p>
             </div>
         </div>
     </div>
     
     <script>
-        // Debug info
-        document.getElementById('debug').textContent = 'Страница загружена. Готов к входу.';
+        const SUPABASE_URL = 'https://rntranckosfsnaakirqh.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtpcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI2MzY0MjYsImV4cCI6MjA0ODIxMjQyNn0.oaBupXryNkc1NlPV7qlanC8KFBydPygR1lncVl1qzfE';
         
         // Check if already logged in
         const isAuthenticated = localStorage.getItem('crm_authenticated');
@@ -272,106 +260,70 @@
             const expiration = parseInt(authExpiration);
             
             if (now < expiration) {
-                document.getElementById('debug').textContent = 'Уже авторизован, перенаправляю...';
                 window.location.href = '/crm/';
             } else {
                 localStorage.removeItem('crm_authenticated');
                 localStorage.removeItem('crm_auth_expiration');
                 localStorage.removeItem('crm_user');
-                document.getElementById('debug').textContent = 'Сессия истекла, нужен новый вход.';
             }
         }
         
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value;
             const remember = document.getElementById('remember').checked;
             const loginBtn = document.getElementById('loginBtn');
             const errorMsg = document.getElementById('errorMessage');
             const successMsg = document.getElementById('successMessage');
-            const debug = document.getElementById('debug');
-            
-            // Clear messages
-            errorMsg.style.display = 'none';
-            successMsg.style.display = 'none';
             
             // Disable button
             loginBtn.disabled = true;
             loginBtn.textContent = 'Проверка...';
-            debug.textContent = `Проверяю вход: ${username}`;
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
             
-            // Check credentials - multiple methods
             try {
-                let success = false;
-                let userData = null;
-                
-                // Method 1: Hardcoded credentials
-                if ((username === 'Luba' || username === 'luba') && password === 'Luba1488@') {
-                    success = true;
-                    userData = {
-                        username: 'Luba',
-                        name: 'Любовь Лукащук',
-                        role: 'admin',
-                        source: 'hardcoded'
-                    };
-                    debug.textContent = '✅ Вход через hardcoded credentials';
-                }
-                // Method 2: Email variants
-                else if ((username === 'lyubov.ofis@gmail.com' || username.includes('lyubov')) && password === 'Luba1488@') {
-                    success = true;
-                    userData = {
-                        username: 'lyubov.ofis@gmail.com',
-                        name: 'Любовь Лукащук',
-                        role: 'admin',
-                        source: 'email'
-                    };
-                    debug.textContent = '✅ Вход через email';
-                }
-                // Method 3: Alternative passwords
-                else if ((username === 'Luba' || username === 'lyubov.ofis@gmail.com') && 
-                         (password === 'admin' || password === '1488' || password === 'luba1488')) {
-                    success = true;
-                    userData = {
-                        username: username,
-                        name: 'Любовь Лукащук',
-                        role: 'admin',
-                        source: 'alternative'
-                    };
-                    debug.textContent = '✅ Вход через альтернативный пароль';
+                // Method 1: Hardcoded credentials (backward compatibility)
+                if (email === 'Luba' && password === 'Luba1488@') {
+                    authenticateUser('Luba', 'Любовь Лукащук', 'admin', remember);
+                    return;
                 }
                 
-                if (success && userData) {
-                    // Set authentication
-                    localStorage.setItem('crm_authenticated', 'true');
-                    localStorage.setItem('crm_user', JSON.stringify(userData));
+                // Method 2: Check admin_users table
+                if (typeof window.supabase !== 'undefined') {
+                    const { createClient } = window.supabase;
+                    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
                     
-                    // Set expiration
-                    const expirationDate = new Date();
-                    if (remember) {
-                        expirationDate.setDate(expirationDate.getDate() + 14);
-                    } else {
-                        expirationDate.setHours(expirationDate.getHours() + 24);
+                    const { data, error } = await supabase
+                        .from('admin_users')
+                        .select('*')
+                        .eq('email', email)
+                        .eq('is_active', true)
+                        .single();
+                    
+                    if (data && !error) {
+                        // Simple password check (in production, use proper hashing)
+                        if (password === 'Luba1488@' || password === 'admin') {
+                            // Update last_login
+                            await supabase
+                                .from('admin_users')
+                                .update({ last_login: new Date().toISOString() })
+                                .eq('id', data.id);
+                            
+                            authenticateUser(data.email, data.full_name, data.role, remember);
+                            return;
+                        }
                     }
-                    localStorage.setItem('crm_auth_expiration', expirationDate.getTime());
-                    
-                    // Show success
-                    successMsg.textContent = `Добро пожаловать, ${userData.name}!`;
-                    successMsg.style.display = 'block';
-                    debug.textContent = '✅ Успешно! Перенаправляю в CRM...';
-                    
-                    setTimeout(() => {
-                        window.location.href = '/crm/';
-                    }, 1500);
-                } else {
-                    throw new Error(`Неверные данные для входа. Попробовайте: Luba/Luba1488@ или lyubov.ofis@gmail.com/Luba1488@`);
                 }
+                
+                // Authentication failed
+                throw new Error('Неверный email или пароль');
                 
             } catch (error) {
-                errorMsg.textContent = error.message;
+                errorMsg.textContent = error.message || 'Ошибка входа';
                 errorMsg.style.display = 'block';
-                debug.textContent = `❌ Ошибка: ${error.message}`;
                 
                 // Shake animation
                 document.querySelector('.login-card').style.animation = 'shake 0.5s';
@@ -383,6 +335,36 @@
                 loginBtn.textContent = 'Войти в систему';
             }
         });
+        
+        function authenticateUser(username, fullName, role, remember) {
+            // Set authentication
+            localStorage.setItem('crm_authenticated', 'true');
+            localStorage.setItem('crm_user', JSON.stringify({
+                username: username,
+                name: fullName,
+                role: role
+            }));
+            
+            // Set expiration
+            if (remember) {
+                const expirationDate = new Date();
+                expirationDate.setDate(expirationDate.getDate() + 14);
+                localStorage.setItem('crm_auth_expiration', expirationDate.getTime());
+            } else {
+                const expirationDate = new Date();
+                expirationDate.setHours(expirationDate.getHours() + 24);
+                localStorage.setItem('crm_auth_expiration', expirationDate.getTime());
+            }
+            
+            // Show success and redirect
+            document.getElementById('successMessage').textContent = 'Вход выполнен успешно!';
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            setTimeout(() => {
+                window.location.href = '/crm/';
+            }, 1000);
+        }
     </script>
 </body>
 </html>

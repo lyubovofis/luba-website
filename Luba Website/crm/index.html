@@ -557,32 +557,46 @@
                     const { createClient } = window.supabase;
                     const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
                     
+                    // Load all leads from quiz_leads table
                     const { data, error } = await supabase
                         .from('quiz_leads')
                         .select('*')
                         .order('created_at', { ascending: false });
                     
+                    if (error) {
+                        console.error('Error loading from Supabase:', error);
+                    }
+                    
                     if (data && data.length > 0) {
-                        data.forEach(lead => {
-                            if (!lead.stage) lead.stage = 'new';
-                        });
-                        
-                        quizLeadsNotInFunnel = data.filter(lead => lead.quiz_type && lead.stage === 'quiz_new');
+                        // Separate quiz leads (not in funnel) from CRM leads (in funnel)
+                        quizLeadsNotInFunnel = data.filter(lead => !lead.stage || lead.stage === 'quiz_new');
                         allLeads = data.filter(lead => lead.stage && lead.stage !== 'quiz_new');
                         
                         renderAll();
-                        return;
+                    } else {
+                        // No data - show demo
+                        allLeads = [
+                            {id: 1, name: 'Demo Lead', phone: '+380501234567', stage: 'new', created_at: new Date().toISOString()}
+                        ];
+                        quizLeadsNotInFunnel = [];
+                        renderAll();
                     }
+                } else {
+                    console.error('Supabase library not loaded');
+                    // Fallback data
+                    allLeads = [
+                        {id: 1, name: 'Demo Lead', phone: '+380501234567', stage: 'new', created_at: new Date().toISOString()}
+                    ];
+                    renderAll();
                 }
             } catch (error) {
-                console.error('Error loading data:', error);
+                console.error('Critical error:', error);
+                // Fallback data
+                allLeads = [
+                    {id: 1, name: 'Demo Lead', phone: '+380501234567', stage: 'new', created_at: new Date().toISOString()}
+                ];
+                renderAll();
             }
-            
-            // Mock data
-            allLeads = [
-                {id: 1, name: 'Demo Lead', phone: '+380501234567', stage: 'new', created_at: new Date().toISOString()}
-            ];
-            renderAll();
         }
         
         function renderAll() {
@@ -732,47 +746,79 @@
         }
         
         async function addToFunnel(leadId) {
-            const leadIndex = quizLeadsNotInFunnel.findIndex(l => l.id == leadId);
-            if (leadIndex > -1) {
-                const lead = quizLeadsNotInFunnel[leadIndex];
-                lead.stage = 'new';
-                allLeads.unshift(lead);
-                quizLeadsNotInFunnel.splice(leadIndex, 1);
-                
-                try {
-                    if (typeof window.supabase !== 'undefined') {
-                        const { createClient } = window.supabase;
-                        const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                        await supabase.from('quiz_leads').update({ stage: 'new' }).eq('id', leadId);
+            const lead = quizLeadsNotInFunnel.find(l => l.id == leadId);
+            if (!lead) return;
+            
+            // Update stage to move from quiz to funnel
+            lead.stage = 'new';
+            
+            try {
+                if (typeof window.supabase !== 'undefined') {
+                    const { createClient } = window.supabase;
+                    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                    
+                    const { data, error } = await supabase
+                        .from('quiz_leads')
+                        .update({ stage: 'new' })
+                        .eq('id', leadId);
+                    
+                    if (!error) {
+                        // Move from quiz list to funnel
+                        quizLeadsNotInFunnel = quizLeadsNotInFunnel.filter(l => l.id !== leadId);
+                        allLeads.unshift(lead);
+                    } else {
+                        console.error('Failed to update:', error);
                     }
-                } catch (error) {
-                    console.error('Failed to update:', error);
                 }
-                
-                renderAll();
+            } catch (error) {
+                console.error('Failed to add to funnel:', error);
             }
+            
+            renderAll();
         }
         
         async function addAllToFunnel() {
-            for (let lead of quizLeadsNotInFunnel) {
-                lead.stage = 'new';
-                allLeads.unshift(lead);
-            }
+            if (quizLeadsNotInFunnel.length === 0) return;
             
             const leadIds = quizLeadsNotInFunnel.map(l => l.id);
-            if (leadIds.length > 0) {
-                try {
-                    if (typeof window.supabase !== 'undefined') {
-                        const { createClient } = window.supabase;
-                        const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                        await supabase.from('quiz_leads').update({ stage: 'new' }).in('id', leadIds);
+            
+            try {
+                if (typeof window.supabase !== 'undefined') {
+                    const { createClient } = window.supabase;
+                    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                    
+                    const { error } = await supabase
+                        .from('quiz_leads')
+                        .update({ stage: 'new' })
+                        .in('id', leadIds);
+                    
+                    if (!error) {
+                        quizLeadsNotInFunnel.forEach(lead => {
+                            lead.stage = 'new';
+                            allLeads.unshift(lead);
+                        });
+                        quizLeadsNotInFunnel = [];
+                    } else {
+                        console.error('Failed to update:', error);
                     }
-                } catch (error) {
-                    console.error('Failed to update:', error);
                 }
+            } catch (error) {
+                console.error('Failed to add all to funnel:', error);
             }
             
-            quizLeadsNotInFunnel = [];
+            renderAll();
+        }
+                    const { data, error } = await supabase.from('crm_leads').insert(newCrmLeads).select();
+                    
+                    if (data) {
+                        allLeads.unshift(...data);
+                        quizLeadsNotInFunnel = [];
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to add all:', error);
+            }
+            
             renderAll();
         }
         
