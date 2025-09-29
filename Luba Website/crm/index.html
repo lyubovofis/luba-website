@@ -513,10 +513,16 @@
     </div>
     
     <script>
+        // Debug info
+        console.log('CRM Dashboard loading...');
+        
         // Check auth
         if (!localStorage.getItem('crm_authenticated')) {
+            console.log('Not authenticated, redirecting...');
             window.location.href = '/crm/login.html';
         }
+        
+        console.log('Auth check passed');
         
         // State
         let allLeads = [];
@@ -552,51 +558,96 @@
         }
         
         async function loadData() {
+            console.log('Loading data from Supabase...');
+            
             try {
-                if (typeof window.supabase !== 'undefined') {
-                    const { createClient } = window.supabase;
-                    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                // Check if Supabase is loaded
+                if (typeof window.supabase === 'undefined') {
+                    console.error('Supabase library not loaded, loading fallback data');
+                    showFallbackData();
+                    return;
+                }
+                
+                const { createClient } = window.supabase;
+                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                console.log('Supabase client created');
+                
+                // Test connection first
+                const { data: testData, error: testError } = await supabase
+                    .from('quiz_leads')
+                    .select('id')
+                    .limit(1);
+                
+                if (testError) {
+                    console.error('Supabase connection test failed:', testError);
+                    showFallbackData();
+                    return;
+                }
+                
+                console.log('Supabase connection successful');
+                
+                // Load all leads from quiz_leads table
+                const { data, error } = await supabase
+                    .from('quiz_leads')
+                    .select('*')
+                    .order('created_at', { ascending: false });
+                
+                if (error) {
+                    console.error('Error loading leads:', error);
+                    showFallbackData();
+                    return;
+                }
+                
+                console.log(`Loaded ${data?.length || 0} leads from Supabase`);
+                
+                if (data && data.length > 0) {
+                    // Separate quiz leads (not in funnel) from CRM leads (in funnel)
+                    quizLeadsNotInFunnel = data.filter(lead => !lead.stage || lead.stage === 'quiz_new');
+                    allLeads = data.filter(lead => lead.stage && lead.stage !== 'quiz_new');
                     
-                    // Load all leads from quiz_leads table
-                    const { data, error } = await supabase
-                        .from('quiz_leads')
-                        .select('*')
-                        .order('created_at', { ascending: false });
+                    console.log(`Quiz leads: ${quizLeadsNotInFunnel.length}, Funnel leads: ${allLeads.length}`);
                     
-                    if (error) {
-                        console.error('Error loading from Supabase:', error);
-                    }
-                    
-                    if (data && data.length > 0) {
-                        // Separate quiz leads (not in funnel) from CRM leads (in funnel)
-                        quizLeadsNotInFunnel = data.filter(lead => !lead.stage || lead.stage === 'quiz_new');
-                        allLeads = data.filter(lead => lead.stage && lead.stage !== 'quiz_new');
-                        
-                        renderAll();
-                    } else {
-                        // No data - show demo
-                        allLeads = [
-                            {id: 1, name: 'Demo Lead', phone: '+380501234567', stage: 'new', created_at: new Date().toISOString()}
-                        ];
-                        quizLeadsNotInFunnel = [];
-                        renderAll();
-                    }
-                } else {
-                    console.error('Supabase library not loaded');
-                    // Fallback data
-                    allLeads = [
-                        {id: 1, name: 'Demo Lead', phone: '+380501234567', stage: 'new', created_at: new Date().toISOString()}
-                    ];
                     renderAll();
+                    
+                    // Show success message
+                    const user = JSON.parse(localStorage.getItem('crm_user') || '{}');
+                    document.querySelector('h1').textContent = `Dashboard - ${data.length} лидов загружено`;
+                } else {
+                    console.log('No leads found in database');
+                    showFallbackData();
                 }
             } catch (error) {
-                console.error('Critical error:', error);
-                // Fallback data
-                allLeads = [
-                    {id: 1, name: 'Demo Lead', phone: '+380501234567', stage: 'new', created_at: new Date().toISOString()}
-                ];
-                renderAll();
+                console.error('Critical error loading data:', error);
+                showFallbackData();
             }
+        }
+        
+        function showFallbackData() {
+            console.log('Showing fallback demo data');
+            allLeads = [
+                {
+                    id: 1, 
+                    name: 'Demo Lead - Supabase не подключен', 
+                    phone: '+380501234567', 
+                    stage: 'new', 
+                    created_at: new Date().toISOString(),
+                    main_block: 'Демо данные'
+                }
+            ];
+            quizLeadsNotInFunnel = [
+                {
+                    id: 2,
+                    name: 'Demo Quiz Lead',
+                    phone: '+380501234568',
+                    main_block: 'Проблема с подключением',
+                    quiz_answers: {currentIncome: '1000', desiredIncome: '3000'},
+                    created_at: new Date().toISOString()
+                }
+            ];
+            renderAll();
+            
+            // Show error message in header
+            document.querySelector('h1').innerHTML = 'Dashboard - <span style="color: red">Ошибка подключения к Supabase</span>';
         }
         
         function renderAll() {
