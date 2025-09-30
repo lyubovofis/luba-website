@@ -761,17 +761,17 @@
         <!-- Step 8: Contact form BEFORE results -->
         <div class="quiz-step" id="step8">
             <div class="question-number">✨</div>
-            <h2>Последний шаг до вашего денежного кода</h2>
-            <div class="question-subtitle">Куда отправить ваш персональный план на 7 дней?</div>
+            <h2>Останній крок до вашого грошового коду</h2>
+            <div class="question-subtitle">Куди надіслати ваш персональний план на 7 днів??</div>
             
             <div class="form-group">
-                <label>Ваше имя</label>
-                <input type="text" id="name" placeholder="Как к вам обращаться">
+                <label>Ваше ім'я</label>
+                <input type="text" id="name" placeholder="Як до вас звертатися">
                 <div class="error-message" id="nameError"></div>
             </div>
             
             <div class="form-group">
-                <label>WhatsApp для связи</label>
+                <label>WhatsApp для зв'язку</label>
                 <input type="tel" id="whatsapp" placeholder="+380501234567" pattern="^\+[1-9][0-9]{9,14}$">
                 <div class="error-message" id="whatsappError"></div>
             </div>
@@ -784,7 +784,7 @@
             
             <div class="buttons-row">
                 <button class="btn btn-secondary" onclick="prevStep(8)">← Назад</button>
-                <button class="btn" onclick="validateAndShowResult()">Получить мой денежный код →</button>
+                <button class="btn" onclick="validateAndShowResult()">Отримати мій грошовий код →</button>
             </div>
         </div>
         
@@ -1199,11 +1199,11 @@
             // Validate name
             const fakenames = ['test', 'asdf', 'qwerty', 'aaaa', 'bbbb', 'qqqq', 'wwww', 'eeee'];
             if (!name || name.length < 2) {
-                document.getElementById('nameError').textContent = 'Введите ваше имя (минимум 2 буквы)';
+                document.getElementById('nameError').textContent = 'Введіть ваше ім'я (мінімум 2 літери)';
                 document.getElementById('nameError').style.display = 'block';
                 valid = false;
             } else if (fakenames.includes(name.toLowerCase()) || /^\d+$/.test(name)) {
-                document.getElementById('nameError').textContent = 'Пожалуйста, введите настоящее имя';
+                document.getElementById('nameError').textContent = 'Будь ласка, введіть справжнє ім'я';
                 document.getElementById('nameError').style.display = 'block';
                 valid = false;
             }
@@ -1211,15 +1211,15 @@
             // Validate phone
             const cleanPhone = whatsapp.replace(/\D/g, '');
             if (!whatsapp || cleanPhone.length < 10) {
-                document.getElementById('whatsappError').textContent = 'Введите номер телефона (минимум 10 цифр)';
+                document.getElementById('whatsappError').textContent = 'Введіть номер телефону (мінімум 10 цифр)';
                 document.getElementById('whatsappError').style.display = 'block';
                 valid = false;
             } else if (!whatsapp.startsWith('+')) {
-                document.getElementById('whatsappError').textContent = 'Номер должен начинаться с + (например: +380501234567)';
+                document.getElementById('whatsappError').textContent = 'Номер повинен починатися з + (наприклад: +380501234567)';
                 document.getElementById('whatsappError').style.display = 'block';
                 valid = false;
             } else if (/^(\+1{10,}|\+9{10,}|\+0{10,})$/.test(whatsapp)) {
-                document.getElementById('whatsappError').textContent = 'Пожалуйста, введите настоящий номер телефона';
+                document.getElementById('whatsappError').textContent = 'Будь ласка, введіть справжній номер телефону';
                 document.getElementById('whatsappError').style.display = 'block';
                 valid = false;
             }
@@ -1419,10 +1419,6 @@
                     }
                 }, 100);
             }, { once: true });
-            
-            window.location.href = whatsappUrl;
-        }
-            }
             
             window.location.href = whatsappUrl;
         }
