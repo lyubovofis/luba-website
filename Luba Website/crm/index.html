@@ -663,6 +663,33 @@
                 </div>
             </div>
             
+            <!-- A/B/C Test Stats -->
+            <div style="margin-top: 24px;">
+                <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--text-light);">
+                    🧪 A/B/C Тест заголовков
+                </h2>
+                <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="stat-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="stat-label" style="color: white; font-weight: 700; margin-bottom: 8px;">A: "84% застряли"</div>
+                        <div class="stat-value" id="quizVersionA" style="font-size: 32px;">0</div>
+                        <div class="stat-label" style="color: rgba(255,255,255,0.9);">лидов</div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                        <div class="stat-label" style="color: white; font-weight: 700; margin-bottom: 8px;">B: "Почему не приходят?"</div>
+                        <div class="stat-value" id="quizVersionB" style="font-size: 32px;">0</div>
+                        <div class="stat-label" style="color: rgba(255,255,255,0.9);">лидов</div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="stat-label" style="color: white; font-weight: 700; margin-bottom: 8px;">C: "€2000 уже 3 года?"</div>
+                        <div class="stat-value" id="quizVersionC" style="font-size: 32px;">0</div>
+                        <div class="stat-label" style="color: rgba(255,255,255,0.9);">лидов</div>
+                    </div>
+                </div>
+                <div style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">
+                    💡 URL для рекламы: <code style="background: var(--bg-dark); padding: 4px 8px; border-radius: 4px;">https://lyubovpsy.com/quiz-test/</code>
+                </div>
+            </div>
+            
             <!-- Funnel Stats -->
             <div style="margin-top: 24px;">
                 <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--text-light);">
@@ -1046,6 +1073,25 @@
                         >
                             📋 В воронку
                         </button>
+                        <button 
+                            onclick="deleteQuizLead(${lead.id})"
+                            style="
+                                background: #ef4444;
+                                color: white;
+                                border: none;
+                                padding: 10px 16px;
+                                border-radius: 8px;
+                                cursor: pointer;
+                                font-size: 14px;
+                                font-weight: 600;
+                                transition: all 0.2s;
+                            "
+                            onmouseover="this.style.background='#dc2626'"
+                            onmouseout="this.style.background='#ef4444'"
+                            title="Удалить лида"
+                        >
+                            🗑️
+                        </button>
                     </div>
                 </div>
                 ${Object.keys(quizAnswers).length > 0 ? `
@@ -1166,6 +1212,29 @@
             }
         }
         
+        async function deleteQuizLead(leadId) {
+            if (!confirm('Удалить лида из квиза? Это действие нельзя отменить.')) return;
+            
+            try {
+                const { createClient } = window.supabase;
+                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                
+                const { error } = await supabase
+                    .from('quiz_leads')
+                    .delete()
+                    .eq('id', leadId);
+                
+                if (error) throw error;
+                
+                console.log('✅ Lead deleted');
+                await loadData();
+                
+            } catch (error) {
+                console.error('❌ Error:', error);
+                alert('Ошибка при удалении: ' + error.message);
+            }
+        }
+        
         function updateStats() {
             updateDashboard();
         }
@@ -1192,6 +1261,22 @@
             const contactedLeads = periodLeads.filter(l => l.stage === 'new');
             const consultLeads = periodLeads.filter(l => l.stage === 'consultation');
             const paidLeads = periodLeads.filter(l => l.stage === 'paid');
+            
+            // A/B/C Test stats
+            const versionA = periodLeads.filter(l => l.quiz_version === 'a' || l.quiz_version === 'a-uk').length;
+            const versionB = periodLeads.filter(l => l.quiz_version === 'b' || l.quiz_version === 'b-uk').length;
+            const versionC = periodLeads.filter(l => l.quiz_version === 'c' || l.quiz_version === 'c-uk').length;
+            
+            const versionARu = periodLeads.filter(l => l.quiz_version === 'a').length;
+            const versionAUk = periodLeads.filter(l => l.quiz_version === 'a-uk').length;
+            const versionBRu = periodLeads.filter(l => l.quiz_version === 'b').length;
+            const versionBUk = periodLeads.filter(l => l.quiz_version === 'b-uk').length;
+            const versionCRu = periodLeads.filter(l => l.quiz_version === 'c').length;
+            const versionCUk = periodLeads.filter(l => l.quiz_version === 'c-uk').length;
+            
+            document.getElementById('quizVersionA').textContent = `${versionA} (🇷🇺${versionARu}/🇺🇦${versionAUk})`;
+            document.getElementById('quizVersionB').textContent = `${versionB} (🇷🇺${versionBRu}/🇺🇦${versionBUk})`;
+            document.getElementById('quizVersionC').textContent = `${versionC} (🇷🇺${versionCRu}/🇺🇦${versionCUk})`;
             
             // Update main stats
             document.getElementById('totalLeads').textContent = periodLeads.length;

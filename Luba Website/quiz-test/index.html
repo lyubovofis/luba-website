@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест: Ваш денежный код | Денежный Водопад</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .loading {
+            text-align: center;
+            color: white;
+        }
+        .spinner {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="spinner"></div>
+        <p>Загрузка теста...</p>
+    </div>
+
+    <script>
+        // A/B/C Test Router with Language Detection
+        (function() {
+            const versions = ['a', 'b', 'c'];
+            
+            // Detect language from browser
+            const userLang = navigator.language || navigator.userLanguage;
+            const isUkrainian = userLang.toLowerCase().startsWith('uk');
+            
+            // Check if user already has a version
+            let userVersion = sessionStorage.getItem('quiz_version');
+            
+            if (!userVersion) {
+                // Distribute evenly: 33% / 33% / 34%
+                const random = Math.random();
+                if (random < 0.33) {
+                    userVersion = 'a';
+                } else if (random < 0.66) {
+                    userVersion = 'b';
+                } else {
+                    userVersion = 'c';
+                }
+                
+                sessionStorage.setItem('quiz_version', userVersion);
+            }
+            
+            // Determine language suffix
+            const langSuffix = isUkrainian ? '-uk' : '';
+            
+            // Track which version and language user sees
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'ab_test_assigned', {
+                    'version': userVersion,
+                    'language': isUkrainian ? 'uk' : 'ru',
+                    'timestamp': new Date().toISOString()
+                });
+            }
+            
+            // Redirect to version with language
+            const targetUrl = `/quiz-${userVersion}${langSuffix}/`;
+            console.log('A/B/C Test - Version:', userVersion, 'Language:', isUkrainian ? 'uk' : 'ru');
+            
+            // Small delay for tracking
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 100);
+        })();
+    </script>
+</body>
+</html>
