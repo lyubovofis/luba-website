@@ -1,0 +1,48 @@
+# Version Control
+.git
+.gitignore
+.github
+
+# Development files
+*.py
+*.sh
+*.bat
+*.md
+*.log
+node_modules
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test files
+test-*
+Best pages
+webhook
+tiktok-integration
+netlify
+.netlify
+
+# Config files not needed in production
+.env
+.env.local
+.env.example
+netlify.toml
+analyze_tiktok.py
+tiktok_*.py
+whatsapp-api-crm.js
+
+# Documentation
+README.md
+HOW_TO_SHARE.md
+META_WHATSAPP_SETUP.md
+PROJECT_OVERVIEW.md
+OPTIMIZATION_REPORT.md
+SOURCE_TRACKING.md
+
+# Backup or temp files
+*.bak
+*.tmp
+*~
+.DS_Store
+Thumbs.db

@@ -179,6 +179,20 @@
             letter-spacing: 0.5px;
         }
         
+        .stat-change {
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        
+        .stat-change.positive {
+            color: #38ef7d;
+        }
+        
+        .stat-change.negative {
+            color: #f5576c;
+        }
+        
         /* Kanban Board - COMPACT VERSION */
         .kanban-board {
             display: grid;
@@ -577,25 +591,108 @@
                     <h1>Dashboard</h1>
                     <p style="color:var(--text-gray);margin-top:5px;font-size:14px">Обзор системы</p>
                 </div>
-                <button class="btn btn-primary" onclick="showAddLeadModal()">+ Добавить лида</button>
+                <div style="display:flex;gap:10px;align-items:center;">
+                    <select id="periodFilter" onchange="updateDashboard()" style="
+                        background: var(--bg-card);
+                        color: var(--text-light);
+                        border: 1px solid var(--border);
+                        padding: 10px 16px;
+                        border-radius: 10px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        cursor: pointer;
+                    ">
+                        <option value="7">7 дней</option>
+                        <option value="30" selected>30 дней</option>
+                        <option value="90">3 месяца</option>
+                        <option value="180">6 месяцев</option>
+                        <option value="365">Год</option>
+                        <option value="all">Всё время</option>
+                    </select>
+                    <button class="btn btn-primary" onclick="showAddLeadModal()">+ Добавить лида</button>
+                </div>
             </header>
             
+            <!-- Main Stats -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-value" id="totalLeads">0</div>
                     <div class="stat-label">👥 Всего лидов</div>
+                    <div class="stat-change" id="leadsChange"></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value" id="consultations">0</div>
                     <div class="stat-label">💬 Консультации</div>
+                    <div class="stat-change" id="consultChange"></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value" id="payments">0</div>
                     <div class="stat-label">💰 Оплаты</div>
+                    <div class="stat-change" id="paymentsChange"></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value" id="conversion">0%</div>
                     <div class="stat-label">📈 Конверсия</div>
+                    <div class="stat-change" id="conversionChange"></div>
+                </div>
+            </div>
+            
+            <!-- Revenue Stats -->
+            <div style="margin-top: 24px;">
+                <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--text-light);">
+                    💵 Финансовая статистика
+                </h2>
+                <div class="stats-grid">
+                    <div class="stat-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="stat-value" id="totalRevenue">€0</div>
+                        <div class="stat-label" style="color: rgba(255,255,255,0.9);">💰 Заработано</div>
+                        <div class="stat-change" id="revenueChange" style="color: rgba(255,255,255,0.8);"></div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                        <div class="stat-value" id="avgDeal">€0</div>
+                        <div class="stat-label" style="color: rgba(255,255,255,0.9);">📊 Средний чек</div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="stat-value" id="leadValue">€0</div>
+                        <div class="stat-label" style="color: rgba(255,255,255,0.9);">🎯 Ценность лида</div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <div class="stat-value" id="projectedRevenue">€0</div>
+                        <div class="stat-label" style="color: rgba(255,255,255,0.9);">📈 Прогноз</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Funnel Stats -->
+            <div style="margin-top: 24px;">
+                <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--text-light);">
+                    🔄 Воронка продаж
+                </h2>
+                <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div class="stat-card">
+                        <div class="stat-value" id="quizLeads">0</div>
+                        <div class="stat-label">🎯 Из квиза</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="contactedLeads">0</div>
+                        <div class="stat-label">💬 Написал</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="consultLeads">0</div>
+                        <div class="stat-label">☎️ На консультации</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="paidLeads">0</div>
+                        <div class="stat-label">✅ Оплатили</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="quizToConsult">0%</div>
+                        <div class="stat-label">📊 Квиз → Консульт</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="consultToPaid">0%</div>
+                        <div class="stat-label">📈 Консульт → Оплата</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -610,7 +707,7 @@
             <div class="kanban-board">
                 <div class="kanban-column" data-stage="new">
                     <div class="column-header">
-                        <span class="column-title">📝 Новые</span>
+                        <span class="column-title">💬 Написал</span>
                         <div class="column-badge" id="count-new">0</div>
                     </div>
                     <div class="leads-container" id="new-leads"></div>
@@ -769,6 +866,7 @@
         }
         
         function renderKanban() {
+            // Show only leads that are in funnel (not quiz_new)
             ['new', 'consultation', 'paid'].forEach(stage => {
                 const container = document.getElementById(`${stage}-leads`);
                 const leads = allLeads.filter(l => l.stage === stage);
@@ -848,18 +946,268 @@
         
         function renderQuizLeads() {
             const container = document.getElementById('quiz-leads-list');
-            container.innerHTML = '<p style="text-align:center;color:var(--text-gray)">✅ Все лиды в воронке</p>';
+            const quizLeads = allLeads.filter(l => l.stage === 'quiz_new');
+            
+            if (quizLeads.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:var(--text-gray);padding:60px 20px;">Нет новых лидов из квиза</p>';
+                return;
+            }
+            
+            container.innerHTML = '';
+            quizLeads.forEach(lead => {
+                const card = createQuizLeadCard(lead);
+                container.appendChild(card);
+            });
+        }
+        
+        function createQuizLeadCard(lead) {
+            let quizAnswers = {};
+            if (lead.quiz_answers) {
+                try {
+                    quizAnswers = typeof lead.quiz_answers === 'string' 
+                        ? JSON.parse(lead.quiz_answers) 
+                        : lead.quiz_answers;
+                } catch (e) {}
+            }
+            
+            const card = document.createElement('div');
+            card.className = 'quiz-lead-card';
+            card.style.cssText = `
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.3s ease;
+            `;
+            
+            card.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px;">
+                    <div>
+                        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">
+                            ${lead.name || quizAnswers.name || 'Без имени'}
+                        </h3>
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                            <div style="font-size: 14px; color: var(--text-gray);">
+                                📱 ${lead.phone || quizAnswers.whatsapp || '-'}
+                            </div>
+                            ${lead.email ? `
+                            <div style="font-size: 14px; color: var(--text-gray);">
+                                📧 ${lead.email}
+                            </div>` : ''}
+                            ${quizAnswers.currentIncome || quizAnswers.desiredIncome ? `
+                            <div style="font-size: 14px; color: var(--text-gray);">
+                                💰 €${quizAnswers.currentIncome || '-'} → €${quizAnswers.desiredIncome || '-'}
+                            </div>` : ''}
+                            <div style="font-size: 13px; color: var(--text-gray); margin-top: 4px;">
+                                🕐 ${new Date(lead.created_at).toLocaleString('ru', { 
+                                    day: '2-digit', 
+                                    month: 'short', 
+                                    hour: '2-digit', 
+                                    minute: '2-digit' 
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <button 
+                            onclick="contactQuizLead('${lead.phone || quizAnswers.whatsapp}', ${lead.id})"
+                            style="
+                                background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+                                color: white;
+                                border: none;
+                                padding: 10px 16px;
+                                border-radius: 8px;
+                                cursor: pointer;
+                                font-size: 14px;
+                                font-weight: 600;
+                                transition: all 0.2s;
+                            "
+                            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(37, 211, 102, 0.4)'"
+                            onmouseout="this.style.transform=''; this.style.boxShadow=''"
+                        >
+                            💬 Написать
+                        </button>
+                        <button 
+                            onclick="moveQuizToFunnel(${lead.id})"
+                            style="
+                                background: var(--gradient-primary);
+                                color: white;
+                                border: none;
+                                padding: 10px 16px;
+                                border-radius: 8px;
+                                cursor: pointer;
+                                font-size: 14px;
+                                font-weight: 600;
+                                transition: all 0.2s;
+                            "
+                            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(102, 126, 234, 0.4)'"
+                            onmouseout="this.style.transform=''; this.style.boxShadow=''"
+                        >
+                            📋 В воронку
+                        </button>
+                    </div>
+                </div>
+                ${Object.keys(quizAnswers).length > 0 ? `
+                <details style="margin-top: 12px;">
+                    <summary style="cursor: pointer; color: var(--accent); font-size: 14px; font-weight: 600;">
+                        🎯 Ответы из квиза
+                    </summary>
+                    <div style="margin-top: 12px; padding: 12px; background: var(--bg-dark); border-radius: 8px; font-size: 13px; line-height: 1.6;">
+                        ${Object.entries(quizAnswers).map(([key, value]) => {
+                            if (key === 'name' || key === 'whatsapp') return '';
+                            const labels = {
+                                'q1': 'Отношение к деньгам',
+                                'q2': 'Основной блок',
+                                'q3': 'Поведение с деньгами',
+                                'q4': 'Убеждения',
+                                'q6': 'Эмоции',
+                                'q7': 'Барьеры',
+                                'currentIncome': 'Текущий доход',
+                                'desiredIncome': 'Желаемый доход'
+                            };
+                            return `<div style="margin-bottom: 6px;"><strong>${labels[key] || key}:</strong> ${value}</div>`;
+                        }).join('')}
+                    </div>
+                </details>` : ''}
+            `;
+            
+            return card;
+        }
+        
+        async function contactQuizLead(phone, leadId) {
+            const cleanPhone = phone?.replace(/[^\d+]/g, '');
+            if (cleanPhone) {
+                window.open(`https://wa.me/${cleanPhone}`, '_blank');
+            }
+        }
+        
+        async function moveQuizToFunnel(leadId) {
+            if (!confirm('Переместить лида в воронку?')) return;
+            
+            try {
+                const { createClient } = window.supabase;
+                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                
+                const { error } = await supabase
+                    .from('quiz_leads')
+                    .update({ stage: 'new' })
+                    .eq('id', leadId);
+                
+                if (error) throw error;
+                
+                console.log('✅ Moved to funnel');
+                await loadData();
+                showTab('kanban');
+            } catch (error) {
+                console.error('❌ Error:', error);
+                alert('Ошибка при перемещении');
+            }
         }
         
         function updateStats() {
-            const consultLeads = allLeads.filter(l => l.stage === 'consultation');
-            const paidLeads = allLeads.filter(l => l.stage === 'paid');
+            updateDashboard();
+        }
+        
+        function updateDashboard() {
+            const period = parseInt(document.getElementById('periodFilter')?.value || '30');
+            const now = new Date();
+            let startDate = new Date();
             
-            document.getElementById('totalLeads').textContent = allLeads.length;
+            if (period !== 'all') {
+                startDate.setDate(now.getDate() - period);
+            } else {
+                startDate = new Date(0); // Beginning of time
+            }
+            
+            // Filter leads by period
+            const periodLeads = period === 'all' ? allLeads : allLeads.filter(l => {
+                const createdDate = new Date(l.created_at);
+                return createdDate >= startDate;
+            });
+            
+            // Basic stats
+            const quizLeads = periodLeads.filter(l => l.stage === 'quiz_new');
+            const contactedLeads = periodLeads.filter(l => l.stage === 'new');
+            const consultLeads = periodLeads.filter(l => l.stage === 'consultation');
+            const paidLeads = periodLeads.filter(l => l.stage === 'paid');
+            
+            // Update main stats
+            document.getElementById('totalLeads').textContent = periodLeads.length;
             document.getElementById('consultations').textContent = consultLeads.length;
             document.getElementById('payments').textContent = paidLeads.length;
-            document.getElementById('conversion').textContent = allLeads.length > 0 
-                ? Math.round((paidLeads.length / allLeads.length) * 100) + '%' : '0%';
+            
+            const conversion = periodLeads.length > 0 
+                ? Math.round((paidLeads.length / periodLeads.length) * 100) 
+                : 0;
+            document.getElementById('conversion').textContent = conversion + '%';
+            
+            // Revenue calculations
+            const PACKAGE_PRICE = 2000; // €2000 per package
+            const totalRevenue = paidLeads.length * PACKAGE_PRICE;
+            const avgDeal = paidLeads.length > 0 ? PACKAGE_PRICE : 0;
+            const leadValue = periodLeads.length > 0 
+                ? Math.round(totalRevenue / periodLeads.length) 
+                : 0;
+            
+            // Projected revenue (consultations * conversion rate)
+            const projectedRevenue = Math.round(consultLeads.length * (conversion / 100) * PACKAGE_PRICE);
+            
+            document.getElementById('totalRevenue').textContent = `€${totalRevenue.toLocaleString()}`;
+            document.getElementById('avgDeal').textContent = `€${avgDeal.toLocaleString()}`;
+            document.getElementById('leadValue').textContent = `€${leadValue}`;
+            document.getElementById('projectedRevenue').textContent = `€${projectedRevenue.toLocaleString()}`;
+            
+            // Funnel stats
+            document.getElementById('quizLeads').textContent = quizLeads.length;
+            document.getElementById('contactedLeads').textContent = contactedLeads.length;
+            document.getElementById('consultLeads').textContent = consultLeads.length;
+            document.getElementById('paidLeads').textContent = paidLeads.length;
+            
+            // Conversion rates
+            const quizToConsult = quizLeads.length > 0 
+                ? Math.round((consultLeads.length / quizLeads.length) * 100) 
+                : 0;
+            const consultToPaid = consultLeads.length > 0 
+                ? Math.round((paidLeads.length / consultLeads.length) * 100) 
+                : 0;
+            
+            document.getElementById('quizToConsult').textContent = quizToConsult + '%';
+            document.getElementById('consultToPaid').textContent = consultToPaid + '%';
+            
+            // Calculate changes (compare with previous period)
+            if (period !== 'all') {
+                const prevStartDate = new Date(startDate);
+                prevStartDate.setDate(prevStartDate.getDate() - period);
+                
+                const prevLeads = allLeads.filter(l => {
+                    const createdDate = new Date(l.created_at);
+                    return createdDate >= prevStartDate && createdDate < startDate;
+                });
+                
+                const prevPaidLeads = prevLeads.filter(l => l.stage === 'paid');
+                const prevRevenue = prevPaidLeads.length * PACKAGE_PRICE;
+                
+                updateStatChange('leadsChange', periodLeads.length, prevLeads.length);
+                updateStatChange('revenueChange', totalRevenue, prevRevenue, '€');
+                updateStatChange('paymentsChange', paidLeads.length, prevPaidLeads.length);
+            }
+        }
+        
+        function updateStatChange(elementId, current, previous, prefix = '') {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+            
+            if (previous === 0) {
+                element.textContent = '';
+                return;
+            }
+            
+            const change = ((current - previous) / previous * 100).toFixed(1);
+            const isPositive = change >= 0;
+            
+            element.textContent = `${isPositive ? '↑' : '↓'} ${Math.abs(change)}% vs прошлый период`;
+            element.className = `stat-change ${isPositive ? 'positive' : 'negative'}`;
         }
         
         function showLeadDetails(leadId) {
