@@ -1,29 +1,30 @@
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+[[redirects]]
+  from = "/crm"
+  to = "/crm/login.html"
+  status = 200
+
+[[redirects]]
+  from = "/crm/"
+  to = "/crm/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/crm/*"
+  to = "/crm/:splat"
+  status = 200
+
+[build]
+  publish = "."
+  command = "echo 'No build required'"
 
 [[headers]]
-  for = "/*.css"
+  for = "/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
-  for = "/*.jpg"
+  for = "/crm/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/*.png"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/*.webp"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/*.woff2"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "no-cache"
