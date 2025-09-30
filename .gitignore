@@ -22,3 +22,7 @@ Best pages/
 *backup*
 *old*
 *.bak
+.vercel
+
+# Local Netlify folder
+.netlify

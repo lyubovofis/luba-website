@@ -1,40 +1,21 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
     {
       "source": "/crm",
+      "destination": "/crm/login.html"
+    },
+    {
+      "source": "/crm/",
       "destination": "/crm/index.html"
-    },
-    {
-      "source": "/crm/:path*",
-      "destination": "/crm/:path*"
-    },
-    {
-      "source": "/images/:path*",
-      "destination": "/images/:path*"
-    },
-    {
-      "source": "/css/:path*", 
-      "destination": "/css/:path*"
-    },
-    {
-      "source": "/js/:path*",
-      "destination": "/js/:path*"
-    },
-    {
-      "source": "/quiz/:path*",
-      "destination": "/quiz/:path*"
     }
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/crm/(.*)",
       "headers": [
         {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }
