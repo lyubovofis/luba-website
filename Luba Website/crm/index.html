@@ -1066,7 +1066,37 @@
                                 'currentIncome': 'Текущий доход',
                                 'desiredIncome': 'Желаемый доход'
                             };
-                            return `<div style="margin-bottom: 6px;"><strong>${labels[key] || key}:</strong> ${value}</div>`;
+                            
+                            const translations = {
+                                // Q1 - Отношение
+                                'worth': 'Недостойность',
+                                'escape': 'Бегство от денег',
+                                'fear': 'Страх богатства',
+                                'other': 'Другое',
+                                // Q2 - Успех других
+                                'guilt': 'Чувство вины',
+                                'share': 'Делиться',
+                                // Q3 - Поведение
+                                'hide': 'Скрываю доходы',
+                                'spend': 'Трачу быстро',
+                                'save': 'Коплю на черный день',
+                                // Q4 - Убеждения
+                                'positive': 'Позитивные',
+                                'evil': 'Деньги - зло',
+                                'lucky': 'Везунчикам',
+                                // Q6 - Эмоции
+                                'tired': 'Усталость',
+                                'anxiety': 'Тревога',
+                                'shame': 'Стыд',
+                                // Q7 - Барьеры
+                                'permission': 'Разрешение',
+                                'time': 'Нет времени',
+                                'knowledge': 'Нет знаний',
+                                'confidence': 'Нет уверенности'
+                            };
+                            
+                            const translatedValue = translations[value] || value;
+                            return `<div style="margin-bottom: 6px;"><strong>${labels[key] || key}:</strong> ${translatedValue}</div>`;
                         }).join('')}
                     </div>
                 </details>` : ''}
@@ -1076,9 +1106,25 @@
         }
         
         async function contactQuizLead(phone, leadId) {
+            const lead = allLeads.find(l => l.id == leadId);
             const cleanPhone = phone?.replace(/[^\d+]/g, '');
+            
             if (cleanPhone) {
-                window.open(`https://wa.me/${cleanPhone}`, '_blank');
+                // Персонализированное сообщение
+                const name = lead?.name || 'там';
+                const income = lead?.quiz_answers?.desiredIncome || '5000';
+                
+                const message = `Привет! Увидела что ты прошла тест 🎯
+
+Судя по результатам, у тебя есть четкая цель - выйти на €${income}. Это реально!
+
+Я работаю с женщинами именно на этом пути - убираем блоки, которые тормозят деньги.
+
+Хочешь обсудить твою ситуацию? Проведу бесплатную диагностическую сессию - покажу что конкретно блокирует и как убрать 💰
+
+Когда тебе удобно созвониться?`;
+                
+                window.open(`https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`, '_blank');
             }
         }
         
@@ -1089,19 +1135,34 @@
                 const { createClient } = window.supabase;
                 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
                 
-                const { error } = await supabase
+                const { data, error } = await supabase
                     .from('quiz_leads')
                     .update({ stage: 'new' })
-                    .eq('id', leadId);
+                    .eq('id', leadId)
+                    .select();
                 
                 if (error) throw error;
                 
-                console.log('✅ Moved to funnel');
+                console.log('✅ Moved to funnel:', data);
+                
+                // Перезагрузить данные и переключить на воронку
                 await loadData();
-                showTab('kanban');
+                
+                // Небольшая задержка чтобы данные обновились
+                setTimeout(() => {
+                    showTab('kanban');
+                }, 500);
+                
             } catch (error) {
                 console.error('❌ Error:', error);
-                alert('Ошибка при перемещении');
+                // Не показывать alert если лид уже перемещен
+                if (!error.message.includes('0 rows')) {
+                    alert('Ошибка при перемещении: ' + error.message);
+                } else {
+                    // Лид уже перемещен, просто обновить
+                    await loadData();
+                    showTab('kanban');
+                }
             }
         }
         
