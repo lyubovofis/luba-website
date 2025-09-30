@@ -1,11 +1,18 @@
 {
-  "name": "whatsapp-webhook",
+  "name": "lyubov-psy-website",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node webhook-server.js"
+    "start": "node webhook-server.js",
+    "test": "node test-crm-supabase.js",
+    "test:playwright": "node test-crm-playwright.js",
+    "server": "python -m http.server 8000",
+    "test:full": "start cmd /k python -m http.server 8000 && timeout /t 3 && node test-crm-playwright.js"
   },
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.1"
   }
 }

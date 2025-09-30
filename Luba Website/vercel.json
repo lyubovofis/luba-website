@@ -1,0 +1,23 @@
+{
+  "rewrites": [
+    {
+      "source": "/crm",
+      "destination": "/crm/login.html"
+    },
+    {
+      "source": "/crm/",
+      "destination": "/crm/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/crm/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
