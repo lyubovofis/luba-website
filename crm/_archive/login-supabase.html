@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Login - Денежный Водопад</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            width: 400px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #6b46c1;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .icon {
+            font-size: 50px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #6b46c1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover { background: #553c9a; }
+        .error {
+            color: #ef4444;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">💰</div>
+        <h1>CRM Денежный Водопад</h1>
+        
+        <form id="loginForm">
+            <label>Логин</label>
+            <input type="text" id="email" value="Luba" required>
+            
+            <label>Пароль</label>
+            <input type="password" id="password" value="Luba1488@" required>
+            
+            <button type="submit">Войти</button>
+        </form>
+        
+        <div class="error" id="error"></div>
+    </div>
+    
+    <script>
+        // Check if already authenticated
+        window.addEventListener('DOMContentLoaded', function() {
+            const isAuthenticated = localStorage.getItem('crm_authenticated');
+            const authExpiration = localStorage.getItem('crm_auth_expiration');
+            
+            if (isAuthenticated && authExpiration) {
+                const now = new Date().getTime();
+                const expiration = parseInt(authExpiration);
+                
+                if (now < expiration) {
+                    // Still valid, redirect to dashboard
+                    window.location.href = '/crm/dashboard.html';
+                } else {
+                    // Expired, clear auth
+                    localStorage.removeItem('crm_authenticated');
+                    localStorage.removeItem('crm_auth_expiration');
+                    localStorage.removeItem('crm_user');
+                }
+            }
+        });
+        
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('error');
+            
+            if (email === 'Luba' && password === 'Luba1488@') {
+                // Set expiration to 14 days from now
+                const expirationDate = new Date();
+                expirationDate.setDate(expirationDate.getDate() + 14);
+                
+                localStorage.setItem('crm_authenticated', 'true');
+                localStorage.setItem('crm_auth_expiration', expirationDate.getTime());
+                localStorage.setItem('crm_user', JSON.stringify({
+                    email: 'Luba',
+                    role: 'admin',
+                    name: 'Любовь'
+                }));
+                window.location.href = '/crm/dashboard.html';
+            } else {
+                errorDiv.textContent = 'Неверный логин или пароль';
+                errorDiv.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
