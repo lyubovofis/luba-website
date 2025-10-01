@@ -1151,6 +1151,10 @@
                             <div style="font-size: 14px; color: var(--text-gray);">
                                 📧 ${lead.email}
                             </div>` : ''}
+                            ${lead.quiz_version ? `
+                            <div style="font-size: 13px; padding: 4px 8px; background: var(--gradient-primary); color: white; border-radius: 6px; display: inline-block; font-weight: 600;">
+                                ${lead.quiz_version.toUpperCase()}
+                            </div>` : ''}
                             ${quizAnswers.currentIncome || quizAnswers.desiredIncome ? `
                             <div style="font-size: 14px; color: var(--text-gray);">
                                 💰 €${quizAnswers.currentIncome || '-'} → €${quizAnswers.desiredIncome || '-'}
