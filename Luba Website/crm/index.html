@@ -871,7 +871,7 @@
                 
                 <div class="kanban-column" data-stage="consultation">
                     <div class="column-header">
-                        <span class="column-title">💬 Консультация</span>
+                        <span class="column-title">📞 Консультация</span>
                         <div class="column-badge" id="count-consultation">0</div>
                     </div>
                     <div class="leads-container" id="consultation-leads"></div>
@@ -1061,6 +1061,9 @@
                         <button class="lead-action" onclick="event.stopPropagation(); moveToNext(${lead.id})" title="Далее">
                             ➡️
                         </button>
+                        <button class="lead-action" onclick="event.stopPropagation(); markNotInterested(${lead.id})" title="Не зацікавлений" style="background: #f5576c;">
+                            👎
+                        </button>
                     </div>
                 </div>
                 <div class="lead-info">
@@ -1150,6 +1153,10 @@
                             ${lead.email ? `
                             <div style="font-size: 14px; color: var(--text-gray);">
                                 📧 ${lead.email}
+                            </div>` : ''}
+                            ${lead.quiz_version ? `
+                            <div style="font-size: 13px; padding: 4px 8px; background: var(--gradient-primary); color: white; border-radius: 6px; display: inline-block; font-weight: 600;">
+                                ${lead.quiz_version.toUpperCase()}
                             </div>` : ''}
                             ${quizAnswers.currentIncome || quizAnswers.desiredIncome ? `
                             <div style="font-size: 14px; color: var(--text-gray);">
