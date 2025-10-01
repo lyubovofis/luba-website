@@ -871,7 +871,7 @@
                 
                 <div class="kanban-column" data-stage="consultation">
                     <div class="column-header">
-                        <span class="column-title">💬 Консультация</span>
+                        <span class="column-title">📞 Консультация</span>
                         <div class="column-badge" id="count-consultation">0</div>
                     </div>
                     <div class="leads-container" id="consultation-leads"></div>
@@ -1060,6 +1060,9 @@
                         </button>
                         <button class="lead-action" onclick="event.stopPropagation(); moveToNext(${lead.id})" title="Далее">
                             ➡️
+                        </button>
+                        <button class="lead-action" onclick="event.stopPropagation(); markNotInterested(${lead.id})" title="Не зацікавлений" style="background: #f5576c;">
+                            👎
                         </button>
                     </div>
                 </div>
