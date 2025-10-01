@@ -1710,6 +1710,29 @@
             }
         }
         
+        // Mark as Not Interested
+        async function markNotInterested(leadId) {
+            if (!confirm('Позначити ліда як незацікавленого?')) return;
+            
+            try {
+                const { createClient } = window.supabase;
+                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                
+                await supabase
+                    .from('quiz_leads')
+                    .update({ 
+                        stage: 'not_interested',
+                        updated_at: new Date().toISOString()
+                    })
+                    .eq('id', leadId);
+                
+                await loadData();
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Помилка: ' + error.message);
+            }
+        }
+        
         // Drag & Drop
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.kanban-column').forEach(column => {
