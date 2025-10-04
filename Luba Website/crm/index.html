@@ -1464,8 +1464,7 @@
                 await supabase
                     .from('quiz_leads')
                     .update({
-                        stage: 'quiz_new',
-                        updated_at: new Date().toISOString()
+                        stage: 'quiz_new'
                     })
                     .eq('id', leadId);
                 
@@ -1786,8 +1785,7 @@
                     const { error } = await supabase
                         .from('quiz_leads')
                         .update({ 
-                            stage: newStage,
-                            updated_at: new Date().toISOString()
+                            stage: newStage
                         })
                         .eq('id', leadId);
                     
@@ -1874,8 +1872,7 @@
                 await supabase
                     .from('quiz_leads')
                     .update({ 
-                        stage: 'not_interested',
-                        updated_at: new Date().toISOString()
+                        stage: 'not_interested'
                     })
                     .eq('id', leadId);
                 
