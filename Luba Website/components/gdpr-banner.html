@@ -35,19 +35,6 @@
             " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                 Принять все
             </button>
-            <button onclick="acceptNecessaryCookies()" style="
-                background: transparent;
-                color: white;
-                border: 1px solid #667eea;
-                padding: 12px 30px;
-                border-radius: 25px;
-                cursor: pointer;
-                font-weight: 600;
-                font-size: 14px;
-                transition: all 0.2s;
-            " onmouseover="this.style.background='rgba(102,126,234,0.1)'" onmouseout="this.style.background='transparent'">
-                Только необходимые
-            </button>
             <button onclick="showCookieSettings()" style="
                 background: transparent;
                 color: #999;
@@ -99,9 +86,9 @@
             <label style="display: flex; align-items: start; margin-bottom: 15px; cursor: pointer;">
                 <input type="checkbox" id="analytics-cookies" style="margin-right: 10px; margin-top: 3px;">
                 <div>
-                    <strong>Аналитические Cookie</strong>
+                    <strong>Аналитические Cookie (включая Hotjar)</strong>
                     <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">
-                        Помогают нам понять, как посетители взаимодействуют с сайтом (Google Analytics, TikTok Pixel).
+                        Помогают нам понять, как посетители взаимодействуют с сайтом. Hotjar записывает сессии для улучшения UX (Google Analytics, TikTok Pixel, Hotjar).
                     </p>
                 </div>
             </label>
@@ -172,18 +159,24 @@ function setCookie(name, value, days) {
 }
 
 function acceptAllCookies() {
+    // Set all consents
     setCookie('gdpr_consent', 'all', 365);
     setCookie('analytics_consent', 'true', 365);
     setCookie('marketing_consent', 'true', 365);
+    
+    // Hide banner
     document.getElementById('gdpr-banner').style.display = 'none';
+    
+    // Initialize all tracking including Hotjar
     initializeTracking();
-}
-
-function acceptNecessaryCookies() {
-    setCookie('gdpr_consent', 'necessary', 365);
-    setCookie('analytics_consent', 'false', 365);
-    setCookie('marketing_consent', 'false', 365);
-    document.getElementById('gdpr-banner').style.display = 'none';
+    
+    // Track acceptance event
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'cookie_consent', {
+            'consent_type': 'all_accepted',
+            'timestamp': new Date().toISOString()
+        });
+    }
 }
 
 function showCookieSettings() {
@@ -220,6 +213,15 @@ function initializeTracking() {
         gtag('consent', 'update', {
             'analytics_storage': 'granted'
         });
+    }
+    
+    // Hotjar - запускаем если analytics включен
+    if (analyticsConsent) {
+        // Hotjar уже загружен в head, просто активируем если нужно
+        if (typeof hj !== 'undefined') {
+            console.log('Hotjar активирован после согласия');
+            // Hotjar начинает записывать автоматически
+        }
     }
     
     // TikTok Pixel
