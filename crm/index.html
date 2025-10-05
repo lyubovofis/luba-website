@@ -864,7 +864,7 @@
             </header>
             
             <div class="kanban-board">
-                <div class="kanban-column" data-stage="quiz_new">
+                <div class="kanban-column" data-stage="new">
                     <div class="column-header">
                         <span class="column-title">💬 Написал</span>
                         <div class="column-badge" id="count-new">0</div>
@@ -1772,7 +1772,7 @@
             const lead = allLeads.find(l => l.id == leadId);
             if (!lead) return;
             
-            const stages = ['quiz_new', 'consultation', 'paid'];
+            const stages = ['new', 'consultation', 'paid'];
             const currentIndex = stages.indexOf(lead.stage);
             
             if (currentIndex < stages.length - 1) {
@@ -1894,40 +1894,40 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.kanban-column').forEach(column => {
                 column.addEventListener('dragover', e => e.preventDefault());
-                
                 column.addEventListener('drop', async e => {
                     e.preventDefault();
                     
-                    if (!draggedElement) return;
-                    
-                    const leadId = parseInt(draggedElement.dataset.id);
-                    const newStage = column.dataset.stage;
-                    const lead = allLeads.find(l => l.id == leadId);
-                    
-                    if (!lead || lead.stage === newStage) return;
-                    
-                    try {
-                        const { createClient } = window.supabase;
-                        const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                    if (draggedElement) {
+                        const container = column.querySelector('.leads-container');
+                        container.appendChild(draggedElement);
                         
-                        const { error } = await supabase
-                            .from('quiz_leads')
-                            .update({ stage: newStage })
-                            .eq('id', leadId);
+                        const leadId = parseInt(draggedElement.dataset.id);
+                        const newStage = column.dataset.stage;
+                        const lead = allLeads.find(l => l.id == leadId);
                         
-                        if (error) throw error;
-                        
-                        await loadData();
-                    } catch (error) {
-                        console.error('Drag & drop error:', error);
-                        alert('Помилка переміщення');
-                        await loadData();
+                        if (lead && lead.stage !== newStage) {
+                            lead.stage = newStage;
+                            
+                            try {
+                                const { createClient } = window.supabase;
+                                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                                await supabase.from('quiz_leads').update({ 
+                                    stage: newStage,
+                                    updated_at: new Date().toISOString()
+                                }).eq('id', leadId);
+                                
+                                // Перезагружаем из базы данных!
+                                await loadData();
+                            } catch (error) {
+                                console.error('Error:', error);
+                                alert('Ошибка сохранения: ' + error.message);
+                            }
+                        }
                     }
                 });
             });
-        });
-        
-        // Add lead form
+            
+            // Add lead form
             document.getElementById('addLeadForm').addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
@@ -1971,9 +1971,6 @@
         window.toggleEditMode = toggleEditMode;
         window.cancelEdit = cancelEdit;
         window.saveLeadChanges = saveLeadChanges;
-        
-        // Load data on page load
-        loadData();
     </script>
 </body>
 </html>
