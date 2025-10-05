@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Tests
+test-*.js
+*.test.js
+
+# Archives
+_archive/
+Best pages/
+
+# Documentation
+*.md
+!README.md
+
+# Development files
+deploy-*.js
+fix-*.js
+add-*.js
+create-*.js
+push-to-production.js
+netlify-mcp-server.js
+server.js
+start-server.bat
+start_server.bat
+
+# Git
+.git/
+.github/
+.gitignore
+
+# Netlify
+.netlify/
+netlify.toml
+
+# Logs and cache
+*.log
+.cache/
+test-results/
+
+# IDE
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
