@@ -864,7 +864,7 @@
             </header>
             
             <div class="kanban-board">
-                <div class="kanban-column" data-stage="new">
+                <div class="kanban-column" data-stage="quiz_new">
                     <div class="column-header">
                         <span class="column-title">💬 Написал</span>
                         <div class="column-badge" id="count-new">0</div>
@@ -1772,7 +1772,7 @@
             const lead = allLeads.find(l => l.id == leadId);
             if (!lead) return;
             
-            const stages = ['new', 'consultation', 'paid'];
+            const stages = ['quiz_new', 'consultation', 'paid'];
             const currentIndex = stages.indexOf(lead.stage);
             
             if (currentIndex < stages.length - 1) {
@@ -1901,9 +1901,11 @@
                         const container = column.querySelector('.leads-container');
                         container.appendChild(draggedElement);
                         
-                        const leadId = parseInt(draggedElement.dataset.id);
-                        const newStage = column.dataset.stage;
-                        const lead = allLeads.find(l => l.id == leadId);
+                                            const leadId = parseInt(draggedElement.dataset.id);
+                    const newStage = column.dataset.stage;
+                    const lead = allLeads.find(l => l.id == leadId);
+                    
+                    console.log('🔄 Drag & Drop:', { leadId, newStage, currentStage: lead?.stage });
                         
                         if (lead && lead.stage !== newStage) {
                             lead.stage = newStage;
@@ -1911,10 +1913,19 @@
                             try {
                                 const { createClient } = window.supabase;
                                 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                                await supabase.from('quiz_leads').update({ 
+                                const { data, error } = await supabase.from('quiz_leads').update({ 
                                     stage: newStage,
                                     updated_at: new Date().toISOString()
                                 }).eq('id', leadId);
+                        
+                        if (error) {
+                            console.error('❌ Update error:', error);
+                            alert('Помилка оновлення: ' + error.message);
+                            await loadData(); // Reload to revert visual change
+                            return;
+                        }
+                        
+                        console.log('✅ Updated successfully');
                                 
                                 // Перезагружаем из базы данных!
                                 await loadData();
