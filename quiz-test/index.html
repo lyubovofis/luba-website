@@ -1533,5 +1533,15 @@
             }
         }
     </script>
+
+<!-- GDPR Cookie Banner -->
+<script>
+    fetch('/components/gdpr-banner.html')
+        .then(response => response.text())
+        .then(html => {
+            document.body.insertAdjacentHTML('beforeend', html);
+        });
+</script>
+
 </body>
 </html>
