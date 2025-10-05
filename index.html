@@ -2144,9 +2144,31 @@ window.addEventListener('scroll', function() {
 <!-- GDPR Cookie Banner -->
 <script>
     fetch('/components/gdpr-banner.html')
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to load GDPR banner');
+            return response.text();
+        })
         .then(html => {
             document.body.insertAdjacentHTML('beforeend', html);
+            console.log('✅ GDPR banner loaded');
+        })
+        .catch(error => {
+            console.error('❌ GDPR banner error:', error);
+            // Fallback: вбудований баннер
+            document.body.insertAdjacentHTML('beforeend', `
+                <div id="gdpr-banner" style="position:fixed;bottom:0;left:0;right:0;background:rgba(43,49,57,0.98);color:white;padding:20px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);">
+                    <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;">
+                        <p style="margin:0;font-size:14px;">🍪 Ми використовуємо cookies. <a href="/privacy.html" style="color:#667eea;">Політика</a></p>
+                        <button onclick="document.getElementById('gdpr-banner').style.display='none';document.cookie='gdpr_consent=all;path=/;max-age=31536000'" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;border:none;padding:12px 30px;border-radius:25px;cursor:pointer;font-weight:600;">Прийняти</button>
+                    </div>
+                </div>
+            `);
+            setTimeout(() => {
+                const banner = document.getElementById('gdpr-banner');
+                if (banner && !document.cookie.includes('gdpr_consent')) {
+                    banner.style.display = 'block';
+                }
+            }, 1000);
         });
 </script>
 
