@@ -1,48 +1,48 @@
-# Version Control
-.git
-.gitignore
-.github
-
-# Development files
-*.py
-*.sh
-*.bat
-*.md
-*.log
-node_modules
+# Dependencies
+node_modules/
 package-lock.json
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# Test files
-test-*
-Best pages
-webhook
-tiktok-integration
-netlify
-.netlify
+# Tests
+test-*.js
+*.test.js
 
-# Config files not needed in production
-.env
-.env.local
-.env.example
-netlify.toml
-analyze_tiktok.py
-tiktok_*.py
-whatsapp-api-crm.js
+# Archives
+_archive/
+Best pages/
 
 # Documentation
-README.md
-HOW_TO_SHARE.md
-META_WHATSAPP_SETUP.md
-PROJECT_OVERVIEW.md
-OPTIMIZATION_REPORT.md
-SOURCE_TRACKING.md
+*.md
+!README.md
 
-# Backup or temp files
-*.bak
-*.tmp
-*~
+# Development files
+deploy-*.js
+fix-*.js
+add-*.js
+create-*.js
+push-to-production.js
+netlify-mcp-server.js
+server.js
+start-server.bat
+start_server.bat
+
+# Git
+.git/
+.github/
+.gitignore
+
+# Netlify
+.netlify/
+netlify.toml
+
+# Logs and cache
+*.log
+.cache/
+test-results/
+
+# IDE
+.vscode/
+.idea/
+
+# System files
 .DS_Store
 Thumbs.db

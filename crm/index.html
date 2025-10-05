@@ -704,6 +704,9 @@
                 <li><a class="nav-link" onclick="showTab('quiz')">
                     <span class="nav-icon">🎯</span><span>Квиз</span>
                 </a></li>
+                <li><a class="nav-link" onclick="showTab('archive')">
+                    <span class="nav-icon">🗄️</span><span>Архів</span>
+                </a></li>
             </ul>
         </nav>
         
@@ -896,6 +899,16 @@
                 <p style="text-align:center;color:var(--text-gray)">Загрузка...</p>
             </div>
         </div>
+        
+        <!-- ARCHIVE TAB -->
+        <div id="archive" class="tab-content">
+            <header class="header">
+                <h1>Архів - Не зацікавлені</h1>
+            </header>
+            <div id="archive-leads-list" style="background:var(--bg-card);padding:30px;border-radius:16px;box-shadow:var(--shadow);border:1px solid var(--border);">
+                <p style="text-align:center;color:var(--text-gray)">Загрузка...</p>
+            </div>
+        </div>
     </main>
     
     <!-- ADD LEAD MODAL -->
@@ -972,6 +985,15 @@
             document.getElementById(tabName).classList.add('active');
             document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
             event.currentTarget.classList.add('active');
+            
+            // Load data for specific tabs
+            if (tabName === 'archive') {
+                renderArchiveLeads();
+            } else if (tabName === 'kanban') {
+                renderKanban();
+            } else if (tabName === 'quiz') {
+                renderQuizLeads();
+            }
         }
         
         function showAddLeadModal() {
@@ -1348,6 +1370,118 @@
             }
         }
         
+        // Render Archive Leads
+        function renderArchiveLeads() {
+            const container = document.getElementById('archive-leads-list');
+            const archivedLeads = allLeads.filter(l => l.stage === 'not_interested');
+            
+            if (archivedLeads.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:var(--text-gray);padding:60px 20px;">Немає архівованих лідів</p>';
+                return;
+            }
+            
+            container.innerHTML = `
+                <div style="margin-bottom: 20px; color: var(--text-gray); font-size: 14px;">
+                    📦 Всього в архіві: <strong style="color: var(--text-light);">${archivedLeads.length}</strong>
+                </div>
+            `;
+            
+            archivedLeads.forEach(lead => {
+                const card = createArchiveLeadCard(lead);
+                container.appendChild(card);
+            });
+        }
+        
+        function createArchiveLeadCard(lead) {
+            let quizAnswers = {};
+            if (lead.quiz_answers) {
+                try {
+                    quizAnswers = typeof lead.quiz_answers === 'string' 
+                        ? JSON.parse(lead.quiz_answers) 
+                        : lead.quiz_answers;
+                } catch (e) {}
+            }
+            
+            const card = document.createElement('div');
+            card.className = 'archive-lead-card';
+            card.style.cssText = `
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 20px;
+                margin-bottom: 16px;
+                opacity: 0.7;
+                transition: all 0.3s ease;
+            `;
+            
+            card.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: start;">
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text-gray);">
+                            ${lead.name || quizAnswers.name || 'Без имени'}
+                        </h3>
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                            <div style="font-size: 14px; color: var(--text-gray);">
+                                📱 ${lead.phone || quizAnswers.whatsapp || '-'}
+                            </div>
+                            ${lead.email ? `
+                            <div style="font-size: 14px; color: var(--text-gray);">
+                                📧 ${lead.email}
+                            </div>` : ''}
+                            <div style="font-size: 12px; color: var(--text-gray); margin-top: 8px;">
+                                🗄️ Архівовано: ${new Date(lead.updated_at).toLocaleDateString('uk-UA')}
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <button 
+                            onclick="restoreFromArchive(${lead.id})" 
+                            style="background: var(--gradient-success); color: white; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600;"
+                            title="Відновити">
+                            ↩️ Відновити
+                        </button>
+                        <button 
+                            onclick="deleteQuizLead(${lead.id})" 
+                            style="background: #ef4444; color: white; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px;"
+                            title="Видалити назавжди">
+                            🗑️
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        // Restore from archive
+        async function restoreFromArchive(leadId) {
+            if (!confirm('Відновити ліда з архіву?')) return;
+            
+            try {
+                const { createClient } = window.supabase;
+                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                
+                await supabase
+                    .from('quiz_leads')
+                    .update({
+                        stage: 'quiz_new'
+                    })
+                    .eq('id', leadId);
+                
+                await loadData();
+                
+                // Show success
+                const div = document.createElement('div');
+                div.style.cssText = 'position:fixed;top:20px;right:20px;background:var(--gradient-success);color:white;padding:15px 25px;border-radius:12px;box-shadow:var(--shadow);z-index:10000;font-weight:600';
+                div.textContent = '✅ Ліда відновлено!';
+                document.body.appendChild(div);
+                setTimeout(() => div.remove(), 3000);
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Помилка: ' + error.message);
+            }
+        }
+        
         async function deleteQuizLead(leadId) {
             if (!confirm('Удалить лида из квиза? Это действие нельзя отменить.')) return;
             
@@ -1642,17 +1776,34 @@
             const currentIndex = stages.indexOf(lead.stage);
             
             if (currentIndex < stages.length - 1) {
-                lead.stage = stages[currentIndex + 1];
+                const newStage = stages[currentIndex + 1];
                 
                 try {
                     const { createClient } = window.supabase;
                     const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                    await supabase.from('quiz_leads').update({ stage: lead.stage }).eq('id', leadId);
+                    
+                    const { error } = await supabase
+                        .from('quiz_leads')
+                        .update({ 
+                            stage: newStage
+                        })
+                        .eq('id', leadId);
+                    
+                    if (error) throw error;
+                    
+                    // Reload data to ensure consistency
+                    await loadData();
+                    
+                    // Show success
+                    const div = document.createElement('div');
+                    div.style.cssText = 'position:fixed;top:20px;right:20px;background:var(--gradient-success);color:white;padding:15px 25px;border-radius:12px;box-shadow:var(--shadow);z-index:10000;font-weight:600';
+                    div.textContent = '✅ Переміщено!';
+                    document.body.appendChild(div);
+                    setTimeout(() => div.remove(), 2000);
                 } catch (error) {
                     console.error('Error:', error);
+                    alert('Помилка: ' + error.message);
                 }
-                
-                renderAll();
             }
         }
         
@@ -1710,6 +1861,35 @@
             }
         }
         
+        // Mark as Not Interested
+        async function markNotInterested(leadId) {
+            if (!confirm('Позначити ліда як незацікавленого?')) return;
+            
+            try {
+                const { createClient } = window.supabase;
+                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                
+                await supabase
+                    .from('quiz_leads')
+                    .update({ 
+                        stage: 'not_interested'
+                    })
+                    .eq('id', leadId);
+                
+                await loadData();
+                
+                // Show success
+                const div = document.createElement('div');
+                div.style.cssText = 'position:fixed;top:20px;right:20px;background:var(--gradient-success);color:white;padding:15px 25px;border-radius:12px;box-shadow:var(--shadow);z-index:10000;font-weight:600';
+                div.textContent = '✅ Переміщено в архів!';
+                document.body.appendChild(div);
+                setTimeout(() => div.remove(), 3000);
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Помилка: ' + error.message);
+            }
+        }
+        
         // Drag & Drop
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.kanban-column').forEach(column => {
@@ -1731,12 +1911,17 @@
                             try {
                                 const { createClient } = window.supabase;
                                 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                                await supabase.from('quiz_leads').update({ stage: newStage }).eq('id', leadId);
+                                await supabase.from('quiz_leads').update({ 
+                                    stage: newStage,
+                                    updated_at: new Date().toISOString()
+                                }).eq('id', leadId);
+                                
+                                // Перезагружаем из базы данных!
+                                await loadData();
                             } catch (error) {
                                 console.error('Error:', error);
+                                alert('Ошибка сохранения: ' + error.message);
                             }
-                            
-                            renderAll();
                         }
                     }
                 });
