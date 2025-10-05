@@ -1044,11 +1044,19 @@
         }
         
         function renderKanban() {
-            // Show only leads that are in funnel (not quiz_new)
-            ['new', 'consultation', 'paid'].forEach(stage => {
-                const container = document.getElementById(`${stage}-leads`);
-                const leads = allLeads.filter(l => l.stage === stage);
-                document.getElementById(`count-${stage}`).textContent = leads.length;
+            // Show leads from funnel
+            // 'new' column shows both 'new' and 'quiz_new' stages
+            const stages = {
+                'new': ['new', 'quiz_new'],
+                'consultation': ['consultation'],
+                'paid': ['paid']
+            };
+            
+            Object.keys(stages).forEach(columnStage => {
+                const container = document.getElementById(`${columnStage}-leads`);
+                const stageValues = stages[columnStage];
+                const leads = allLeads.filter(l => stageValues.includes(l.stage));
+                document.getElementById(`count-${columnStage}`).textContent = leads.length;
                 
                 container.innerHTML = '';
                 leads.forEach(lead => {
@@ -1911,12 +1919,17 @@
                             try {
                                 const { createClient } = window.supabase;
                                 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                                await supabase.from('quiz_leads').update({ 
-                                    stage: newStage,
-                                    updated_at: new Date().toISOString()
-                                }).eq('id', leadId);
                                 
-                                // Перезагружаем из базы данных!
+                                const { error } = await supabase
+                                    .from('quiz_leads')
+                                    .update({ stage: newStage })
+                                    .eq('id', leadId);
+                                
+                                if (error) {
+                                    console.error('Drag & drop error:', error);
+                                    alert('Помилка переміщення: ' + error.message);
+                                }
+                                
                                 await loadData();
                             } catch (error) {
                                 console.error('Error:', error);
