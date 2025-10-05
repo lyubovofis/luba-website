@@ -1914,8 +1914,7 @@
                                 const { createClient } = window.supabase;
                                 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
                                 const { data, error } = await supabase.from('quiz_leads').update({ 
-                                    stage: newStage,
-                                    updated_at: new Date().toISOString()
+                                    stage: newStage
                                 }).eq('id', leadId);
                         
                         if (error) {
