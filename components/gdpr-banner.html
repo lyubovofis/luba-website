@@ -134,12 +134,28 @@
 <script>
 // GDPR Cookie Management
 (function() {
-    // Check if user already made a choice
-    if (!getCookie('gdpr_consent')) {
-        setTimeout(function() {
-            document.getElementById('gdpr-banner').style.display = 'block';
-        }, 1000);
+    // Wait for banner element to be in DOM
+    function showBannerIfNeeded() {
+        const banner = document.getElementById('gdpr-banner');
+        if (!banner) {
+            // Element not ready yet, wait a bit
+            setTimeout(showBannerIfNeeded, 100);
+            return;
+        }
+        
+        // Check if user already made a choice
+        if (!getCookie('gdpr_consent')) {
+            setTimeout(function() {
+                banner.style.display = 'block';
+                console.log('🍪 GDPR banner shown');
+            }, 500);
+        } else {
+            console.log('🍪 GDPR consent already given');
+        }
     }
+    
+    // Start checking immediately
+    showBannerIfNeeded();
     
     // Initialize tracking based on consent
     initializeTracking();
