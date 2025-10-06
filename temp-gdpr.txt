@@ -1,0 +1,279 @@
+﻿<!-- GDPR Cookie Banner Component -->
+<div id="gdpr-banner" style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(43, 49, 57, 0.98);
+    color: white;
+    padding: 20px;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    display: none;
+    font-family: 'Montserrat', sans-serif;
+">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
+        <div style="flex: 1; min-width: 300px;">
+            <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                ðŸª ÐœÑ‹ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÐ¼ Ñ„Ð°Ð¹Ð»Ñ‹ cookie Ð´Ð»Ñ ÑƒÐ»ÑƒÑ‡ÑˆÐµÐ½Ð¸Ñ Ð²Ð°ÑˆÐµÐ³Ð¾ Ð¾Ð¿Ñ‹Ñ‚Ð° Ð½Ð° ÑÐ°Ð¹Ñ‚Ðµ, Ð°Ð½Ð°Ð»Ð¸Ñ‚Ð¸ÐºÐ¸ Ð¸ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ð¸ ÐºÐ¾Ð½Ñ‚ÐµÐ½Ñ‚Ð°. 
+                ÐŸÑ€Ð¾Ð´Ð¾Ð»Ð¶Ð°Ñ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ ÑÐ°Ð¹Ñ‚, Ð²Ñ‹ ÑÐ¾Ð³Ð»Ð°ÑˆÐ°ÐµÑ‚ÐµÑÑŒ Ñ Ð½Ð°ÑˆÐµÐ¹ 
+                <a href="/privacy.html" style="color: #667eea; text-decoration: underline;">ÐŸÐ¾Ð»Ð¸Ñ‚Ð¸ÐºÐ¾Ð¹ ÐºÐ¾Ð½Ñ„Ð¸Ð´ÐµÐ½Ñ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚Ð¸</a> Ð¸ 
+                <a href="/cookie-policy.html" style="color: #667eea; text-decoration: underline;">ÐŸÐ¾Ð»Ð¸Ñ‚Ð¸ÐºÐ¾Ð¹ Cookie</a>.
+            </p>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button onclick="acceptAllCookies()" style="
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 14px;
+                transition: transform 0.2s;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                ÐŸÑ€Ð¸Ð½ÑÑ‚ÑŒ Ð²ÑÐµ
+            </button>
+            <button onclick="showCookieSettings()" style="
+                background: transparent;
+                color: #999;
+                border: none;
+                padding: 12px 20px;
+                cursor: pointer;
+                font-size: 14px;
+                text-decoration: underline;
+            ">
+                ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal" style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 10000;
+    overflow-y: auto;
+">
+    <div style="
+        background: white;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        border-radius: 15px;
+        color: #333;
+    ">
+        <h2 style="margin-bottom: 20px; color: #667eea;">ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Cookie</h2>
+        
+        <div style="margin-bottom: 20px;">
+            <label style="display: flex; align-items: start; margin-bottom: 15px; cursor: pointer;">
+                <input type="checkbox" checked disabled style="margin-right: 10px; margin-top: 3px;">
+                <div>
+                    <strong>ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹Ðµ Cookie</strong>
+                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">
+                        Ð­Ñ‚Ð¸ Ñ„Ð°Ð¹Ð»Ñ‹ cookie Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹ Ð´Ð»Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ ÑÐ°Ð¹Ñ‚Ð° Ð¸ Ð½Ðµ Ð¼Ð¾Ð³ÑƒÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ‚ÐºÐ»ÑŽÑ‡ÐµÐ½Ñ‹.
+                    </p>
+                </div>
+            </label>
+            
+            <label style="display: flex; align-items: start; margin-bottom: 15px; cursor: pointer;">
+                <input type="checkbox" id="analytics-cookies" style="margin-right: 10px; margin-top: 3px;">
+                <div>
+                    <strong>ÐÐ½Ð°Ð»Ð¸Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸Ðµ Cookie (Ð²ÐºÐ»ÑŽÑ‡Ð°Ñ Hotjar)</strong>
+                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">
+                        ÐŸÐ¾Ð¼Ð¾Ð³Ð°ÑŽÑ‚ Ð½Ð°Ð¼ Ð¿Ð¾Ð½ÑÑ‚ÑŒ, ÐºÐ°Ðº Ð¿Ð¾ÑÐµÑ‚Ð¸Ñ‚ÐµÐ»Ð¸ Ð²Ð·Ð°Ð¸Ð¼Ð¾Ð´ÐµÐ¹ÑÑ‚Ð²ÑƒÑŽÑ‚ Ñ ÑÐ°Ð¹Ñ‚Ð¾Ð¼. Hotjar Ð·Ð°Ð¿Ð¸ÑÑ‹Ð²Ð°ÐµÑ‚ ÑÐµÑÑÐ¸Ð¸ Ð´Ð»Ñ ÑƒÐ»ÑƒÑ‡ÑˆÐµÐ½Ð¸Ñ UX (Google Analytics, TikTok Pixel, Hotjar).
+                    </p>
+                </div>
+            </label>
+            
+            <label style="display: flex; align-items: start; margin-bottom: 15px; cursor: pointer;">
+                <input type="checkbox" id="marketing-cookies" style="margin-right: 10px; margin-top: 3px;">
+                <div>
+                    <strong>ÐœÐ°Ñ€ÐºÐµÑ‚Ð¸Ð½Ð³Ð¾Ð²Ñ‹Ðµ Cookie</strong>
+                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">
+                        Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÑŽÑ‚ÑÑ Ð´Ð»Ñ Ð¿Ð¾ÐºÐ°Ð·Ð° Ñ€ÐµÐ»ÐµÐ²Ð°Ð½Ñ‚Ð½Ð¾Ð¹ Ñ€ÐµÐºÐ»Ð°Ð¼Ñ‹ (Facebook Pixel, TikTok Ads).
+                    </p>
+                </div>
+            </label>
+        </div>
+        
+        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+            <button onclick="saveCustomCookies()" style="
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+            ">
+                Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸
+            </button>
+            <button onclick="closeCookieSettings()" style="
+                background: #f0f0f0;
+                color: #333;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+            ">
+                ÐžÑ‚Ð¼ÐµÐ½Ð°
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+// GDPR Cookie Management
+(function() {
+    // Wait for banner element to be in DOM
+    function showBannerIfNeeded() {
+        const banner = document.getElementById('gdpr-banner');
+        if (!banner) {
+            // Element not ready yet, wait a bit
+            setTimeout(showBannerIfNeeded, 100);
+            return;
+        }
+        
+        // Check if user already made a choice
+        if (!getCookie('gdpr_consent')) {
+            setTimeout(function() {
+                banner.style.display = 'block';
+                console.log('ðŸª GDPR banner shown');
+            }, 500);
+        } else {
+            console.log('ðŸª GDPR consent already given');
+        }
+    }
+    
+    // Start checking immediately
+    showBannerIfNeeded();
+    
+    // Initialize tracking based on consent
+    initializeTracking();
+})();
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = `expires=${date.toUTCString()}`;
+    document.cookie = `${name}=${value};${expires};path=/;SameSite=Lax`;
+}
+
+function acceptAllCookies() {
+    // Set all consents
+    setCookie('gdpr_consent', 'all', 365);
+    setCookie('analytics_consent', 'true', 365);
+    setCookie('marketing_consent', 'true', 365);
+    
+    // Hide banner
+    document.getElementById('gdpr-banner').style.display = 'none';
+    
+    // Initialize all tracking including Hotjar
+    initializeTracking();
+    
+    // Track acceptance event
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'cookie_consent', {
+            'consent_type': 'all_accepted',
+            'timestamp': new Date().toISOString()
+        });
+    }
+}
+
+function showCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'block';
+    // Load current preferences
+    document.getElementById('analytics-cookies').checked = getCookie('analytics_consent') === 'true';
+    document.getElementById('marketing-cookies').checked = getCookie('marketing_consent') === 'true';
+}
+
+function closeCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'none';
+}
+
+function saveCustomCookies() {
+    const analytics = document.getElementById('analytics-cookies').checked;
+    const marketing = document.getElementById('marketing-cookies').checked;
+    
+    setCookie('gdpr_consent', 'custom', 365);
+    setCookie('analytics_consent', analytics ? 'true' : 'false', 365);
+    setCookie('marketing_consent', marketing ? 'true' : 'false', 365);
+    
+    document.getElementById('gdpr-banner').style.display = 'none';
+    document.getElementById('cookie-settings-modal').style.display = 'none';
+    
+    initializeTracking();
+}
+
+function initializeTracking() {
+    const analyticsConsent = getCookie('analytics_consent') === 'true';
+    const marketingConsent = getCookie('marketing_consent') === 'true';
+    
+    // Google Analytics
+    if (analyticsConsent && typeof gtag !== 'undefined') {
+        gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+        });
+    }
+    
+    // Hotjar - Ð·Ð°Ð¿ÑƒÑÐºÐ°ÐµÐ¼ ÐµÑÐ»Ð¸ analytics Ð²ÐºÐ»ÑŽÑ‡ÐµÐ½
+    if (analyticsConsent) {
+        // Hotjar ÑƒÐ¶Ðµ Ð·Ð°Ð³Ñ€ÑƒÐ¶ÐµÐ½ Ð² head, Ð¿Ñ€Ð¾ÑÑ‚Ð¾ Ð°ÐºÑ‚Ð¸Ð²Ð¸Ñ€ÑƒÐµÐ¼ ÐµÑÐ»Ð¸ Ð½ÑƒÐ¶Ð½Ð¾
+        if (typeof hj !== 'undefined') {
+            console.log('Hotjar Ð°ÐºÑ‚Ð¸Ð²Ð¸Ñ€Ð¾Ð²Ð°Ð½ Ð¿Ð¾ÑÐ»Ðµ ÑÐ¾Ð³Ð»Ð°ÑÐ¸Ñ');
+            // Hotjar Ð½Ð°Ñ‡Ð¸Ð½Ð°ÐµÑ‚ Ð·Ð°Ð¿Ð¸ÑÑ‹Ð²Ð°Ñ‚ÑŒ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸
+        }
+    }
+    
+    // TikTok Pixel
+    if (marketingConsent && typeof ttq !== 'undefined') {
+        ttq.page();
+    }
+    
+    // Facebook Pixel
+    if (marketingConsent && typeof fbq !== 'undefined') {
+        fbq('track', 'PageView');
+    }
+}
+
+// Cookie preferences button (floating)
+document.addEventListener('DOMContentLoaded', function() {
+    const prefsButton = document.createElement('button');
+    prefsButton.innerHTML = 'ðŸª';
+    prefsButton.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(102,126,234,0.9);
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        z-index: 1000;
+        transition: all 0.3s;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    `;
+    prefsButton.onclick = showCookieSettings;
+    prefsButton.onmouseover = function() { this.style.transform = 'scale(1.1)'; };
+    prefsButton.onmouseout = function() { this.style.transform = 'scale(1)'; };
+    document.body.appendChild(prefsButton);
+});
+</script>
