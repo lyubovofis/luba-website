@@ -39,8 +39,6 @@ async function testLiveSite() {
             
             if (firstLink.href.includes('34654420334')) {
                 console.log('   ✅ WhatsApp number: +34654420334 (Spain)');
-            } else if (firstLink.href.includes('380507260235')) {
-                console.log('   ✅ WhatsApp number: +380507260235 (Ukraine)');
             } else {
                 console.log(`   ⚠️  Unknown number in: ${firstLink.href}`);
             }
@@ -73,8 +71,6 @@ async function testLiveSite() {
         
         if (quizWa === '34654420334') {
             console.log('   ✅ Quiz uses: +34654420334 (Spain)');
-        } else if (quizWa === '380507260235') {
-            console.log('   ✅ Quiz uses: +380507260235 (Ukraine)');
         }
         
         await page.screenshot({ path: 'test-results/live-02-quiz.png' });
@@ -166,7 +162,7 @@ async function testLiveSite() {
         console.log('🌐 WHATSAPP NUMBERS:');
         console.log('   Landing: +34654420334 (Spain)');
         console.log(`   Quiz: ${quizWa || 'Check manually'}`);
-        console.log('   Note: Should be +380507260235 if needs Ukraine');
+        console.log('   All should use: +34654420334');
         
         console.log('\n🎨 CRM DESIGN:');
         console.log(`   Status: ${logoTitle.includes('Money Flow') ? 'NEW ✅' : 'OLD ❌'}`);
