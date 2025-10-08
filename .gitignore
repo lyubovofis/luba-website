@@ -3,7 +3,7 @@
 *.log
 *.tmp
 .DS_Store
-*.md
+# Removed: *.md - we need documentation!
 !README.md
 
 # Local folders
