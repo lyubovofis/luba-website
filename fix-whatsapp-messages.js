@@ -18,10 +18,10 @@ folders.forEach(folder => {
         "const message = `Вітаю! Я пройшов(ла) тест"
     );
     
-    // Update phone number
+    // Update phone number - keep Spain number
     content = content.replace(
-        /https:\/\/wa\.me\/34654420334/g,
-        'https://wa.me/380507260235'
+        /https:\/\/wa\.me\/380507260235/g,
+        'https://wa.me/34654420334'
     );
     
     fs.writeFileSync(file, content);

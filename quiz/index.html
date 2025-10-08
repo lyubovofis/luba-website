@@ -416,11 +416,47 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            transition: all 0.3s;
         }
         
         .whatsapp-btn:hover {
             background: #20bd5a;
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        }
+        
+        .telegram-btn {
+            background: #0088cc;
+            transition: all 0.3s;
+        }
+        
+        .telegram-btn:hover {
+            background: #006699;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.4);
+        }
+        
+        .messenger-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        @media (max-width: 640px) {
+            .messenger-buttons {
+                gap: 10px;
+            }
+            
+            .messenger-btn {
+                min-height: 70px !important;
+                padding: 12px 8px !important;
+                font-size: 14px !important;
+            }
+            
+            .messenger-btn span:first-child {
+                font-size: 24px !important;
+                margin-bottom: 4px !important;
+            }
         }
         
         
@@ -587,7 +623,7 @@
         <!-- Step 1: Income situation -->
         <div class="quiz-step active" id="step1">
             <div class="question-number">1</div>
-            <h2 style="font-size: 28px; margin-bottom: 8px;">84% женщин застряли на одном уровне дохода</h2>
+            <h2 style="font-size: 28px; margin-bottom: 8px;">84% людей застряли на одном уровне дохода</h2>
             <div class="question-subtitle" style="font-size: 18px; margin-bottom: 24px; color: #667eea;">А вы? Узнайте свой денежный блок за 2 минуты</div>
             
             <div style="margin-bottom: 20px; font-size: 16px; font-weight: 600;">Вам предложили проект за €5000. Первая мысль?</div>
@@ -612,7 +648,7 @@
                 </div>
                 <div class="option-card" data-value="ready" data-block="growth">
                     <div class="option-icon">💪</div>
-                    <div class="option-text">Отлично! Я готова!</div>
+                    <div class="option-text">Отлично! Я готов!</div>
                 </div>
                 <div class="option-card" data-value="other" data-block="unique">
                     <div class="option-icon">💭</div>
@@ -629,7 +665,7 @@
         <!-- Step 2: Success of others -->
         <div class="quiz-step" id="step2">
             <div class="question-number">2</div>
-            <h2>Подруга купила квартиру в Барселоне. Вы чувствуете?</h2>
+            <h2>Знакомый купил квартиру в Барселоне. Вы чувствуете?</h2>
             <div class="question-subtitle">Первая эмоция, которая приходит</div>
             
             <div class="options-grid">
@@ -651,7 +687,7 @@
                 </div>
                 <div class="option-card" data-value="joy" data-block="abundance">
                     <div class="option-icon">🎉</div>
-                    <div class="option-text">Искренняя радость за неё</div>
+                    <div class="option-text">Искренняя радость за него/неё</div>
                 </div>
                 <div class="option-card" data-value="other" data-block="unique">
                     <div class="option-icon">💭</div>
@@ -858,7 +894,7 @@
         <div class="quiz-step" id="step8">
             <div class="question-number">✨</div>
             <h2>Последний шаг до вашего денежного кода</h2>
-            <div class="question-subtitle">Куда отправить ваш персональный план на 7 дней?</div>
+            <div class="question-subtitle">Куда отправить ваш персональный план трансформации на 7 дней?</div>
             
             <div class="form-group">
                 <label>Ваше имя</label>
@@ -955,12 +991,23 @@
                 </div>
                 
                 <!-- Action buttons -->
-                <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <button class="whatsapp-btn" onclick="goToWhatsApp()">
-                        <span>💬</span>
-                        <span>Получить персональную консультацию в WhatsApp</span>
+                <div class="messenger-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 15px;">
+                    <button class="messenger-btn whatsapp-btn" onclick="goToWhatsApp()" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #25D366; color: white; padding: 18px 12px; border-radius: 12px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; min-height: 80px;">
+                        <span style="font-size: 28px; margin-bottom: 8px;">💬</span>
+                        <span style="text-align: center; line-height: 1.3;">WhatsApp</span>
                     </button>
                     
+                    <button class="messenger-btn telegram-btn" onclick="goToTelegram()" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0088cc; color: white; padding: 18px 12px; border-radius: 12px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; min-height: 80px;">
+                        <span style="font-size: 28px; margin-bottom: 8px;">✈️</span>
+                        <span style="text-align: center; line-height: 1.3;">Telegram</span>
+                    </button>
+                </div>
+                
+                <p style="text-align: center; color: #6b7280; font-size: 14px; margin-bottom: 15px;">
+                    Выберите удобный мессенджер для консультации
+                </p>
+                
+                <div style="display: flex; flex-direction: column; gap: 12px;">
                     <button style="background: white; color: var(--primary); border: 2px solid var(--primary); padding: 14px; border-radius: 10px; font-size: 16px; cursor: pointer;" onclick="window.location.href='/'">
                         🏠 На главную
                     </button>
@@ -1007,7 +1054,7 @@
                     "День 5-6: Сделайте одно смелое денежное действие",
                     "День 7: Назначьте цену выше обычной"
                 ],
-                testimonial: "У меня был страх больших денег. За 2 месяца подняла цены в 3 раза! - Марина, €1800 → €5400/мес"
+                testimonial: "Был страх больших денег. За 2 месяца цены выросли в 3 раза! €1800 → €5400/мес"
             },
             worth: {
                 name: "Чувство недостойности",
@@ -1025,7 +1072,7 @@
                     "День 5-6: Повышайте цену на 20%",
                     "День 7: Скажите 'да' большой возможности"
                 ],
-                testimonial: "Всю жизнь думала, что недостойна больших денег. После программы - контракт на €50,000! - Оксана"
+                testimonial: "Чувство недостойности мешало годами. После программы - контракт на €50,000!"
             },
             sabotage: {
                 name: "Самосаботаж успеха",
@@ -1043,7 +1090,7 @@
                     "День 5-6: Доведите до конца одно важное дело",
                     "День 7: Примите комплимент без оправданий"
                 ],
-                testimonial: "Постоянно саботировала успех. Теперь спокойно держу €10,000 на счету - Елена"
+                testimonial: "Постоянный самосаботаж успеха ушел в прошлое. Теперь спокойно держу €10,000 на счету"
             },
             impostor: {
                 name: "Синдром самозванца",
@@ -1061,7 +1108,7 @@
                     "День 5-6: Выступите как эксперт публично",
                     "День 7: Примите свою уникальность"
                 ],
-                testimonial: "Синдром самозванца мешал брать дорогие проекты. Сейчас минимальный чек €3000 - Анна"
+                testimonial: "Синдром самозванца блокировал крупные проекты. Сейчас минимальный чек €3000"
             },
             comparison: {
                 name: "Токсичное сравнение",
@@ -1079,7 +1126,7 @@
                     "День 5-6: Найдите свою уникальность",
                     "День 7: Празднуйте маленькие победы"
                 ],
-                testimonial: "Перестала сравнивать себя с другими - доход вырос в 4 раза! - Ирина"
+                testimonial: "Сравнения с другими съедали энергию. Перестал(а) сравнивать - доход вырос в 4 раза!"
             },
             victim: {
                 name: "Позиция жертвы",
@@ -1097,7 +1144,7 @@
                     "День 5-6: Найдите возможность в проблеме",
                     "День 7: Примите решение без советов"
                 ],
-                testimonial: "Из жертвы обстоятельств стала хозяйкой своей жизни. Доход х5! - Светлана"
+                testimonial: "Из позиции жертвы в хозяина жизни. Доход вырос в 5 раз за полгода!"
             },
             burnout: {
                 name: "Выгорание и истощение",
@@ -1115,7 +1162,7 @@
                     "День 5-6: Найдите источник энергии",
                     "День 7: Скажите 'нет' энергетическому вампиру"
                 ],
-                testimonial: "Была в выгорании 2 года. Сейчас работаю 4 часа в день и зарабатываю в 3 раза больше - Юлия"
+                testimonial: "Выгорание длилось 2 года. Сейчас работаю 4 часа в день и зарабатываю в 3 раза больше"
             },
             growth: {
                 name: "Готовность к росту",
@@ -1133,7 +1180,7 @@
                     "День 5-6: Инвестируйте в свое развитие",
                     "День 7: Сделайте смелый шаг вперед"
                 ],
-                testimonial: "Была готова к росту, но не знала куда. С ментором вышла на €10,000/мес - Татьяна"
+                testimonial: "Готовность к росту была, но не хватало вектора. С ментором доход вырос до €10,000/мес"
             },
             unique: {
                 name: "Уникальный паттерн",
@@ -1151,7 +1198,7 @@
                     "День 5-6: Доверьтесь интуиции в денежном вопросе",
                     "День 7: Запишитесь на персональную диагностику"
                 ],
-                testimonial: "У меня был сложный микс блоков. После индивидуальной работы всё встало на места - Мария"
+                testimonial: "Уникальная комбинация блоков требовала индивидуального подхода. После персональной работы всё встало на места"
             }
         };
         
@@ -1465,13 +1512,33 @@
         
         // Go to WhatsApp
         function goToWhatsApp() {
-            const message = `Здравствуйте! Я прошёл(ла) тест "Денежный код". Мой результат: ${quizState.blockName} (${quizState.primaryBlock}). Хочу записаться на бесплатную консультацию.`;
+            const message = `Здравствуйте! Я прошёл тест "Денежный код". Мой результат: ${quizState.blockName} (${quizState.primaryBlock}). Хочу записаться на бесплатную консультацию.`;
             const whatsappUrl = `https://wa.me/34654420334?text=${encodeURIComponent(message)}`;
             
             // Track BEFORE opening WhatsApp
+            trackMessengerClick('WhatsApp');
+            
+            window.location.href = whatsappUrl;
+        }
+        
+        // Go to Telegram
+        function goToTelegram() {
+            const message = `Здравствуйте! Я прошёл тест "Денежный код". Мой результат: ${quizState.blockName} (${quizState.primaryBlock}). Хочу записаться на бесплатную консультацию.`;
+            const telegramUrl = `https://t.me/LyubovUA?text=${encodeURIComponent(message)}`;
+            
+            // Track BEFORE opening Telegram
+            trackMessengerClick('Telegram');
+            
+            window.location.href = telegramUrl;
+        }
+        
+        // Track messenger clicks
+        function trackMessengerClick(messenger) {
             if (typeof fbq !== 'undefined') {
                 try {
-                    fbq('track', 'Contact');
+                    fbq('track', 'Contact', {
+                        messenger: messenger
+                    });
                 } catch (e) {
                     console.log('FB pixel error:', e);
                 }
@@ -1479,8 +1546,8 @@
             if (typeof window.ttq !== 'undefined') {
                 try {
                     window.ttq.track('Contact', {
-                        content_type: 'whatsapp_message',
-                        content_name: 'Quiz Result WhatsApp',
+                        content_type: messenger.toLowerCase() + '_message',
+                        content_name: 'Quiz Result ' + messenger,
                         description: quizState.blockName
                     });
                 } catch (e) {
@@ -1490,7 +1557,7 @@
             if (typeof gtag !== 'undefined') {
                 try {
                     gtag('event', 'contact', {
-                        'event_category': 'WhatsApp',
+                        'event_category': messenger,
                         'event_label': 'Quiz Result'
                     });
                 } catch (e) {
@@ -1498,25 +1565,23 @@
                 }
             }
             
-            // Track if WhatsApp was actually opened (user returned)
+            // Track if messenger was actually opened (user returned)
             const startTime = Date.now();
             window.addEventListener('blur', function() {
                 setTimeout(() => {
                     if (Date.now() - startTime > 3000) {
-                        // User was away for 3+ seconds = likely opened WhatsApp
+                        // User was away for 3+ seconds = likely opened messenger
                         if (typeof window.ttq !== 'undefined') {
                             try {
                                 window.ttq.track('Contact', {
-                                    content_type: 'whatsapp_opened',
-                                    content_name: 'WhatsApp Actually Opened'
+                                    content_type: messenger.toLowerCase() + '_opened',
+                                    content_name: messenger + ' Actually Opened'
                                 });
                             } catch (e) {}
                         }
                     }
                 }, 100);
             }, { once: true });
-            
-            window.location.href = whatsappUrl;
         }
         
         // Save results to email
