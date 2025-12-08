@@ -80,8 +80,15 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Sitemap location
+# Sitemap and feeds
 Sitemap: https://denezhniy-vodopad.com/sitemap.xml
 
-# Additional AI context file
-# See also: https://denezhniy-vodopad.com/llms.txt
+# RSS Feed
+# https://denezhniy-vodopad.com/feed.xml
+
+# AI context files
+# https://denezhniy-vodopad.com/llms.txt
+# https://denezhniy-vodopad.com/.well-known/ai-plugin.json
+
+# For humans
+# https://denezhniy-vodopad.com/humans.txt

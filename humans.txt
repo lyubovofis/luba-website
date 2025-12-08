@@ -1,0 +1,33 @@
+/* TEAM */
+Creator: Любовь Золотова (Lyubov Zolotova)
+Role: Founder, Transformation Coach
+Contact: hello@denezhniy-vodopad.com
+Telegram: @LyubovUA
+WhatsApp: +34654420334
+From: Spain / Israel
+
+/* SITE */
+Name: Денежный Водопад (Money Waterfall)
+URL: https://denezhniy-vodopad.com
+Language: Russian
+Target: Russian-speaking diaspora worldwide
+Standards: HTML5, CSS3, JavaScript
+Software: Netlify, Google Analytics, Facebook Pixel, TikTok Pixel, Microsoft Clarity
+AI-Friendly: Yes (see /llms.txt and /robots.txt)
+
+/* MISSION */
+Help women transform their relationship with money
+through deep psychological work with subconscious blocks,
+family patterns, and limiting beliefs.
+
+8-week program with proven results:
+- 347+ women transformed
+- 3-10x average income growth
+- Individual approach
+
+/* THANKS */
+To all women who trusted us with their transformation journey.
+To the universe for abundance and flow.
+
+/* LAST UPDATE */
+2025-12-08
