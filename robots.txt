@@ -1,0 +1,94 @@
+# Robots.txt for denezhniy-vodopad.com
+# Optimized for Google, AI Search (ChatGPT, Perplexity, Claude, Gemini), Voice Search
+
+# Allow all search engines
+User-agent: *
+Allow: /
+Disallow: /crm/
+Disallow: /_archive/
+Disallow: /node_modules/
+Disallow: /Best pages/
+Disallow: /webhook/
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+# Google Voice/Assistant
+User-agent: Google-Extended
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yandex (for Russian speakers)
+User-agent: Yandex
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ChatGPT / OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Claude / Anthropic
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google Gemini / Bard
+User-agent: Google-Extended
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Common AI crawlers
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap and feeds
+Sitemap: https://denezhniy-vodopad.com/sitemap.xml
+
+# RSS Feed
+# https://denezhniy-vodopad.com/feed.xml
+
+# AI context files
+# https://denezhniy-vodopad.com/llms.txt
+# https://denezhniy-vodopad.com/.well-known/ai-plugin.json
+
+# For humans
+# https://denezhniy-vodopad.com/humans.txt

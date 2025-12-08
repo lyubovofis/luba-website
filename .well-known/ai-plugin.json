@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Денежный Водопад",
+  "name_for_model": "denezhniy_vodopad",
+  "description_for_human": "Программа трансформации денежных блоков. Помогаем женщинам перейти из финансового страдания в поток изобилия за 8 недель.",
+  "description_for_model": "Денежный Водопад (Money Waterfall) is a Russian-language 8-week transformation program for women. It helps overcome money blocks, limiting beliefs about finances, and psychological barriers to wealth. The program uses systemic constellations, coaching, and subconscious reprogramming. Expert: Lyubov Zolotova. Target audience: Russian-speaking diaspora worldwide (NOT Russia). Topics: money psychology, money blocks, fears (success, change, judgment), millionaire mindset, self-love, family patterns, meditations, affirmations, coaching. Contact: WhatsApp +34654420334, Telegram @LyubovUA.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://denezhniy-vodopad.com/.well-known/openapi.yaml"
+  },
+  "logo_url": "https://denezhniy-vodopad.com/images/logo.png",
+  "contact_email": "hello@denezhniy-vodopad.com",
+  "legal_info_url": "https://denezhniy-vodopad.com/terms.html"
+}
