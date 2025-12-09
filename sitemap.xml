@@ -1,408 +1,602 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <!-- Main Pages -->
     <url>
-        <loc>https://denezhniy-vodopad.com/</loc>
-        <lastmod>2025-12-08</lastmod>
+        <loc>https://lyubovpsy.com/</loc>
+        <lastmod>2025-09-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
-        <loc>https://denezhniy-vodopad.com/quiz/</loc>
-        <lastmod>2025-12-08</lastmod>
+        <loc>https://lyubovpsy.com/quiz/</loc>
+        <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://denezhniy-vodopad.com/pages/</loc>
-        <lastmod>2025-12-08</lastmod>
+        <loc>https://lyubovpsy.com/pages/</loc>
+        <lastmod>2025-12-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <!-- Legal Pages -->
     <url>
-        <loc>https://denezhniy-vodopad.com/privacy.html</loc>
-        <lastmod>2025-12-08</lastmod>
+        <loc>https://lyubovpsy.com/privacy.html</loc>
+        <lastmod>2025-09-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <url>
-        <loc>https://denezhniy-vodopad.com/terms.html</loc>
-        <lastmod>2025-12-08</lastmod>
+        <loc>https://lyubovpsy.com/terms.html</loc>
+        <lastmod>2025-09-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <url>
-        <loc>https://denezhniy-vodopad.com/disclaimer.html</loc>
-        <lastmod>2025-12-08</lastmod>
+        <loc>https://lyubovpsy.com/disclaimer.html</loc>
+        <lastmod>2025-09-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <url>
-        <loc>https://denezhniy-vodopad.com/cookie-policy.html</loc>
-        <lastmod>2025-12-08</lastmod>
+        <loc>https://lyubovpsy.com/cookie-policy.html</loc>
+        <lastmod>2025-09-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
-    <!-- SEO Articles - Money Psychology -->
+    <!-- SEO Articles - 91 pages, published 1 per day from Sep 10 to Dec 9, 2025 -->
     <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/psihologiya-deneg.html</loc>
+        <loc>https://lyubovpsy.com/ru/affirmacii-na-dengi.html</loc>
+        <lastmod>2025-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/cennost-sebya.html</loc>
+        <lastmod>2025-09-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/chuvstvo-viny-za-dengi.html</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/denezhnaya-energiya.html</loc>
+        <lastmod>2025-09-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/denezhnaya-meditaciya.html</loc>
+        <lastmod>2025-09-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/denezhnye-bloki.html</loc>
+        <lastmod>2025-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/denezhnye-bloki-spisok.html</loc>
+        <lastmod>2025-09-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/denezhnye-bloki-v-tele.html</loc>
+        <lastmod>2025-09-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/denezhnyj-potolok.html</loc>
+        <lastmod>2025-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/dengi-i-lyubov.html</loc>
+        <lastmod>2025-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/dengi-i-otnosheniya.html</loc>
+        <lastmod>2025-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/dengi-v-otnosheniyah.html</loc>
+        <lastmod>2025-09-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/dengi-zlo.html</loc>
+        <lastmod>2025-09-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/depressiya-iz-za-deneg.html</loc>
+        <lastmod>2025-09-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/dopolnitelnyi-dohod.html</loc>
+        <lastmod>2025-09-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/emocionalnye-pokupki.html</loc>
+        <lastmod>2025-09-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/emocionalnyj-golod.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/energeticheskie-bloki.html</loc>
+        <lastmod>2025-09-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/energiya-deneg.html</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/finansovaya-gramotnost.html</loc>
+        <lastmod>2025-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/finansovaya-nezavisimost.html</loc>
+        <lastmod>2025-09-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/finansovaya-trevozhnost.html</loc>
+        <lastmod>2025-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/finansovoe-myshlenie.html</loc>
+        <lastmod>2025-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/finansovye-celi.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/finansovyi-uspeh.html</loc>
+        <lastmod>2025-10-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/impulsivnye-pokupki.html</loc>
+        <lastmod>2025-10-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/kak-kopit-dengi.html</loc>
+        <lastmod>2025-10-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/kak-polyubit-dengi.html</loc>
+        <lastmod>2025-10-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/kak-privlech-dengi.html</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/kak-razbogatet.html</loc>
+        <lastmod>2025-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/kak-stat-bogatym.html</loc>
+        <lastmod>2025-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/kak-stat-millionerom.html</loc>
+        <lastmod>2025-10-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/kak-ubrat-denezhnye-bloki.html</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/kak-uvelichit-dohod-psihologiya.html</loc>
+        <lastmod>2025-10-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/karma-deneg.html</loc>
+        <lastmod>2025-10-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/kompulsivnye-pokupki.html</loc>
+        <lastmod>2025-10-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/konsultaciya-psihologa.html</loc>
+        <lastmod>2025-10-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/kouching-onlayn.html</loc>
+        <lastmod>2025-10-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/layf-kouch.html</loc>
+        <lastmod>2025-10-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/lichnye-finansy.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/lyubov-k-sebe.html</loc>
+        <lastmod>2025-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/mantry-na-dengi.html</loc>
+        <lastmod>2025-10-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/meditaciya-izobilie.html</loc>
+        <lastmod>2025-10-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/meditaciya-na-dengi.html</loc>
+        <lastmod>2025-10-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/myshlenie-millionera.html</loc>
+        <lastmod>2025-10-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/myshlenie-rosta.html</loc>
+        <lastmod>2025-10-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/negativnye-mysli.html</loc>
+        <lastmod>2025-10-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/negativnye-ustanovki.html</loc>
+        <lastmod>2025-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/ogranichivayushie-ubezhdeniya.html</loc>
+        <lastmod>2025-10-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/otnoshenie-k-dengam.html</loc>
+        <lastmod>2025-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/passivnyi-dohod.html</loc>
+        <lastmod>2025-10-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/pochemu-ne-hvataet-deneg.html</loc>
+        <lastmod>2025-10-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/pozitivnoe-myshlenie.html</loc>
+        <lastmod>2025-11-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/pozitivnye-ubezhdeniya.html</loc>
+        <lastmod>2025-11-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/prinyatie-sebya.html</loc>
+        <lastmod>2025-11-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/privlechenie-deneg.html</loc>
+        <lastmod>2025-11-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/privychki-bogatyh.html</loc>
+        <lastmod>2025-11-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/psihologicheskie-bariery.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/psihologiya-deneg.html</loc>
+        <lastmod>2025-11-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/put-k-bogatstvu.html</loc>
+        <lastmod>2025-11-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/rabota-s-podsoznaniem.html</loc>
+        <lastmod>2025-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/rabota-s-rodom.html</loc>
+        <lastmod>2025-11-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/roditelskie-ustanovki.html</loc>
+        <lastmod>2025-11-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/rodovye-programmy.html</loc>
+        <lastmod>2025-11-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/rodovye-travmy.html</loc>
+        <lastmod>2025-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/samosabotazh.html</loc>
+        <lastmod>2025-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/semeynye-scenarii.html</loc>
+        <lastmod>2025-11-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/shopogolizm.html</loc>
+        <lastmod>2025-11-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/sila-mysli.html</loc>
+        <lastmod>2025-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/sindrom-samozvanca.html</loc>
+        <lastmod>2025-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/sistemnye-rasstanovki.html</loc>
+        <lastmod>2025-11-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/ssory-iz-za-deneg.html</loc>
+        <lastmod>2025-11-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/strah-bednosti.html</loc>
+        <lastmod>2025-11-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/strah-budushego.html</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/strah-kritiki.html</loc>
+        <lastmod>2025-11-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/strah-osuzhdeniya.html</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/strah-otkaza.html</loc>
+        <lastmod>2025-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/strah-peremen.html</loc>
+        <lastmod>2025-11-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/strah-tratit-dengi.html</loc>
+        <lastmod>2025-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/strah-uspeha.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/test-na-denezhnye-bloki.html</loc>
+        <lastmod>2025-11-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/toksichnye-otnosheniya.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/upravlenie-dengami.html</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/uvelichit-dohod.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/uverennost-v-sebe.html</loc>
+        <lastmod>2025-12-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/vizualizaciya-deneg.html</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/vizualizaciya-uspeha.html</loc>
+        <lastmod>2025-12-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/vnutrennij-kritik.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/vnutrenniy-kritik.html</loc>
+        <lastmod>2025-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lyubovpsy.com/ru/zavisimost-ot-pokupok.html</loc>
         <lastmod>2025-12-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
     <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/denezhnaya-energiya.html</loc>
-        <lastmod>2025-12-08</lastmod>
+        <loc>https://lyubovpsy.com/ru/zhenshina-i-dengi.html</loc>
+        <lastmod>2025-12-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/energiya-deneg.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/privlechenie-deneg.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/kak-privlech-dengi.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/dengi-zlo.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- SEO Articles - Money Blocks -->
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/denezhnye-bloki.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/kak-ubrat-denezhnye-bloki.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/samosabotazh.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/sindrom-samozvanca.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/psihologicheskie-bariery.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/toksichnye-otnosheniya.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- SEO Articles - Fears -->
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/strah-uspeha.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/strah-budushego.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/strah-peremen.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/strah-osuzhdeniya.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/negativnye-mysli.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/vnutrenniy-kritik.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- SEO Articles - Mindset -->
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/myshlenie-millionera.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/myshlenie-rosta.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/pozitivnoe-myshlenie.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/sila-mysli.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/kak-razbogatet.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/kak-stat-bogatym.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- SEO Articles - Self-Work -->
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/lyubov-k-sebe.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/prinyatie-sebya.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/uverennost-v-sebe.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/emocionalnyj-golod.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/shopogolizm.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/kompulsivnye-pokupki.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/impulsivnye-pokupki.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- SEO Articles - Family/Ancestral -->
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/rodovye-programmy.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/rodovye-travmy.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/rabota-s-rodom.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/sistemnye-rasstanovki.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- SEO Articles - Practices -->
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/meditaciya-na-dengi.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/meditaciya-izobilie.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/affirmacii-na-dengi.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/mantry-na-dengi.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/finansovye-celi.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/finansovaya-gramotnost.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/lichnye-finansy.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/kak-kopit-dengi.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- SEO Articles - Coaching & Income -->
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/konsultaciya-psihologa.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/layf-kouch.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/kouching-onlayn.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/finansovaya-nezavisimost.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/passivnyi-dohod.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://denezhniy-vodopad.com/pages/seo/dopolnitelnyi-dohod.html</loc>
-        <lastmod>2025-12-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
 </urlset>

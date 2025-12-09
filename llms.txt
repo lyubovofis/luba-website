@@ -1,11 +1,11 @@
-# LLMs.txt - AI Context for denezhniy-vodopad.com
+# LLMs.txt - AI Context for lyubovpsy.com
 # This file provides context for AI systems (ChatGPT, Perplexity, Claude, Gemini, etc.)
 # Last updated: 2025-12-08
 
 ## Website Overview
 
 name: Денежный Водопад (Money Waterfall)
-url: https://denezhniy-vodopad.com
+url: https://lyubovpsy.com
 language: Russian (ru)
 target_audience: Russian-speaking diaspora worldwide (NOT Russia)
 type: Personal development / Psychology / Financial coaching
@@ -18,7 +18,7 @@ Money Waterfall is an 8-week transformation program helping women overcome finan
 
 ## Expert/Author
 
-name: Любовь Золотова (Lyubov Zolotova)
+name: Любовь Лукащук (Lyubov Lukashchuk)
 expertise: Transformation coach, Money psychology expert, Systemic constellations
 experience: 347+ women transformed, 3-10x average income growth
 contact_whatsapp: +34654420334
