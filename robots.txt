@@ -1,4 +1,4 @@
-# Robots.txt for denezhniy-vodopad.com
+# Robots.txt for lyubovpsy.com
 # Optimized for Google, AI Search (ChatGPT, Perplexity, Claude, Gemini), Voice Search
 
 # Allow all search engines
@@ -81,14 +81,14 @@ User-agent: Applebot-Extended
 Allow: /
 
 # Sitemap and feeds
-Sitemap: https://denezhniy-vodopad.com/sitemap.xml
+Sitemap: https://lyubovpsy.com/sitemap.xml
 
 # RSS Feed
-# https://denezhniy-vodopad.com/feed.xml
+# https://lyubovpsy.com/feed.xml
 
 # AI context files
-# https://denezhniy-vodopad.com/llms.txt
-# https://denezhniy-vodopad.com/.well-known/ai-plugin.json
+# https://lyubovpsy.com/llms.txt
+# https://lyubovpsy.com/.well-known/ai-plugin.json
 
 # For humans
-# https://denezhniy-vodopad.com/humans.txt
+# https://lyubovpsy.com/humans.txt
