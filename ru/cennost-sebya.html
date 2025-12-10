@@ -756,6 +756,35 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             max-height: 500px;
         }
 
+        /* Expert Section */
+        .expert-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+        .expert-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .expert-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            flex-shrink: 0;
+        }
+        .expert-info { flex: 1; min-width: 280px; }
+        .expert-info h2 { color: var(--dark); margin-bottom: 10px; font-size: 1.8rem; }
+        .expert-credentials { color: var(--primary); font-weight: 600; margin-bottom: 15px; }
+        .expert-info p { color: #555; line-height: 1.7; margin-bottom: 10px; }
+        @media (max-width: 768px) {
+            .expert-container { flex-direction: column; text-align: center; }
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -1267,6 +1296,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
                     <div class="faq-answer">
                         <p>Вы спокойно принимаете комплименты. Легко говорите "нет". Не разрушаетесь от критики. Называете справедливую цену. Не сравниваете себя с другими. Ошибаетесь без самобичевания. Чувствуете право на свои потребности и желания.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expert Section -->
+        <section class="expert-section">
+            <div class="expert-container">
+                <img src="/images/luba-hero.webp" alt="Психолог Любовь Лукащук" class="expert-photo">
+                <div class="expert-info">
+                    <h2>Любовь Лукащук</h2>
+                    <p class="expert-credentials">Психолог, специалист по самоценности и денежному мышлению</p>
+                    <p>Более 10 лет практики. Помогаю людям по всему миру вернуть ощущение собственной ценности и построить здоровые отношения с деньгами.</p>
+                    <p><strong>Моя методика:</strong> мы находим корни обесценивания себя, прорабатываем их и возвращаем вам ощущение своей значимости.</p>
                 </div>
             </div>
         </section>

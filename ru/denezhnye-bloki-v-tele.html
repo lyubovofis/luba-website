@@ -883,6 +883,61 @@
                 text-align: center;
             }
         }
+
+        /* Expert Section */
+        .expert-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            color: #1a1a2e;
+        }
+        .expert-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .expert-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #6b4ce6;
+        }
+        .expert-info {
+            flex: 1;
+            min-width: 280px;
+        }
+        .expert-info h3 {
+            color: #1a1a2e;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .expert-title {
+            color: #6b4ce6;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .expert-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            display: block;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #6b4ce6;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -1274,6 +1329,23 @@
                 </div>
             </section>
         </main>
+
+        <!-- Expert Section -->
+        <section class="expert-section">
+            <div class="expert-container">
+                <img src="/images/luba-hero.webp" alt="Любовь Лукащук - психолог" class="expert-image">
+                <div class="expert-info">
+                    <h3>Любовь Лукащук</h3>
+                    <p class="expert-title">Психолог, специалист по телесной терапии</p>
+                    <p>Помогаю убрать денежные блоки через работу с телом. Работаю онлайн с клиентами по всему миру.</p>
+                    <div class="expert-stats">
+                        <div class="stat"><span class="stat-number">500+</span><span class="stat-label">клиентов</span></div>
+                        <div class="stat"><span class="stat-number">10+</span><span class="stat-label">лет опыта</span></div>
+                        <div class="stat"><span class="stat-number">30+</span><span class="stat-label">стран</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Footer -->
         <footer>

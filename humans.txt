@@ -1,14 +1,14 @@
 /* TEAM */
 Creator: Любовь Золотова (Lyubov Zolotova)
 Role: Founder, Transformation Coach
-Contact: hello@denezhniy-vodopad.com
+Contact: https://t.me/LyubovUA
 Telegram: @LyubovUA
 WhatsApp: +34654420334
 From: Spain / Israel
 
 /* SITE */
 Name: Денежный Водопад (Money Waterfall)
-URL: https://denezhniy-vodopad.com
+URL: https://lyubovpsy.com
 Language: Russian
 Target: Russian-speaking diaspora worldwide
 Standards: HTML5, CSS3, JavaScript
