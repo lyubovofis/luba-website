@@ -600,6 +600,53 @@
             color: #6b7280;
         }
 
+        /* Expert Section */
+        .expert-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+        .expert-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .expert-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            flex-shrink: 0;
+        }
+        .expert-info {
+            flex: 1;
+            min-width: 280px;
+        }
+        .expert-info h2 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        .expert-credentials {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .expert-info p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .expert-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -1034,31 +1081,15 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section>
-            <h2 class="section-title">Психолог Любовь Лукащук</h2>
-            <div class="about-container">
-                <div class="about-photo">
-                    <span>ЛЗ</span>
-                </div>
-                <div class="about-text">
-                    <h3>Помогаю изменить отношение к деньгам</h3>
-                    <p>Привет! Я Любовь Лукащук, психолог и коуч по трансформации денежного мышления. Убеждение "деньги — зло" — один из самых распространённых блоков, с которым я работаю.</p>
-                    <p>За годы практики я помогла сотням людей освободиться от этого ограничения и начать строить здоровые отношения с финансами. Моя методика сочетает глубинную психологию, работу с родовыми программами и практические техники.</p>
-                    <div class="credentials">
-                        <div class="credential">
-                            <div class="number">10+</div>
-                            <div class="label">лет опыта</div>
-                        </div>
-                        <div class="credential">
-                            <div class="number">8000+</div>
-                            <div class="label">часов практики</div>
-                        </div>
-                        <div class="credential">
-                            <div class="number">35</div>
-                            <div class="label">стран</div>
-                        </div>
-                    </div>
+        <!-- Expert Section -->
+        <section class="expert-section">
+            <div class="expert-container">
+                <img src="/images/luba-hero.webp" alt="Психолог Любовь Лукащук" class="expert-photo">
+                <div class="expert-info">
+                    <h2>Любовь Лукащук</h2>
+                    <p class="expert-credentials">Психолог, специалист по денежному мышлению</p>
+                    <p>Более 10 лет практики, 8000+ часов консультаций. Помогаю людям по всему миру трансформировать отношение к деньгам и освободиться от денежных блоков.</p>
+                    <p><strong>Моя методика:</strong> мы находим корни ваших установок, прорабатываем их и формируем новое, здоровое отношение к деньгам.</p>
                 </div>
             </div>
         </section>

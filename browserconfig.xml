@@ -9,7 +9,7 @@
             <TileColor>#6b46c1</TileColor>
         </tile>
         <notification>
-            <polling-uri src="https://denezhniy-vodopad.com/feed.xml"/>
+            <polling-uri src="https://lyubovpsy.com/feed.xml"/>
             <frequency>30</frequency>
             <cycle>1</cycle>
         </notification>

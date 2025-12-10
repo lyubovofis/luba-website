@@ -967,9 +967,9 @@
 
         /* Expert Section */
         .expert-section {
-            background: linear-gradient(135deg, var(--primary) 0%, #4c1d95 100%);
-            color: var(--white);
-            padding: 60px 30px;
+            background: #f8f9fa;
+            padding: 60px 20px;
+            color: #1a1a2e;
         }
 
         .expert-content {
@@ -979,19 +979,16 @@
             align-items: center;
             gap: 40px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .expert-image {
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4em;
+            object-fit: cover;
             flex-shrink: 0;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border: 4px solid #6b4ce6;
         }
 
         .expert-info {
@@ -1002,16 +999,16 @@
         .expert-info h3 {
             font-size: 1.8em;
             margin-bottom: 10px;
+            color: #1a1a2e;
         }
 
         .expert-info .subtitle {
-            color: var(--gold);
+            color: #6b4ce6;
             font-size: 1.1em;
             margin-bottom: 15px;
         }
 
         .expert-info p {
-            opacity: 0.95;
             line-height: 1.7;
             margin-bottom: 20px;
         }
@@ -1029,7 +1026,7 @@
         .stat-number {
             font-size: 2em;
             font-weight: bold;
-            color: var(--gold);
+            color: #6b4ce6;
         }
 
         .stat-label {
@@ -1874,7 +1871,7 @@
         <!-- Expert Section -->
         <section class="expert-section">
             <div class="expert-content">
-                <div class="expert-image">👩‍💼</div>
+                <img src="/images/luba-hero.webp" alt="Любовь Лукащук - психолог" class="expert-image">
                 <div class="expert-info">
                     <h3>Любовь Лукащук</h3>
                     <div class="subtitle">Психолог, специалист по финансовому поведению</div>

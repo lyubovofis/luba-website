@@ -9,9 +9,9 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://denezhniy-vodopad.com/.well-known/openapi.yaml"
+    "url": "https://lyubovpsy.com/.well-known/openapi.yaml"
   },
-  "logo_url": "https://denezhniy-vodopad.com/images/logo.png",
-  "contact_email": "hello@denezhniy-vodopad.com",
-  "legal_info_url": "https://denezhniy-vodopad.com/terms.html"
+  "logo_url": "https://lyubovpsy.com/images/logo.png",
+  "contact_email": "info@lyubovpsy.com",
+  "legal_info_url": "https://lyubovpsy.com/terms.html"
 }

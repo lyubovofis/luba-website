@@ -576,6 +576,53 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             display: block;
         }
 
+        /* Expert Section */
+        .expert-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+        .expert-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .expert-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            flex-shrink: 0;
+        }
+        .expert-info {
+            flex: 1;
+            min-width: 280px;
+        }
+        .expert-info h2 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        .expert-credentials {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .expert-info p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .expert-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -986,6 +1033,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
                 <div class="faq-answer">
                     Первый шаг — честно оценить свои отношения с деньгами. Напишите первые 10 мыслей, которые приходят на слово "деньги" и "богатые люди". Если там много негатива — это ваши блоки. Второй шаг — найти источник этих убеждений (обычно семья, детство). Третий шаг — проработать блоки с психологом. Только после этого имеет смысл изучать инвестиции, бизнес и другие способы увеличения дохода — иначе подсознание будет саботировать.
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Section -->
+    <section class="expert-section">
+        <div class="expert-container">
+            <img src="/images/luba-hero.webp" alt="Психолог Любовь Лукащук" class="expert-photo">
+            <div class="expert-info">
+                <h2>Любовь Лукащук</h2>
+                <p class="expert-credentials">Психолог, специалист по денежному мышлению</p>
+                <p>Более 10 лет практики, 8000+ часов консультаций. Помогаю людям по всему миру трансформировать отношение к деньгам и освободиться от денежных блоков.</p>
+                <p><strong>Моя методика:</strong> мы находим корни ваших установок, прорабатываем их и формируем новое, здоровое отношение к деньгам.</p>
             </div>
         </div>
     </section>

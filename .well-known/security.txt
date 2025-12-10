@@ -1,11 +1,11 @@
-# Security Policy for denezhniy-vodopad.com
+# Security Policy for lyubovpsy.com
 # https://securitytxt.org/
 
-Contact: mailto:hello@denezhniy-vodopad.com
 Contact: https://t.me/LyubovUA
+Contact: https://wa.me/34654420334
 Expires: 2026-12-31T23:59:59.000Z
 Preferred-Languages: ru, en
-Canonical: https://denezhniy-vodopad.com/.well-known/security.txt
+Canonical: https://lyubovpsy.com/.well-known/security.txt
 
 # We appreciate responsible disclosure of security vulnerabilities.
 # Please contact us via email or Telegram.

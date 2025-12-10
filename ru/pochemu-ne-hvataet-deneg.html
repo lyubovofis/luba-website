@@ -690,6 +690,53 @@
             opacity: 0.95;
         }
 
+        /* Expert Section */
+        .expert-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+        .expert-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .expert-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            flex-shrink: 0;
+        }
+        .expert-info {
+            flex: 1;
+            min-width: 280px;
+        }
+        .expert-info h2 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        .expert-credentials {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .expert-info p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .expert-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
@@ -1103,6 +1150,19 @@
                 </div>
 
                 <p class="about-text">Специализируюсь на психологии денег и финансового поведения. Помогаю находить и закрывать "денежные дыры", менять ментальность с дефицитной на изобильную, выстраивать здоровые отношения с деньгами. Работаю онлайн с русскоязычными клиентами по всему миру.</p>
+            </div>
+        </section>
+
+        <!-- Expert Section -->
+        <section class="expert-section">
+            <div class="expert-container">
+                <img src="/images/luba-hero.webp" alt="Психолог Любовь Лукащук" class="expert-photo">
+                <div class="expert-info">
+                    <h2>Любовь Лукащук</h2>
+                    <p class="expert-credentials">Психолог, специалист по денежному мышлению</p>
+                    <p>Более 10 лет практики, 8000+ часов консультаций. Помогаю людям по всему миру трансформировать отношение к деньгам и освободиться от денежных блоков.</p>
+                    <p><strong>Моя методика:</strong> мы находим корни ваших установок, прорабатываем их и формируем новое, здоровое отношение к деньгам.</p>
+                </div>
             </div>
         </section>
 

@@ -5,10 +5,10 @@
     <InputEncoding>UTF-8</InputEncoding>
     <OutputEncoding>UTF-8</OutputEncoding>
     <Language>ru</Language>
-    <Image width="16" height="16" type="image/x-icon">https://denezhniy-vodopad.com/favicon.ico</Image>
-    <Url type="text/html" template="https://www.google.com/search?q=site:denezhniy-vodopad.com+{searchTerms}"/>
-    <Url type="application/rss+xml" template="https://denezhniy-vodopad.com/feed.xml"/>
-    <Contact>hello@denezhniy-vodopad.com</Contact>
+    <Image width="16" height="16" type="image/x-icon">https://lyubovpsy.com/favicon.ico</Image>
+    <Url type="text/html" template="https://www.google.com/search?q=site:lyubovpsy.com+{searchTerms}"/>
+    <Url type="application/rss+xml" template="https://lyubovpsy.com/feed.xml"/>
+    <Contact>hello@lyubovpsy.com</Contact>
     <Tags>психология денег денежные блоки коучинг трансформация</Tags>
     <LongName>Денежный Водопад - Статьи о психологии денег</LongName>
     <Developer>Денежный Водопад</Developer>
