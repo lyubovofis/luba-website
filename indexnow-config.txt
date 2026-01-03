@@ -1,0 +1,32 @@
+# IndexNow Configuration - READ THIS!
+# Created: 2026-01-03T14:47:38.835533
+
+=== NEXT STEPS ===
+
+1. Go to https://www.indexnow.org/
+2. Enter your domain: https://lyubovpsy.com
+3. Click "I confirm" or "Generate" button
+4. Copy the API KEY they give you
+5. Open indexnow-submit.py
+6. Find line: API_KEY = "TVOJ_API_KEY_ZDES"
+7. Replace with your real key: API_KEY = "your-actual-key-here"
+8. Save the file
+9. Run: python indexnow-submit.py
+
+=== GENERATED DEMO KEY (for reference) ===
+8ce2fa7e831268f65d487c8970eb70c5
+
+=== VERIFICATION FILE ===
+Location: c:\Luba Website\8ce2fa7e831268f65d487c8970eb70c5.html
+URL: https://lyubovpsy.com/8ce2fa7e831268f65d487c8970eb70c5.html
+
+=== WHAT HAPPENS AFTER ===
+- Google, Bing, Yandex will index all URLs from your sitemap
+- Indexation will complete in 6-24 hours
+- Much faster than manual pinging!
+- You can run indexnow-submit.py regularly (weekly/monthly)
+
+=== IMPORTANT ===
+- Do NOT use the demo key above
+- You MUST get a real API key from indexnow.org
+- Only then will indexation actually work
