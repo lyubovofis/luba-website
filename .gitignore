@@ -30,3 +30,6 @@ Best pages/
 .env
 *.token
 github_token.txt
+
+# Terminal Paste Image folder
+.cp-images/
