@@ -187,7 +187,7 @@
             }
         },
         "datePublished": "2025-09-16",
-        "dateModified": "2026-01-03"
+        "dateModified": "2026-03-03"
     }
     </script>
     <!-- Schema.org Speakable for Voice Search -->
@@ -1010,6 +1010,119 @@
     ]
 }
 </script>
+    <style>
+/* === Author byline bar === */
+.article-byline-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 30px;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+.article-byline-bar img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #e9d5ff;
+}
+.byline-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+}
+.byline-info a {
+    font-weight: 700;
+    color: #6b46c1;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.byline-info a:hover { text-decoration: underline; }
+.byline-info span {
+    font-size: 0.80rem;
+    color: #4b5563;
+}
+.byline-date {
+    font-size: 0.80rem;
+    color: #4b5563;
+    margin-left: auto;
+    white-space: nowrap;
+}
+@media (max-width: 640px) {
+    .article-byline-bar { padding: 12px 16px; }
+    .byline-date { margin-left: 0; width: 100%; }
+}
+
+/* === Table of Contents === */
+.article-toc {
+    background: #faf5ff;
+    border: 1px solid #e9d5ff;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 0 0 32px 0;
+}
+.article-toc h4 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #6b46c1;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+.article-toc ol {
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+.article-toc li { margin-bottom: 5px; }
+.article-toc a {
+    color: #374151;
+    text-decoration: none;
+    font-size: 0.91rem;
+    line-height: 1.45;
+}
+.article-toc a:hover { color: #6b46c1; text-decoration: underline; }
+
+/* === Mid-article CTA === */
+.mid-article-cta {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    border: 1px solid #c4b5fd;
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin: 38px 0;
+    text-align: center;
+}
+.mid-article-cta p {
+    font-size: 1rem;
+    color: #1f2937;
+    margin: 0 0 14px 0;
+    line-height: 1.6;
+    font-weight: 500;
+}
+.mid-cta-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.mid-cta-btn-wa, .mid-cta-btn-tg {
+    padding: 11px 22px;
+    border-radius: 25px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.92rem;
+    display: inline-block;
+    transition: opacity 0.2s;
+}
+.mid-cta-btn-wa { background: #25d366; color: white !important; }
+.mid-cta-btn-tg { background: #0088cc; color: white !important; }
+.mid-cta-btn-wa:hover, .mid-cta-btn-tg:hover { opacity: 0.9; }
+    </style>
 </head>
 <body>
 <!-- Site Navigation - Standardized -->
@@ -1055,7 +1168,7 @@
             <h1>Денежные блоки: полный список</h1>
 <div class="article-meta-bar">
         <span class="read-time">&#128337; ~7 мин чтения</span>
-        <span class="updated-date">&#128197; Обновлено: январь 2025</span>
+        <span class="updated-date">&#128197; Обновлено: 3 марта 2026</span>
     </div>
             <p class="hero-subtitle">50+ убеждений, которые мешают вам зарабатывать и богатеть</p>
 
@@ -1074,6 +1187,16 @@
                 </div>
             </div>
         </section>
+
+    <!-- Author Byline Bar -->
+    <div class="article-byline-bar">
+        <img src="/images/luba-hero.webp" alt="Любовь Лукащук" width="44" height="44">
+        <div class="byline-info">
+            <a href="/ru/ob-avtore">Любовь Лукащук</a>
+            <span>Психолог · 10+ лет · Автор метода «Денежный Водопад»</span>
+        </div>
+        <span class="byline-date">Опубликовано: 16 сентября 2025 · Обновлено: 3 марта 2026</span>
+    </div>
 
         <main>
             <!-- How to Use -->
@@ -1602,7 +1725,17 @@
 
             <!-- CTA Section -->
             <section class="cta-section">
-                <h2>Готовы избавиться от блоков?</h2>
+                
+        <!-- Table of Contents -->
+        <div class="article-toc">
+            <h4>Содержание статьи</h4>
+            <ol>
+                <li><a href="#toc-1">Готовы избавиться от блоков?</a></li>
+                <li><a href="#toc-2">Частые вопросы</a></li>
+            </ol>
+        </div>
+
+        <h2 id="toc-1">Готовы избавиться от блоков?</h2>
                 <p>Программа "Денежный Водопад" за 8 недель трансформирует все найденные блоки. Запишитесь на бесплатную консультацию - покажу как именно это работает.</p>
 
     <div class="related-articles" style="background: linear-gradient(135deg, rgba(255,215,0,0.08) 0%, rgba(255,215,0,0.03) 100%); border-left: 4px solid #d4a017; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 30px 0; font-family: inherit;">
@@ -1629,7 +1762,7 @@
 
             <!-- FAQ Section -->
             <section>
-                <h2>Частые вопросы</h2>
+                <h2 id="toc-2">Частые вопросы</h2>
                 <div class="faq-container">
                     <div class="faq-item">
                         <div class="faq-question">
