@@ -771,8 +771,131 @@
         }
     }
     </script>
+
+<style>
+
+/* Standardized Navigation */
+@media (max-width: 768px) {
+    #site-nav .nav-content {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0 10px;
+    }
+    #site-nav ul {
+        display: none !important;
+    }
+}
+
+/* Breadcrumb styles */
+.std-breadcrumb {
+    padding: 12px 30px;
+    background: #f9fafb;
+    font-size: 14px;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+}
+.std-breadcrumb a {
+    color: #6b46c1;
+    text-decoration: none;
+}
+.std-breadcrumb a:hover {
+    text-decoration: underline;
+}
+.std-breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.std-breadcrumb li::after {
+    content: "›";
+    margin: 0 8px;
+    color: #9ca3af;
+}
+.std-breadcrumb li:last-child::after {
+    content: "";
+}
+.std-breadcrumb li:last-child {
+    color: #374151;
+}
+
+/* Article meta (reading time + date) */
+.article-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    color: #6b7280;
+    flex-wrap: wrap;
+}
+.article-meta-bar .read-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.article-meta-bar .updated-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://lyubovpsy.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Статьи",
+            "item": "https://lyubovpsy.com/pages/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Синдром самозванца: что это и как избавиться навсегда?",
+            "item": "https://lyubovpsy.com/ru/sindrom-samozvanca"
+        }
+    ]
+}
+</script>
 </head>
 <body>
+<!-- Site Navigation - Standardized -->
+<nav id="site-nav" style="background: white; padding: 15px 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
+    <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
+        <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none;">Денежный Водопад</a>
+        <ul style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; align-items: center;">
+            <li><a href="/#about" style="color: #1f2937; text-decoration: none; font-weight: 500;">О программе</a></li>
+            <li><a href="/#method" style="color: #1f2937; text-decoration: none; font-weight: 500;">Методика</a></li>
+            <li><a href="/#pricing" style="color: #1f2937; text-decoration: none; font-weight: 500;">Стоимость</a></li>
+            <li><a href="/pages/" style="color: #1f2937; text-decoration: none; font-weight: 500;">Статьи</a></li>
+        </ul>
+        <a href="https://t.me/LyubovUA" style="background: #0088cc; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: bold;">Telegram</a>
+    </div>
+</nav>
+<!-- Breadcrumb Navigation -->
+<nav class="std-breadcrumb" aria-label="breadcrumb">
+    <ol>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/pages/">Статьи</a></li>
+        <li>Синдром самозванца: что это и как избавиться навсегда?</li>
+    </ol>
+</nav>
+
     <div class="wrapper">
         <!-- Navigation -->
         <nav>
@@ -790,6 +913,10 @@
         <section class="hero">
             <div class="container">
                 <h1>Синдром самозванца: что это и как избавиться навсегда?</h1>
+<div class="article-meta-bar">
+        <span class="read-time">&#128337; ~7 мин чтения</span>
+        <span class="updated-date">&#128197; Обновлено: январь 2025</span>
+    </div>
                 <p class="subtitle">Синдром самозванца - это когда вы не верите в свои достижения и боитесь, что вас "разоблачат". Узнайте как это влияет на вашу карьеру и деньги, и как трансформировать за 8 недель.</p>
 
                 <div class="hero-stats">
@@ -840,6 +967,17 @@
                         <div class="block-icon">1</div>
                         <h3 class="block-title">Перфекционист</h3>
                         <p class="block-text">"Если не идеально - значит плохо". Ставите нереальные стандарты и разочаровываетесь когда не достигаете 100%. Любая ошибка = провал.</p>
+
+    <div class="related-articles" style="background: linear-gradient(135deg, rgba(255,215,0,0.08) 0%, rgba(255,215,0,0.03) 100%); border-left: 4px solid #d4a017; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 30px 0; font-family: inherit;">
+      <p style="font-weight: 700; color: #b8860b; margin-bottom: 10px; font-size: 1rem;">Читайте также:</p>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 6px;"><a href="/ru/cennost-sebya.html" style="color: #b8860b; text-decoration: none; font-size: 0.97rem; transition: color 0.2s;">Ценность Себя: Как Почувствовать Свою Ценность</a></li>
+        <li style="margin-bottom: 6px;"><a href="/ru/lyubov-k-sebe.html" style="color: #b8860b; text-decoration: none; font-size: 0.97rem; transition: color 0.2s;">Любовь к себе: почему это ключ к деньгам</a></li>
+        <li style="margin-bottom: 6px;"><a href="/ru/prinyatie-sebya.html" style="color: #b8860b; text-decoration: none; font-size: 0.97rem; transition: color 0.2s;">Принятие себя и деньги: как самоценность влияет</a></li>
+        <li style="margin-bottom: 6px;"><a href="/ru/uverennost-v-sebe.html" style="color: #b8860b; text-decoration: none; font-size: 0.97rem; transition: color 0.2s;">Уверенность в себе и деньги: как это связано</a></li>
+        <li style="margin-bottom: 6px;"><a href="/ru/vnutrenniy-kritik.html" style="color: #b8860b; text-decoration: none; font-size: 0.97rem; transition: color 0.2s;">Внутренний критик: как распознать и победить</a></li>
+      </ul>
+    </div>
                     </div>
 
                     <div class="block-card">

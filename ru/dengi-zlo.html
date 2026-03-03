@@ -847,8 +847,131 @@
             }
         }
     </style>
+
+<style>
+
+/* Standardized Navigation */
+@media (max-width: 768px) {
+    #site-nav .nav-content {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0 10px;
+    }
+    #site-nav ul {
+        display: none !important;
+    }
+}
+
+/* Breadcrumb styles */
+.std-breadcrumb {
+    padding: 12px 30px;
+    background: #f9fafb;
+    font-size: 14px;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+}
+.std-breadcrumb a {
+    color: #6b46c1;
+    text-decoration: none;
+}
+.std-breadcrumb a:hover {
+    text-decoration: underline;
+}
+.std-breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.std-breadcrumb li::after {
+    content: "›";
+    margin: 0 8px;
+    color: #9ca3af;
+}
+.std-breadcrumb li:last-child::after {
+    content: "";
+}
+.std-breadcrumb li:last-child {
+    color: #374151;
+}
+
+/* Article meta (reading time + date) */
+.article-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    color: #6b7280;
+    flex-wrap: wrap;
+}
+.article-meta-bar .read-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.article-meta-bar .updated-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://lyubovpsy.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Статьи",
+            "item": "https://lyubovpsy.com/pages/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "\"Деньги — зло\"? Пора избавиться от этого убеждения",
+            "item": "https://lyubovpsy.com/ru/dengi-zlo"
+        }
+    ]
+}
+</script>
 </head>
 <body>
+<!-- Site Navigation - Standardized -->
+<nav id="site-nav" style="background: white; padding: 15px 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
+    <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
+        <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none;">Денежный Водопад</a>
+        <ul style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; align-items: center;">
+            <li><a href="/#about" style="color: #1f2937; text-decoration: none; font-weight: 500;">О программе</a></li>
+            <li><a href="/#method" style="color: #1f2937; text-decoration: none; font-weight: 500;">Методика</a></li>
+            <li><a href="/#pricing" style="color: #1f2937; text-decoration: none; font-weight: 500;">Стоимость</a></li>
+            <li><a href="/pages/" style="color: #1f2937; text-decoration: none; font-weight: 500;">Статьи</a></li>
+        </ul>
+        <a href="https://t.me/LyubovUA" style="background: #0088cc; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: bold;">Telegram</a>
+    </div>
+</nav>
+<!-- Breadcrumb Navigation -->
+<nav class="std-breadcrumb" aria-label="breadcrumb">
+    <ol>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/pages/">Статьи</a></li>
+        <li>"Деньги — зло"? Пора избавиться от этого убеждения</li>
+    </ol>
+</nav>
+
     <div class="wrapper">
         <!-- Header -->
         <header>
@@ -864,6 +987,10 @@
         <!-- Hero Section -->
         <section class="hero">
             <h1>"Деньги — зло"? Пора избавиться от этого убеждения</h1>
+<div class="article-meta-bar">
+        <span class="read-time">&#128337; ~6 мин чтения</span>
+        <span class="updated-date">&#128197; Обновлено: январь 2025</span>
+    </div>
             <p>Узнайте, почему это мнение блокирует ваш финансовый успех и как изменить своё отношение к деньгам навсегда</p>
             <a href="https://wa.me/972539459969" class="cta-button">Записаться на консультацию</a>
         </section>
@@ -875,6 +1002,17 @@
                 <p style="text-align: center; font-size: 1.1em; color: #6b7280; margin-bottom: 30px;">
                     Многие убеждения о деньгах — это мифы, которые мешают вам жить в достатке. Давайте разберём самые популярные.
                 </p>
+
+    <div class="related-articles" style="background: linear-gradient(135deg, rgba(255,215,0,0.08) 0%, rgba(255,215,0,0.03) 100%); border-left: 4px solid #d4a017; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 30px 0; font-family: inherit;">
+      <p style="font-weight: 700; color: #b8860b; margin-bottom: 10px; font-size: 1rem;">Читайте также:</p>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 6px;"><a href="/ru/denezhnye-bloki.html" style="color: #b8860b; text-decoration: none; font-size: 0.97rem; transition: color 0.2s;">Денежные блоки: что это и как убрать навсегда</a></li>
+        <li style="margin-bottom: 6px;"><a href="/ru/psihologiya-deneg.html" style="color: #b8860b; text-decoration: none; font-size: 0.97rem; transition: color 0.2s;">Психология денег: как изменить отношение</a></li>
+        <li style="margin-bottom: 6px;"><a href="/ru/otnoshenie-k-dengam.html" style="color: #b8860b; text-decoration: none; font-size: 0.97rem; transition: color 0.2s;">Отношение к деньгам: как эмоции влияют на доход</a></li>
+        <li style="margin-bottom: 6px;"><a href="/ru/energiya-deneg.html" style="color: #b8860b; text-decoration: none; font-size: 0.97rem; transition: color 0.2s;">Энергия денег: правда о вибрациях</a></li>
+        <li style="margin-bottom: 6px;"><a href="/ru/karma-deneg.html" style="color: #b8860b; text-decoration: none; font-size: 0.97rem; transition: color 0.2s;">Карма Денег</a></li>
+      </ul>
+    </div>
                 <div class="myth-grid">
                     <div class="myth-card">
                         <span class="label myth">МИФ</span>
