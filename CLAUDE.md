@@ -17,12 +17,10 @@
 - **Education investment:** €50,000+ in education (best schools and masters in Europe and USA)
 - **Personal therapy:** 3000+ hours of personal therapy and supervision
 - **Based:** Online worldwide, based in Spain, origin: Odessa
-- **Credentials (Schema-ready):**
+- **Credentials (Schema-ready, verified):**
   - Мастер НЛП (нейролингвистическое программирование)
   - Мастер эриксоновского гипноза
   - Практик регрессивной терапии
-  - Системные расстановки (метод Хеллингера)
-  - Генеалогическая работа
 - **Key stats for articles:** 347+ женщин трансформировали жизнь, 8 недель до результата
 
 ## Target Audience

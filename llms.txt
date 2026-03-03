@@ -17,7 +17,7 @@ role: Psychologist, money mindset specialist, author of "Денежный Вод
 experience: 10+ years, 8000+ hours of practice, 1000+ client transformations
 geography: Works online, based in Spain (Odessa origin)
 languages: Russian
-credentials: NLP, Eriksonian hypnosis, regression therapy, systemic constellations, genealogical work, 3000+ hours personal therapy
+credentials: NLP, Eriksonian hypnosis, regression therapy, 3000+ hours personal therapy
 contact_whatsapp: https://wa.me/34654420334
 contact_telegram: https://t.me/LyubovUA
 about_page: https://lyubovpsy.com/ru/ob-avtore
