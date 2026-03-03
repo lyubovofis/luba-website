@@ -103,19 +103,21 @@ Use `ru/strah-osuzhdeniya.html` as the HTML structure reference for new articles
 - Free consult: `?text=Здравствуйте! Хочу записаться на бесплатную консультацию по программе Денежный Водопад`
 - Трансформация package: `?text=Хочу пакет Трансформация за €2000`
 
-## Design System (CSS variables)
+## Design System
 
+> **Полная система токенов, все компоненты с готовым HTML/CSS — в файле:**
+> **`/design-system.md`** — читай его при создании или редактировании любой страницы.
+
+### Ключевые токены (краткая выжимка):
 ```css
---primary: #6b46c1      /* main purple */
---primary-dark: #553c9a
---primary-light: #9f7aea
---gold: #fbbf24          /* accent gold */
---dark: #1f2937
---light: #f9fafb
+--primary: #6b46c1    --primary-dark: #553c9a    --primary-light: #9f7aea
+--gold: #fbbf24       --dark: #1f2937             --light: #f9fafb
+--text: #374151       --text-light: #6b7280       --success: #10b981
+--gradient: linear-gradient(135deg, rgba(107,70,193,0.95), rgba(85,60,154,0.95))
 ```
-- Font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-- Gradient hero: `linear-gradient(135deg, #6b46c1 0%, #553c9a 100%)`
-- Button colors: WhatsApp `#25d366`, Telegram `#0088cc`
+- Body bg: `linear-gradient(135deg, #667eea 0%, #764ba2 100%)`
+- WhatsApp: `#25d366` · Telegram: `#0088cc`
+- Font: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`
 
 ## Content Strategy
 
