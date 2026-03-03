@@ -165,7 +165,7 @@
             "name": "Денежный Водопад"
         },
         "datePublished": "2025-12-09",
-        "dateModified": "2026-01-03"
+        "dateModified": "2026-03-03"
     }
     </script>
     <!-- Schema.org Speakable for Voice Search -->
@@ -786,6 +786,119 @@
     ]
 }
 </script>
+    <style>
+/* === Author byline bar === */
+.article-byline-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 30px;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+.article-byline-bar img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #e9d5ff;
+}
+.byline-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+}
+.byline-info a {
+    font-weight: 700;
+    color: #6b46c1;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.byline-info a:hover { text-decoration: underline; }
+.byline-info span {
+    font-size: 0.80rem;
+    color: #4b5563;
+}
+.byline-date {
+    font-size: 0.80rem;
+    color: #4b5563;
+    margin-left: auto;
+    white-space: nowrap;
+}
+@media (max-width: 640px) {
+    .article-byline-bar { padding: 12px 16px; }
+    .byline-date { margin-left: 0; width: 100%; }
+}
+
+/* === Table of Contents === */
+.article-toc {
+    background: #faf5ff;
+    border: 1px solid #e9d5ff;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 0 0 32px 0;
+}
+.article-toc h4 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #6b46c1;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+.article-toc ol {
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+.article-toc li { margin-bottom: 5px; }
+.article-toc a {
+    color: #374151;
+    text-decoration: none;
+    font-size: 0.91rem;
+    line-height: 1.45;
+}
+.article-toc a:hover { color: #6b46c1; text-decoration: underline; }
+
+/* === Mid-article CTA === */
+.mid-article-cta {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    border: 1px solid #c4b5fd;
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin: 38px 0;
+    text-align: center;
+}
+.mid-article-cta p {
+    font-size: 1rem;
+    color: #1f2937;
+    margin: 0 0 14px 0;
+    line-height: 1.6;
+    font-weight: 500;
+}
+.mid-cta-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.mid-cta-btn-wa, .mid-cta-btn-tg {
+    padding: 11px 22px;
+    border-radius: 25px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.92rem;
+    display: inline-block;
+    transition: opacity 0.2s;
+}
+.mid-cta-btn-wa { background: #25d366; color: white !important; }
+.mid-cta-btn-tg { background: #0088cc; color: white !important; }
+.mid-cta-btn-wa:hover, .mid-cta-btn-tg:hover { opacity: 0.9; }
+    </style>
 </head>
 <body>
 <!-- Site Navigation - Standardized -->
@@ -827,15 +940,38 @@
             <h1>Женщина и деньги: время изменить отношения</h1>
 <div class="article-meta-bar">
         <span class="read-time">&#128337; ~6 мин чтения</span>
-        <span class="updated-date">&#128197; Обновлено: январь 2025</span>
+        <span class="updated-date">&#128197; Обновлено: 3 марта 2026</span>
     </div>
             <p>Почему умные и талантливые женщины часто избегают финансовых вопросов? Как преодолеть страхи и обрести настоящую финансовую независимость.</p>
             <a href="#test" class="btn btn-primary">Пройти тест на денежные блоки</a>
         </section>
 
+    <!-- Author Byline Bar -->
+    <div class="article-byline-bar">
+        <img src="/images/luba-hero.webp" alt="Любовь Лукащук" width="44" height="44">
+        <div class="byline-info">
+            <a href="/ru/ob-avtore">Любовь Лукащук</a>
+            <span>Психолог · 10+ лет · Автор метода «Денежный Водопад»</span>
+        </div>
+        <span class="byline-date">Опубликовано: 9 декабря 2025 · Обновлено: 3 марта 2026</span>
+    </div>
+
         <!-- Statistics -->
         <section class="content">
-            <h2>Статистика: женщины и деньги</h2>
+            
+        <!-- Table of Contents -->
+        <div class="article-toc">
+            <h4>Содержание статьи</h4>
+            <ol>
+                <li><a href="#toc-1">Статистика: женщины и деньги</a></li>
+                <li><a href="#toc-2">Типичные женские денежные блоки</a></li>
+                <li><a href="#toc-3">5 шагов к финансовой свободе для женщины</a></li>
+                <li><a href="#toc-4">Тест: Ваши отношения с деньгами</a></li>
+                <li><a href="#toc-5">Готовы изменить отношения с деньгами?</a></li>
+            </ol>
+        </div>
+
+        <h2 id="toc-1">Статистика: женщины и деньги</h2>
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="number">78%</div>
@@ -870,7 +1006,7 @@
 
         <!-- Women's Money Blocks -->
         <section class="content">
-            <h2>Типичные женские денежные блоки</h2>
+            <h2 id="toc-2">Типичные женские денежные блоки</h2>
             <p>Многие из этих убеждений передаются из поколения в поколение и воспринимаются как норма:</p>
 
             <div class="blocks-grid">
@@ -952,7 +1088,17 @@
 
         <!-- Steps to Freedom -->
         <section class="content">
-            <h2>5 шагов к финансовой свободе для женщины</h2>
+            
+        <!-- Mid-Article CTA -->
+        <div class="mid-article-cta">
+            <p>Узнайте, как эта тема проявляется именно у вас — на бесплатной 15-минутной консультации.</p>
+            <div class="mid-cta-btns">
+                <a href="https://wa.me/34654420334?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!+%D0%A5%D0%BE%D1%87%D1%83+%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F+%D0%BD%D0%B0+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%83%D1%8E+%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E" class="mid-cta-btn-wa">💬 WhatsApp</a>
+                <a href="https://t.me/LyubovUA" class="mid-cta-btn-tg">✈ Telegram</a>
+            </div>
+        </div>
+
+        <h2 id="toc-3">5 шагов к финансовой свободе для женщины</h2>
 
             <div class="steps">
                 <div class="step">
@@ -1005,7 +1151,7 @@
 
         <!-- Test Section -->
         <section class="test-section" id="test">
-            <h2>Тест: Ваши отношения с деньгами</h2>
+            <h2 id="toc-4">Тест: Ваши отношения с деньгами</h2>
             <p style="text-align: center; opacity: 0.9; margin-bottom: 30px;">Ответьте честно на 8 вопросов и узнайте, какие блоки мешают вашему финансовому успеху</p>
 
             <div id="test-container">
@@ -1096,7 +1242,17 @@
 
         <!-- CTA Section -->
         <section class="cta-section">
-            <h2>Готовы изменить отношения с деньгами?</h2>
+            
+        <!-- Mid-Article CTA -->
+        <div class="mid-article-cta">
+            <p>Готовы разобраться с этим раз и навсегда? Запишитесь на бесплатную консультацию прямо сейчас.</p>
+            <div class="mid-cta-btns">
+                <a href="https://wa.me/34654420334?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!+%D0%A5%D0%BE%D1%87%D1%83+%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F+%D0%BD%D0%B0+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%83%D1%8E+%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E" class="mid-cta-btn-wa">💬 WhatsApp</a>
+                <a href="https://t.me/LyubovUA" class="mid-cta-btn-tg">✈ Telegram</a>
+            </div>
+        </div>
+
+        <h2 id="toc-5">Готовы изменить отношения с деньгами?</h2>
             <p>За 8 недель программы "Денежный Водопад" вы проработаете глубинные блоки и построите здоровые отношения с финансами. 347+ женщин уже прошли этот путь.</p>
             <div class="cta-buttons">
                 <a href="https://wa.me/34654420334?text=Привет! Хочу узнать про программу для женщин." class="btn btn-whatsapp">
