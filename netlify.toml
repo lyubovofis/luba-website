@@ -1,3 +1,47 @@
+# 301 Redirects: remove .html extension from all URLs
+[[redirects]]
+  from = "/ru/:slug.html"
+  to = "/ru/:slug"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms.html"
+  to = "/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/disclaimer.html"
+  to = "/disclaimer"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cookie-policy.html"
+  to = "/cookie-policy"
+  status = 301
+  force = true
+
+# Redirect old duplicate page to canonical version
+[[redirects]]
+  from = "/ru/vnutrennij-kritik"
+  to = "/ru/vnutrenniy-kritik"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ru/vnutrennij-kritik.html"
+  to = "/ru/vnutrenniy-kritik"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/crm"
   to = "/crm/login.html"
