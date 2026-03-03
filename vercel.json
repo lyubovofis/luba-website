@@ -14,8 +14,20 @@
       "destination": "/quiz-test/index.html"
     },
     {
+      "source": "/quiz/",
+      "destination": "/quiz-test/index.html"
+    },
+    {
       "source": "/test",
       "destination": "/quiz-test/index.html"
+    },
+    {
+      "source": "/pages",
+      "destination": "/ru/blog"
+    },
+    {
+      "source": "/pages/",
+      "destination": "/ru/blog"
     }
   ],
   "headers": [
