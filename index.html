@@ -66,7 +66,7 @@
     </script>
     
     <!-- TikTok Pixel Fix - КРИТИЧЕСКИ ВАЖНО -->
-    <script src="/js/tiktok-pixel-fix.js"></script>
+    <script src="/js/tiktok-pixel-fix.js" defer></script>
     
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="fELi_CpKh1oiewX06i3dBWC2AF8gYkZ" />
@@ -99,8 +99,9 @@
     </script>
     <!-- TikTok Pixel Code End -->
     
-    <!-- Mobile Optimization CSS -->
-    <link rel="stylesheet" href="/css/mobile-optimization.css">
+    <!-- Mobile Optimization CSS (async to avoid render blocking) -->
+    <link rel="preload" href="/css/mobile-optimization.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/mobile-optimization.css"></noscript>
     
     <style>
         * {
@@ -195,8 +196,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(107,70,193,0.95), rgba(85,60,154,0.95)),
-                        url('images/luba-hero.webp') center/cover;
+            background: linear-gradient(135deg, rgba(107,70,193,0.95), rgba(85,60,154,0.95));
             color: white;
             padding: 80px 30px;
             text-align: center;
@@ -1111,7 +1111,7 @@
     </script>
     
     <!-- Hotjar 100% Tracking (temporary - 1 week) -->
-    <script src="/js/hotjar-full-tracking.js"></script>
+    <script src="/js/hotjar-full-tracking.js" defer></script>
     
     <!-- Microsoft Clarity - FREE & BETTER -->
     <script type="text/javascript">
@@ -1138,10 +1138,11 @@
                     <li><a href="#pricing">Стоимость</a></li>
                 </ul>
                 <a href="/quiz/" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 14px; margin-right: 15px;">🧠 Тест</a>
-                <a href="https://t.me/LyubovUA" class="nav-cta" style="background: #0088cc;">✈️ Telegram</a>
+                <a href="https://t.me/LyubovUA" class="nav-cta" style="background: #006ba6;">✈️ Telegram</a>
             </div>
         </nav>
 
+        <main>
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
@@ -1344,7 +1345,7 @@
                     </a>
                     <a href="https://t.me/LyubovUA" 
                        class="btn-primary" 
-                       style="background: #0088cc; color: white; font-size: 18px; padding: 15px 30px; display: inline-block;">
+                       style="background: #006ba6; color: white; font-size: 18px; padding: 15px 30px; display: inline-block;">
                         ✈️ Telegram
                     </a>
                 </div>
@@ -1612,7 +1613,7 @@
                         </a>
                         <a href="https://t.me/LyubovUA" 
                            class="btn-primary" 
-                           style="background: #0088cc; font-size: 18px; padding: 15px 30px;">
+                           style="background: #006ba6; font-size: 18px; padding: 15px 30px;">
                             ✈️ Telegram
                         </a>
                     </div>
@@ -1674,7 +1675,7 @@
                     </a>
                     <a href="https://t.me/LyubovUA" 
                        class="btn-primary" 
-                       style="background: white; color: #0088cc; font-size: 18px; padding: 15px 30px; display: inline-block;">
+                       style="background: white; color: #006ba6; font-size: 18px; padding: 15px 30px; display: inline-block;">
                         ✈️ Telegram
                     </a>
                 </div>
@@ -1954,7 +1955,7 @@
                         <span>WhatsApp</span>
                     </a>
                     
-                    <a href="https://t.me/LyubovUA?text=Здравствуйте! Хочу записаться на бесплатную диагностическую консультацию по программе Денежный Водопад" class="btn-primary" style="background: #0088cc; display: flex; flex-direction: column; align-items: center; padding: 20px;">
+                    <a href="https://t.me/LyubovUA?text=Здравствуйте! Хочу записаться на бесплатную диагностическую консультацию по программе Денежный Водопад" class="btn-primary" style="background: #006ba6; display: flex; flex-direction: column; align-items: center; padding: 20px;">
                         <span style="font-size: 32px; margin-bottom: 10px;">✈️</span>
                         <span>Telegram</span>
                     </a>
@@ -1998,7 +1999,7 @@
                                 <span>WhatsApp</span>
                             </a>
                             
-                            <a href="https://t.me/LyubovUA?text=Любовь, я готов меняться! Хочу на консультацию" class="btn-primary" style="background: #0088cc; font-size: 20px; padding: 25px 30px; display: flex; flex-direction: column; align-items: center;">
+                            <a href="https://t.me/LyubovUA?text=Любовь, я готов меняться! Хочу на консультацию" class="btn-primary" style="background: #006ba6; font-size: 20px; padding: 25px 30px; display: flex; flex-direction: column; align-items: center;">
                                 <span style="font-size: 36px; margin-bottom: 10px;">✈️</span>
                                 <span>Telegram</span>
                             </a>
@@ -2058,6 +2059,7 @@
                 </p>
             </div>
         </footer>
+        </main>
     </div>
 
     <script>
