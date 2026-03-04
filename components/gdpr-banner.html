@@ -1,4 +1,4 @@
-<!-- GDPR Cookie Banner Component -->
+<!-- GDPR Cookie Banner — shows only for European visitors (timezone detection) -->
 <div id="gdpr-banner" style="
     position: fixed;
     bottom: 0;
@@ -6,274 +6,164 @@
     right: 0;
     background: rgba(43, 49, 57, 0.98);
     color: white;
-    padding: 20px;
+    padding: 18px 20px;
     z-index: 9999;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.25);
     display: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 ">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
-        <div style="flex: 1; min-width: 300px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+        <div style="flex: 1; min-width: 280px;">
             <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                🍪 Мы используем файлы cookie для улучшения вашего опыта на сайте, аналитики и персонализации контента. 
-                Продолжая использовать сайт, вы соглашаетесь с нашей 
-                <a href="/privacy.html" style="color: #667eea; text-decoration: underline;">Политикой конфиденциальности</a> и 
-                <a href="/cookie-policy.html" style="color: #667eea; text-decoration: underline;">Политикой Cookie</a>.
+                🍪 Мы используем файлы cookie для улучшения вашего опыта на сайте, аналитики и персонализации контента. Продолжая использовать сайт, вы соглашаетесь с нашей
+                <a href="/privacy" style="color: #9f7aea; text-decoration: underline;">Политикой конфиденциальности</a> и
+                <a href="/cookie-policy" style="color: #9f7aea; text-decoration: underline;">Политикой Cookie</a>.
             </p>
         </div>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <button onclick="acceptAllCookies()" style="
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+            <button onclick="gdprAcceptAll()" style="
+                background: linear-gradient(135deg, #6b46c1 0%, #553c9a 100%);
                 color: white;
                 border: none;
-                padding: 12px 30px;
+                padding: 11px 28px;
                 border-radius: 25px;
                 cursor: pointer;
                 font-weight: 600;
                 font-size: 14px;
-                transition: transform 0.2s;
-            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                Принять все
-            </button>
-            <button onclick="showCookieSettings()" style="
+                white-space: nowrap;
+            ">Принять все</button>
+            <button onclick="gdprShowSettings()" style="
                 background: transparent;
-                color: #999;
+                color: #aaa;
                 border: none;
-                padding: 12px 20px;
+                padding: 11px 16px;
                 cursor: pointer;
                 font-size: 14px;
                 text-decoration: underline;
-            ">
-                Настройки
-            </button>
+                white-space: nowrap;
+            ">Настройки</button>
         </div>
     </div>
 </div>
 
 <!-- Cookie Settings Modal -->
-<div id="cookie-settings-modal" style="
+<div id="gdpr-modal" style="
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.8);
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.75);
     z-index: 10000;
     overflow-y: auto;
 ">
-    <div style="
-        background: white;
-        max-width: 600px;
-        margin: 50px auto;
-        padding: 30px;
-        border-radius: 15px;
-        color: #333;
-    ">
-        <h2 style="margin-bottom: 20px; color: #667eea;">Настройки Cookie</h2>
-        
-        <div style="margin-bottom: 20px;">
-            <label style="display: flex; align-items: start; margin-bottom: 15px; cursor: pointer;">
-                <input type="checkbox" checked disabled style="margin-right: 10px; margin-top: 3px;">
+    <div style="background: white; max-width: 560px; margin: 60px auto; padding: 30px; border-radius: 16px; color: #333;">
+        <h2 style="margin: 0 0 20px; color: #6b46c1; font-size: 1.3rem;">Настройки Cookie</h2>
+        <div style="margin-bottom: 18px; padding: 14px; background: #f9f9f9; border-radius: 10px;">
+            <label style="display: flex; align-items: flex-start; gap: 10px;">
+                <input type="checkbox" checked disabled style="margin-top: 3px; flex-shrink: 0;">
                 <div>
                     <strong>Необходимые Cookie</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">
-                        Эти файлы cookie необходимы для работы сайта и не могут быть отключены.
-                    </p>
-                </div>
-            </label>
-            
-            <label style="display: flex; align-items: start; margin-bottom: 15px; cursor: pointer;">
-                <input type="checkbox" id="analytics-cookies" style="margin-right: 10px; margin-top: 3px;">
-                <div>
-                    <strong>Аналитические Cookie (включая Hotjar)</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">
-                        Помогают нам понять, как посетители взаимодействуют с сайтом. Hotjar записывает сессии для улучшения UX (Google Analytics, TikTok Pixel, Hotjar).
-                    </p>
-                </div>
-            </label>
-            
-            <label style="display: flex; align-items: start; margin-bottom: 15px; cursor: pointer;">
-                <input type="checkbox" id="marketing-cookies" style="margin-right: 10px; margin-top: 3px;">
-                <div>
-                    <strong>Маркетинговые Cookie</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">
-                        Используются для показа релевантной рекламы (Facebook Pixel, TikTok Ads).
-                    </p>
+                    <p style="margin: 4px 0 0; font-size: 13px; color: #666;">Необходимы для работы сайта. Не могут быть отключены.</p>
                 </div>
             </label>
         </div>
-        
-        <div style="display: flex; gap: 10px; justify-content: flex-end;">
-            <button onclick="saveCustomCookies()" style="
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                border: none;
-                padding: 12px 30px;
-                border-radius: 25px;
-                cursor: pointer;
-                font-weight: 600;
-            ">
-                Сохранить настройки
-            </button>
-            <button onclick="closeCookieSettings()" style="
-                background: #f0f0f0;
-                color: #333;
-                border: none;
-                padding: 12px 30px;
-                border-radius: 25px;
-                cursor: pointer;
-                font-weight: 600;
-            ">
-                Отмена
-            </button>
+        <div style="margin-bottom: 18px; padding: 14px; background: #f9f9f9; border-radius: 10px;">
+            <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                <input type="checkbox" id="gdpr-analytics" style="margin-top: 3px; flex-shrink: 0;">
+                <div>
+                    <strong>Аналитические Cookie</strong>
+                    <p style="margin: 4px 0 0; font-size: 13px; color: #666;">Google Analytics, Microsoft Clarity — помогают улучшать сайт.</p>
+                </div>
+            </label>
+        </div>
+        <div style="margin-bottom: 24px; padding: 14px; background: #f9f9f9; border-radius: 10px;">
+            <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                <input type="checkbox" id="gdpr-marketing" style="margin-top: 3px; flex-shrink: 0;">
+                <div>
+                    <strong>Маркетинговые Cookie</strong>
+                    <p style="margin: 4px 0 0; font-size: 13px; color: #666;">Meta Pixel, TikTok Ads — используются для показа релевантной рекламы.</p>
+                </div>
+            </label>
+        </div>
+        <div style="display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap;">
+            <button onclick="gdprSaveSettings()" style="background: linear-gradient(135deg, #6b46c1, #553c9a); color: white; border: none; padding: 11px 24px; border-radius: 25px; cursor: pointer; font-weight: 600;">Сохранить</button>
+            <button onclick="gdprCloseModal()" style="background: #eee; color: #333; border: none; padding: 11px 24px; border-radius: 25px; cursor: pointer; font-weight: 600;">Отмена</button>
         </div>
     </div>
 </div>
 
 <script>
-// GDPR Cookie Management
 (function() {
-    // Wait for banner element to be in DOM
-    function showBannerIfNeeded() {
-        const banner = document.getElementById('gdpr-banner');
-        if (!banner) {
-            // Element not ready yet, wait a bit
-            setTimeout(showBannerIfNeeded, 100);
-            return;
-        }
-        
-        // Check if user already made a choice
-        if (!getCookie('gdpr_consent')) {
-            setTimeout(function() {
-                banner.style.display = 'block';
-                console.log('🍪 GDPR banner shown');
-            }, 500);
-        } else {
-            console.log('🍪 GDPR consent already given');
-        }
+    // Detect European users by timezone
+    function isEuropeanUser() {
+        try {
+            var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            return tz.indexOf('Europe/') === 0 ||
+                   tz === 'Atlantic/Reykjavik' ||
+                   tz === 'Atlantic/Azores' ||
+                   tz === 'Atlantic/Madeira' ||
+                   tz === 'Atlantic/Canary';
+        } catch(e) { return false; }
     }
-    
-    // Start checking immediately
-    showBannerIfNeeded();
-    
-    // Initialize tracking based on consent
-    initializeTracking();
+
+    function gdprGetCookie(name) {
+        var v = '; ' + document.cookie;
+        var parts = v.split('; ' + name + '=');
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+
+    function gdprSetCookie(name, value, days) {
+        var d = new Date();
+        d.setTime(d.getTime() + days * 864e5);
+        document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+    }
+
+    // Show banner only for EU users who haven't consented yet
+    function initGdprBanner() {
+        if (!isEuropeanUser()) return;
+        if (gdprGetCookie('gdpr_consent')) return;
+
+        var banner = document.getElementById('gdpr-banner');
+        if (!banner) return;
+        setTimeout(function() { banner.style.display = 'block'; }, 600);
+    }
+
+    // Run after DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGdprBanner);
+    } else {
+        initGdprBanner();
+    }
+
+    // Make functions global
+    window.gdprAcceptAll = function() {
+        gdprSetCookie('gdpr_consent', 'all', 365);
+        gdprSetCookie('analytics_consent', 'true', 365);
+        gdprSetCookie('marketing_consent', 'true', 365);
+        document.getElementById('gdpr-banner').style.display = 'none';
+    };
+
+    window.gdprShowSettings = function() {
+        var modal = document.getElementById('gdpr-modal');
+        if (modal) {
+            document.getElementById('gdpr-analytics').checked = gdprGetCookie('analytics_consent') === 'true';
+            document.getElementById('gdpr-marketing').checked = gdprGetCookie('marketing_consent') === 'true';
+            modal.style.display = 'block';
+        }
+    };
+
+    window.gdprCloseModal = function() {
+        document.getElementById('gdpr-modal').style.display = 'none';
+    };
+
+    window.gdprSaveSettings = function() {
+        var a = document.getElementById('gdpr-analytics').checked;
+        var m = document.getElementById('gdpr-marketing').checked;
+        gdprSetCookie('gdpr_consent', 'custom', 365);
+        gdprSetCookie('analytics_consent', a ? 'true' : 'false', 365);
+        gdprSetCookie('marketing_consent', m ? 'true' : 'false', 365);
+        document.getElementById('gdpr-banner').style.display = 'none';
+        document.getElementById('gdpr-modal').style.display = 'none';
+    };
 })();
-
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
-
-function setCookie(name, value, days) {
-    const date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    const expires = `expires=${date.toUTCString()}`;
-    document.cookie = `${name}=${value};${expires};path=/;SameSite=Lax`;
-}
-
-function acceptAllCookies() {
-    // Set all consents
-    setCookie('gdpr_consent', 'all', 365);
-    setCookie('analytics_consent', 'true', 365);
-    setCookie('marketing_consent', 'true', 365);
-    
-    // Hide banner
-    document.getElementById('gdpr-banner').style.display = 'none';
-    
-    // Initialize all tracking including Hotjar
-    initializeTracking();
-    
-    // Track acceptance event
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'cookie_consent', {
-            'consent_type': 'all_accepted',
-            'timestamp': new Date().toISOString()
-        });
-    }
-}
-
-function showCookieSettings() {
-    document.getElementById('cookie-settings-modal').style.display = 'block';
-    // Load current preferences
-    document.getElementById('analytics-cookies').checked = getCookie('analytics_consent') === 'true';
-    document.getElementById('marketing-cookies').checked = getCookie('marketing_consent') === 'true';
-}
-
-function closeCookieSettings() {
-    document.getElementById('cookie-settings-modal').style.display = 'none';
-}
-
-function saveCustomCookies() {
-    const analytics = document.getElementById('analytics-cookies').checked;
-    const marketing = document.getElementById('marketing-cookies').checked;
-    
-    setCookie('gdpr_consent', 'custom', 365);
-    setCookie('analytics_consent', analytics ? 'true' : 'false', 365);
-    setCookie('marketing_consent', marketing ? 'true' : 'false', 365);
-    
-    document.getElementById('gdpr-banner').style.display = 'none';
-    document.getElementById('cookie-settings-modal').style.display = 'none';
-    
-    initializeTracking();
-}
-
-function initializeTracking() {
-    const analyticsConsent = getCookie('analytics_consent') === 'true';
-    const marketingConsent = getCookie('marketing_consent') === 'true';
-    
-    // Google Analytics
-    if (analyticsConsent && typeof gtag !== 'undefined') {
-        gtag('consent', 'update', {
-            'analytics_storage': 'granted'
-        });
-    }
-    
-    // Hotjar - запускаем если analytics включен
-    if (analyticsConsent) {
-        // Hotjar уже загружен в head, просто активируем если нужно
-        if (typeof hj !== 'undefined') {
-            console.log('Hotjar активирован после согласия');
-            // Hotjar начинает записывать автоматически
-        }
-    }
-    
-    // TikTok Pixel
-    if (marketingConsent && typeof ttq !== 'undefined') {
-        ttq.page();
-    }
-    
-    // Facebook Pixel
-    if (marketingConsent && typeof fbq !== 'undefined') {
-        fbq('track', 'PageView');
-    }
-}
-
-// Cookie preferences button (floating)
-document.addEventListener('DOMContentLoaded', function() {
-    const prefsButton = document.createElement('button');
-    prefsButton.innerHTML = '🍪';
-    prefsButton.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: rgba(102,126,234,0.9);
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 20px;
-        z-index: 1000;
-        transition: all 0.3s;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    `;
-    prefsButton.onclick = showCookieSettings;
-    prefsButton.onmouseover = function() { this.style.transform = 'scale(1.1)'; };
-    prefsButton.onmouseout = function() { this.style.transform = 'scale(1)'; };
-    document.body.appendChild(prefsButton);
-});
 </script>
