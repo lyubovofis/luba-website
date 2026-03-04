@@ -41,7 +41,8 @@
     </script>
 
     <!-- Mobile Optimization CSS -->
-    <link rel="stylesheet" href="/css/mobile-optimization.css">
+    <link rel="preload" href="/css/mobile-optimization.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/mobile-optimization.css"></noscript>
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -510,7 +511,7 @@
     transition: opacity 0.2s;
 }
 .mid-cta-btn-wa { background: #25d366; color: white !important; }
-.mid-cta-btn-tg { background: #0088cc; color: white !important; }
+.mid-cta-btn-tg { background: #006ba6; color: white !important; }
 .mid-cta-btn-wa:hover, .mid-cta-btn-tg:hover { opacity: 0.9; }
     </style>
 </head>
@@ -530,11 +531,13 @@
                     <li><a href="/#pricing">Стоимость</a></li>
                 </ul>
                 <a href="/quiz/" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 14px; margin-right: 15px;">Тест</a>
-                <a href="https://t.me/LyubovUA" class="nav-cta" style="background: #0088cc;">Telegram</a>
+                <a href="https://t.me/LyubovUA" class="nav-cta" style="background: #006ba6;">Telegram</a>
             </div>
         </nav>
 
         <!-- Hero -->
+        <main>
+
         <section class="hero">
             <div class="container">
                 <h1>Любовь Лукащук — психолог, автор метода &laquo;Денежный Водопад&raquo;</h1>
@@ -562,7 +565,7 @@
 
     <!-- Author Byline Bar -->
     <div class="article-byline-bar">
-        <img src="/images/luba-hero.webp" alt="Любовь Лукащук" width="44" height="44">
+        <img src="/images/luba-hero.webp" alt="Любовь Лукащук" width="44" height="44" loading="lazy">
         <div class="byline-info">
             <a href="/ru/ob-avtore">Любовь Лукащук</a>
             <span>Психолог · 10+ лет · Автор метода «Денежный Водопад»</span>
@@ -589,7 +592,7 @@
 
                 <div class="story-content">
                     <div class="story-image">
-                        <img src="/images/luba-hero.webp" alt="Любовь Лукащук — психолог, автор метода Денежный Водопад">
+                        <img src="/images/luba-hero.webp" alt="Любовь Лукащук — психолог, автор метода Денежный Водопад" loading="lazy">
                     </div>
                     <div class="text-content" style="margin-bottom: 0;">
                         <p><strong>Меня зовут Любовь Лукащук.</strong> Я — мастер трансформации сознания и проводник в реальность изобилия.</p>
@@ -748,7 +751,7 @@
                         <span style="font-size: 32px; margin-bottom: 10px;">&#128172;</span>
                         <span>WhatsApp</span>
                     </a>
-                    <a href="https://t.me/LyubovUA" class="btn-primary" style="background: #0088cc; color: white; display: flex; flex-direction: column; align-items: center; padding: 20px;">
+                    <a href="https://t.me/LyubovUA" class="btn-primary" style="background: #006ba6; color: white; display: flex; flex-direction: column; align-items: center; padding: 20px;">
                         <span style="font-size: 32px; margin-bottom: 10px;">&#9992;</span>
                         <span>Telegram</span>
                     </a>
@@ -791,6 +794,7 @@
                 </p>
             </div>
         </footer>
+        </main>
     </div>
 <!-- GDPR Cookie Banner — shows only for European visitors (timezone detection) -->
 <div id="gdpr-banner" style="
