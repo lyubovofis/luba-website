@@ -348,18 +348,32 @@
             }(window, document, 'ttq');
     });
     </script>
+    <link rel="stylesheet" href="/css/responsive.css">
 </head>
 <body>
-<nav id="site-nav" style="background: white; padding: 15px 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
-    <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
-        <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none;">Денежный Водопад</a>
-        <ul style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; align-items: center;">
+<nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
+    <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
+        <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none; flex-shrink: 0;">Денежный Водопад</a>
+        <ul class="nav-menu" style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; align-items: center;">
             <li><a href="/#about" style="color: #1f2937; text-decoration: none; font-weight: 500;">О программе</a></li>
             <li><a href="/#method" style="color: #1f2937; text-decoration: none; font-weight: 500;">Методика</a></li>
             <li><a href="/#pricing" style="color: #1f2937; text-decoration: none; font-weight: 500;">Стоимость</a></li>
             <li><a href="/ru/blog" style="color: #1f2937; text-decoration: none; font-weight: 500;">Статьи</a></li>
         </ul>
-        <a href="https://t.me/LyubovUA" style="background: #006ba6; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: bold;">Telegram</a>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="https://t.me/LyubovUA" class="nav-telegram" style="background: #006ba6; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; white-space: nowrap; font-size: 0.95rem;">Telegram</a>
+            <button class="nav-hamburger" aria-label="Открыть меню" aria-expanded="false" onclick="(function(b){var n=document.getElementById('site-nav');n.classList.toggle('nav-open');b.setAttribute('aria-expanded',n.classList.contains('nav-open'));})(this)">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+        </div>
+    </div>
+    <div class="nav-mobile-menu" aria-label="Мобильное меню">
+        <ul>
+            <li><a href="/#about">О программе</a></li>
+            <li><a href="/#method">Методика</a></li>
+            <li><a href="/#pricing">Стоимость</a></li>
+            <li><a href="/ru/blog">Статьи</a></li>
+        </ul>
     </div>
 </nav>
 
