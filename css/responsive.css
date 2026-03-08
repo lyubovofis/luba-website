@@ -1,0 +1,322 @@
+/* =====================================================
+   RESPONSIVE.CSS — Shared mobile fixes for lyubovpsy.com
+   Loaded by all /ru/ articles via <link> in <head>
+   Last updated: 2026-03-07
+   ===================================================== */
+
+/* ======================================================
+   HAMBURGER NAVIGATION
+   ====================================================== */
+
+.nav-hamburger {
+    display: none;
+    background: none;
+    border: 2px solid #6b46c1;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 6px 8px;
+    color: #6b46c1;
+    line-height: 0;
+    flex-shrink: 0;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-hamburger:hover {
+    background: #6b46c1;
+    color: white;
+}
+
+.nav-mobile-menu {
+    display: none;
+    border-top: 1px solid #e5e7eb;
+    background: white;
+}
+
+#site-nav.nav-open .nav-mobile-menu {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    /* Tighten nav padding, force row layout (overrides mobile-optimization.css column) */
+    #site-nav .nav-content {
+        padding: 12px 15px !important;
+        flex-wrap: nowrap !important;
+        flex-direction: row !important;
+        gap: 8px;
+    }
+
+    /* Show hamburger, hide desktop menu */
+    .nav-hamburger {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #site-nav > .nav-content > ul,
+    #site-nav ul.nav-menu {
+        display: none !important;
+    }
+
+    /* Mobile menu — override the inline display:none !important */
+    #site-nav .nav-mobile-menu ul {
+        display: flex !important;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 8px 20px 14px;
+        gap: 0;
+    }
+
+    #site-nav .nav-mobile-menu ul li {
+        border-bottom: 1px solid #f3f4f6;
+    }
+
+    #site-nav .nav-mobile-menu ul li:last-child {
+        border-bottom: none;
+    }
+
+    #site-nav .nav-mobile-menu ul li a {
+        display: block;
+        padding: 12px 0;
+        color: #1f2937;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    #site-nav .nav-mobile-menu ul li a:active,
+    #site-nav .nav-mobile-menu ul li a:hover {
+        color: #6b46c1;
+    }
+
+    /* Shrink logo font on small screens */
+    #site-nav a[href="/"] {
+        font-size: 1.15rem !important;
+    }
+
+    /* Shrink Telegram button in nav */
+    .nav-telegram,
+    #site-nav a[href*="t.me"][style*="border-radius"] {
+        padding: 8px 13px !important;
+        font-size: 0.82rem !important;
+        white-space: nowrap;
+    }
+}
+
+/* Extra-small phones: 375px and below */
+@media (max-width: 375px) {
+    #site-nav a[href="/"] {
+        font-size: 1rem !important;
+    }
+    .nav-telegram,
+    #site-nav a[href*="t.me"][style*="border-radius"] {
+        padding: 7px 10px !important;
+        font-size: 0.78rem !important;
+    }
+}
+
+/* ======================================================
+   GLOBAL OVERFLOW PREVENTION
+   ====================================================== */
+
+html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.wrapper {
+    overflow-x: hidden;
+}
+
+img,
+video,
+iframe,
+table,
+pre,
+code {
+    max-width: 100%;
+}
+
+/* ======================================================
+   ARTICLE CONTENT — MOBILE PADDING
+   ====================================================== */
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 1rem !important;
+    }
+
+    .content {
+        padding: 1.5rem 1rem 5rem !important; /* extra bottom for sticky-cta */
+    }
+
+    .answer-box {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .test-section {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .money-impact {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .program-section,
+    .cta-section,
+    .faq-section {
+        padding: 1.5rem 1rem !important;
+    }
+
+    /* Hero subtitle sizing */
+    .hero-subtitle {
+        font-size: 1rem !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Breadcrumb */
+    .std-breadcrumb {
+        padding: 8px 15px !important;
+        font-size: 12px !important;
+    }
+
+    /* Byline bar */
+    .article-byline-bar {
+        padding: 10px 15px !important;
+    }
+}
+
+/* ======================================================
+   GRID OVERFLOW FIX — prevent minmax from causing overflow
+   The modern pattern: minmax(min(Xpx, 100%), 1fr)
+   ====================================================== */
+
+.fear-cards {
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+}
+
+.impact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+}
+
+/* Stack all grids to 1 column on phones */
+@media (max-width: 480px) {
+    .fear-cards,
+    .impact-grid,
+    .expert-section,
+    .result-cards,
+    .program-grid,
+    .steps-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ======================================================
+   FONT SIZE SCALING (clamp — fluid, no layout breaks)
+   ====================================================== */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: clamp(1.35rem, 5.5vw, 1.8rem) !important;
+        line-height: 1.25 !important;
+    }
+
+    h2 {
+        font-size: clamp(1.15rem, 4.5vw, 1.5rem) !important;
+        line-height: 1.3 !important;
+    }
+
+    h3 {
+        font-size: clamp(1rem, 4vw, 1.2rem) !important;
+        line-height: 1.35 !important;
+    }
+}
+
+/* ======================================================
+   BUTTONS — minimum 44px touch targets
+   ====================================================== */
+
+@media (max-width: 768px) {
+    a.btn,
+    button.btn,
+    .btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sticky-cta .btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.9rem 1.5rem;
+        min-height: 50px;
+    }
+
+    /* White button in hero */
+    .btn-white {
+        background: white;
+        color: #6b46c1;
+        font-weight: 700;
+    }
+}
+
+/* ======================================================
+   STICKY CTA — iOS safe-area (iPhone bottom bar)
+   ====================================================== */
+
+.sticky-cta {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+    padding-left: max(1rem, env(safe-area-inset-left)) !important;
+    padding-right: max(1rem, env(safe-area-inset-right)) !important;
+}
+
+/* ======================================================
+   SEO FOOTER — mobile layout
+   ====================================================== */
+
+@media (max-width: 768px) {
+    .seo-footer-inner {
+        padding: 30px 15px 20px !important;
+    }
+
+    .seo-categories {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+
+    .seo-footer-contact {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    .seo-footer-legal-links {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 6px 12px !important;
+    }
+
+    .seo-footer-legal-links a {
+        font-size: 0.8rem !important;
+    }
+
+    .seo-footer-brand-name {
+        font-size: 0.85rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .seo-categories {
+        grid-template-columns: 1fr !important;
+    }
+
+    .seo-category {
+        padding: 14px !important;
+    }
+}

@@ -74,7 +74,18 @@
       "image": "https://lyubovpsy.com/images/luba-hero.webp",
       "datePublished": "2026-04-02",
       "dateModified": "2026-04-02",
-      "author": {"@type": "Person", "name": "Любовь Лукащук", "url": "https://lyubovpsy.com/ru/ob-avtore"},
+      "author": {
+            "@type": "Person",
+            "name": "Любовь Лукащук",
+            "jobTitle": "Мастер трансформации сознания, психолог-практик",
+            "url": "https://lyubovpsy.com/ru/ob-avtore",
+            "sameAs": [
+                "https://www.instagram.com/lyubov_psy_/",
+                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+                "https://www.facebook.com/lyubov.lukaschuk",
+                "https://t.me/LyubovUA"
+            ]
+        },
       "publisher": {"@type": "Organization", "name": "Денежный Водопад", "url": "https://lyubovpsy.com"},
       "mainEntityOfPage": "https://lyubovpsy.com/ru/zavist"
     }
@@ -181,19 +192,35 @@
     !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=r;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};ttq.load('CVPVVPJC77U3Q9FF4TE0');ttq.page();}(window,document,'ttq');
     });
     </script>
+    <link rel="stylesheet" href="/css/responsive.css">
 </head>
 <body>
 <div class="wrapper">
-    <nav>
-        <a href="/" class="nav-logo">Денежный Водопад</a>
-        <ul class="nav-links">
-            <li><a href="/#about">О программе</a></li>
-            <li><a href="/ru/ob-avtore">Об авторе</a></li>
-            <li><a href="/ru/otzyvy">Отзывы</a></li>
-            <li><a href="/ru/blog">Блог</a></li>
-            <li><a href="https://t.me/LyubovUA" class="nav-cta">Консультация</a></li>
+    <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
+    <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
+        <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none; flex-shrink: 0;">Денежный Водопад</a>
+        <ul class="nav-menu" style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; align-items: center;">
+            <li><a href="/#about" style="color: #1f2937; text-decoration: none; font-weight: 500;">О программе</a></li>
+            <li><a href="/#method" style="color: #1f2937; text-decoration: none; font-weight: 500;">Методика</a></li>
+            <li><a href="/#pricing" style="color: #1f2937; text-decoration: none; font-weight: 500;">Стоимость</a></li>
+            <li><a href="/ru/blog" style="color: #1f2937; text-decoration: none; font-weight: 500;">Статьи</a></li>
         </ul>
-    </nav>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="https://t.me/LyubovUA" class="nav-telegram" style="background: #006ba6; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; white-space: nowrap; font-size: 0.95rem;">Telegram</a>
+            <button class="nav-hamburger" aria-label="Открыть меню" aria-expanded="false" onclick="(function(b){var n=document.getElementById('site-nav');n.classList.toggle('nav-open');b.setAttribute('aria-expanded',n.classList.contains('nav-open'));})(this)">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+        </div>
+    </div>
+    <div class="nav-mobile-menu" aria-label="Мобильное меню">
+        <ul>
+            <li><a href="/#about">О программе</a></li>
+            <li><a href="/#method">Методика</a></li>
+            <li><a href="/#pricing">Стоимость</a></li>
+            <li><a href="/ru/blog">Статьи</a></li>
+        </ul>
+    </div>
+</nav>
 
     <div class="breadcrumb">
         <a href="/">Главная</a> → <a href="/ru/blog">Блог</a> → Зависть
@@ -447,5 +474,10 @@
     window.gdprAcceptAll=function(){setCookie('gdpr_consent','all',365);setCookie('analytics_consent','true',365);setCookie('marketing_consent','true',365);document.getElementById('gdpr-banner').style.display='none';};
 })();
 </script>
+
+    <!-- Sticky CTA Mobile -->
+    <div class="sticky-cta">
+        <a href="https://wa.me/34654420334?text=Хочу%20записаться%20на%20консультацию" class="btn btn-primary">Консультация в WhatsApp</a>
+    </div>
 </body>
 </html>
