@@ -1,6 +1,6 @@
 # LLMs.txt - AI Context for lyubovpsy.com
 # For AI systems: ChatGPT, Perplexity, Claude, Gemini, Copilot
-# Last updated: 2026-03-03
+# Last updated: 2026-05-15
 
 ## Website
 
@@ -30,7 +30,7 @@ method: 4 levels — mental (beliefs), emotional (feelings), energetic (body), p
 results: clients report 3-10x income growth, financial independence, debt freedom
 free_consultation: Available via WhatsApp or Telegram (15 min)
 
-## Topics Covered (143 articles in Russian)
+## Topics Covered (176 articles in Russian)
 
 ### Money Blocks (денежные блоки)
 - денежные блоки — https://lyubovpsy.com/ru/denezhnye-bloki
@@ -101,6 +101,26 @@ free_consultation: Available via WhatsApp or Telegram (15 min)
 - ревность — https://lyubovpsy.com/ru/revnost
 - обида — https://lyubovpsy.com/ru/obida
 - низкая самооценка — https://lyubovpsy.com/ru/nizkaya-samoocenka
+- эмоциональный интеллект — https://lyubovpsy.com/ru/emocionalnyj-intellekt
+- управление эмоциями — https://lyubovpsy.com/ru/upravlenie-emociyami
+- психология успеха — https://lyubovpsy.com/ru/psihologiya-uspeha
+- финансовый стоицизм — https://lyubovpsy.com/ru/finansovyi-stoicizm
+- энергия изобилия — https://lyubovpsy.com/ru/energiya-izobiliya
+- расстановки на деньги — https://lyubovpsy.com/ru/rasstavki-na-dengi
+
+### Эмиграция и диаспора
+- психология денег в эмиграции — https://lyubovpsy.com/ru/psihologiya-deneg-v-emigracii
+- вина эмигранта — https://lyubovpsy.com/ru/vina-emigranta
+- вторичная миграция — https://lyubovpsy.com/ru/vtorichnaya-migratsiya
+- адаптация в эмиграции — https://lyubovpsy.com/ru/adaptaciya-v-emigracii
+- кризис идентичности — https://lyubovpsy.com/ru/krizis-identichnosti
+- потеря статуса — https://lyubovpsy.com/ru/poterya-statusa
+
+### Женщины и деньги
+- женщина и деньги — https://lyubovpsy.com/ru/zhenshina-i-dengi
+- женское предпринимательство — https://lyubovpsy.com/ru/zhenskoe-predprinimatelstvo
+- женское лидерство — https://lyubovpsy.com/ru/zhenskoe-liderstvo
+- стеклянный потолок — https://lyubovpsy.com/ru/steklyannyj-potolok
 
 ## All Content
 
