@@ -2218,6 +2218,37 @@ window.addEventListener('scroll', function() {
 });
 </script>
 
+<style>
+@media (max-width: 768px) {
+  #gdpr-banner {
+    padding: 10px 14px !important;
+    max-height: 80px;
+    overflow: hidden;
+  }
+  #gdpr-banner > div {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+  #gdpr-banner p {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  #gdpr-banner button {
+    padding: 7px 14px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+  #gdpr-banner .gdpr-settings-btn {
+    display: none !important;
+  }
+}
+</style>
 <!-- GDPR Cookie Banner - INLINE VERSION -->
 <div id="gdpr-banner" style="
     display: none;

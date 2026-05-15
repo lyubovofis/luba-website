@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://www.clarity.ms">
     <meta name="description" content="Управление деньгами: как научиться контролировать финансы? Психолог Любовь Лукащук поможет выстроить здоровые отношения с деньгами. Бесплатная консультация.">
     <meta name="keywords" content="управление деньгами, как управлять деньгами, финансовое управление, контроль финансов, психология денег, денежный менеджмент">
     <meta name="author" content="Любовь Лукащук">
@@ -1248,23 +1251,28 @@
 
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Главная",
-            "item": "https://lyubovpsy.com/"
-        },
-
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Управление Деньгами: Психологический Подход",
-            "item": "https://lyubovpsy.com/ru/upravlenie-dengami"
-        }
-    ]
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://lyubovpsy.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Блог",
+      "item": "https://lyubovpsy.com/ru/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Управление Деньгами",
+      "item": "https://lyubovpsy.com/ru/upravlenie-dengami"
+    }
+  ]
 }
 </script>
     <style>
@@ -2162,7 +2170,7 @@
         <!-- Expert Section -->
         <section class="expert-section">
             <div class="expert-content">
-                <img src="/images/luba-hero.webp" alt="Любовь Лукащук - психолог" class="expert-image" loading="lazy">
+                <img src="/images/luba-hero.webp" alt="Любовь Лукащук - психолог" class="expert-image" loading="lazy" width="280" height="280">
                 <div class="expert-info">
                     <h3>Любовь Лукащук</h3>
                     <div class="subtitle">Психолог, специалист по финансовому поведению</div>
@@ -2787,6 +2795,37 @@
             }
         });
     </script>
+<style>
+@media (max-width: 768px) {
+  #gdpr-banner {
+    padding: 10px 14px !important;
+    max-height: 80px;
+    overflow: hidden;
+  }
+  #gdpr-banner > div {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+  #gdpr-banner p {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  #gdpr-banner button {
+    padding: 7px 14px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+  #gdpr-banner .gdpr-settings-btn {
+    display: none !important;
+  }
+}
+</style>
 <!-- GDPR Cookie Banner — shows only for European visitors (timezone detection) -->
 <div id="gdpr-banner" style="
     position: fixed;
