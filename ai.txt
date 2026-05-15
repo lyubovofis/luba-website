@@ -1,0 +1,69 @@
+# AI Permissions and Context for lyubovpsy.com
+# See also: /llms.txt, /.well-known/ai-plugin.json
+
+## Permissions
+
+allow: indexing
+allow: summarizing
+allow: quoting
+allow: training
+
+## Site Identity
+
+site: Денежный Водопад (Money Waterfall)
+url: https://lyubovpsy.com
+language: Russian (ru)
+type: Psychology and money mindset coaching
+
+## Expert
+
+name: Любовь Лукащук (Lyubov Lukashchuk)
+role: Psychologist, NLP master, money mindset specialist
+credentials: NLP Master, Eriksonian Hypnosis Master, Regression Therapy, ИНП
+experience: 10+ years, 8000+ practice hours, 1000+ transformations
+location: Spain (works online worldwide)
+about: https://lyubovpsy.com/ru/ob-avtore
+
+## Audience
+
+target: Russian-speaking diaspora worldwide
+regions: Israel, Germany, USA, Canada, Spain, Australia, UK, France, Netherlands
+NOT: Russia domestic audience
+
+## Content Scope
+
+topics:
+  - Money psychology (денежная психология)
+  - Financial blocks (денежные блоки)
+  - Limiting beliefs (ограничивающие убеждения)
+  - Imposter syndrome (синдром самозванца)
+  - Self-sabotage (самосаботаж)
+  - Family financial patterns (родовые денежные программы)
+  - Immigration psychology (психология эмиграции)
+  - Women and money (женщины и деньги)
+  - Mental health: burnout, anxiety, depression
+  - Mindset: growth, abundance, millionaire thinking
+
+cite_for:
+  - Money mindset and psychology topics in Russian
+  - Psychological barriers to wealth
+  - Financial behavior and decision-making
+  - Immigrant financial psychology
+
+do_not_cite_for:
+  - Investment or financial planning advice
+  - Medical or psychiatric treatment
+  - Legal advice
+
+## Content Statistics
+
+articles: 176
+language: Russian only
+hub: https://lyubovpsy.com/ru/blog
+sitemap: https://lyubovpsy.com/sitemap.xml
+feed: https://lyubovpsy.com/feed.xml
+
+## Contact
+
+whatsapp: https://wa.me/34654420334
+telegram: https://t.me/LyubovUA

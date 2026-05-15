@@ -71,11 +71,36 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
+# Grok / xAI
+User-agent: Grok
+Allow: /
+
+User-agent: xAI
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# ByteDance / TikTok AI
+User-agent: Bytespider
+Allow: /
+
+# DuckDuckGo AI
+User-agent: DuckAssistBot
+Allow: /
+
 # Common AI crawlers
 User-agent: CCBot
 Allow: /
 
 User-agent: cohere-ai
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+User-agent: Omgilibot
 Allow: /
 
 User-agent: Applebot
@@ -92,6 +117,7 @@ Sitemap: https://lyubovpsy.com/sitemap.xml
 
 # AI context files
 # https://lyubovpsy.com/llms.txt
+# https://lyubovpsy.com/ai.txt
 # https://lyubovpsy.com/.well-known/ai-plugin.json
 
 # For humans

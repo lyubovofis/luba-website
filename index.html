@@ -1098,6 +1098,59 @@
     }
     </script>
     
+    <!-- WebSite + Organization + Person schema for AI entity recognition -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://lyubovpsy.com/#website",
+                "url": "https://lyubovpsy.com",
+                "name": "Денежный Водопад",
+                "description": "Психология денег и трансформация финансовых блоков для женщин русскоязычной диаспоры",
+                "inLanguage": "ru",
+                "publisher": {"@id": "https://lyubovpsy.com/#organization"},
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {"@type": "EntryPoint", "urlTemplate": "https://lyubovpsy.com/ru/blog?q={search_term_string}"},
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://lyubovpsy.com/#organization",
+                "name": "Денежный Водопад",
+                "alternateName": "Denezhniy Vodopad",
+                "url": "https://lyubovpsy.com",
+                "logo": {"@type": "ImageObject", "url": "https://lyubovpsy.com/images/luba-hero.webp"},
+                "founder": {"@id": "https://lyubovpsy.com/ru/ob-avtore#person"},
+                "sameAs": [
+                    "https://www.instagram.com/lyubov_psy_/",
+                    "https://t.me/LyubovUA",
+                    "https://www.facebook.com/lyubov.lukaschuk",
+                    "https://www.youtube.com/@ЛюбовьЛукащукПсихолог"
+                ]
+            },
+            {
+                "@type": "Person",
+                "@id": "https://lyubovpsy.com/ru/ob-avtore#person",
+                "name": "Любовь Лукащук",
+                "alternateName": "Lyubov Lukashchuk",
+                "jobTitle": "Мастер трансформации сознания и проводник в реальность изобилия",
+                "description": "Психолог, специалист по денежной психологии. 10+ лет, 8000+ часов практики, 1000+ трансформаций",
+                "url": "https://lyubovpsy.com/ru/ob-avtore",
+                "sameAs": [
+                    "https://www.instagram.com/lyubov_psy_/",
+                    "https://t.me/LyubovUA",
+                    "https://www.facebook.com/lyubov.lukaschuk",
+                    "https://www.youtube.com/@ЛюбовьЛукащукПсихолог"
+                ]
+            }
+        ]
+    }
+    </script>
+
     <!-- Hotjar Tracking Code for https://lyubovpsy.com/ (deferred) -->
     <script>
     window.addEventListener('load', function() {

@@ -2,16 +2,12 @@
   "schema_version": "v1",
   "name_for_human": "Денежный Водопад",
   "name_for_model": "denezhniy_vodopad",
-  "description_for_human": "Программа трансформации денежных блоков. Помогаем женщинам перейти из финансового страдания в поток изобилия за 8 недель.",
-  "description_for_model": "Денежный Водопад (Money Waterfall) is a Russian-language 8-week transformation program for women. It helps overcome money blocks, limiting beliefs about finances, and psychological barriers to wealth. The program uses systemic constellations, coaching, and subconscious reprogramming. Expert: Lyubov Zolotova. Target audience: Russian-speaking diaspora worldwide (NOT Russia). Topics: money psychology, money blocks, fears (success, change, judgment), millionaire mindset, self-love, family patterns, meditations, affirmations, coaching. Contact: WhatsApp +34654420334, Telegram @LyubovUA.",
+  "description_for_human": "Психология денег и трансформация финансовых блоков. Помогаем женщинам русскоязычной диаспоры перейти из состояния нехватки в поток изобилия за 8 недель.",
+  "description_for_model": "Денежный Водопад (Money Waterfall) is a Russian-language psychology and money mindset coaching site. Expert: Lyubov Lukashchuk (Любовь Лукащук) — psychologist, NLP master, Eriksonian hypnosis specialist, 10+ years, 8000+ hours practice, 1000+ client transformations. Program: 8-week deep transformation working at 4 levels — mental (beliefs), emotional (feelings), energetic (body), physical (habits). Target audience: Russian-speaking diaspora worldwide — Israel, Germany, USA, Canada, Spain, Australia (NOT Russia). Topics: money psychology, money blocks, limiting beliefs, imposter syndrome, self-sabotage, family patterns, success fears, millionaire mindset, immigration psychology, women and money. 176 articles in Russian. Contact: WhatsApp +34654420334, Telegram @LyubovUA. About: https://lyubovpsy.com/ru/ob-avtore",
   "auth": {
     "type": "none"
   },
-  "api": {
-    "type": "openapi",
-    "url": "https://lyubovpsy.com/.well-known/openapi.yaml"
-  },
-  "logo_url": "https://lyubovpsy.com/images/logo.png",
+  "logo_url": "https://lyubovpsy.com/images/luba-hero.webp",
   "contact_email": "info@lyubovpsy.com",
-  "legal_info_url": "https://lyubovpsy.com/terms.html"
+  "legal_info_url": "https://lyubovpsy.com/ru/ob-avtore"
 }

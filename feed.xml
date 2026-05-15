@@ -4,123 +4,293 @@
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>Денежный Водопад - Статьи о психологии денег</title>
+    <title>Денежный Водопад — Психология денег и трансформация</title>
     <link>https://lyubovpsy.com</link>
-    <description>Бесплатные статьи о психологии денег, денежных блоках, мышлении изобилия и финансовой трансформации от Любови Золотовой</description>
+    <description>Статьи о психологии денег, денежных блоках, мышлении изобилия и личной трансформации от Любови Лукащук — психолога с 10-летним опытом работы с женщинами русскоязычной диаспоры по всему миру.</description>
     <language>ru</language>
-    <lastBuildDate>Sun, 08 Dec 2025 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 May 2026 10:00:00 +0000</lastBuildDate>
     <atom:link href="https://lyubovpsy.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
-      <url>https://lyubovpsy.com/images/logo.png</url>
+      <url>https://lyubovpsy.com/images/luba-hero.webp</url>
       <title>Денежный Водопад</title>
       <link>https://lyubovpsy.com</link>
     </image>
-    <managingEditor>hello@lyubovpsy.com (Любовь Золотова)</managingEditor>
-    <webMaster>hello@lyubovpsy.com</webMaster>
-    <copyright>© 2025 Денежный Водопад. Все права защищены.</copyright>
+    <managingEditor>info@lyubovpsy.com (Любовь Лукащук)</managingEditor>
+    <webMaster>info@lyubovpsy.com</webMaster>
+    <copyright>© 2026 Денежный Водопад. Все права защищены.</copyright>
     <category>Психология</category>
-    <category>Финансы</category>
+    <category>Психология денег</category>
     <category>Саморазвитие</category>
+    <ttl>1440</ttl>
 
-    <!-- Психология денег -->
     <item>
-      <title>Психология денег: как изменить отношение к финансам</title>
-      <link>https://lyubovpsy.com/pages/seo/psihologiya-deneg.html</link>
-      <guid isPermaLink="true">https://lyubovpsy.com/pages/seo/psihologiya-deneg.html</guid>
-      <description>Узнайте, как ваше подсознание влияет на финансовое благополучие и как изменить денежные установки.</description>
-      <category>Психология денег</category>
-      <dc:creator>Любовь Золотова</dc:creator>
-      <pubDate>Sun, 08 Dec 2025 10:00:00 +0000</pubDate>
+      <title>Энергия изобилия: как перейти из состояния нехватки в поток</title>
+      <link>https://lyubovpsy.com/ru/energiya-izobiliya</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/energiya-izobiliya</guid>
+      <description>Узнайте, как сдвинуть внутреннее состояние с хронической нехватки на поток изобилия — практические техники от психолога.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Fri, 20 Mar 2026 10:00:00 +0000</pubDate>
     </item>
 
     <item>
-      <title>Денежные блоки: как распознать и убрать</title>
-      <link>https://lyubovpsy.com/pages/seo/denezhnye-bloki.html</link>
-      <guid isPermaLink="true">https://lyubovpsy.com/pages/seo/denezhnye-bloki.html</guid>
-      <description>Полное руководство по выявлению и устранению денежных блоков, мешающих финансовому успеху.</description>
-      <category>Денежные блоки</category>
-      <dc:creator>Любовь Золотова</dc:creator>
-      <pubDate>Sun, 08 Dec 2025 09:00:00 +0000</pubDate>
+      <title>Женское предпринимательство: психология успешного бизнеса</title>
+      <link>https://lyubovpsy.com/ru/zhenskoe-predprinimatelstvo</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/zhenskoe-predprinimatelstvo</guid>
+      <description>Психологические барьеры женского предпринимательства и как их преодолеть. Опыт 1000+ трансформаций.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Thu, 19 Mar 2026 10:00:00 +0000</pubDate>
     </item>
 
     <item>
-      <title>Страх успеха: почему мы боимся богатства</title>
-      <link>https://lyubovpsy.com/pages/seo/strah-uspeha.html</link>
-      <guid isPermaLink="true">https://lyubovpsy.com/pages/seo/strah-uspeha.html</guid>
-      <description>Разбираем психологические причины страха успеха и способы его преодоления.</description>
-      <category>Страхи</category>
-      <dc:creator>Любовь Золотова</dc:creator>
-      <pubDate>Sun, 08 Dec 2025 08:00:00 +0000</pubDate>
+      <title>Расставки на деньги: что это и зачем нужно</title>
+      <link>https://lyubovpsy.com/ru/rasstavki-na-dengi</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/rasstavki-na-dengi</guid>
+      <description>Системные расстановки как метод работы с финансовыми блоками и родовыми программами безденежья.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Wed, 18 Mar 2026 12:00:00 +0000</pubDate>
     </item>
 
     <item>
-      <title>Мышление миллионера: 10 привычек богатых людей</title>
-      <link>https://lyubovpsy.com/pages/seo/myshlenie-millionera.html</link>
-      <guid isPermaLink="true">https://lyubovpsy.com/pages/seo/myshlenie-millionera.html</guid>
-      <description>Изучите образ мышления успешных людей и внедрите их привычки в свою жизнь.</description>
-      <category>Мышление</category>
-      <dc:creator>Любовь Золотова</dc:creator>
-      <pubDate>Sun, 08 Dec 2025 07:00:00 +0000</pubDate>
+      <title>Финансовый стоицизм: древняя философия для современных денег</title>
+      <link>https://lyubovpsy.com/ru/finansovyi-stoicizm</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/finansovyi-stoicizm</guid>
+      <description>Как принципы стоицизма помогают освободиться от финансовой тревоги и выработать спокойное отношение к деньгам.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Wed, 18 Mar 2026 10:00:00 +0000</pubDate>
     </item>
 
     <item>
-      <title>Синдром самозванца: как перестать обесценивать себя</title>
-      <link>https://lyubovpsy.com/pages/seo/sindrom-samozvanca.html</link>
-      <guid isPermaLink="true">https://lyubovpsy.com/pages/seo/sindrom-samozvanca.html</guid>
-      <description>Узнайте причины синдрома самозванца и эффективные методы борьбы с ним.</description>
-      <category>Психология</category>
-      <dc:creator>Любовь Золотова</dc:creator>
-      <pubDate>Sun, 08 Dec 2025 06:00:00 +0000</pubDate>
+      <title>Женское лидерство: как женщины меняют правила игры</title>
+      <link>https://lyubovpsy.com/ru/zhenskoe-liderstvo</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/zhenskoe-liderstvo</guid>
+      <description>Психология женского лидерства: почему женщины боятся власти и как преодолеть этот барьер.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Tue, 17 Mar 2026 12:00:00 +0000</pubDate>
     </item>
 
     <item>
-      <title>Медитация на деньги: практика привлечения изобилия</title>
-      <link>https://lyubovpsy.com/pages/seo/meditaciya-na-dengi.html</link>
-      <guid isPermaLink="true">https://lyubovpsy.com/pages/seo/meditaciya-na-dengi.html</guid>
-      <description>Пошаговое руководство по денежным медитациям для привлечения финансового потока.</description>
-      <category>Практики</category>
-      <dc:creator>Любовь Золотова</dc:creator>
-      <pubDate>Sun, 08 Dec 2025 05:00:00 +0000</pubDate>
+      <title>Поиск предназначения: как найти своё призвание и монетизировать</title>
+      <link>https://lyubovpsy.com/ru/poisk-prednaznacheniya</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/poisk-prednaznacheniya</guid>
+      <description>Практическое руководство по поиску своего призвания и построению дохода вокруг любимого дела.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Tue, 17 Mar 2026 10:00:00 +0000</pubDate>
     </item>
 
     <item>
-      <title>Аффирмации на деньги: 50 мощных утверждений</title>
-      <link>https://lyubovpsy.com/pages/seo/affirmacii-na-dengi.html</link>
-      <guid isPermaLink="true">https://lyubovpsy.com/pages/seo/affirmacii-na-dengi.html</guid>
-      <description>Коллекция эффективных денежных аффирмаций с инструкцией по применению.</description>
-      <category>Практики</category>
-      <dc:creator>Любовь Золотова</dc:creator>
-      <pubDate>Sun, 08 Dec 2025 04:00:00 +0000</pubDate>
+      <title>Психосоматика кожи: о чём говорит тело</title>
+      <link>https://lyubovpsy.com/ru/psihosomatika-kozhi</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/psihosomatika-kozhi</guid>
+      <description>Связь кожных заболеваний с психологическими блоками и непрожитыми эмоциями. Взгляд психолога.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Mon, 16 Mar 2026 12:00:00 +0000</pubDate>
     </item>
 
     <item>
-      <title>Родовые программы: как семейные сценарии влияют на деньги</title>
-      <link>https://lyubovpsy.com/pages/seo/rodovye-programmy.html</link>
-      <guid isPermaLink="true">https://lyubovpsy.com/pages/seo/rodovye-programmy.html</guid>
-      <description>Исследуйте влияние семейных денежных паттернов и научитесь их трансформировать.</description>
-      <category>Род и семья</category>
-      <dc:creator>Любовь Золотова</dc:creator>
-      <pubDate>Sun, 08 Dec 2025 03:00:00 +0000</pubDate>
+      <title>ПТСР: что это, симптомы и влияние на финансовую жизнь</title>
+      <link>https://lyubovpsy.com/ru/ptsr</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/ptsr</guid>
+      <description>Посттравматическое стрессовое расстройство и его скрытое влияние на финансовые решения и доход.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Mon, 16 Mar 2026 10:00:00 +0000</pubDate>
     </item>
 
     <item>
-      <title>Самосаботаж: почему мы мешаем своему успеху</title>
-      <link>https://lyubovpsy.com/pages/seo/samosabotazh.html</link>
-      <guid isPermaLink="true">https://lyubovpsy.com/pages/seo/samosabotazh.html</guid>
-      <description>Разбираем механизмы самосаботажа и способы его преодоления.</description>
-      <category>Психология</category>
-      <dc:creator>Любовь Золотова</dc:creator>
-      <pubDate>Sun, 08 Dec 2025 02:00:00 +0000</pubDate>
+      <title>Манипуляция в отношениях: как распознать и защититься</title>
+      <link>https://lyubovpsy.com/ru/manipulyaciya-v-otnosheniyah</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/manipulyaciya-v-otnosheniyah</guid>
+      <description>Признаки манипулятивного поведения в отношениях и практические техники защиты психологических границ.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Sun, 15 Mar 2026 12:00:00 +0000</pubDate>
     </item>
 
     <item>
-      <title>Финансовая независимость: путь к свободе</title>
-      <link>https://lyubovpsy.com/pages/seo/finansovaya-nezavisimost.html</link>
-      <guid isPermaLink="true">https://lyubovpsy.com/pages/seo/finansovaya-nezavisimost.html</guid>
-      <description>Пошаговый план достижения финансовой независимости через психологическую работу.</description>
-      <category>Коучинг</category>
-      <dc:creator>Любовь Золотова</dc:creator>
-      <pubDate>Sun, 08 Dec 2025 01:00:00 +0000</pubDate>
+      <title>Границы в отношениях: как влияют на деньги и успех</title>
+      <link>https://lyubovpsy.com/ru/granicy-v-otnosheniyah</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/granicy-v-otnosheniyah</guid>
+      <description>Почему неумение выстраивать личные границы напрямую блокирует финансовый рост. Разбор с примерами.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Sun, 15 Mar 2026 10:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Психология успеха: что отличает богатых от бедных в голове</title>
+      <link>https://lyubovpsy.com/ru/psihologiya-uspeha</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/psihologiya-uspeha</guid>
+      <description>Ключевые психологические различия между людьми с разным уровнем дохода. Конкретные паттерны мышления.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Sat, 14 Mar 2026 12:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Управление эмоциями: техники для финансового роста</title>
+      <link>https://lyubovpsy.com/ru/upravlenie-emociyami</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/upravlenie-emociyami</guid>
+      <description>Как научиться управлять эмоциями и превратить эту навык в инструмент финансового роста.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Sat, 14 Mar 2026 10:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Эмоциональный интеллект: что это и как развить</title>
+      <link>https://lyubovpsy.com/ru/emocionalnyj-intellekt</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/emocionalnyj-intellekt</guid>
+      <description>Полное руководство по развитию эмоционального интеллекта — ключевого навыка для финансового и личного успеха.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Fri, 13 Mar 2026 12:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Думскроллинг: как остановить зависимость от плохих новостей</title>
+      <link>https://lyubovpsy.com/ru/dumskrolling</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/dumskrolling</guid>
+      <description>Психология думскроллинга и практические методы избавления от зависимости листать тревожные новости.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Fri, 13 Mar 2026 10:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Техники заземления: 7 способов вернуться в тело при тревоге</title>
+      <link>https://lyubovpsy.com/ru/tehniki-zazemleniya</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/tehniki-zazemleniya</guid>
+      <description>Практические техники заземления при панике и тревоге. Быстрые методы возвращения в состояние здесь-и-сейчас.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Thu, 12 Mar 2026 12:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Травма разлуки: как эмиграция разрывает связи</title>
+      <link>https://lyubovpsy.com/ru/travma-razluki</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/travma-razluki</guid>
+      <description>Психологические последствия разлуки с близкими при эмиграции и пути восстановления привязанностей.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Thu, 12 Mar 2026 10:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Потеря статуса в эмиграции: как пережить и восстановиться</title>
+      <link>https://lyubovpsy.com/ru/poterya-statusa</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/poterya-statusa</guid>
+      <description>Потеря профессионального и социального статуса при переезде: психология адаптации и восстановления самоценности.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Wed, 11 Mar 2026 12:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Вторичная миграция: психология второго переезда</title>
+      <link>https://lyubovpsy.com/ru/vtorichnaya-migratsiya</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/vtorichnaya-migratsiya</guid>
+      <description>Особенности психологической адаптации при втором переезде: новые страхи, старые блоки и как с ними работать.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Wed, 11 Mar 2026 10:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Кризис идентичности в эмиграции: кто я здесь?</title>
+      <link>https://lyubovpsy.com/ru/krizis-identichnosti</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/krizis-identichnosti</guid>
+      <description>Как переезд разрушает привычную идентичность и что делать, чтобы заново найти себя в новой стране.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Tue, 10 Mar 2026 12:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Вина эмигранта: как чувство вины блокирует доход и счастье</title>
+      <link>https://lyubovpsy.com/ru/vina-emigranta</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/vina-emigranta</guid>
+      <description>Синдром выжившего и вина перед оставшимися — как эти чувства блокируют финансовый рост эмигрантов.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Tue, 10 Mar 2026 10:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Психология долгов: почему люди снова и снова влезают в долги</title>
+      <link>https://lyubovpsy.com/ru/psihologiya-dolgov</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/psihologiya-dolgov</guid>
+      <description>Бессознательные причины долговой ловушки и психологические методы выхода из хронического состояния должника.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Mon, 09 Mar 2026 12:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Детская позиция в деньгах: когда взрослая женщина ведёт себя как ребёнок</title>
+      <link>https://lyubovpsy.com/ru/detskaya-poziciya-v-dengah</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/detskaya-poziciya-v-dengah</guid>
+      <description>Психология детских сценариев в финансовом поведении взрослых женщин и как перейти во взрослую позицию.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Mon, 09 Mar 2026 10:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Стеклянный потолок дохода: почему вы застряли на одном уровне</title>
+      <link>https://lyubovpsy.com/ru/steklyannyj-potolok</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/steklyannyj-potolok</guid>
+      <description>Что такое психологический стеклянный потолок дохода, почему он возникает и как его пробить навсегда.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Sun, 08 Mar 2026 12:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Психология богатства: как мыслят богатые люди</title>
+      <link>https://lyubovpsy.com/ru/psihologiya-bogatstva</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/psihologiya-bogatstva</guid>
+      <description>Ключевые ментальные паттерны состоятельных людей, которые можно освоить независимо от стартовых условий.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Sun, 08 Mar 2026 10:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Финансовая опора: как женщине создать финансовую независимость</title>
+      <link>https://lyubovpsy.com/ru/finansovaya-opora</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/finansovaya-opora</guid>
+      <description>Психологические шаги к финансовой независимости для женщин: от зависимости к собственной опоре.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Sat, 07 Mar 2026 12:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Синдром отложенной жизни: начну жить, когда...</title>
+      <link>https://lyubovpsy.com/ru/sindrom-otlozhennoj-zhizni</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/sindrom-otlozhennoj-zhizni</guid>
+      <description>Психология откладывания настоящей жизни на потом и как этот паттерн разрушает финансовый потенциал.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Sat, 07 Mar 2026 10:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Психология денег в эмиграции: как переезд меняет отношения с деньгами</title>
+      <link>https://lyubovpsy.com/ru/psihologiya-deneg-v-emigracii</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/psihologiya-deneg-v-emigracii</guid>
+      <description>Особенности денежной психологии эмигрантов: страх нестабильности, синдром выжившего, двойные стандарты.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Fri, 06 Mar 2026 12:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Вторичные выгоды безденежья: зачем подсознание защищает бедность</title>
+      <link>https://lyubovpsy.com/ru/vtorichnye-vygody-bezdenzhya</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/vtorichnye-vygody-bezdenzhya</guid>
+      <description>Почему подсознание саботирует финансовый успех и какие скрытые выгоды оно видит в безденежье.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Fri, 06 Mar 2026 10:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Страх больших денег: почему женщины боятся зарабатывать много</title>
+      <link>https://lyubovpsy.com/ru/strah-bolshih-deneg</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/strah-bolshih-deneg</guid>
+      <description>Разбор страха богатства: откуда он берётся, как проявляется и как навсегда освободиться от ограничивающего убеждения.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Thu, 05 Mar 2026 12:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>Денежные блоки: как распознать и убрать психологические барьеры</title>
+      <link>https://lyubovpsy.com/ru/denezhnye-bloki</link>
+      <guid isPermaLink="true">https://lyubovpsy.com/ru/denezhnye-bloki</guid>
+      <description>Полный разбор денежных блоков — подсознательных установок, которые мешают зарабатывать больше.</description>
+      <dc:creator>Любовь Лукащук</dc:creator>
+      <pubDate>Thu, 05 Mar 2026 10:00:00 +0000</pubDate>
     </item>
 
   </channel>
