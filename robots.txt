@@ -6,6 +6,7 @@ User-agent: *
 Allow: /
 Disallow: /crm/
 Disallow: /_archive/
+Disallow: /drafts/
 Disallow: /node_modules/
 Disallow: /Best pages/
 Disallow: /webhook/
@@ -37,6 +38,9 @@ Allow: /
 
 # ChatGPT / OpenAI
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User

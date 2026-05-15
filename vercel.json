@@ -21,6 +21,21 @@
       "source": "/ru/vnutrennij-kritik",
       "destination": "/ru/vnutrenniy-kritik",
       "permanent": true
+    },
+    {
+      "source": "/ru/uverennaya-zhenshchina",
+      "destination": "/ru/uverennost-v-sebe",
+      "permanent": true
+    },
+    {
+      "source": "/ru/emigraciya-i-dengi",
+      "destination": "/ru/psihologiya-deneg-v-emigracii",
+      "permanent": true
+    },
+    {
+      "source": "/ru/strah-byt-bogatoy",
+      "destination": "/ru/strah-bolshih-deneg",
+      "permanent": true
     }
   ],
   "rewrites": [

@@ -1,0 +1,110 @@
+name: Auto-publish scheduled articles
+
+on:
+  # schedule:
+  #   - cron: '0 8 * * *'  # Daily at 08:00 UTC — DISABLED: all 30 articles published
+  workflow_dispatch:      # Manual trigger from GitHub UI
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Publish due articles
+        id: publish
+        run: |
+          python3 << 'PYEOF'
+          import json, shutil, os, re
+          from datetime import date
+
+          today = date.today().isoformat()
+          queue_file = 'drafts/publish-queue.json'
+
+          with open(queue_file, encoding='utf-8') as f:
+              queue = json.load(f)
+
+          published = []
+          for item in queue:
+              if item.get('published'):
+                  continue
+              if item['date'] <= today:
+                  src = f"drafts/{item['filename']}"
+                  dst = f"ru/{item['slug']}.html"
+                  if os.path.exists(src):
+                      shutil.copy2(src, dst)
+                      item['published'] = True
+                      published.append(item)
+                      print(f"Published: {dst}")
+                  else:
+                      print(f"WARNING: {src} not found, skipping")
+
+          if not published:
+              print("No articles due today.")
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                  f.write('has_changes=false\n')
+              exit(0)
+
+          # Save updated queue
+          with open(queue_file, 'w', encoding='utf-8') as f:
+              json.dump(queue, f, indent=2, ensure_ascii=False)
+
+          # Update sitemap.xml
+          with open('sitemap.xml', encoding='utf-8') as f:
+              sitemap = f.read()
+
+          new_urls = ''
+          for item in published:
+              new_urls += f'''
+    <url>
+        <loc>https://lyubovpsy.com/ru/{item['slug']}</loc>
+        <lastmod>{today}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>'''
+
+          sitemap = sitemap.replace('</urlset>', new_urls + '\n</urlset>')
+          with open('sitemap.xml', 'w', encoding='utf-8') as f:
+              f.write(sitemap)
+
+          # Update blog.html article count
+          with open('ru/blog.html', encoding='utf-8') as f:
+              blog = f.read()
+
+          count_match = re.search(r'(\d+) статей', blog)
+          if count_match:
+              old_count = int(count_match.group(1))
+              new_count = old_count + len(published)
+              # Update all occurrences of the count
+              blog = blog.replace(f'{old_count} статей', f'{new_count} статей')
+              blog = blog.replace(f'"numberOfItems": {old_count}', f'"numberOfItems": {new_count}')
+              # Update visible stat number
+              blog = re.sub(
+                  r'(<div class="stat-number">)' + str(old_count) + r'(</div>)',
+                  r'\g<1>' + str(new_count) + r'\2',
+                  blog
+              )
+              with open('ru/blog.html', 'w', encoding='utf-8') as f:
+                  f.write(blog)
+              print(f"blog.html counter: {old_count} -> {new_count}")
+
+          slugs = ', '.join([i['slug'] for i in published])
+          print(f"Done! Published {len(published)} article(s): {slugs}")
+
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('has_changes=true\n')
+              f.write(f'slugs={slugs}\n')
+          PYEOF
+
+      - name: Commit and push changes
+        if: steps.publish.outputs.has_changes == 'true'
+        run: |
+          git config user.name "Auto-publish Bot"
+          git config user.email "autopublish@lyubovpsy.com"
+          git add ru/ sitemap.xml drafts/publish-queue.json
+          git commit -m "auto: publish ${{ steps.publish.outputs.slugs }}"
+          git push
