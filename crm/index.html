@@ -1574,7 +1574,7 @@
         }
         
         async function moveQuizToFunnel(leadId) {
-            if (!confirm('Переместить лида в воронку?')) return;
+            if (!await confirmAction('Переместить лида в воронку продаж?')) return;
             
             try {
                 const supabase = crmAuth;
@@ -1695,7 +1695,7 @@
         
         // Restore from archive
         async function restoreFromArchive(leadId) {
-            if (!confirm('Відновити ліда з архіву?')) return;
+            if (!await confirmAction('Восстановить лида из архива?')) return;
             
             try {
                 const supabase = crmAuth;
@@ -1722,7 +1722,7 @@
         }
         
         async function deleteQuizLead(leadId) {
-            if (!confirm('Удалить лида из квиза? Это действие нельзя отменить.')) return;
+            if (!await confirmAction('Удалить лида? Это действие нельзя отменить.')) return;
             
             try {
                 const supabase = crmAuth;
@@ -2099,7 +2099,7 @@
         
         // Mark as Not Interested
         async function markNotInterested(leadId) {
-            if (!confirm('Позначити ліда як незацікавленого?')) return;
+            if (!await confirmAction('Отметить лида как незаинтересованного и убрать в архив?')) return;
             
             try {
                 const supabase = crmAuth;
@@ -2219,6 +2219,35 @@
             });
         });
         
+        // Custom non-blocking confirm (replaces window.confirm which freezes browser)
+        function confirmAction(message) {
+            return new Promise(resolve => {
+                const overlay = document.createElement('div');
+                overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);z-index:9999;display:flex;align-items:center;justify-content:center;';
+                const box = document.createElement('div');
+                box.style.cssText = 'background:#1e293b;border:1px solid rgba(148,163,184,0.2);border-radius:16px;padding:30px;max-width:380px;width:90%;box-shadow:0 25px 60px rgba(0,0,0,0.5);';
+                const msg = document.createElement('p');
+                msg.textContent = message;
+                msg.style.cssText = 'color:#f1f5f9;font-size:16px;margin-bottom:24px;line-height:1.5;';
+                const row = document.createElement('div');
+                row.style.cssText = 'display:flex;gap:12px;';
+                const btnNo = document.createElement('button');
+                btnNo.textContent = 'Отмена';
+                btnNo.style.cssText = 'flex:1;padding:12px;border:1px solid rgba(148,163,184,0.3);background:transparent;color:#94a3b8;border-radius:10px;cursor:pointer;font-size:14px;font-weight:600;';
+                const btnYes = document.createElement('button');
+                btnYes.textContent = 'Подтвердить';
+                btnYes.style.cssText = 'flex:1;padding:12px;border:none;background:linear-gradient(135deg,#667eea,#764ba2);color:white;border-radius:10px;cursor:pointer;font-size:14px;font-weight:600;';
+                row.appendChild(btnNo);
+                row.appendChild(btnYes);
+                box.appendChild(msg);
+                box.appendChild(row);
+                overlay.appendChild(box);
+                document.body.appendChild(overlay);
+                btnYes.onclick = () => { document.body.removeChild(overlay); resolve(true); };
+                btnNo.onclick  = () => { document.body.removeChild(overlay); resolve(false); };
+            });
+        }
+
         // Global
         window.showTab = showTab;
         window.showAddLeadModal = showAddLeadModal;
