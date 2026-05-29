@@ -19,7 +19,10 @@ create table if not exists public.quiz_leads (
   main_block   text,
   utm_source   text,
   utm_medium   text,
-  utm_campaign text
+  utm_campaign text,
+  -- CRM-воронка: quiz_new -> new -> consultation -> paid -> archive
+  stage        text default 'quiz_new',
+  quiz_version text
 );
 
 create table if not exists public.crm_leads (
