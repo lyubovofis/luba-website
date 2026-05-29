@@ -1195,17 +1195,21 @@
     <script>
         console.log('🚀 Money Flow CRM loading...');
         
-        // Check auth
-        if (!localStorage.getItem('crm_authenticated')) {
-            console.log('❌ Not authenticated');
-            window.location.href = '/crm/login.html';
-        }
-        
         // State
         let allLeads = [];
         let draggedElement = null;
-        const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
+        const SUPABASE_URL = 'https://rtlbzfvvmrwqwhsgybrp.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0bGJ6ZnZ2bXJ3cXdoc2d5YnJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5OTQ2MjUsImV4cCI6MjA5NTU3MDYyNX0.K4CF5evvHhTAAYKAc3dn3s9so9jL5Zzjln5qnDMCqtk';
+
+        // Реальная проверка входа — нужна активная сессия Supabase Auth
+        const crmAuth = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        (async () => {
+            const { data: { session } } = await crmAuth.auth.getSession();
+            if (!session) {
+                console.log('❌ Нет сессии — на страницу входа');
+                window.location.href = '/crm/login.html';
+            }
+        })();
         
         // Functions
         function showTab(tabName) {
@@ -1237,8 +1241,10 @@
             document.getElementById('leadModal').classList.remove('active');
         }
         
-        function logout() {
-            localStorage.clear();
+        async function logout() {
+            try { await crmAuth.auth.signOut(); } catch (e) {}
+            localStorage.removeItem('crm_authenticated');
+            localStorage.removeItem('crm_username');
             window.location.href = '/crm/login.html';
         }
         

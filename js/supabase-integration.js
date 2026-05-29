@@ -2,8 +2,8 @@
 // This file handles all database interactions with proper error handling
 
 // Supabase Configuration
-const SUPABASE_URL = 'https://rntranckosfsnaakjrqh.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJudHJhbmNrb3Nmc25hYWtqcnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTUyNTIsImV4cCI6MjA3Mzg3MTI1Mn0.Nme48al5xSVPlD4l40z6ZPwTkSL0uC3JQ300IZu7WBA';
+const SUPABASE_URL = 'https://rtlbzfvvmrwqwhsgybrp.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0bGJ6ZnZ2bXJ3cXdoc2d5YnJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5OTQ2MjUsImV4cCI6MjA5NTU3MDYyNX0.K4CF5evvHhTAAYKAc3dn3s9so9jL5Zzjln5qnDMCqtk';
 
 // Initialize Supabase Client
 let supabaseClient;
