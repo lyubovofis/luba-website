@@ -1045,7 +1045,7 @@
                         <div class="stat-label" style="color: rgba(255,255,255,0.9);">лидов</div>
                     </div>
                 </div>
-                <div style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">
+                <div style="margin-top: 12px; font-size: 13px; color: var(--text-gray);">
                     💡 URL для рекламы: <code style="background: var(--bg-dark); padding: 4px 8px; border-radius: 4px;">https://lyubovpsy.com/quiz-test/</code>
                 </div>
             </div>
@@ -2211,10 +2211,11 @@
         
         // Close mobile menu when clicking on nav item
         document.addEventListener('DOMContentLoaded', () => {
-            const navItems = document.querySelectorAll('.nav-item');
+            const navItems = document.querySelectorAll('.nav-link');
             navItems.forEach(item => {
                 item.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
+                    const sidebar = document.getElementById('sidebar');
+                    if (window.innerWidth <= 768 && sidebar.classList.contains('mobile-open')) {
                         toggleMobileMenu();
                     }
                 });
