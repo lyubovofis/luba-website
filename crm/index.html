@@ -923,16 +923,16 @@
         
         <nav>
             <ul class="nav-menu">
-                <li><a class="nav-link active" onclick="showTab('dashboard')">
+                <li><a class="nav-link active" onclick="showTab('dashboard', this)">
                     <span class="nav-icon">📊</span><span>Dashboard</span>
                 </a></li>
-                <li><a class="nav-link" onclick="showTab('kanban')">
+                <li><a class="nav-link" onclick="showTab('kanban', this)">
                     <span class="nav-icon">📋</span><span>Воронка</span>
                 </a></li>
-                <li><a class="nav-link" onclick="showTab('quiz')">
+                <li><a class="nav-link" onclick="showTab('quiz', this)">
                     <span class="nav-icon">🎯</span><span>Квиз</span>
                 </a></li>
-                <li><a class="nav-link" onclick="showTab('archive')">
+                <li><a class="nav-link" onclick="showTab('archive', this)">
                     <span class="nav-icon">🗄️</span><span>Архів</span>
                 </a></li>
             </ul>
@@ -1212,11 +1212,17 @@
         })();
         
         // Functions
-        function showTab(tabName) {
+        function showTab(tabName, navEl) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
             document.getElementById(tabName).classList.add('active');
             document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+            // If navEl provided use it, otherwise find matching nav link by onclick attribute
+            if (navEl) {
+                navEl.classList.add('active');
+            } else {
+                const matchingNav = document.querySelector(`.nav-link[onclick*="'${tabName}'"]`);
+                if (matchingNav) matchingNav.classList.add('active');
+            }
             
             // Load data for specific tabs
             if (tabName === 'archive') {
@@ -1252,9 +1258,8 @@
             console.log('📊 Loading data...');
             
             try {
-                const { createClient } = window.supabase;
-                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                
+                const supabase = crmAuth;
+
                 const { data, error } = await supabase
                     .from('quiz_leads')
                     .select('*')
@@ -1572,9 +1577,8 @@
             if (!confirm('Переместить лида в воронку?')) return;
             
             try {
-                const { createClient } = window.supabase;
-                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                
+                const supabase = crmAuth;
+
                 const { data, error } = await supabase
                     .from('quiz_leads')
                     .update({ stage: 'new' })
@@ -1694,9 +1698,8 @@
             if (!confirm('Відновити ліда з архіву?')) return;
             
             try {
-                const { createClient } = window.supabase;
-                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                
+                const supabase = crmAuth;
+
                 await supabase
                     .from('quiz_leads')
                     .update({
@@ -1722,9 +1725,8 @@
             if (!confirm('Удалить лида из квиза? Это действие нельзя отменить.')) return;
             
             try {
-                const { createClient } = window.supabase;
-                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                
+                const supabase = crmAuth;
+
                 const { error } = await supabase
                     .from('quiz_leads')
                     .delete()
@@ -2015,12 +2017,11 @@
                 const newStage = stages[currentIndex + 1];
                 
                 try {
-                    const { createClient } = window.supabase;
-                    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                    
+                    const supabase = crmAuth;
+
                     const { error } = await supabase
                         .from('quiz_leads')
-                        .update({ 
+                        .update({
                             stage: newStage
                         })
                         .eq('id', leadId);
@@ -2071,9 +2072,8 @@
             };
             
             try {
-                const { createClient } = window.supabase;
-                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                
+                const supabase = crmAuth;
+
                 const { error } = await supabase
                     .from('quiz_leads')
                     .update(updatedData)
@@ -2102,12 +2102,11 @@
             if (!confirm('Позначити ліда як незацікавленого?')) return;
             
             try {
-                const { createClient } = window.supabase;
-                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                
+                const supabase = crmAuth;
+
                 await supabase
                     .from('quiz_leads')
-                    .update({ 
+                    .update({
                         stage: 'archive'
                     })
                     .eq('id', leadId);
@@ -2145,9 +2144,8 @@
                             lead.stage = newStage;
                             
                             try {
-                                const { createClient } = window.supabase;
-                                const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-                                
+                                const supabase = crmAuth;
+
                                 const { error } = await supabase
                                     .from('quiz_leads')
                                     .update({ stage: newStage })
@@ -2182,8 +2180,7 @@
                 };
                 
                 try {
-                    const { createClient } = window.supabase;
-                    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+                    const supabase = crmAuth;
                     const { data, error } = await supabase.from('quiz_leads').insert([newLead]).select().single();
                     if (error) throw error;
                     if (data) newLead.id = data.id;
@@ -2230,7 +2227,12 @@
         window.logout = logout;
         window.showLeadDetails = showLeadDetails;
         window.contactLead = contactLead;
+        window.contactQuizLead = contactQuizLead;
         window.moveToNext = moveToNext;
+        window.moveQuizToFunnel = moveQuizToFunnel;
+        window.markNotInterested = markNotInterested;
+        window.deleteQuizLead = deleteQuizLead;
+        window.restoreFromArchive = restoreFromArchive;
         window.toggleEditMode = toggleEditMode;
         window.cancelEdit = cancelEdit;
         window.saveLeadChanges = saveLeadChanges;
