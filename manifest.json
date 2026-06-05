@@ -45,14 +45,14 @@
       "name": "Пройти тест",
       "short_name": "Тест",
       "description": "Бесплатный тест на денежные блоки",
-      "url": "/quiz/",
+      "url": "/quiz",
       "icons": [{ "src": "/images/quiz-icon.png", "sizes": "96x96" }]
     },
     {
       "name": "Все статьи",
       "short_name": "Статьи",
-      "description": "50+ бесплатных статей о психологии денег",
-      "url": "/pages/",
+      "description": "Более 280 бесплатных статей о психологии денег",
+      "url": "/ru/blog",
       "icons": [{ "src": "/images/articles-icon.png", "sizes": "96x96" }]
     },
     {
