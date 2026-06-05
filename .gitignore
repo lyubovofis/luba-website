@@ -33,3 +33,4 @@ github_token.txt
 
 # Terminal Paste Image folder
 .cp-images/
+.playwright-mcp/

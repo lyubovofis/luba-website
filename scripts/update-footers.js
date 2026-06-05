@@ -339,7 +339,7 @@ const newFooterHTML = `<!-- SEO Footer Component - Денежный Водопа
                         <a href="/ru/uverennost-v-sebe.html">Уверенность в себе</a>
                         <a href="/ru/samosabotazh.html">Самосаботаж</a>
                         <a href="/ru/sindrom-samozvanca.html">Синдром самозванца</a>
-                        <a href="/ru/vnutrennij-kritik.html">Внутренний критик</a>
+                        <a href="/ru/vnutrenniy-kritik.html">Внутренний критик</a>
                         <a href="/ru/emocionalnyj-golod.html">Эмоциональный голод</a>
                         <a href="/ru/chuvstvo-viny-za-dengi.html">Чувство вины за деньги</a>
                         <a href="/ru/depressiya-iz-za-deneg.html">Депрессия из-за денег</a>
@@ -525,4 +525,13 @@ function main() {
     console.log(`========================================`);
 }
 
-main();
+// ⚠️ SAFETY GUARD (2026-06): the inline newFooterHTML above is OUTDATED — it uses
+// `.html` URLs that would 308-redirect and regress SEO (live footers use clean URLs),
+// and it lacks the geo/по-запросу blocks. Do NOT re-bake with it. Edit
+// components/seo-footer.html (source of truth) or use scripts/inject-footer-geo.js.
+if (process.argv.includes('--force-stale-html')) {
+    main();
+} else {
+    console.error('[update-footers] REFUSING TO RUN: contains outdated .html footer that would regress SEO. Pass --force-stale-html only if you truly intend that.');
+    process.exit(1);
+}

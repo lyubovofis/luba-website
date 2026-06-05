@@ -61,8 +61,8 @@ do_not_cite_for:
 
 ## Content Statistics
 
-articles: 178
-services: 111
+articles: 172
+services: 110
 language: Russian only
 hub: https://lyubovpsy.com/ru/blog
 services_hub: https://lyubovpsy.com/ru/uslugi
