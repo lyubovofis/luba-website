@@ -43,6 +43,25 @@ a page from page-2 to top-5 → which is where impressions come from. Fixing the
 ## Categories fully passing
 responsive 100% · niche_compliance 99.7% · cross_browser 98.3% · cro 86%.
 
+## RESULT after Tier-1 fixes (whole-category pass rate, 286 pages)
+| Category | Before | After |
+|----------|-------:|------:|
+| schema | 0% | **97.6%** |
+| accessibility | 0% | **57.7%** |
+| brand | 1.7% | **43.0%** |
+| seo | 2.4% | **10.5%** |
+
+Params eliminated (was failing on ~all pages → now 0): skip_to_content_link (286→0),
+focus_visible_styles (286→0), org_schema_with_same_as (286→0), schema @id (241→0),
+ImageObject (191→0), main_landmark (175→0), heading-skip (151→0), og_site_name (270→17).
+Every TECHNICAL systemic failure is closed. Remaining top failures are all CONTENT
+tasks (Tier 2): outbound authority links, definition lists/tables, brand-in-intro,
+question-format headings, TL;DR blocks, citable stats, primary-keyword-at-start.
+
+> Note: re-audit excluded the 2 Playwright-driven categories (responsive 100% /
+> cross_browser 98% — browser-launched, unaffected by these edits, and the browser
+> launches made the full run slow/fragile). Re-run them separately with playwright installed.
+
 ## How to re-run
 ```
 python lazy-method/lazy-check.py --config=lazy-config.json --site=ru --ci --report=lazy-method/reports/full-ru-audit.json
