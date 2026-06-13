@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Смысл жизни: как найти, когда его нет | Психолог Любовь Лукащук">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content='"Зачем всё это?" — если вы задаёте этот вопрос, вы не одни. О том, как найти смысл жизни в современном мире.'>
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/smysl-zhizni">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Смысл жизни: как найти его, когда кажется, что его нет",
-        "description": "Как найти смысл жизни, когда он потерян. О психологии смысла, ценностях и работе с потерей ориентиров.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-01-09",
-        "dateModified": "2026-01-09",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/smysl-zhizni"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Смысл жизни: как найти его, когда кажется, что его нет",
+    "description": "Как найти смысл жизни, когда он потерян. О психологии смысла, ценностях и работе с потерей ориентиров.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-01-09",
+    "dateModified": "2026-01-09",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/smysl-zhizni",
+    "@id": "https://lyubovpsy.com/ru/smysl-zhizni#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Смысл жизни: как найти его, когда кажется, что его нет | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/smysl-zhizni",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Смысл жизни: как найти его, когда кажется, что его нет | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/smysl-zhizni",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/smysl-zhizni#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -284,7 +312,12 @@
             .sticky-cta { display: block; }
             .content { padding-bottom: 100px; }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 @media (max-width: 768px) { #site-nav .nav-content { flex-wrap: wrap; gap: 10px; padding: 0 10px; } #site-nav ul { display: none !important; } }
@@ -377,6 +410,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
         <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none; flex-shrink: 0;">Денежный Водопад</a>
@@ -442,7 +476,7 @@
         <span class="byline-date">Опубликовано: 9 января 2026 · Обновлено: 9 января 2026</span>
     </div>
 
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Смысл жизни: почему этот вопрос так важен?</h2>
@@ -473,22 +507,22 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#127919;</div>
-                <h4>Смысл как цель</h4>
+                <h3>Смысл как цель</h3>
                 <p>Что-то, чего я хочу достичь. Что-то, что важно оставить после себя. Что-то, ради чего стоит стараться.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128149;</div>
-                <h4>Смысл как связь</h4>
+                <h3>Смысл как связь</h3>
                 <p>Любовь. Принадлежность. Быть нужным. Быть частью чего-то большего, чем я сам.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#127775;</div>
-                <h4>Смысл как присутствие</h4>
+                <h3>Смысл как присутствие</h3>
                 <p>Быть здесь и сейчас. Видеть красоту. Чувствовать. Творить. Это тоже смысл — не менее реальный.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128591;</div>
-                <h4>Смысл через принятие</h4>
+                <h3>Смысл через принятие</h3>
                 <p>Франкл: смысл можно найти даже в страдании — через позицию, которую мы занимаем по отношению к нему.</p>
             </div>
         </div>
@@ -592,27 +626,27 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">&#128149;</div>
-                <h4>Отношения</h4>
+                <h3>Отношения</h3>
                 <p>Быть по-настоящему рядом с теми, кого любите. Это уже смысл. Достаточный и настоящий.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">&#127775;</div>
-                <h4>Присутствие</h4>
+                <h3>Присутствие</h3>
                 <p>Замечать красоту. Чашка кофе утром. Закат. Смех ребёнка. Быть здесь — это тоже смысл.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">&#127912;</div>
-                <h4>Творчество</h4>
+                <h3>Творчество</h3>
                 <p>Создавать что-то — неважно, большое или маленькое. Приготовить еду. Написать. Вырастить цветок.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">&#129309;</div>
-                <h4>Служение</h4>
+                <h3>Служение</h3>
                 <p>Помочь кому-то. Быть полезным. Это одна из самых древних и устойчивых форм смысла.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">&#127939;</div>
-                <h4>Рост</h4>
+                <h3>Рост</h3>
                 <p>Учиться. Развиваться. Становиться лучше — не для кого-то, а потому что это живо и интересно.</p>
             </div>
         </div>

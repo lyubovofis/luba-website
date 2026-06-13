@@ -54,6 +54,7 @@
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://lyubovpsy.com/ru/ob-avtore">
     <meta property="og:title" content="Любовь Лукащук — психолог | Денежный Водопад">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Любовь Лукащук — психолог-практик с 10-летним опытом. 8000+ часов практики, 1000+ трансформаций.">
     <meta property="og:image" content="https://lyubovpsy.com/images/luba-hero.webp">
     <meta property="og:locale" content="ru_RU">
@@ -381,7 +382,12 @@
             .hero-stats { gap: 20px; }
             .btn-primary { width: 100%; padding: 15px 20px !important; font-size: 16px !important; }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
     <!-- Structured Data - ProfilePage + Person (Google E-E-A-T 2026) -->
     <script type="application/ld+json">
@@ -708,6 +714,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
     <div class="wrapper">
         <!-- Navigation -->
         <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
@@ -739,7 +746,7 @@
 </nav>
 
         <!-- Hero -->
-        <main>
+        <main id="main">
 
         <section class="hero">
             <div class="container">

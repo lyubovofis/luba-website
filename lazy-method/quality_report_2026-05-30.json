@@ -1,0 +1,26 @@
+{
+  "boomy": {
+    "pages": 308,
+    "kw_injected": 308,
+    "thin_fixed": 0,
+    "thin_pages": [],
+    "near_dups_found": 1442,
+    "near_dups_fixed": 236
+  },
+  "lumo": {
+    "pages": 319,
+    "kw_injected": 319,
+    "thin_fixed": 0,
+    "thin_pages": [],
+    "near_dups_found": 2737,
+    "near_dups_fixed": 263
+  },
+  "vora": {
+    "pages": 299,
+    "kw_injected": 299,
+    "thin_fixed": 0,
+    "thin_pages": [],
+    "near_dups_found": 1398,
+    "near_dups_fixed": 207
+  }
+}

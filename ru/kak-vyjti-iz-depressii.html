@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Как выйти из депрессии самостоятельно и с помощью психолога">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Депрессия — это не слабость характера. Из неё можно выйти. Практические шаги, техники и поддержка психолога.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/kak-vyjti-iz-depressii">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Как выйти из депрессии: путь к себе шаг за шагом",
-        "description": "Депрессия — это не слабость характера. Из неё можно выйти. Практические шаги, техники и поддержка психолога.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-12-19",
-        "dateModified": "2025-11-19",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/kak-vyjti-iz-depressii"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Как выйти из депрессии: путь к себе шаг за шагом",
+    "description": "Депрессия — это не слабость характера. Из неё можно выйти. Практические шаги, техники и поддержка психолога.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-12-19",
+    "dateModified": "2025-11-19",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/kak-vyjti-iz-depressii",
+    "@id": "https://lyubovpsy.com/ru/kak-vyjti-iz-depressii#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Как выйти из депрессии: путь к себе шаг за шагом | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/kak-vyjti-iz-depressii",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Как выйти из депрессии: путь к себе шаг за шагом | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/kak-vyjti-iz-depressii",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/kak-vyjti-iz-depressii#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -358,7 +386,12 @@
             .sticky-cta { display: block; }
             .content { padding-bottom: 100px; }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 @media (max-width: 768px) {
@@ -465,6 +498,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
         <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none; flex-shrink: 0;">Денежный Водопад</a>
@@ -530,10 +564,10 @@
         <span class="byline-date">Опубликовано: 19 декабря 2025 · Обновлено: 19 ноября 2025</span>
     </div>
 
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="warning-box">
-            <h4>Важное примечание</h4>
+            <h2>Важное примечание</h2>
             <p>Эта статья носит психологический и образовательный характер и не является медицинской консультацией. При подозрении на клиническую депрессию обратитесь к врачу-психиатру. Если у вас есть мысли о самоповреждении — немедленно обратитесь за экстренной помощью.</p>
         </div>
 
@@ -565,32 +599,32 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128546;</div>
-                <h4>Подавленное настроение</h4>
+                <h3>Подавленное настроение</h3>
                 <p>Устойчивая грусть, пустота или безнадёжность. Часто — ощущение, что «так будет всегда».</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128564;</div>
-                <h4>Ангедония</h4>
+                <h3>Ангедония</h3>
                 <p>Потеря интереса и радости от того, что раньше нравилось. Ничего не хочется, ничто не радует.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#129680;</div>
-                <h4>Изменение сна и аппетита</h4>
+                <h3>Изменение сна и аппетита</h3>
                 <p>Бессонница или, напротив, сонливость; потеря или усиление аппетита. Тело реагирует на психическое состояние.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128260;</div>
-                <h4>Снижение концентрации</h4>
+                <h3>Снижение концентрации</h3>
                 <p>Трудно сосредоточиться, принимать решения, удерживать мысль. Привычные задачи кажутся непосильными.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128551;</div>
-                <h4>Чувство вины и никчёмности</h4>
+                <h3>Чувство вины и никчёмности</h3>
                 <p>Человек винит себя во всём. Ощущение, что он «недостаточен», «обуза» для близких.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128683;</div>
-                <h4>Снижение работоспособности</h4>
+                <h3>Снижение работоспособности</h3>
                 <p>Привычные задачи занимают в разы больше времени или невозможны. Социальные функции нарушены.</p>
             </div>
         </div>
@@ -621,27 +655,27 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Режим дня</h4>
+                <h3>Режим дня</h3>
                 <p>Ложиться и вставать в одно время. Структура дня создаёт предсказуемость, которая снижает тревогу и помогает нервной системе.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Движение</h4>
+                <h3>Движение</h3>
                 <p>Даже 15-минутная прогулка на свежем воздухе влияет на уровень нейромедиаторов. Не спорт — просто движение.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Солнечный свет</h4>
+                <h3>Солнечный свет</h3>
                 <p>Дефицит света — реальный фактор депрессии. Особенно актуально в Северной Европе. Выходите на улицу в светлое время суток.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Один живой контакт</h4>
+                <h3>Один живой контакт</h3>
                 <p>Не текст — звонок или встреча. Изоляция усугубляет депрессию. Один реальный разговор в день — минимум.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Обратитесь за помощью</h4>
+                <h3>Обратитесь за помощью</h3>
                 <p>Самый важный шаг. Депрессия требует профессиональной поддержки. Это не слабость — это самозабота.</p>
             </div>
         </div>
@@ -715,22 +749,22 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128148;</div>
-                <h4>Непрожитое горе</h4>
+                <h3>Непрожитое горе</h3>
                 <p>Потеря близкого, расставание, эмиграция — горе, которое не было прожито полностью, может «застрять» и трансформироваться в депрессию.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128327;</div>
-                <h4>Хронический стресс</h4>
+                <h3>Хронический стресс</h3>
                 <p>Длительное пребывание в невыносимых условиях без возможности изменить ситуацию. Психика «сдаётся» в виде депрессии.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128268;</div>
-                <h4>Подавленные эмоции</h4>
+                <h3>Подавленные эмоции</h3>
                 <p>Злость, страх, обида — эмоции, которые нельзя было выражать. Они уходят внутрь и создают эмоциональную заморозку.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128260;</div>
-                <h4>Потеря смысла</h4>
+                <h3>Потеря смысла</h3>
                 <p>Когда рассыпается то, ради чего жил. Развод, эмиграция, потеря работы, конец жизненного этапа — всё это кризис смысла.</p>
             </div>
         </div>

@@ -114,39 +114,55 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Как Стать Миллионером: Психология Богатства и Мышление Успеха",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Как Стать Миллионером: Психология Богатства и Мышление Успеха",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://lyubovpsy.com/images/luba-hero.webp"
-            }
-        },
-        "datePublished": "2025-10-11",
-        "dateModified": "2025-11-25",
-        "description": "Психологические секреты миллионеров: мышление богатства, привычки успешных людей.",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://lyubovpsy.com/ru/kak-stat-millionerom"
-        }
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ]
+    },
+    "datePublished": "2025-10-11",
+    "dateModified": "2025-11-25",
+    "description": "Психологические секреты миллионеров: мышление богатства, привычки успешных людей.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyubovpsy.com/ru/kak-stat-millionerom"
+    },
+    "@id": "https://lyubovpsy.com/ru/kak-stat-millionerom#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFLSQ07PGM"></script>
@@ -169,18 +185,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Как Стать Миллионером: Психология Богатства и Мышление Успеха | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/kak-stat-millionerom",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Как Стать Миллионером: Психология Богатства и Мышление Успеха | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/kak-stat-millionerom",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/kak-stat-millionerom#webpage"
+}
+</script>
 
 
     <style>
@@ -881,7 +904,12 @@
                 flex-direction: column;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1134,6 +1162,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1242,7 +1271,7 @@
             <div class="mindset-grid">
                 <div class="mindset-card">
                     <div class="mindset-icon">💭</div>
-                    <h4>Отношение к деньгам</h4>
+                    <h3>Отношение к деньгам</h3>
                     <div class="mindset-comparison">
                         <div class="comparison-box poor-mindset">
                             <strong>Бедность:</strong> «Деньги — корень зла»
@@ -1255,7 +1284,7 @@
 
                 <div class="mindset-card">
                     <div class="mindset-icon">🎯</div>
-                    <h4>Фокус внимания</h4>
+                    <h3>Фокус внимания</h3>
                     <div class="mindset-comparison">
                         <div class="comparison-box poor-mindset">
                             <strong>Бедность:</strong> «Как сэкономить?»
@@ -1268,7 +1297,7 @@
 
                 <div class="mindset-card">
                     <div class="mindset-icon">📚</div>
-                    <h4>Время и обучение</h4>
+                    <h3>Время и обучение</h3>
                     <div class="mindset-comparison">
                         <div class="comparison-box poor-mindset">
                             <strong>Бедность:</strong> «Времени нет, это дорого»
@@ -1281,7 +1310,7 @@
 
                 <div class="mindset-card">
                     <div class="mindset-icon">❌</div>
-                    <h4>Реакция на неудачи</h4>
+                    <h3>Реакция на неудачи</h3>
                     <div class="mindset-comparison">
                         <div class="comparison-box poor-mindset">
                             <strong>Бедность:</strong> «Я неудачник»
@@ -1294,7 +1323,7 @@
 
                 <div class="mindset-card">
                     <div class="mindset-icon">🏠</div>
-                    <h4>Траты vs инвестиции</h4>
+                    <h3>Траты vs инвестиции</h3>
                     <div class="mindset-comparison">
                         <div class="comparison-box poor-mindset">
                             <strong>Бедность:</strong> Покупает пассивы (машины, вещи)
@@ -1307,7 +1336,7 @@
 
                 <div class="mindset-card">
                     <div class="mindset-icon">⏰</div>
-                    <h4>Отношение ко времени</h4>
+                    <h3>Отношение ко времени</h3>
                     <div class="mindset-comparison">
                         <div class="comparison-box poor-mindset">
                             <strong>Бедность:</strong> Продаёт время за деньги
@@ -1327,7 +1356,7 @@
             <div class="barriers-grid">
                 <div class="barrier-card">
                     <div class="barrier-number">1</div>
-                    <h4>Негативные убеждения о богатых</h4>
+                    <h3>Негативные убеждения о богатых</h3>
                     <p>«Богатые — нечестные люди», «деньги портят». Если вы так думаете, подсознание не позволит вам стать «плохим человеком».</p>
 
     <div class="related-articles" style="background: linear-gradient(135deg, rgba(255,215,0,0.08) 0%, rgba(255,215,0,0.03) 100%); border-left: 4px solid #d4a017; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 30px 0; font-family: inherit;">
@@ -1344,25 +1373,25 @@
 
                 <div class="barrier-card">
                     <div class="barrier-number">2</div>
-                    <h4>Страх успеха</h4>
+                    <h3>Страх успеха</h3>
                     <p>Боязнь изменений, зависти окружающих, потери друзей. Проще оставаться «своим» в привычном окружении.</p>
                 </div>
 
                 <div class="barrier-card">
                     <div class="barrier-number">3</div>
-                    <h4>Синдром самозванца</h4>
+                    <h3>Синдром самозванца</h3>
                     <p>«Я недостоин», «повезло», «скоро разоблачат». Глубокое чувство, что вы не заслуживаете большого успеха.</p>
                 </div>
 
                 <div class="barrier-card">
                     <div class="barrier-number">4</div>
-                    <h4>Денежный потолок</h4>
+                    <h3>Денежный потолок</h3>
                     <p>Подсознательный лимит дохода. Зарабатываете «потолок», потом деньги уходят на неожиданные расходы.</p>
                 </div>
 
                 <div class="barrier-card">
                     <div class="barrier-number">5</div>
-                    <h4>Лояльность семейной системе</h4>
+                    <h3>Лояльность семейной системе</h3>
                     <p>«Нельзя быть богаче родителей», «в нашей семье богатых не было». Бессознательное ограничение ради принадлежности.</p>
                 </div>
             </div>
@@ -1375,25 +1404,25 @@
             <div class="transform-steps">
                 <div class="transform-step">
                     <div class="step-icon">🔍</div>
-                    <h4>Найти свои блоки</h4>
+                    <h3>Найти свои блоки</h3>
                     <p>Осознать, какие именно убеждения и страхи ограничивают ваш финансовый рост. Они часто скрыты в подсознании.</p>
                 </div>
 
                 <div class="transform-step">
                     <div class="step-icon">🔄</div>
-                    <h4>Трансформировать программы</h4>
+                    <h3>Трансформировать программы</h3>
                     <p>Заменить старые установки на новые через глубинную работу. Не аффирмации — а работу с подсознанием.</p>
                 </div>
 
                 <div class="transform-step">
                     <div class="step-icon">🎯</div>
-                    <h4>Принять новую идентичность</h4>
+                    <h3>Принять новую идентичность</h3>
                     <p>Начать думать и действовать как человек, у которого УЖЕ есть деньги. Это меняет все решения.</p>
                 </div>
 
                 <div class="transform-step">
                     <div class="step-icon">🚀</div>
-                    <h4>Действовать из нового состояния</h4>
+                    <h3>Действовать из нового состояния</h3>
                     <p>С новым мышлением вы видите возможности там, где раньше видели преграды. И действуете по-другому.</p>
                 </div>
             </div>

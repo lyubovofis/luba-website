@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Экзистенциальный кризис: причины, симптомы и как пройти |">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Экзистенциальный кризис — это вопросы &quot;зачем?&quot;, &quot;кто я?&quot;. Это не патология, а шанс. Читайте, как его пройти.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/ekzistencialnyj-krizis">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Экзистенциальный кризис: когда жизнь теряет смысл",
-        "description": "Экзистенциальный кризис — это вопросы 'зачем?', 'кто я?'. Это не патология, а шанс переосмыслить жизнь.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-01-07",
-        "dateModified": "2026-01-07",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/ekzistencialnyj-krizis"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Экзистенциальный кризис: когда жизнь теряет смысл",
+    "description": "Экзистенциальный кризис — это вопросы 'зачем?', 'кто я?'. Это не патология, а шанс переосмыслить жизнь.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-01-07",
+    "dateModified": "2026-01-07",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/ekzistencialnyj-krizis",
+    "@id": "https://lyubovpsy.com/ru/ekzistencialnyj-krizis#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Экзистенциальный кризис: когда жизнь теряет смысл | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/ekzistencialnyj-krizis",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Экзистенциальный кризис: когда жизнь теряет смысл | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/ekzistencialnyj-krizis",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/ekzistencialnyj-krizis#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -284,7 +312,12 @@
             .sticky-cta { display: block; }
             .content { padding-bottom: 100px; }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 @media (max-width: 768px) { #site-nav .nav-content { flex-wrap: wrap; gap: 10px; padding: 0 10px; } #site-nav ul { display: none !important; } }
@@ -377,6 +410,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
         <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none; flex-shrink: 0;">Денежный Водопад</a>
@@ -442,7 +476,7 @@
         <span class="byline-date">Опубликовано: 7 января 2026 · Обновлено: 7 января 2026</span>
     </div>
 
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое экзистенциальный кризис?</h2>
@@ -473,22 +507,22 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#10067;</div>
-                <h4>"Зачем всё это?"</h4>
+                <h3>"Зачем всё это?"</h3>
                 <p>Прежние ответы на этот вопрос больше не удовлетворяют. Достигли цели — и пустота. Жили "как надо" — и вдруг непонятно, надо ли.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#129300;</div>
-                <h4>"Кто я на самом деле?"</h4>
+                <h3>"Кто я на самом деле?"</h3>
                 <p>Роли — муж/жена, мать/отец, специалист, эмигрант — не дают ощущения настоящего себя. Под ними — вопрос без ответа.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128165;</div>
-                <h4>Страх смерти</h4>
+                <h3>Страх смерти</h3>
                 <p>Осознание конечности жизни — собственной или близкого человека — запускает переоценку всего. "Если я умру — что останется?"</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128640;</div>
-                <h4>"Правильно ли я живу?"</h4>
+                <h3>"Правильно ли я живу?"</h3>
                 <p>Ощущение, что жизнь идёт не своим путём. Что вы живёте чужой версией себя — или вообще по инерции.</p>
             </div>
         </div>
@@ -588,27 +622,27 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Не убегайте</h4>
+                <h3>Не убегайте</h3>
                 <p>Заглушить кризис работой, едой или соцсетями — не решение. Вопросы останутся. Нужно встретиться с ними.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Исследуйте, а не решайте</h4>
+                <h3>Исследуйте, а не решайте</h3>
                 <p>Экзистенциальные вопросы не решаются — они исследуются. Цель не найти окончательный ответ, а углублиться.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Найдите свои ценности</h4>
+                <h3>Найдите свои ценности</h3>
                 <p>Смысл рождается не из абстракций, а из конкретных ценностей: что для вас важно? Что даёт ощущение живости?</p>
             </div>
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Создавайте, а не ждите</h4>
+                <h3>Создавайте, а не ждите</h3>
                 <p>Смысл не приходит как озарение. Он создаётся через действие, через выбор, через присутствие в своей жизни.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Работайте с психологом</h4>
+                <h3>Работайте с психологом</h3>
                 <p>Экзистенциальный кризис — глубокая работа. Психолог помогает пройти её не в одиночку и не вслепую.</p>
             </div>
         </div>

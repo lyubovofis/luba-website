@@ -13,6 +13,7 @@
     <meta name="keywords" content="негативные мысли, как избавиться от негативных мыслей, навязчивые мысли, негативное мышление, как перестать думать о плохом, тревожные мысли">
 
     <meta property="og:title" content="Негативные Мысли | Как Избавиться | Денежный Водопад">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Негативные мысли не дают покоя? Узнайте как остановить поток негатива и начать мыслить позитивно.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/negativnye-mysli">
@@ -107,32 +108,52 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Негативные Мысли: Как Избавиться и Начать Мыслить Позитивно",
-        "description": "Узнайте о причинах негативного мышления и эффективных методах его трансформации. Психолог Любовь Лукащук помогает изменить мышление онлайн.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-10-26",
-        "dateModified": "2025-11-29"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Негативные Мысли: Как Избавиться и Начать Мыслить Позитивно",
+    "description": "Узнайте о причинах негативного мышления и эффективных методах его трансформации. Психолог Любовь Лукащук помогает изменить мышление онлайн.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-10-26",
+    "dateModified": "2025-11-29",
+    "@id": "https://lyubovpsy.com/ru/negativnye-mysli#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -174,18 +195,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Негативные Мысли | Как Избавиться | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/negativnye-mysli",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Негативные Мысли | Как Избавиться | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/negativnye-mysli",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/negativnye-mysli#webpage"
+}
+</script>
 
 
     <style>
@@ -915,7 +943,12 @@
                 display: none;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1148,6 +1181,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1217,7 +1251,7 @@
 
         <!-- Thought Cloud -->
         <section class="section">
-            <div class="container">
+            <div class="container" id="main" role="main">
                 <h2 class="section-title">Знакомы ли вам <span>эти мысли</span>?</h2>
                 <div class="thought-cloud">
                     <div class="thought-item">"Я никогда не смогу..."</div>
@@ -1292,31 +1326,31 @@
                     <div class="cycle-steps">
                         <div class="cycle-step">
                             <div class="step-num">1</div>
-                            <h4>Негативная мысль</h4>
+                            <h3>Негативная мысль</h3>
                             <p>"Это не получится"</p>
                         </div>
                         <div class="cycle-arrow">→</div>
                         <div class="cycle-step">
                             <div class="step-num">2</div>
-                            <h4>Эмоции</h4>
+                            <h3>Эмоции</h3>
                             <p>Тревога, страх, уныние</p>
                         </div>
                         <div class="cycle-arrow">→</div>
                         <div class="cycle-step">
                             <div class="step-num">3</div>
-                            <h4>Бездействие</h4>
+                            <h3>Бездействие</h3>
                             <p>Откладывание, избегание</p>
                         </div>
                         <div class="cycle-arrow">→</div>
                         <div class="cycle-step">
                             <div class="step-num">4</div>
-                            <h4>Результат</h4>
+                            <h3>Результат</h3>
                             <p>Ничего не меняется</p>
                         </div>
                         <div class="cycle-arrow">→</div>
                         <div class="cycle-step">
                             <div class="step-num">5</div>
-                            <h4>Подтверждение</h4>
+                            <h3>Подтверждение</h3>
                             <p>"Я так и знала!"</p>
                         </div>
                     </div>

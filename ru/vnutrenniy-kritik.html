@@ -60,6 +60,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/vnutrenniy-kritik">
     <meta property="og:title" content="Внутренний критик: как распознать и победить">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Что такое внутренний критик и как он мешает зарабатывать. Тест + 7 техник избавления.">
     <meta property="og:image" content="https://lyubovpsy.com/images/luba-hero.webp">
     <meta property="og:locale" content="ru_RU">
@@ -205,45 +206,72 @@
 
     <!-- Article Schema -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Внутренний критик: как распознать и победить",
-        "description": "Что такое внутренний критик, как он формируется и мешает зарабатывать. 7 техник освобождения от критикующего голоса.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад"
-        },
-        "datePublished": "2025-12-07",
-        "dateModified": "2025-11-07"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Внутренний критик: как распознать и победить",
+    "description": "Что такое внутренний критик, как он формируется и мешает зарабатывать. 7 техник освобождения от критикующего голоса.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-12-07",
+    "dateModified": "2025-11-07",
+    "@id": "https://lyubovpsy.com/ru/vnutrenniy-kritik#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Внутренний критик: как распознать и победить | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/vnutrenniy-kritik",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Внутренний критик: как распознать и победить | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/vnutrenniy-kritik",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/vnutrenniy-kritik#webpage"
+}
+</script>
 
 
     <style>
@@ -967,7 +995,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1220,6 +1253,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1292,7 +1326,7 @@
 
 
     <!-- Main Content -->
-    <main class="content">
+    <main id="main" class="content">
         <!-- Intro Section -->
         <section class="section">
             
@@ -1394,28 +1428,28 @@
 
             <div class="impact-grid">
                 <div class="impact-card">
-                    <h4><span class="impact-icon">💰</span> Не просите больше</h4>
+                    <h3><span class="impact-icon">💰</span> Не просите больше</h3>
                     <p>Критик шепчет: «Ты не заслуживаешь», и вы не просите повышение, соглашаетесь на низкую оплату, стесняетесь называть цену.</p>
                 </div>
 
                 <div class="impact-card">
-                    <h4><span class="impact-icon">🚀</span> Не начинаете проекты</h4>
+                    <h3><span class="impact-icon">🚀</span> Не начинаете проекты</h3>
                     <p>«У тебя не получится» — и вы откладываете бизнес-идею, не откликаетесь на вакансию мечты, не предлагаете услуги.</p>
                 </div>
 
                 <div class="impact-card">
-                    <h4><span class="impact-icon">🎯</span> Саботируете успех</h4>
+                    <h3><span class="impact-icon">🎯</span> Саботируете успех</h3>
                     <p>Когда успех близко, критик усиливается: «Это не для тебя!» — и вы неосознанно разрушаете достигнутое.</p>
                 </div>
 
                 <div class="impact-card">
-                    <h4><span class="impact-icon">👥</span> Избегаете нетворкинга</h4>
+                    <h3><span class="impact-icon">👥</span> Избегаете нетворкинга</h3>
                     <p>«Что ты можешь им предложить?» — и вы не заводите полезные знакомства, не просите о помощи, не продвигаете себя.</p>
                 </div>
             </div>
 
             <div class="warning-box" style="margin-top: 30px;">
-                <h4>Критик особенно силён в финансах</h4>
+                <h3>Критик особенно силён в финансах</h3>
                 <p>Деньги — табуированная тема. Мы впитываем установки «богатые — плохие», «деньги портят людей», «хвастаться нехорошо». Внутренний критик использует эти установки, чтобы держать вас в «безопасной» бедности.</p>
             </div>
         </section>
@@ -1614,7 +1648,7 @@
                 <div class="technique-card">
                     <div class="technique-number">1</div>
                     <div class="technique-content">
-                        <h4>Дайте критику имя и образ</h4>
+                        <h3>Дайте критику имя и образ</h3>
                         <p>Отделите критика от себя. Представьте его как персонажа — старуху-ворчунью, злобного карлика, строгую учительницу. Дайте ему имя.</p>
                         <div class="technique-example">«О, это опять Зинаида пришла ворчать. Привет, Зина, я тебя слышу, но решения принимаю сама.»</div>
                     </div>
@@ -1623,7 +1657,7 @@
                 <div class="technique-card">
                     <div class="technique-number">2</div>
                     <div class="technique-content">
-                        <h4>Запишите его фразы от второго лица</h4>
+                        <h3>Запишите его фразы от второго лица</h3>
                         <p>Вместо «Я неудачник» напишите «Ты неудачник». Это помогает увидеть, насколько жестоко и несправедливо звучат эти слова.</p>
                         <div class="technique-example">Вы бы никогда не сказали такое другу. Почему вы позволяете говорить это себе?</div>
                     </div>
@@ -1632,7 +1666,7 @@
                 <div class="technique-card">
                     <div class="technique-number">3</div>
                     <div class="technique-content">
-                        <h4>Найдите источник голоса</h4>
+                        <h3>Найдите источник голоса</h3>
                         <p>Чей это голос на самом деле? Мамы? Папы? Учителя? Когда вы понимаете, что это не ваши мысли, они теряют власть.</p>
                         <div class="technique-example">«Эта фраза — от папы. Он сам был несчастен и проецировал на меня. Это его страх, не мой.»</div>
                     </div>
@@ -1641,7 +1675,7 @@
                 <div class="technique-card">
                     <div class="technique-number">4</div>
                     <div class="technique-content">
-                        <h4>Поговорите с критиком</h4>
+                        <h3>Поговорите с критиком</h3>
                         <p>Спросите его: «Чего ты боишься? От чего пытаешься защитить?» Часто критик — это испуганный ребёнок, который хочет уберечь вас от боли.</p>
                         <div class="technique-example">«Я понимаю, что ты хочешь защитить меня от разочарования. Но я взрослая и справлюсь.»</div>
                     </div>
@@ -1650,7 +1684,7 @@
                 <div class="technique-card">
                     <div class="technique-number">5</div>
                     <div class="technique-content">
-                        <h4>Создайте внутреннего союзника</h4>
+                        <h3>Создайте внутреннего союзника</h3>
                         <p>Если есть критик — должен быть и защитник. Представьте мудрого, любящего персонажа, который всегда на вашей стороне.</p>
                         <div class="technique-example">«Ты справишься. Ты уже столько преодолела. Я горжусь тобой.»</div>
                     </div>
@@ -1659,7 +1693,7 @@
                 <div class="technique-card">
                     <div class="technique-number">6</div>
                     <div class="technique-content">
-                        <h4>Практикуйте самосострадание</h4>
+                        <h3>Практикуйте самосострадание</h3>
                         <p>Говорите с собой так, как говорили бы с любимым другом. Представьте, что ваш друг совершил такую же «ошибку» — что бы вы ему сказали?</p>
                         <div class="technique-example">«Это было тяжело. Ты сделала всё, что могла в той ситуации. Это нормально — быть неидеальной.»</div>
                     </div>
@@ -1668,7 +1702,7 @@
                 <div class="technique-card">
                     <div class="technique-number">7</div>
                     <div class="technique-content">
-                        <h4>Ведите дневник достижений</h4>
+                        <h3>Ведите дневник достижений</h3>
                         <p>Каждый день записывайте 3 вещи, которые у вас получились. Даже маленькие. Это перепрограммирует фокус внимания.</p>
                         <div class="technique-example">«Сегодня: приготовила завтрак, завершила отчёт, помогла коллеге. Я молодец.»</div>
                     </div>

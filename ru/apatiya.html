@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Апатия: причины, симптомы и как вернуть желание жить | Психолог">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Апатия — это не лень. Это сигнал вашей психики. Узнайте причины апатии и как вернуть интерес к жизни.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/apatiya">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Апатия: когда ничего не хочется и как это изменить",
-        "description": "Апатия — это не лень. Это сигнал вашей психики, что что-то важное требует внимания. Причины апатии, симптомы и как вернуть интерес к жизни.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-12-09",
-        "dateModified": "2025-11-11",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/apatiya"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Апатия: когда ничего не хочется и как это изменить",
+    "description": "Апатия — это не лень. Это сигнал вашей психики, что что-то важное требует внимания. Причины апатии, симптомы и как вернуть интерес к жизни.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-12-09",
+    "dateModified": "2025-11-11",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/apatiya",
+    "@id": "https://lyubovpsy.com/ru/apatiya#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Апатия: когда ничего не хочется и как это изменить | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/apatiya",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Апатия: когда ничего не хочется и как это изменить | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/apatiya",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/apatiya#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -717,7 +745,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -963,6 +996,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1034,7 +1068,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое апатия?</h2>
@@ -1066,17 +1100,17 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#129760;</div>
-                <h4>Эмоциональная анестезия</h4>
+                <h3>Эмоциональная анестезия</h3>
                 <p>Ничто не задевает, ничто не трогает. Радость, грусть, злость — всё приглушено или полностью отсутствует.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128531;</div>
-                <h4>Отсутствие желаний</h4>
+                <h3>Отсутствие желаний</h3>
                 <p>Не хочется ни есть любимое блюдо, ни встречаться с близкими, ни строить планы. Пустота вместо мотивации.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128564;</div>
-                <h4>Потеря интереса</h4>
+                <h3>Потеря интереса</h3>
                 <p>То, что раньше нравилось — хобби, работа, отношения — больше не приносит удовольствия. Всё кажется бессмысленным.</p>
             </div>
         </div>
@@ -1116,32 +1150,32 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#127774;</div>
-                <h4>Ничто не доставляет удовольствия</h4>
+                <h3>Ничто не доставляет удовольствия</h3>
                 <p>Любимые занятия, еда, общение — всё воспринимается равнодушно. Ощущение, что вы смотрите на жизнь через стекло.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128683;</div>
-                <h4>Трудно начать что-либо</h4>
+                <h3>Трудно начать что-либо</h3>
                 <p>Самые простые задачи кажутся непосильными. Встать с кровати, позвонить, ответить на сообщение — всё требует огромных усилий.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128148;</div>
-                <h4>Безразличие к близким</h4>
+                <h3>Безразличие к близким</h3>
                 <p>Не хочется общаться, встречаться, отвечать. Забота о других кажется непосильной. Отчуждённость нарастает.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128546;</div>
-                <h4>Ощущение внутренней пустоты</h4>
+                <h3>Ощущение внутренней пустоты</h3>
                 <p>Нет ни горя, ни радости — только пустота. Иногда сложно понять, что вы вообще чувствуете прямо сейчас.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128564;</div>
-                <h4>Постоянная усталость</h4>
+                <h3>Постоянная усталость</h3>
                 <p>Даже после сна нет ощущения отдыха. Тело тяжёлое, движения замедленные, голова как в тумане.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128260;</div>
-                <h4>Отсутствие планов и целей</h4>
+                <h3>Отсутствие планов и целей</h3>
                 <p>Будущее кажется размытым или вообще не интересует. Планировать что-то кажется бессмысленным.</p>
             </div>
         </div>
@@ -1179,27 +1213,27 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Признайте состояние</h4>
+                <h3>Признайте состояние</h3>
                 <p>Апатия — это не слабость. Признать её — уже первый шаг. Без осуждения: «Сейчас я в апатии, и это требует внимания».</p>
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Снизьте нагрузку</h4>
+                <h3>Снизьте нагрузку</h3>
                 <p>Временно уберите всё необязательное. Апатия — сигнал перегрузки. Разрешите себе делать меньше без чувства вины.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Маленькие действия</h4>
+                <h3>Маленькие действия</h3>
                 <p>Не «изменить жизнь», а один крошечный шаг. Выйти на воздух. Выпить воды. Позвонить одному человеку. Маленькое движение запускает жизнь.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Найдите, что «заморозилось»</h4>
+                <h3>Найдите, что «заморозилось»</h3>
                 <p>Апатия часто означает: где-то есть подавленная эмоция. Что я не позволяю себе чувствовать? Это ключевой вопрос.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Работа с психологом</h4>
+                <h3>Работа с психологом</h3>
                 <p>Психолог помогает найти первопричину и «разморозить» замороженные части. Это не просто разговор — это глубинная работа с изменениями.</p>
             </div>
         </div>

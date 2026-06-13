@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Психология денег в эмиграции: как переезд меняет отношения с деньгами">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Финансовые блоки при переезде, кризис денежной идентичности, стыд эмигранта. Техники работы с деньгами за рубежом для русскоязычных женщин.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/psihologiya-deneg-v-emigracii">
@@ -129,33 +130,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Психология денег в эмиграции: как переезд меняет отношения с деньгами деньгами",
-        "description": "Финансовые блоки при переезде, кризис денежной идентичности, стыд эмигранта и практические техники для русскоязычных женщин за рубежом.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-08-12",
-        "dateModified": "2025-11-05",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/psihologiya-deneg-v-emigracii"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Психология денег в эмиграции: как переезд меняет отношения с деньгами деньгами",
+    "description": "Финансовые блоки при переезде, кризис денежной идентичности, стыд эмигранта и практические техники для русскоязычных женщин за рубежом.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-08-12",
+    "dateModified": "2025-11-05",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/psihologiya-deneg-v-emigracii",
+    "@id": "https://lyubovpsy.com/ru/psihologiya-deneg-v-emigracii#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -198,18 +219,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Психология денег в эмиграции: как переезд меняет отношения с деньгами деньгами | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/psihologiya-deneg-v-emigracii",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Психология денег в эмиграции: как переезд меняет отношения с деньгами деньгами | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/psihologiya-deneg-v-emigracii",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/psihologiya-deneg-v-emigracii#webpage"
+}
+</script>
 
 
     <style>
@@ -781,7 +809,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1014,6 +1047,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1085,7 +1119,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое психология денег в эмиграции?</h2>
@@ -1128,37 +1162,37 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#127760;</div>
-                <h4>Потеря ориентиров стоимости</h4>
+                <h3>Потеря ориентиров стоимости</h3>
                 <p>Дома вы знали: это дорого, это нормально, это дёшево. После переезда эта система рушится. Мозг постоянно конвертирует, сравнивает и путается. Вы теряете интуитивное понимание денег.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128100;</div>
-                <h4>Потеря статуса и профессиональной идентичности</h4>
+                <h3>Потеря статуса и профессиональной идентичности</h3>
                 <p>Дома вы были специалистом, руководителем, экспертом. Здесь — "иностранка с акцентом". Этот удар по статусу напрямую бьёт по ощущению, что вы заслуживаете хороших денег.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#129504;</div>
-                <h4>Разрыв с прежней денежной историей</h4>
+                <h3>Разрыв с прежней денежной историей</h3>
                 <p>Ваш опыт, репутация, достижения — всё это осталось "там". Здесь вы снова в нуле. Этот разрыв порождает ощущение, что нужно заново доказывать свою ценность — и часто она занижается.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128172;</div>
-                <h4>Языковой барьер в денежных переговорах</h4>
+                <h3>Языковой барьер в денежных переговорах</h3>
                 <p>Просить повышение, называть цену, торговаться — всё это требует не просто знания слов, а эмоциональной уверенности. На иностранном языке эта уверенность испаряется.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128580;</div>
-                <h4>Стыд "благодарного эмигранта"</h4>
+                <h3>Стыд "благодарного эмигранта"</h3>
                 <p>"Я должна быть благодарна, что меня вообще взяли". Это убеждение блокирует любые попытки просить больше, торговаться или устанавливать справедливые условия.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128308;</div>
-                <h4>Синдром временности</h4>
+                <h3>Синдром временности</h3>
                 <p>"Это временно, пока не устроюсь". Но "временное" состояние растягивается на годы. Человек продолжает работать "по-эмигрантски" — за меньшее, чем заслуживает.</p>
             </div>
         </div>
@@ -1252,31 +1286,31 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Отделите место от ценности</h4>
+                <h3>Отделите место от ценности</h3>
                 <p>Запишите список из 10 своих профессиональных навыков. Поставьте рядом с каждым вопрос: "Этот навык исчез после переезда?" Ответ — нет. Ваша ценность не зависит от страны.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Создайте "якорь" местной реальности</h4>
+                <h3>Создайте "якорь" местной реальности</h3>
                 <p>Перестаньте конвертировать цены в старую валюту. Изучите реальную рыночную стоимость вашей работы в новой стране — через LinkedIn, местные рекрутинговые сайты, разговоры с коллегами.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Практикуйте денежные разговоры на иностранном языке</h4>
+                <h3>Практикуйте денежные разговоры на иностранном языке</h3>
                 <p>Запишите фразы на языке новой страны: "Мой рейт составляет...", "Я хотела бы обсудить повышение...". Произносите их вслух — сначала одна, потом с доверенным человеком. Тело должно привыкнуть к этим словам.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Работайте со стыдом "благодарного эмигранта"</h4>
+                <h3>Работайте со стыдом "благодарного эмигранта"</h3>
                 <p>Когда появляется мысль "я должна быть благодарна за то, что есть", спросите себя: "Благодарность — это хорошо. Но оправдывает ли она работу ниже рынка?" Благодарность и справедливая оплата — не противоречие.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Создайте новую денежную идентичность</h4>
+                <h3>Создайте новую денежную идентичность</h3>
                 <p>Напишите описание себя как профессионала в новой стране — не "эмигрантка, которая старается", а конкретный специалист с конкретными навыками и ценностью для рынка. Перечитывайте это каждое утро неделю.</p>
             </div>
         </div>

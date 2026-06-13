@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Нарциссизм: как распознать нарцисса и защитить себя">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Нарциссизм в отношениях — как распознать нарцисса, почему сложно уйти и как восстановиться после отношений с нарциссом. Помощь психолога онлайн.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/narcissizm">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Нарциссизм: жизнь рядом с человеком, которому важен только он",
-        "description": "Нарциссизм в отношениях — как распознать нарцисса, почему сложно уйти и как восстановиться после отношений с нарциссом. Помощь психолога онлайн.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-03-17",
-        "dateModified": "2026-03-17",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/narcissizm"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Нарциссизм: жизнь рядом с человеком, которому важен только он",
+    "description": "Нарциссизм в отношениях — как распознать нарцисса, почему сложно уйти и как восстановиться после отношений с нарциссом. Помощь психолога онлайн.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-03-17",
+    "dateModified": "2026-03-17",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/narcissizm",
+    "@id": "https://lyubovpsy.com/ru/narcissizm#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Нарциссизм: как распознать нарцисса и защитить себя | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/narcissizm",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Нарциссизм: как распознать нарцисса и защитить себя | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/narcissizm",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/narcissizm#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -717,7 +745,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -950,6 +983,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1022,7 +1056,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Нарциссизм: бытовой или клинический?</h2>
@@ -1050,37 +1084,37 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128064;</div>
-                <h4>Газлайтинг</h4>
+                <h3>Газлайтинг</h3>
                 <p>«Этого не было», «ты всё придумываешь», «ты слишком чувствительная». Нарцисс заставляет вас сомневаться в собственном восприятии реальности и памяти.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128565;</div>
-                <h4>Постоянное обесценивание</h4>
+                <h3>Постоянное обесценивание</h3>
                 <p>Ваши достижения незначительны, ваши чувства — преувеличены, ваши мнения — неверны. Нарцисс систематически снижает вашу самооценку.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#129354;</div>
-                <h4>Отсутствие эмпатии</h4>
+                <h3>Отсутствие эмпатии</h3>
                 <p>Нарцисс не способен искренне сочувствовать. Ваша боль его не трогает, а часто раздражает. Он может имитировать эмпатию, но не чувствовать её.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128081;</div>
-                <h4>Грандиозность и требование восхищения</h4>
+                <h3>Грандиозность и требование восхищения</h3>
                 <p>Нарцисс убеждён в своей исключительности и требует постоянного подтверждения. Любое несогласие с его взглядами воспринимается как атака.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#127921;</div>
-                <h4>Манипуляции и контроль</h4>
+                <h3>Манипуляции и контроль</h3>
                 <p>Нарцисс использует вину, стыд, страх и сравнение с другими для управления партнёром. «Нормальные жёны так не делают» — типичный приём.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128245;</div>
-                <h4>Изоляция</h4>
+                <h3>Изоляция</h3>
                 <p>Постепенно нарцисс отдаляет вас от друзей и семьи. Сначала тонко критикует ваших близких, потом устраивает сцены из-за встреч с ними.</p>
             </div>
         </div>
@@ -1209,31 +1243,31 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Признайте реальность</h4>
+                <h3>Признайте реальность</h3>
                 <p>Первый и самый болезненный шаг — признать: это было насилие, а не «сложные отношения». Назвать вещи своими именами — необходимое условие исцеления.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>No contact или серый камень</h4>
+                <h3>No contact или серый камень</h3>
                 <p>Полный разрыв контакта (или минимальный, если есть общие дети) — ключевое условие восстановления. Любой контакт с нарциссом поддерживает травматическую привязанность.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Восстановите доверие к себе</h4>
+                <h3>Восстановите доверие к себе</h3>
                 <p>Газлайтинг разрушил вашу способность доверять собственному восприятию. Важно постепенно возвращать контакт с собственными чувствами и ощущениями как надёжным ориентиром.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Проработайте травматическую привязанность</h4>
+                <h3>Проработайте травматическую привязанность</h3>
                 <p>Это не просто «забыть». Trauma bonding требует специфической психологической работы — с телесными реакциями, триггерами и глубинными механизмами привязанности.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Выстройте самооценку заново</h4>
+                <h3>Выстройте самооценку заново</h3>
                 <p>Нарцисс разрушал вашу самооценку системно. Восстановление — это не просто «думать о себе хорошо», это работа с глубинными убеждениями о собственной ценности.</p>
             </div>
         </div>

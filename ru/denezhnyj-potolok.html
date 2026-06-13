@@ -114,39 +114,55 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Денежный Потолок: Как Пробить Невидимый Лимит Дохода",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Денежный Потолок: Как Пробить Невидимый Лимит Дохода",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://lyubovpsy.com/images/luba-hero.webp"
-            }
-        },
-        "datePublished": "2025-09-18",
-        "dateModified": "2025-12-08",
-        "description": "Что такое денежный потолок и как его пробить. Психология финансовых ограничений.",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://lyubovpsy.com/ru/denezhnyj-potolok"
-        }
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ]
+    },
+    "datePublished": "2025-09-18",
+    "dateModified": "2025-12-08",
+    "description": "Что такое денежный потолок и как его пробить. Психология финансовых ограничений.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyubovpsy.com/ru/denezhnyj-potolok"
+    },
+    "@id": "https://lyubovpsy.com/ru/denezhnyj-potolok#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFLSQ07PGM"></script>
@@ -169,18 +185,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Денежный Потолок: Как Пробить Невидимый Лимит Дохода | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/denezhnyj-potolok",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Денежный Потолок: Как Пробить Невидимый Лимит Дохода | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/denezhnyj-potolok",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/denezhnyj-potolok#webpage"
+}
+</script>
 
 
     <style>
@@ -936,7 +959,12 @@
                 justify-content: center;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1189,6 +1217,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1290,7 +1319,7 @@
             <div class="why-grid">
                 <div class="why-card">
                     <div class="why-icon">👨‍👩‍👧</div>
-                    <h4>Уровень дохода семьи</h4>
+                    <h3>Уровень дохода семьи</h3>
                     <p>В детстве вы впитали «норму» — сколько денег «нормально» иметь. Выше этой нормы — уже «не наше»</p>
 
     <div class="related-articles" style="background: linear-gradient(135deg, rgba(255,215,0,0.08) 0%, rgba(255,215,0,0.03) 100%); border-left: 4px solid #d4a017; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 30px 0; font-family: inherit;">
@@ -1307,31 +1336,31 @@
 
                 <div class="why-card">
                     <div class="why-icon">🚫</div>
-                    <h4>Запрет превзойти родителей</h4>
+                    <h3>Запрет превзойти родителей</h3>
                     <p>Подсознательный страх: если я заработаю больше папы/мамы, я их предам. Детская лояльность сильнее логики</p>
                 </div>
 
                 <div class="why-card">
                     <div class="why-icon">⚠️</div>
-                    <h4>Травмы с деньгами</h4>
+                    <h3>Травмы с деньгами</h3>
                     <p>Если в детстве деньги приносили конфликты, стыд, страх — мозг защищает вас, не допуская «опасного» богатства</p>
                 </div>
 
                 <div class="why-card">
                     <div class="why-icon">🎭</div>
-                    <h4>Страх изменений</h4>
+                    <h3>Страх изменений</h3>
                     <p>Больше денег = другая жизнь, другое окружение, другие проблемы. Подсознание предпочитает «знакомое»</p>
                 </div>
 
                 <div class="why-card">
                     <div class="why-icon">👁️</div>
-                    <h4>Страх осуждения</h4>
+                    <h3>Страх осуждения</h3>
                     <p>«Богатые — плохие», «что люди скажут», «не высовывайся». Эти послания из детства работают до сих пор</p>
                 </div>
 
                 <div class="why-card">
                     <div class="why-icon">💔</div>
-                    <h4>Самооценка</h4>
+                    <h3>Самооценка</h3>
                     <p>Глубоко внутри вы не верите, что достойны большего. Доход — это отражение вашей внутренней ценности</p>
                 </div>
             </div>
@@ -1367,7 +1396,7 @@
                     <div class="sign-item">
                         <span class="sign-icon">📊</span>
                         <div class="sign-content">
-                            <h4>Доход колеблется в узком коридоре</h4>
+                            <h3>Доход колеблется в узком коридоре</h3>
                             <p>Уже несколько лет вы зарабатываете примерно одинаково — плюс-минус 20%</p>
                         </div>
                     </div>
@@ -1375,7 +1404,7 @@
                     <div class="sign-item">
                         <span class="sign-icon">💨</span>
                         <div class="sign-content">
-                            <h4>Деньги «сами» уходят</h4>
+                            <h3>Деньги «сами» уходят</h3>
                             <p>После крупного заработка появляются непредвиденные расходы, которые «съедают» излишек</p>
                         </div>
                     </div>
@@ -1383,7 +1412,7 @@
                     <div class="sign-item">
                         <span class="sign-icon">🛑</span>
                         <div class="sign-content">
-                            <h4>Саботаж в последний момент</h4>
+                            <h3>Саботаж в последний момент</h3>
                             <p>Срываете важные переговоры, откладываете повышение цен, «забываете» выставить счёт</p>
                         </div>
                     </div>
@@ -1391,7 +1420,7 @@
                     <div class="sign-item">
                         <span class="sign-icon">😰</span>
                         <div class="sign-content">
-                            <h4>Тревога при росте дохода</h4>
+                            <h3>Тревога при росте дохода</h3>
                             <p>Вместо радости — напряжение, ожидание «подвоха», чувство, что «это ненадолго»</p>
                         </div>
                     </div>
@@ -1399,7 +1428,7 @@
                     <div class="sign-item">
                         <span class="sign-icon">🔄</span>
                         <div class="sign-content">
-                            <h4>Повторяющиеся ситуации</h4>
+                            <h3>Повторяющиеся ситуации</h3>
                             <p>Похожие истории потери денег: неоплаченные счета, обман, неудачные вложения</p>
                         </div>
                     </div>
@@ -1414,25 +1443,25 @@
             <div class="breakthrough-steps">
                 <div class="breakthrough-card">
                     <div class="breakthrough-number">1</div>
-                    <h4>Осознать свой потолок</h4>
+                    <h3>Осознать свой потолок</h3>
                     <p>Посмотрите на историю доходов. Какая максимальная сумма, которую вы стабильно получали? Это ваш текущий лимит</p>
                 </div>
 
                 <div class="breakthrough-card">
                     <div class="breakthrough-number">2</div>
-                    <h4>Найти источник</h4>
+                    <h3>Найти источник</h3>
                     <p>Откуда эта цифра? Сколько зарабатывали родители? Какие послания о деньгах вы слышали в детстве?</p>
                 </div>
 
                 <div class="breakthrough-card">
                     <div class="breakthrough-number">3</div>
-                    <h4>Работа с подсознанием</h4>
+                    <h3>Работа с подсознанием</h3>
                     <p>Трансформировать убеждения через регрессию, работу с внутренним ребёнком, телесные практики</p>
                 </div>
 
                 <div class="breakthrough-card">
                     <div class="breakthrough-number">4</div>
-                    <h4>Установить новую норму</h4>
+                    <h3>Установить новую норму</h3>
                     <p>Создать новый «термостат» — через визуализацию, окружение, постепенное расширение зоны комфорта</p>
                 </div>
             </div>

@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Газлайтинг: как распознать манипуляцию и выйти из токсичных">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Газлайтинг — психологическая манипуляция, которая заставляет сомневаться в реальности. Как распознать газлайтинг в отношениях и получить помощь психолога онлайн.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/gaslayting">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Газлайтинг: когда вас заставляют сомневаться в себе",
-        "description": "Газлайтинг — психологическая манипуляция, которая заставляет сомневаться в реальности. Как распознать газлайтинг в отношениях, почему жертвы остаются и как выйти из токсичных отношений.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-03-14",
-        "dateModified": "2026-03-14",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/gaslayting"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Газлайтинг: когда вас заставляют сомневаться в себе",
+    "description": "Газлайтинг — психологическая манипуляция, которая заставляет сомневаться в реальности. Как распознать газлайтинг в отношениях, почему жертвы остаются и как выйти из токсичных отношений.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-03-14",
+    "dateModified": "2026-03-14",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/gaslayting",
+    "@id": "https://lyubovpsy.com/ru/gaslayting#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Газлайтинг: как распознать манипуляцию и выйти из токсичных отношений | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/gaslayting",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Газлайтинг: как распознать манипуляцию и выйти из токсичных отношений | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/gaslayting",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/gaslayting#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -717,7 +745,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -950,6 +983,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1022,7 +1056,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое газлайтинг?</h2>
@@ -1059,61 +1093,61 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128483;</div>
-                <h4>«Тебе кажется»</h4>
+                <h3>«Тебе кажется»</h3>
                 <p>Классический инструмент. Ваш опыт, эмоции и наблюдения объявляются иллюзией. Вы начинаете сомневаться: а вдруг действительно кажется?</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#129300;</div>
-                <h4>«Этого не было»</h4>
+                <h3>«Этого не было»</h3>
                 <p>Газлайтер отрицает события, которые вы точно помните. Ваша память объявляется ненадёжной. Постепенно вы перестаёте доверять своим воспоминаниям.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128580;</div>
-                <h4>«Ты слишком чувствительна»</h4>
+                <h3>«Ты слишком чувствительна»</h3>
                 <p>Ваши законные эмоции обесцениваются. Вы начинаете стыдиться своих реакций и подавлять их, чтобы «не быть истеричкой».</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128565;</div>
-                <h4>«Ты сходишь с ума»</h4>
+                <h3>«Ты сходишь с ума»</h3>
                 <p>Прямая атака на ваш рассудок. Иногда говорится с «заботой»: «Тебе нужно лечиться», «Ты неадекватна». Цель — заставить вас усомниться в себе.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128064;</div>
-                <h4>«Ты всё придумываешь»</h4>
+                <h3>«Ты всё придумываешь»</h3>
                 <p>Ваши наблюдения объявляются фантазией. Газлайтер сам рассказывает, что «на самом деле» произошло — версию, удобную ему.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128549;</div>
-                <h4>«Никто тебе не поверит»</h4>
+                <h3>«Никто тебе не поверит»</h3>
                 <p>Изоляция от поддержки. Газлайтер заранее обесценивает возможную помощь со стороны, укрепляя вашу зависимость от него одного.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128533;</div>
-                <h4>«Ты сама виновата»</h4>
+                <h3>«Ты сама виновата»</h3>
                 <p>Ответственность за его поведение перекладывается на вас. «Я бы так не делал, если бы ты не...» — газлайтер никогда не виноват.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#129310;</div>
-                <h4>«Ты слишком драматизируешь»</h4>
+                <h3>«Ты слишком драматизируешь»</h3>
                 <p>Ваша реакция на реальную проблему объявляется преувеличением. Вы учитесь молчать и терпеть, чтобы «не раздувать из мухи слона».</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128548;</div>
-                <h4>«Я пошутил, у тебя нет чувства юмора»</h4>
+                <h3>«Я пошутил, у тебя нет чувства юмора»</h3>
                 <p>Обидные слова ретроспективно объявляются шуткой. Вы оказываетесь виноваты в том, что «не понимаете юмора».</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128163;</div>
-                <h4>«Ты всегда так говоришь»</h4>
+                <h3>«Ты всегда так говоришь»</h3>
                 <p>Газлайтер переписывает историю отношений, навязывая вам образ «всегда недовольной», «всегда ищущей проблемы». Вы начинаете верить в этот образ.</p>
             </div>
         </div>
@@ -1248,31 +1282,31 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Признать реальность</h4>
+                <h3>Признать реальность</h3>
                 <p>Первый и самый сложный шаг — назвать происходящее своим именем. Психолог помогает восстановить объективную картину событий без самообвинений.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Восстановить доверие к себе</h4>
+                <h3>Восстановить доверие к себе</h3>
                 <p>Постепенная работа по возвращению уверенности в собственных ощущениях, памяти и суждениях — фундамент выздоровления.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Работа с травмой</h4>
+                <h3>Работа с травмой</h3>
                 <p>Газлайтинг оставляет глубокие следы. Работа с травматической связью, тревогой и симптомами ПТСР — необходимая часть восстановления.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Восстановить связи</h4>
+                <h3>Восстановить связи</h3>
                 <p>Возобновление контактов с друзьями и семьёй, от которых вас изолировали, — важный шаг к выходу из зависимости от газлайтера.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Безопасный план выхода</h4>
+                <h3>Безопасный план выхода</h3>
                 <p>Практическая подготовка к выходу из ситуации с учётом финансовой, юридической и эмоциональной безопасности.</p>
             </div>
         </div>

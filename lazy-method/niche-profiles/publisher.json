@@ -1,0 +1,68 @@
+{
+  "_comment": "Blog / content niche (business blog, not news wire). Auto-detected on Article/BlogPosting schema or author/byline. Full param reference: ../blog-method/BLOG-PARAMETERS-2026-2027.md. is_local:false so page-level local checks (LocalBusiness schema, map/directions) are skipped for articles.",
+  "niche": "publisher",
+  "schema_type": "Organization",
+  "is_local": false,
+  "required_schemas": [
+    "BlogPosting",
+    "Organization",
+    "Person",
+    "BreadcrumbList",
+    "FAQPage"
+  ],
+  "thresholds_override": {
+    "word_count": [
+      900,
+      4000
+    ],
+    "word_count_blog": [
+      900,
+      4000
+    ],
+    "internal_links_min": 8,
+    "external_links_max": 25,
+    "reading_level": [
+      6,
+      12
+    ]
+  },
+  "required_cta_types": [
+    "phone",
+    "pricing",
+    "emergency_call"
+  ],
+  "required_trust_signals": [
+    "author_bio",
+    "publish_date",
+    "modified_date",
+    "credentials",
+    "warranty"
+  ],
+  "psychology_focus": [
+    "expertise",
+    "authority",
+    "freshness"
+  ],
+  "forbidden_psychology": [
+    "clickbait",
+    "fake_scarcity",
+    "false_urgency"
+  ],
+  "_na_comment": "Params that describe a sales/landing page, not an informational article. Excluded from the score (not auto-passed) — a blog post legitimately has no lead form, demo CTA, sticky CTA, testimonials block, team/founder block, case studies, or multi-section landing layout. Article E-E-A-T comes from the author bio + sources + dates, which ARE required above.",
+  "na_params": [
+    "contact_or_lead_form_present",
+    "form_present",
+    "trial_or_demo_cta",
+    "mobile_sticky_or_floating_cta",
+    "mobile_tap_targets_styled",
+    "content_sectioned",
+    "semantic_sections_used",
+    "testimonials_present",
+    "named_team_or_founder",
+    "desire_benefits_focused",
+    "case_studies_or_portfolio_referenced",
+    "process_or_methodology_documented",
+    "howto_numbered_list",
+    "howto_schema_present"
+  ]
+}

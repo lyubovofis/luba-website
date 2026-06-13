@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="ОКР (обсессивно-компульсивное расстройство): симптомы,">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="ОКР — навязчивые мысли и ритуалы, которые захватывают жизнь. Психолог о признаках, причинах и работе с обсессивно-компульсивным расстройством.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/okr">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "ОКР: обсессивно-компульсивное расстройство — что это и как с этим жить",
-        "description": "ОКР — навязчивые мысли и ритуалы, которые захватывают жизнь. Психолог о признаках, причинах и работе с обсессивно-компульсивным расстройством.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-02-13",
-        "dateModified": "2026-02-13",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/okr"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ОКР: обсессивно-компульсивное расстройство — что это и как с этим жить",
+    "description": "ОКР — навязчивые мысли и ритуалы, которые захватывают жизнь. Психолог о признаках, причинах и работе с обсессивно-компульсивным расстройством.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-02-13",
+    "dateModified": "2026-02-13",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/okr",
+    "@id": "https://lyubovpsy.com/ru/okr#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "ОКР: обсессивно-компульсивное расстройство — что это и как с этим жить | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/okr",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ОКР: обсессивно-компульсивное расстройство — что это и как с этим жить | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/okr",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/okr#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -655,7 +683,12 @@
             .sticky-cta { display: block; }
             .content { padding-bottom: 100px; }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 @media (max-width: 768px) {
@@ -789,6 +822,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -857,7 +891,7 @@
         <span class="byline-date">Опубликовано: 13 февраля 2026 · Обновлено: 13 февраля 2026</span>
     </div>
 
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое ОКР?</h2>
@@ -895,27 +929,27 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">🧼</div>
-                <h4>Контаминация и чистота</h4>
+                <h3>Контаминация и чистота</h3>
                 <p>Страх заражения, грязи, болезни. Компульсии: многократное мытьё рук, дезинфекция, избегание «грязных» предметов и мест.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">🔒</div>
-                <h4>Проверки</h4>
+                <h3>Проверки</h3>
                 <p>Страх, что что-то не выключено, не закрыто, не сделано. Компульсии: многократная проверка замков, плиты, электроприборов — иногда часами.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">📐</div>
-                <h4>Симметрия и порядок</h4>
+                <h3>Симметрия и порядок</h3>
                 <p>Невыносимое ощущение «неправильности», если вещи расположены несимметрично. Компульсии: расставление до «правильного» ощущения, счёт, выравнивание.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">⚠️</div>
-                <h4>Запрещённые мысли</h4>
+                <h3>Запрещённые мысли</h3>
                 <p>Навязчивые мысли агрессивного, сексуального или религиозного характера. Самые пугающие — и самые часто скрываемые. Вызывают огромный стыд и страх.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">📦</div>
-                <h4>Накопительство</h4>
+                <h3>Накопительство</h3>
                 <p>Невозможность выбросить вещи из-за страха «вдруг понадоблятся». Хаос в доме, который вызывает страдание, но изменить невозможно.</p>
             </div>
         </div>

@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="РПП — расстройство пищевого поведения: виды и как помочь |">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="РПП — это не каприз. Это психологическое расстройство. Узнайте виды РПП и как психолог помогает выйти из этого состояния.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/rasstroystvo-pishchevogo-povedeniya">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Расстройство пищевого поведения (РПП): виды, причины и выход",
-        "description": "Виды РПП, психологические причины и как психолог помогает восстановить здоровые отношения с едой и телом.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-01-30",
-        "dateModified": "2026-01-30",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/rasstroystvo-pishchevogo-povedeniya"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Расстройство пищевого поведения (РПП): виды, причины и выход",
+    "description": "Виды РПП, психологические причины и как психолог помогает восстановить здоровые отношения с едой и телом.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-01-30",
+    "dateModified": "2026-01-30",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/rasstroystvo-pishchevogo-povedeniya",
+    "@id": "https://lyubovpsy.com/ru/rasstroystvo-pishchevogo-povedeniya#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -162,18 +183,25 @@
 
     <!-- Schema.org WebPage / Speakable -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "РПП — расстройство пищевого поведения: виды, причины и выход | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/rasstroystvo-pishchevogo-povedeniya",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "РПП — расстройство пищевого поведения: виды, причины и выход | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/rasstroystvo-pishchevogo-povedeniya",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/rasstroystvo-pishchevogo-povedeniya#webpage"
+}
+</script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFLSQ07PGM"></script>
@@ -306,7 +334,12 @@
             .sticky-cta { display: block; }
             .content { padding-bottom: 100px; }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
     <style>
 @media (max-width: 768px) { #site-nav .nav-content { flex-wrap: wrap; gap: 10px; padding: 0 10px; } #site-nav ul { display: none !important; } }
@@ -370,6 +403,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
         <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none; flex-shrink: 0;">Денежный Водопад</a>
@@ -437,7 +471,7 @@
         <span class="byline-date">Опубликовано: 30 января 2026 · Обновлено: 30 января 2026</span>
     </div>
 
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое РПП?</h2>
@@ -476,23 +510,23 @@
 
         <div class="rpp-types">
             <div class="rpp-type-card">
-                <h4>Нервная анорексия</h4>
+                <h3>Нервная анорексия</h3>
                 <p>Резкое ограничение еды, сильный страх набрать вес, искажённое восприятие тела. Высокий риск для физического здоровья.</p>
             </div>
             <div class="rpp-type-card">
-                <h4>Нервная булимия</h4>
+                <h3>Нервная булимия</h3>
                 <p>Циклы переедания, за которыми следует компенсаторное поведение: рвота, голодание, чрезмерные тренировки или слабительные.</p>
             </div>
             <div class="rpp-type-card">
-                <h4>Компульсивное переедание</h4>
+                <h3>Компульсивное переедание</h3>
                 <p>Эпизоды переедания с ощущением потери контроля, без компенсации. Сопровождается стыдом и виной. Еда используется для заглушения эмоций.</p>
             </div>
             <div class="rpp-type-card">
-                <h4>Орторексия</h4>
+                <h3>Орторексия</h3>
                 <p>Навязчивое стремление есть только «правильную» еду. Нарушает социальную жизнь и создаёт постоянную тревогу вокруг питания.</p>
             </div>
             <div class="rpp-type-card">
-                <h4>ARFID</h4>
+                <h3>ARFID</h3>
                 <p>Крайне избирательное питание, избегание пищи по причинам, не связанным с весом — из-за текстуры, запаха, страха подавиться.</p>
             </div>
         </div>

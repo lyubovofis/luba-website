@@ -126,16 +126,23 @@
 
     <!-- Schema.org Person -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Любовь Лукащук",
-        "jobTitle": "Лайф-коуч по денежному мышлению",
-        "description": "Психолог и лайф-коуч, специализирующийся на трансформации денежного мышления и работе с финансовыми блоками",
-        "url": "https://lyubovpsy.com",
-        "knowsAbout": ["денежное мышление", "финансовая психология", "коучинг", "денежные блоки", "родовые программы"]
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Любовь Лукащук",
+    "jobTitle": "Лайф-коуч по денежному мышлению",
+    "description": "Психолог и лайф-коуч, специализирующийся на трансформации денежного мышления и работе с финансовыми блоками",
+    "url": "https://lyubovpsy.com",
+    "knowsAbout": [
+        "денежное мышление",
+        "финансовая психология",
+        "коучинг",
+        "денежные блоки",
+        "родовые программы"
+    ],
+    "@id": "https://lyubovpsy.com#person"
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -190,18 +197,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Лайф Коуч по Денежному Мышлению | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/layf-kouch",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Лайф Коуч по Денежному Мышлению | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/layf-kouch",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/layf-kouch#webpage"
+}
+</script>
 
 
     <style>
@@ -1021,39 +1035,64 @@
                 font-size: 0.9rem;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Лайф Коуч по Денежному Мышлению | Денежный Водопад",
-        "description": "Лайф-коуч по денежному мышлению Любовь Лукащук. Трансформация финансовых убеждений, работа с денежными блоками, выход на новый уровень дохода. Онлайн сессии.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-10-18",
-        "dateModified": "2025-11-07",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://lyubovpsy.com/ru/layf-kouch"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Лайф Коуч по Денежному Мышлению | Денежный Водопад",
+    "description": "Лайф-коуч по денежному мышлению Любовь Лукащук. Трансформация финансовых убеждений, работа с денежными блоками, выход на новый уровень дохода. Онлайн сессии.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
         }
+    },
+    "datePublished": "2025-10-18",
+    "dateModified": "2025-11-07",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyubovpsy.com/ru/layf-kouch"
+    },
+    "@id": "https://lyubovpsy.com/ru/layf-kouch#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
 <style>
 
@@ -1282,6 +1321,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1320,7 +1360,7 @@
 
     <!-- Header -->
     <header>
-        <div class="container">
+        <div class="container" id="main" role="main">
             <div class="header-content">
                 <a href="https://lyubovpsy.com" class="logo">Денежный <span>Водопад</span></a>
                 <div class="header-cta">

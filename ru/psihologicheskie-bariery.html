@@ -103,31 +103,51 @@
 
     <!-- Schema.org разметка -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Психологические Барьеры к Финансовому Успеху",
-        "description": "Узнайте, какие внутренние препятствия мешают вашему богатству и как их преодолеть.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад"
-        },
-        "datePublished": "2025-11-06",
-        "dateModified": "2025-11-07"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Психологические Барьеры к Финансовому Успеху",
+    "description": "Узнайте, какие внутренние препятствия мешают вашему богатству и как их преодолеть.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-11-06",
+    "dateModified": "2025-11-07",
+    "@id": "https://lyubovpsy.com/ru/psihologicheskie-bariery#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <script type="application/ld+json">
     {
@@ -193,18 +213,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Психологические Барьеры к Финансовому Успеху | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/psihologicheskie-bariery",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Психологические Барьеры к Финансовому Успеху | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/psihologicheskie-bariery",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/psihologicheskie-bariery#webpage"
+}
+</script>
 
 
     <style>
@@ -918,7 +945,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1147,6 +1179,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1332,32 +1365,32 @@
                 <div class="sources-grid">
                     <div class="source-card">
                         <div class="icon">👶</div>
-                        <h4>Детство</h4>
+                        <h3>Детство</h3>
                         <p>Установки родителей о деньгах, наблюдаемые модели поведения, семейные конфликты из-за финансов</p>
                     </div>
                     <div class="source-card">
                         <div class="icon">🌳</div>
-                        <h4>Родовые программы</h4>
+                        <h3>Родовые программы</h3>
                         <p>Сценарии бедности, потерь, раскулачивания, которые передаются через поколения</p>
                     </div>
                     <div class="source-card">
                         <div class="icon">💥</div>
-                        <h4>Травмы</h4>
+                        <h3>Травмы</h3>
                         <p>Потеря денег, банкротство, предательство из-за финансов — личные или семейные</p>
                     </div>
                     <div class="source-card">
                         <div class="icon">🏛️</div>
-                        <h4>Культура</h4>
+                        <h3>Культура</h3>
                         <p>Советское наследие: "богатство — стыд", "высовываться опасно", уравниловка</p>
                     </div>
                     <div class="source-card">
                         <div class="icon">⛪</div>
-                        <h4>Религия</h4>
+                        <h3>Религия</h3>
                         <p>Искажённые интерпретации: "деньги — зло", "бедность — добродетель"</p>
                     </div>
                     <div class="source-card">
                         <div class="icon">📱</div>
-                        <h4>Социум</h4>
+                        <h3>Социум</h3>
                         <p>Окружение, которое осуждает успех, зависть близких, страх "потерять своих"</p>
                     </div>
                 </div>
@@ -1461,28 +1494,28 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h4>Диагностика</h4>
+                        <h3>Диагностика</h3>
                         <p>На первой сессии выявляем ваши конкретные барьеры: какие, откуда, как проявляются. Составляем карту того, что нужно проработать.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h4>Работа с корнем</h4>
+                        <h3>Работа с корнем</h3>
                         <p>Находим первопричину каждого барьера. Это может быть детская травма, родовой сценарий, негативный опыт. Проживаем и трансформируем.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h4>Замена убеждений</h4>
+                        <h3>Замена убеждений</h3>
                         <p>Деструктивные установки заменяем на ресурсные. Формируем новую "карту реальности", где богатство возможно и безопасно.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h4>Интеграция</h4>
+                        <h3>Интеграция</h3>
                         <p>Закрепляем изменения через практики, домашние задания, новые модели поведения. Барьеры рассыпаются, путь к деньгам открывается.</p>
                     </div>
                 </div>

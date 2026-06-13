@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Перфекционизм: признаки, причины и как освободиться | Психолог">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Перфекционизм кажется достоинством, но разрушает продуктивность, отношения и здоровье. Психолог о причинах и выходе из перфекционизма.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/perfekcionizm">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Перфекционизм: как он разрушает вашу жизнь и что с этим делать",
-        "description": "Перфекционизм кажется достоинством, но разрушает продуктивность, отношения и здоровье. Психолог Любовь Лукащук о причинах и выходе из перфекционизма.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-01-14",
-        "dateModified": "2026-01-14",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/perfekcionizm"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Перфекционизм: как он разрушает вашу жизнь и что с этим делать",
+    "description": "Перфекционизм кажется достоинством, но разрушает продуктивность, отношения и здоровье. Психолог Любовь Лукащук о причинах и выходе из перфекционизма.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-01-14",
+    "dateModified": "2026-01-14",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/perfekcionizm",
+    "@id": "https://lyubovpsy.com/ru/perfekcionizm#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Перфекционизм: как он разрушает вашу жизнь и что с этим делать | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/perfekcionizm",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Перфекционизм: как он разрушает вашу жизнь и что с этим делать | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/perfekcionizm",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/perfekcionizm#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -717,7 +745,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -950,6 +983,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1022,7 +1056,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое перфекционизм на самом деле?</h2>
@@ -1069,37 +1103,37 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#9203;</div>
-                <h4>Прокрастинация из-за страха начать</h4>
+                <h3>Прокрастинация из-за страха начать</h3>
                 <p>Не начинаете проект, пока не будет "правильный момент". Откладываете, потому что боитесь: а вдруг выйдет неидеально?</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128683;</div>
-                <h4>Невозможность делегировать</h4>
+                <h3>Невозможность делегировать</h3>
                 <p>"Никто не сделает так же хорошо, как я". Берёте на себя всё, перегораете, но не доверяете другим.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128170;</div>
-                <h4>Всё или ничего</h4>
+                <h3>Всё или ничего</h3>
                 <p>Если не получается идеально — лучше вообще не делать. Проект на 80% кажется провалом, а не достижением.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128064;</div>
-                <h4>Постоянная самокритика</h4>
+                <h3>Постоянная самокритика</h3>
                 <p>Внутренний голос никогда не доволен. После любого успеха приходит мысль: "Но можно было лучше..."</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128565;</div>
-                <h4>Критика других</h4>
+                <h3>Критика других</h3>
                 <p>Те же завышенные стандарты распространяются на партнёра, детей, коллег. Отношения страдают.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128148;</div>
-                <h4>Выгорание и хроническая усталость</h4>
+                <h3>Выгорание и хроническая усталость</h3>
                 <p>Постоянное напряжение "сделать лучше" истощает нервную систему. Выгорание — частый спутник перфекциониста.</p>
             </div>
         </div>
@@ -1195,31 +1229,31 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Примите концепцию "достаточно хорошо"</h4>
+                <h3>Примите концепцию "достаточно хорошо"</h3>
                 <p>80% качества при 100% реализации лучше, чем 100% качества при 0% запуска. Хорошее исполненное лучше идеального незавершённого.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Дайте себе разрешение на ошибку</h4>
+                <h3>Дайте себе разрешение на ошибку</h3>
                 <p>Ошибка — не катастрофа и не доказательство вашей неценности. Это информация. Выучите урок и двигайтесь дальше.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Разделите ценность и результат</h4>
+                <h3>Разделите ценность и результат</h3>
                 <p>Ваша ценность как человека не зависит от результата задачи. Вы ценны вне зависимости от оценок и достижений.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Практикуйте "неидеальное" действие</h4>
+                <h3>Практикуйте "неидеальное" действие</h3>
                 <p>Начните с малого: отправьте непроверенное трижды письмо, опубликуйте пост без идеальной картинки, сдайте задачу при 90% готовности.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Проработайте глубинный страх</h4>
+                <h3>Проработайте глубинный страх</h3>
                 <p>Перфекционизм держится на страхе быть недостаточным. Это детская рана, требующая бережной работы с психологом.</p>
             </div>
         </div>

@@ -13,6 +13,7 @@
     <meta name="keywords" content="финансовые цели, как достичь финансовых целей, постановка финансовых целей, финансовое планирование, денежные цели, достижение финансовых целей">
 
     <meta property="og:title" content="Финансовые Цели | Как Достичь | Денежный Водопад">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Не получается достичь финансовых целей? Узнайте как преодолеть внутренние блоки и выстроить путь к финансовому успеху.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/finansovye-celi">
@@ -107,32 +108,52 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Финансовые Цели: Как Поставить и Достичь с Помощью Психологии",
-        "description": "Узнайте о психологических причинах недостижения финансовых целей и методах их преодоления. Психолог Любовь Лукащук помогает достигать целей онлайн.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-10-03",
-        "dateModified": "2025-11-17"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Финансовые Цели: Как Поставить и Достичь с Помощью Психологии",
+    "description": "Узнайте о психологических причинах недостижения финансовых целей и методах их преодоления. Психолог Любовь Лукащук помогает достигать целей онлайн.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-10-03",
+    "dateModified": "2025-11-17",
+    "@id": "https://lyubovpsy.com/ru/finansovye-celi#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFLSQ07PGM"></script>
@@ -155,18 +176,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Финансовые Цели | Как Достичь | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/finansovye-celi",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Финансовые Цели | Как Достичь | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/finansovye-celi",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/finansovye-celi#webpage"
+}
+</script>
 
 
     <style>
@@ -888,7 +916,12 @@
             font-size: 0.9em;
             color: #666;
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1141,6 +1174,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1208,7 +1242,7 @@
 
         <!-- Goals Section -->
         <section class="section">
-            <div class="container">
+            <div class="container" id="main" role="main">
                 <h2 class="section-title">Типичные <span>финансовые цели</span></h2>
                 <div class="goals-grid">
                     <div class="goal-card">
@@ -1254,42 +1288,42 @@
                         <div class="block-item">
                             <div class="block-icon">🚫</div>
                             <div class="block-content">
-                                <h4>"Я не заслуживаю"</h4>
+                                <h3>"Я не заслуживаю"</h3>
                                 <p>Глубинное убеждение о недостойности богатства и успеха</p>
                             </div>
                         </div>
                         <div class="block-item">
                             <div class="block-icon">😰</div>
                             <div class="block-content">
-                                <h4>Страх успеха</h4>
+                                <h3>Страх успеха</h3>
                                 <p>Боязнь изменений, потери близких, зависти окружающих</p>
                             </div>
                         </div>
                         <div class="block-item">
                             <div class="block-icon">🔄</div>
                             <div class="block-content">
-                                <h4>Самосаботаж</h4>
+                                <h3>Самосаботаж</h3>
                                 <p>Неосознанные действия, разрушающие ваш прогресс</p>
                             </div>
                         </div>
                         <div class="block-item">
                             <div class="block-icon">👨‍👩‍👧</div>
                             <div class="block-content">
-                                <h4>Родовые программы</h4>
+                                <h3>Родовые программы</h3>
                                 <p>Унаследованные установки о деньгах от семьи</p>
                             </div>
                         </div>
                         <div class="block-item">
                             <div class="block-icon">🎭</div>
                             <div class="block-content">
-                                <h4>Вторичные выгоды</h4>
+                                <h3>Вторичные выгоды</h3>
                                 <p>Скрытая польза от недостижения цели</p>
                             </div>
                         </div>
                         <div class="block-item">
                             <div class="block-icon">🎯</div>
                             <div class="block-content">
-                                <h4>Чужие цели</h4>
+                                <h3>Чужие цели</h3>
                                 <p>Цели навязаны обществом, а не исходят от вас</p>
                             </div>
                         </div>

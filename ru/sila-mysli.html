@@ -13,6 +13,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Сила Мысли для Привлечения Денег: Научные Факты и Техники">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Как мысли материализуются в деньги? Нейронаука объясняет. 7 практических техник для развития силы мысли и привлечения финансового изобилия.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/sila-mysli">
@@ -121,35 +122,55 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Сила Мысли для Привлечения Денег: Научные Факты и Практические Техники",
-        "description": "Как работает сила мысли с точки зрения нейронауки. 7 техник использования силы мысли для привлечения денег и финансового изобилия.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад"
-        },
-        "datePublished": "2025-11-17",
-        "dateModified": "2025-12-28",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://lyubovpsy.com/ru/sila-mysli"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Сила Мысли для Привлечения Денег: Научные Факты и Практические Техники",
+    "description": "Как работает сила мысли с точки зрения нейронауки. 7 техник использования силы мысли для привлечения денег и финансового изобилия.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
         }
+    },
+    "datePublished": "2025-11-17",
+    "dateModified": "2025-12-28",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyubovpsy.com/ru/sila-mysli"
+    },
+    "@id": "https://lyubovpsy.com/ru/sila-mysli#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org HowTo -->
     <script type="application/ld+json">
@@ -220,18 +241,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Сила Мысли для Привлечения Денег | Как Работает | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/sila-mysli",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Сила Мысли для Привлечения Денег | Как Работает | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/sila-mysli",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/sila-mysli#webpage"
+}
+</script>
 
 
     <style>
@@ -989,7 +1017,12 @@
                 display: none;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1242,6 +1275,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1325,7 +1359,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="container" id="main" role="main">
         <!-- Intro Section -->
         <section class="intro-section">
             <p>«Мысли материальны» — эту фразу вы слышали сотни раз. Но действительно ли сила мысли работает? Или это просто красивое самовнушение?</p>
@@ -1365,7 +1399,7 @@
             <div class="mechanism-grid">
                 <div class="mechanism-card">
                     <div class="mechanism-icon">🔍</div>
-                    <h4>1. Ретикулярная Активирующая Система (РАС)</h4>
+                    <h3>1. Ретикулярная Активирующая Система (РАС)</h3>
                     <p>РАС — это «фильтр внимания» вашего мозга. Из миллионов единиц информации он выбирает то, что соответствует вашему фокусу. Думаете о нехватке денег — замечаете проблемы. Думаете об изобилии — замечаете возможности.</p>
 
     <div class="related-articles" style="background: linear-gradient(135deg, rgba(255,215,0,0.08) 0%, rgba(255,215,0,0.03) 100%); border-left: 4px solid #d4a017; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 30px 0; font-family: inherit;">
@@ -1382,13 +1416,13 @@
 
                 <div class="mechanism-card">
                     <div class="mechanism-icon">🧬</div>
-                    <h4>2. Нейропластичность</h4>
+                    <h3>2. Нейропластичность</h3>
                     <p>Повторяющиеся мысли создают нейронные связи. Чем чаще вы думаете определённым образом, тем сильнее эти связи. Через 21-66 дней новые мысли становятся автоматическими — меняется ваше поведение и решения.</p>
                 </div>
 
                 <div class="mechanism-card">
                     <div class="mechanism-icon">⚡</div>
-                    <h4>3. Энергетический Резонанс</h4>
+                    <h3>3. Энергетический Резонанс</h3>
                     <p>Мозг генерирует электромагнитные волны. Определённые мысли создают определённые частоты. По закону резонанса вы притягиваете события и людей, вибрирующих на похожей частоте. Страх притягивает страшное. Изобилие — изобильное.</p>
                 </div>
             </div>
@@ -1442,7 +1476,7 @@
             <div class="technique-card">
                 <div class="technique-number">1</div>
                 <div class="technique-content">
-                    <h4>Визуализация с деталями</h4>
+                    <h3>Визуализация с деталями</h3>
                     <p>Не просто «хочу денег». Представьте конкретную сумму на счёте, конкретные покупки, конкретные ощущения. Чем детальнее образ — тем сильнее сигнал для мозга. Уделяйте визуализации 10-15 минут ежедневно.</p>
                     <div class="technique-tip">💡 Подключите все органы чувств: видьте цифры на экране, слышите уведомления о поступлениях, чувствуете радость.</div>
                 </div>
@@ -1451,7 +1485,7 @@
             <div class="technique-card">
                 <div class="technique-number">2</div>
                 <div class="technique-content">
-                    <h4>Состояние «уже имею»</h4>
+                    <h3>Состояние «уже имею»</h3>
                     <p>Главный секрет: не «хочу» и не «буду», а «уже есть». Войдите в состояние человека, у которого желаемая сумма уже есть. Как бы вы двигались? Говорили? Принимали решения? Живите из этого состояния прямо сейчас.</p>
                     <div class="technique-tip">💡 Задавайте себе вопрос: «Что бы я делал сейчас, если бы у меня уже было X?» — и делайте это.</div>
                 </div>
@@ -1460,7 +1494,7 @@
             <div class="technique-card">
                 <div class="technique-number">3</div>
                 <div class="technique-content">
-                    <h4>Денежные аффирмации</h4>
+                    <h3>Денежные аффирмации</h3>
                     <p>Повторяйте утверждения в настоящем времени: «Деньги приходят ко мне легко», «Я заслуживаю финансового изобилия», «Мой доход постоянно растёт». Важно чувствовать слова, а не механически повторять.</p>
                     <div class="technique-tip">💡 Лучшее время: утром после пробуждения и перед сном. Мозг особенно восприимчив.</div>
                 </div>
@@ -1469,7 +1503,7 @@
             <div class="technique-card">
                 <div class="technique-number">4</div>
                 <div class="technique-content">
-                    <h4>Благодарность за деньги</h4>
+                    <h3>Благодарность за деньги</h3>
                     <p>Каждый вечер записывайте 3-5 пунктов, за что благодарны в финансовой сфере. Даже за маленькие суммы, даже за возможность оплатить счета. Благодарность переключает мозг на режим «у меня достаточно».</p>
                     <div class="technique-tip">💡 «Благодарю за каждый рубль, который приходит в мою жизнь» — начните с этого.</div>
                 </div>
@@ -1478,7 +1512,7 @@
             <div class="technique-card">
                 <div class="technique-number">5</div>
                 <div class="technique-content">
-                    <h4>Очистка негативных программ</h4>
+                    <h3>Очистка негативных программ</h3>
                     <p>Замечайте негативные мысли о деньгах и сознательно заменяйте их. «Денег никогда не хватает» → «Деньги приходят в нужный момент». Без этого позитивные техники не работают — негатив сильнее.</p>
                     <div class="technique-tip">💡 Запишите все свои убеждения о деньгах. Всё, что ограничивает — на переработку.</div>
                 </div>
@@ -1487,7 +1521,7 @@
             <div class="technique-card">
                 <div class="technique-number">6</div>
                 <div class="technique-content">
-                    <h4>Действия из изобилия</h4>
+                    <h3>Действия из изобилия</h3>
                     <p>Совершайте хотя бы небольшие действия из состояния «у меня есть». Оставьте чаевые, подарите что-то, инвестируйте малую сумму. Это сигнализирует подсознанию: «У меня достаточно, чтобы делиться».</p>
                     <div class="technique-tip">💡 Даже 100 рублей, отданные с чувством изобилия, меняют энергию больше, чем 10000, отданные со страхом.</div>
                 </div>
@@ -1496,7 +1530,7 @@
             <div class="technique-card">
                 <div class="technique-number">7</div>
                 <div class="technique-content">
-                    <h4>Медитация на изобилие</h4>
+                    <h3>Медитация на изобилие</h3>
                     <p>Ежедневная медитация снижает уровень кортизола (гормон стресса), который блокирует творческое мышление и способность видеть возможности. Используйте специальные медитации на финансовое изобилие.</p>
                     <div class="technique-tip">💡 Даже 10 минут медитации в день меняют структуру мозга за 8 недель (исследование Гарварда).</div>
                 </div>
@@ -1512,7 +1546,7 @@
                 <div class="blocker-card">
                     <span class="blocker-icon">⚔️</span>
                     <div class="blocker-text">
-                        <h4>Противоречивые убеждения</h4>
+                        <h3>Противоречивые убеждения</h3>
                         <p>Сознательно хотите денег, но подсознательно считаете их злом или опасностью. Два сигнала — нулевой результат.</p>
                     </div>
                 </div>
@@ -1520,7 +1554,7 @@
                 <div class="blocker-card">
                     <span class="blocker-icon">❄️</span>
                     <div class="blocker-text">
-                        <h4>Мысли без эмоций</h4>
+                        <h3>Мысли без эмоций</h3>
                         <p>Повторяете аффирмации как робот, без чувств. Мозг воспринимает это как бессмысленный шум.</p>
                     </div>
                 </div>
@@ -1528,7 +1562,7 @@
                 <div class="blocker-card">
                     <span class="blocker-icon">🎲</span>
                     <div class="blocker-text">
-                        <h4>Хаотичная практика</h4>
+                        <h3>Хаотичная практика</h3>
                         <p>Сегодня визуализируете, завтра забыли, послезавтра думаете о проблемах. Нет системности — нет результата.</p>
                     </div>
                 </div>
@@ -1536,7 +1570,7 @@
                 <div class="blocker-card">
                     <span class="blocker-icon">🛋️</span>
                     <div class="blocker-text">
-                        <h4>Мысли без действий</h4>
+                        <h3>Мысли без действий</h3>
                         <p>Ждёте, что деньги материализуются сами. Вселенная отвечает тем, кто делает шаги навстречу.</p>
                     </div>
                 </div>
@@ -1544,7 +1578,7 @@
                 <div class="blocker-card">
                     <span class="blocker-icon">🔒</span>
                     <div class="blocker-text">
-                        <h4>Глубинные денежные блоки</h4>
+                        <h3>Глубинные денежные блоки</h3>
                         <p>Родовые программы, детские травмы о деньгах. Пока они активны — сила мысли упирается в стену.</p>
                     </div>
                 </div>
@@ -1568,7 +1602,7 @@
 
             <form id="thoughtTest">
                 <div class="test-question">
-                    <h4>1. Когда вы думаете о крупной сумме (например, $10,000), что чувствуете?</h4>
+                    <h3>1. Когда вы думаете о крупной сумме (например, $10,000), что чувствуете?</h3>
                     <div class="test-options">
                         <div class="test-option">
                             <input type="radio" name="q1" id="q1a" value="a">
@@ -1586,7 +1620,7 @@
                 </div>
 
                 <div class="test-question">
-                    <h4>2. Как часто вы ловите себя на негативных мыслях о деньгах?</h4>
+                    <h3>2. Как часто вы ловите себя на негативных мыслях о деньгах?</h3>
                     <div class="test-options">
                         <div class="test-option">
                             <input type="radio" name="q2" id="q2a" value="a">
@@ -1604,7 +1638,7 @@
                 </div>
 
                 <div class="test-question">
-                    <h4>3. Используете ли вы визуализацию для финансовых целей?</h4>
+                    <h3>3. Используете ли вы визуализацию для финансовых целей?</h3>
                     <div class="test-options">
                         <div class="test-option">
                             <input type="radio" name="q3" id="q3a" value="a">
@@ -1622,7 +1656,7 @@
                 </div>
 
                 <div class="test-question">
-                    <h4>4. Что вы делаете, когда появляется финансовая возможность?</h4>
+                    <h3>4. Что вы делаете, когда появляется финансовая возможность?</h3>
                     <div class="test-options">
                         <div class="test-option">
                             <input type="radio" name="q4" id="q4a" value="a">
@@ -1640,7 +1674,7 @@
                 </div>
 
                 <div class="test-question">
-                    <h4>5. Как вы относитесь к тому, чтобы делиться деньгами?</h4>
+                    <h3>5. Как вы относитесь к тому, чтобы делиться деньгами?</h3>
                     <div class="test-options">
                         <div class="test-option">
                             <input type="radio" name="q5" id="q5a" value="a">

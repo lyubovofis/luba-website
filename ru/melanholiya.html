@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Меланхолия: что это такое и как с ней справиться | Любовь Лукащук">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Меланхолия — глубокая печаль без видимой причины. Чем отличается от депрессии? Как справиться с меланхолией и когда нужна помощь психолога онлайн.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/melanholiya">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Меланхолия: когда грусть становится постоянной",
-        "description": "Меланхолия — глубокая печаль без видимой причины. Чем отличается от депрессии? Как справиться с меланхолией и когда нужна помощь психолога онлайн.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-03-19",
-        "dateModified": "2026-03-19",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/melanholiya"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Меланхолия: когда грусть становится постоянной",
+    "description": "Меланхолия — глубокая печаль без видимой причины. Чем отличается от депрессии? Как справиться с меланхолией и когда нужна помощь психолога онлайн.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-03-19",
+    "dateModified": "2026-03-19",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/melanholiya",
+    "@id": "https://lyubovpsy.com/ru/melanholiya#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Меланхолия: что это такое и как с ней справиться | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/melanholiya",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Меланхолия: что это такое и как с ней справиться | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/melanholiya",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/melanholiya#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -294,7 +322,12 @@
             .sticky-cta { display: block; }
             .content { padding-bottom: 100px; }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 /* Standardized Navigation */
@@ -397,6 +430,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -469,7 +503,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое меланхолия?</h2>
@@ -505,32 +539,32 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#127755;</div>
-                <h4>Тихая тоска</h4>
+                <h3>Тихая тоска</h3>
                 <p>Не острая боль, а фоновая тяжесть. Как будто серая пелена накрыла мир — всё блёклое, лишённое красок и смысла.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128564;</div>
-                <h4>Потеря интереса</h4>
+                <h3>Потеря интереса</h3>
                 <p>То, что раньше радовало, больше не трогает. Хобби, общение, работа — всё воспринимается с безразличием или усилием.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128529;</div>
-                <h4>Замедленность</h4>
+                <h3>Замедленность</h3>
                 <p>Мысли и действия как будто идут через сопротивление. Даже простые задачи требуют несоразмерных усилий.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128149;</div>
-                <h4>Ностальгия и тоска</h4>
+                <h3>Ностальгия и тоска</h3>
                 <p>Частый спутник меланхолии — тоска по прошлому, по людям, по месту, по себе прежнему. Острое ощущение утраты чего-то важного.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128169;</div>
-                <h4>Экзистенциальные вопросы</h4>
+                <h3>Экзистенциальные вопросы</h3>
                 <p>«Зачем всё это? В чём смысл?» — меланхолия часто выносит на поверхность глубокие вопросы о смысле жизни и своём месте в ней.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#127774;</div>
-                <h4>Время суток имеет значение</h4>
+                <h3>Время суток имеет значение</h3>
                 <p>Меланхолия часто усиливается под вечер, осенью или в пасмурную погоду. Свет и время суток влияют на её интенсивность.</p>
             </div>
         </div>
@@ -542,47 +576,47 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#127760;</div>
-                <h4>Фоновая тяжесть</h4>
+                <h3>Фоновая тяжесть</h3>
                 <p>Ощущение, что мир стал серее. Не острая боль, а тихая, постоянная тяжесть — как будто что-то давит изнутри без видимой причины.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128288;</div>
-                <h4>Потеря удовольствия</h4>
+                <h3>Потеря удовольствия</h3>
                 <p>То, что раньше радовало — хобби, встречи с друзьями, любимая еда, музыка — перестаёт приносить радость. Человек делает это механически.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128336;</div>
-                <h4>Замедление темпа</h4>
+                <h3>Замедление темпа</h3>
                 <p>Мысли, речь, движения — всё как будто через сопротивление. Даже простые задачи требуют несоразмерных усилий и времени.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128263;</div>
-                <h4>Разговорчивость снижается</h4>
+                <h3>Разговорчивость снижается</h3>
                 <p>Меньше хочется говорить, объяснять, вступать в контакт. Слова как будто не дотягиваются до того, что внутри. Человек уходит в себя.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#127774;</div>
-                <h4>Чувствительность к свету и временам года</h4>
+                <h3>Чувствительность к свету и временам года</h3>
                 <p>Меланхолия усиливается осенью, в пасмурные дни, по вечерам. Недостаток солнца буквально ухудшает состояние.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128552;</div>
-                <h4>Бессонница или избыточный сон</h4>
+                <h3>Бессонница или избыточный сон</h3>
                 <p>Сон нарушается: либо засыпаешь, но просыпаешься ночью с тяжёлыми мыслями, либо спишь по 10–12 часов и всё равно усталый.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128490;</div>
-                <h4>Разговоры с самим собой о прошлом</h4>
+                <h3>Разговоры с самим собой о прошлом</h3>
                 <p>Ум постоянно возвращается к тому, что было — к людям, местам, версиям себя. «Вот тогда мне было хорошо. А сейчас...»</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128171;</div>
-                <h4>Ощущение пустоты внутри</h4>
+                <h3>Ощущение пустоты внутри</h3>
                 <p>Не горе, не тревога, а именно пустота. Как будто что-то ушло и не вернулось. Тихая, устойчивая опустошённость.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#10067;</div>
-                <h4>Экзистенциальные вопросы «зачем?»</h4>
+                <h3>Экзистенциальные вопросы «зачем?»</h3>
                 <p>Мысли о смысле: зачем я это делаю, зачем вообще это всё, правильно ли я живу — становятся навязчивыми и изматывающими.</p>
             </div>
         </div>
@@ -742,32 +776,32 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#127810;</div>
-                <h4>Осень и смена сезонов</h4>
+                <h3>Осень и смена сезонов</h3>
                 <p>Уменьшение светового дня — биологический триггер. Мелатонин вырабатывается активнее, серотонин падает. Сезонная меланхолия — реальный и очень распространённый феномен.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#127937;</div>
-                <h4>Юбилеи и даты</h4>
+                <h3>Юбилеи и даты</h3>
                 <p>Дни рождения, годовщины, Новый год — маркеры времени. «Ещё один год прошёл» запускает подведение итогов и меланхолию о несбывшемся.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128268;</div>
-                <h4>Одиночество и тишина</h4>
+                <h3>Одиночество и тишина</h3>
                 <p>Когда вдруг оказываешься один — после развода, отъезда детей, смерти близкого — тишина становится невыносимой. Она обнажает внутреннюю пустоту.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#127760;</div>
-                <h4>Переезд и эмиграция</h4>
+                <h3>Переезд и эмиграция</h3>
                 <p>Новая страна — новые правила, новый язык, отсутствие корней. Первые один-три года эмиграции особенно уязвимы для меланхолии.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128147;</div>
-                <h4>Потеря близкого или отношений</h4>
+                <h3>Потеря близкого или отношений</h3>
                 <p>Расставание, развод, смерть — если горе не было полностью прожито, оно оседает в психике как фоновая тоска.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128188;</div>
-                <h4>Рабочее выгорание</h4>
+                <h3>Рабочее выгорание</h3>
                 <p>После месяцев или лет работы «на износ» нервная система теряет способность радоваться. Меланхолия — одно из лицо выгорания.</p>
             </div>
         </div>
@@ -841,22 +875,22 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#127912;</div>
-                <h4>Творческие люди</h4>
+                <h3>Творческие люди</h3>
                 <p>Художники, писатели, музыканты, актёры — они работают с эмоциональным материалом. Меланхолия для них нередко источник вдохновения, но она же может поглотить изнутри.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128218;</div>
-                <h4>Мыслители и интроверты</h4>
+                <h3>Мыслители и интроверты</h3>
                 <p>Люди, склонные к рефлексии, часто застревают в петле мыслей. «Что я сделал не так? Правильно ли я живу?» — внутренний диалог не замолкает.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#129309;</div>
-                <h4>Эмпаты и заботливые</h4>
+                <h3>Эмпаты и заботливые</h3>
                 <p>Те, кто много отдаёт другим — психологи, врачи, учителя, родители — накапливают чужую боль. Меланхолия становится следствием эмоционального истощения.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#127760;</div>
-                <h4>Эмигранты первого поколения</h4>
+                <h3>Эмигранты первого поколения</h3>
                 <p>Переезд в другую страну — колоссальная культурная и эмоциональная нагрузка. Тоска по дому, потеря идентичности, чужой язык — всё это питает меланхолию.</p>
             </div>
         </div>
@@ -1031,32 +1065,32 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Признайте состояние</h4>
+                <h3>Признайте состояние</h3>
                 <p>Не боритесь с меланхолией и не стыдитесь её. Скажите себе: «Я сейчас в меланхолии. Это нормально. Это пройдёт». Сопротивление усиливает тоску.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Двигайтесь</h4>
+                <h3>Двигайтесь</h3>
                 <p>Физическое движение — один из самых мощных инструментов против меланхолии. Прогулка 30 минут, плавание, танцы. Тело начинает вырабатывать эндорфины и серотонин.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Пишите</h4>
+                <h3>Пишите</h3>
                 <p>Дневник позволяет вынести невысказанное наружу. Пишите без цензуры: что чувствуете, о чём тоскуете, чего хотите. Это помогает психике переработать переживания.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Создавайте маленькие ритуалы</h4>
+                <h3>Создавайте маленькие ритуалы</h3>
                 <p>Чашка хорошего чая утром. Музыка, которая нравится. Контакт с природой. Маленькие ритуалы удовольствия возвращают вкус к жизни постепенно.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Не изолируйтесь</h4>
+                <h3>Не изолируйтесь</h3>
                 <p>Меланхолия тянет к одиночеству — но оно усиливает её. Поддерживайте хотя бы минимальный контакт с людьми, даже если не хочется.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">6</div>
-                <h4>Обратитесь за помощью</h4>
+                <h3>Обратитесь за помощью</h3>
                 <p>Если меланхолия длится больше двух недель и мешает жить — это сигнал обратиться к психологу. Это не слабость, а забота о себе.</p>
             </div>
         </div>
@@ -1128,22 +1162,22 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Напишите мне</h4>
+                <h3>Напишите мне</h3>
                 <p>Через WhatsApp или Telegram. Скажите, что хотите на консультацию по теме меланхолии. Я отвечу в течение нескольких часов.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Выберите время</h4>
+                <h3>Выберите время</h3>
                 <p>Предложу несколько вариантов. Работаю по московскому, израильскому, европейскому времени — найдём подходящий слот.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Первая встреча</h4>
+                <h3>Первая встреча</h3>
                 <p>50 минут через Zoom. Вы рассказываете — я слушаю, задаю вопросы, не осуждаю. Вместе понимаем, что происходит.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Составляем план</h4>
+                <h3>Составляем план</h3>
                 <p>После первой встречи у нас есть понимание ситуации и направление работы. Далее — регулярные сессии по вашему графику.</p>
             </div>
         </div>

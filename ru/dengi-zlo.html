@@ -103,31 +103,51 @@
 
     <!-- Schema.org разметка -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Деньги — Зло? Как Изменить Негативное Отношение к Деньгам",
-        "description": "Почему люди считают деньги злом и как изменить это убеждение. Трансформация денежного мышления с психологом.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад"
-        },
-        "datePublished": "2025-09-22",
-        "dateModified": "2025-11-01"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Деньги — Зло? Как Изменить Негативное Отношение к Деньгам",
+    "description": "Почему люди считают деньги злом и как изменить это убеждение. Трансформация денежного мышления с психологом.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-09-22",
+    "dateModified": "2025-11-01",
+    "@id": "https://lyubovpsy.com/ru/dengi-zlo#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <script type="application/ld+json">
     {
@@ -193,18 +213,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Деньги — Зло? Как Изменить Негативное Отношение к Деньгам | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/dengi-zlo",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Деньги — Зло? Как Изменить Негативное Отношение к Деньгам | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/dengi-zlo",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/dengi-zlo#webpage"
+}
+</script>
 
 
     <style>
@@ -843,7 +870,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1072,6 +1104,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1201,32 +1234,32 @@
                 <div class="origins-list">
                     <div class="origin-item">
                         <div class="icon">👨‍👩‍👧</div>
-                        <h4>Семейные установки</h4>
+                        <h3>Семейные установки</h3>
                         <p>Фразы родителей: "деньги счастья не приносят", "богатые все воры", "нам не дано быть богатыми"</p>
                     </div>
                     <div class="origin-item">
                         <div class="icon">⛪</div>
-                        <h4>Религиозные интерпретации</h4>
+                        <h3>Религиозные интерпретации</h3>
                         <p>Искажённое понимание текстов: "легче верблюду пройти...", при этом библейские герои были состоятельными</p>
                     </div>
                     <div class="origin-item">
                         <div class="icon">📺</div>
-                        <h4>Медиа-образы</h4>
+                        <h3>Медиа-образы</h3>
                         <p>В фильмах злодеи часто богаты, а положительные герои бедны. Это формирует подсознательные ассоциации</p>
                     </div>
                     <div class="origin-item">
                         <div class="icon">💔</div>
-                        <h4>Травматичный опыт</h4>
+                        <h3>Травматичный опыт</h3>
                         <p>Предательство из-за денег, конфликты в семье, потеря близких людей ради наследства</p>
                     </div>
                     <div class="origin-item">
                         <div class="icon">😤</div>
-                        <h4>Зависть и обида</h4>
+                        <h3>Зависть и обида</h3>
                         <p>Проще обесценить то, чего не имеешь. "Деньги зло" — защитный механизм от чувства неполноценности</p>
                     </div>
                     <div class="origin-item">
                         <div class="icon">🏛️</div>
-                        <h4>Культурные стереотипы</h4>
+                        <h3>Культурные стереотипы</h3>
                         <p>Советское прошлое, где богатство было "стыдным" и опасным, оставило след в коллективном сознании</p>
                     </div>
                 </div>
@@ -1330,35 +1363,35 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h4>Осознайте свои убеждения</h4>
+                        <h3>Осознайте свои убеждения</h3>
                         <p>Запишите все мысли о деньгах, которые приходят спонтанно. Часто мы даже не осознаём, какие установки управляют нашим поведением.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h4>Найдите источник</h4>
+                        <h3>Найдите источник</h3>
                         <p>Вспомните, от кого вы услышали эти фразы впервые. Поймите, что это чужие убеждения, которые не обязательно правдивы.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h4>Изучите контрпримеры</h4>
+                        <h3>Изучите контрпримеры</h3>
                         <p>Найдите истории богатых людей, которые делают добро: благотворителей, социальных предпринимателей, меценатов.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h4>Переформулируйте убеждение</h4>
+                        <h3>Переформулируйте убеждение</h3>
                         <p>Замените "деньги — зло" на "деньги — это возможности для добрых дел" или "с деньгами я могу помогать больше".</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h4>Закрепите новое мышление</h4>
+                        <h3>Закрепите новое мышление</h3>
                         <p>Практикуйте благодарность за деньги, которые есть. Тратьте на себя без чувства вины. Инвестируйте в своё развитие.</p>
                     </div>
                 </div>

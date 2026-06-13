@@ -60,6 +60,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/strah-uspeha">
     <meta property="og:title" content="Страх успеха: почему мы боимся достичь большего">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Страх успеха есть у 20% людей. 7 причин + тест + 7 техник преодоления. Психолог 10+ лет. Узнайте свой паттерн, первая консультация — бесплатно.">
     <meta property="og:image" content="https://lyubovpsy.com/images/luba-hero.webp">
     <meta property="og:locale" content="ru_RU">
@@ -100,36 +101,56 @@
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Страх успеха: почему мы боимся достичь большего и как это преодолеть",
-        "description": "Почему 20% работающих людей страдают страхом успеха? Узнайте причины, пройдите тест и получите 7 техник преодоления страха успеха.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-11-28",
-        "dateModified": "2025-11-13",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://lyubovpsy.com/ru/strah-uspeha"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Страх успеха: почему мы боимся достичь большего и как это преодолеть",
+    "description": "Почему 20% работающих людей страдают страхом успеха? Узнайте причины, пройдите тест и получите 7 техник преодоления страха успеха.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
         }
+    },
+    "datePublished": "2025-11-28",
+    "dateModified": "2025-11-13",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyubovpsy.com/ru/strah-uspeha"
+    },
+    "@id": "https://lyubovpsy.com/ru/strah-uspeha#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <script type="application/ld+json">
     {
@@ -252,18 +273,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Страх успеха: причины, признаки и как преодолеть | Психолог",
-        "url": "https://lyubovpsy.com/ru/strah-uspeha",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Страх успеха: причины, признаки и как преодолеть | Психолог",
+    "url": "https://lyubovpsy.com/ru/strah-uspeha",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/strah-uspeha#webpage"
+}
+</script>
 
 
     <style>
@@ -1104,7 +1132,12 @@
         body {
             padding-bottom: 80px;
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1339,6 +1372,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1420,11 +1454,11 @@
 
 
     <!-- Main Content -->
-    <main class="content">
+    <main id="main" class="content">
         <!-- Definition -->
         <section class="section">
             <div class="definition-box">
-                <h3>Что такое страх успеха?</h3>
+                <h2>Что такое страх успеха?</h2>
                 <p><strong>Страх успеха (достижефобия)</strong> — это психологический феномен, при котором человек неосознанно саботирует собственные достижения. В отличие от страха неудачи, при страхе успеха человек боится не провала, а именно <em>последствий достижения цели</em>: изменений в жизни, повышенной ответственности, зависти окружающих, потери отношений.</p>
                 <p>Это один из самых коварных страхов, потому что он часто маскируется под другие проблемы: лень, перфекционизм, синдром самозванца, «не моё время».</p>
             </div>
@@ -1551,49 +1585,49 @@
             <div class="signs-grid">
                 <div class="sign-card">
                     <div class="sign-number">1</div>
-                    <h4>Заниженные цели</h4>
+                    <h3>Заниженные цели</h3>
                     <p>Вы ставите цели ниже своего потенциала, чтобы «не высовываться» и не привлекать внимание к своим возможностям.</p>
                 </div>
 
                 <div class="sign-card">
                     <div class="sign-number">2</div>
-                    <h4>Прокрастинация перед важным</h4>
+                    <h3>Прокрастинация перед важным</h3>
                     <p>Откладываете ключевые задачи именно тогда, когда до успеха один шаг. Находите «уважительные причины».</p>
                 </div>
 
                 <div class="sign-card">
                     <div class="sign-number">3</div>
-                    <h4>Перфекционизм</h4>
+                    <h3>Перфекционизм</h3>
                     <p>Бесконечно улучшаете работу, не доводя до конца. «Ещё не готово» — способ не финишировать никогда.</p>
                 </div>
 
                 <div class="sign-card">
                     <div class="sign-number">4</div>
-                    <h4>Саморазрушающее поведение</h4>
+                    <h3>Саморазрушающее поведение</h3>
                     <p>Перед важными событиями ссоритесь с партнёрами, заболеваете, делаете критические ошибки.</p>
                 </div>
 
                 <div class="sign-card">
                     <div class="sign-number">5</div>
-                    <h4>Отказ от возможностей</h4>
+                    <h3>Отказ от возможностей</h3>
                     <p>Отклоняете предложения о повышении, интересные проекты, публичность — находите «объективные» причины.</p>
                 </div>
 
                 <div class="sign-card">
                     <div class="sign-number">6</div>
-                    <h4>Обесценивание достижений</h4>
+                    <h3>Обесценивание достижений</h3>
                     <p>«Мне просто повезло», «Это ерунда», «Любой бы справился» — неспособность принять свой успех.</p>
                 </div>
 
                 <div class="sign-card">
                     <div class="sign-number">7</div>
-                    <h4>Комфорт в «почти успехе»</h4>
+                    <h3>Комфорт в «почти успехе»</h3>
                     <p>Вам комфортнее быть «почти успешным», чем действительно успешным. Состояние «скоро добьюсь» безопаснее.</p>
                 </div>
 
                 <div class="sign-card">
                     <div class="sign-number">8</div>
-                    <h4>Страх быть заметным</h4>
+                    <h3>Страх быть заметным</h3>
                     <p>Избегаете публичности, не рассказываете о достижениях, прячете свои таланты от окружающих.</p>
                 </div>
             </div>
@@ -1606,22 +1640,22 @@
 
             <div class="impact-grid">
                 <div class="impact-card">
-                    <h4><span class="impact-icon">💰</span> Денежный потолок</h4>
+                    <h3><span class="impact-icon">💰</span> Денежный потолок</h3>
                     <p>Вы неосознанно устанавливаете «потолок» дохода, выше которого боитесь подняться. Когда приближаетесь к нему — саботируете.</p>
                 </div>
 
                 <div class="impact-card">
-                    <h4><span class="impact-icon">📈</span> Отказ от повышения</h4>
+                    <h3><span class="impact-icon">📈</span> Отказ от повышения</h3>
                     <p>«Я ещё не готов», «Мне и так хорошо», «Слишком много ответственности» — типичные отговорки при страхе успеха.</p>
                 </div>
 
                 <div class="impact-card">
-                    <h4><span class="impact-icon">🚀</span> Не поднимаете цены</h4>
+                    <h3><span class="impact-icon">🚀</span> Не поднимаете цены</h3>
                     <p>Работаете за меньшие деньги, чем заслуживаете. Боитесь назвать свою реальную стоимость клиентам.</p>
                 </div>
 
                 <div class="impact-card">
-                    <h4><span class="impact-icon">🎯</span> Недоделанные проекты</h4>
+                    <h3><span class="impact-icon">🎯</span> Недоделанные проекты</h3>
                     <p>Запускаете бизнес-идеи, но не доводите до прибыли. На пороге успеха находите причину остановиться.</p>
                 </div>
             </div>
@@ -1782,7 +1816,7 @@
                 <div class="technique-card">
                     <div class="technique-number">1</div>
                     <div class="technique-content">
-                        <h4>Признайте и назовите страх</h4>
+                        <h3>Признайте и назовите страх</h3>
                         <p>Первый шаг — осознать, что у вас есть страх успеха. Назовите его вслух: «Я боюсь успеха, потому что...» Осознание — половина решения проблемы.</p>
                         <div class="technique-example">
                             «Я боюсь успеха, потому что если стану богатым, мои друзья будут завидовать и отвернутся от меня»
@@ -1793,7 +1827,7 @@
                 <div class="technique-card">
                     <div class="technique-number">2</div>
                     <div class="technique-content">
-                        <h4>Исследуйте корни в детстве</h4>
+                        <h3>Исследуйте корни в детстве</h3>
                         <p>Вспомните свой детский опыт успеха. Как родители реагировали на ваши достижения? Какие установки вы получили? Запишите все воспоминания.</p>
                         <div class="technique-example">
                             Когда я принёс пятёрку, мама сказала: «Не зазнавайся, в следующий раз можешь провалиться». Я запомнил: успех временный и опасный.
@@ -1804,7 +1838,7 @@
                 <div class="technique-card">
                     <div class="technique-number">3</div>
                     <div class="technique-content">
-                        <h4>Визуализируйте позитивный успех</h4>
+                        <h3>Визуализируйте позитивный успех</h3>
                         <p>Каждый день по 5 минут представляйте себя успешным человеком. Но не абстрактно — а конкретно: как изменится ваш день, отношения, самочувствие. Сфокусируйтесь на позитиве.</p>
                         <div class="technique-example">
                             Я представляю, как просыпаюсь в красивой квартире, у меня энергия на любимое дело, мои близкие гордятся мной, я помогаю родителям...
@@ -1815,7 +1849,7 @@
                 <div class="technique-card">
                     <div class="technique-number">4</div>
                     <div class="technique-content">
-                        <h4>Переформулируйте убеждения</h4>
+                        <h3>Переформулируйте убеждения</h3>
                         <p>Замените негативные установки об успехе на позитивные. Работайте с каждым убеждением отдельно.</p>
                         <div class="technique-example">
                             Старое: «Успех отнимет у меня друзей»<br>
@@ -1827,7 +1861,7 @@
                 <div class="technique-card">
                     <div class="technique-number">5</div>
                     <div class="technique-content">
-                        <h4>Действуйте несмотря на страх</h4>
+                        <h3>Действуйте несмотря на страх</h3>
                         <p>Начните с маленьких шагов. Примите одну возможность, которую обычно отклоняете. Поднимите цену на 10%. Попросите о повышении. Страх уменьшается в действии.</p>
                         <div class="technique-example">
                             На этой неделе я соглашусь на выступление, от которого обычно отказываюсь. Пусть будет страшно — я справлюсь.
@@ -1838,7 +1872,7 @@
                 <div class="technique-card">
                     <div class="technique-number">6</div>
                     <div class="technique-content">
-                        <h4>Создайте «группу поддержки»</h4>
+                        <h3>Создайте «группу поддержки»</h3>
                         <p>Окружите себя людьми, которые поддерживают ваш рост. Расскажите им о своих целях. Их вера в вас укрепит вашу собственную веру.</p>
                         <div class="technique-example">
                             Я расскажу трём близким людям о своей цели заработать в 2 раза больше. Их поддержка поможет мне идти к цели, даже когда страшно.
@@ -1849,7 +1883,7 @@
                 <div class="technique-card">
                     <div class="technique-number">7</div>
                     <div class="technique-content">
-                        <h4>Работайте с психологом</h4>
+                        <h3>Работайте с психологом</h3>
                         <p>Глубокие корни страха успеха (детские травмы, родовые программы) лучше прорабатывать со специалистом. Это ускорит процесс и сделает результат устойчивым.</p>
                         <div class="technique-example">
                             С психологом я за 8 недель проработал корни страха успеха и впервые за 5 лет попросил повышение — и получил его!

@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Созависимые отношения: признаки, причины и как выйти | Психолог">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Созависимость — это когда чужая жизнь важнее вашей. Узнайте признаки созависимых отношений и как психолог помогает вернуть себя.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/sozavisimye-otnosheniya">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Созависимые отношения: ловушка, из которой можно выйти",
-        "description": "Созависимость — это когда чужая жизнь важнее вашей. Признаки, причины и путь к восстановлению себя.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-12-26",
-        "dateModified": "2025-11-25",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/sozavisimye-otnosheniya"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Созависимые отношения: ловушка, из которой можно выйти",
+    "description": "Созависимость — это когда чужая жизнь важнее вашей. Признаки, причины и путь к восстановлению себя.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-12-26",
+    "dateModified": "2025-11-25",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/sozavisimye-otnosheniya",
+    "@id": "https://lyubovpsy.com/ru/sozavisimye-otnosheniya#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Созависимые отношения: ловушка, из которой можно выйти | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/sozavisimye-otnosheniya",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Созависимые отношения: ловушка, из которой можно выйти | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/sozavisimye-otnosheniya",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/sozavisimye-otnosheniya#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -294,7 +322,12 @@
             .sticky-cta { display: block; }
             .content { padding-bottom: 100px; }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 @media (max-width: 768px) {
@@ -390,6 +423,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
         <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none; flex-shrink: 0;">Денежный Водопад</a>
@@ -455,7 +489,7 @@
         <span class="byline-date">Опубликовано: 26 декабря 2025 · Обновлено: 25 ноября 2025</span>
     </div>
 
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое созависимость?</h2>
@@ -486,22 +520,22 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128169;</div>
-                <h4>Растворение в другом</h4>
+                <h3>Растворение в другом</h3>
                 <p>У вас нет чёткого ощущения: "а что хочу я?" Желания, мнения, предпочтения подчинены партнёру.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128171;</div>
-                <h4>Жизнь в его ритме</h4>
+                <h3>Жизнь в его ритме</h3>
                 <p>Ваше настроение зависит от его настроения. Если он злится — вы виноваты. Если он рад — вы спокойны.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128274;</div>
-                <h4>Невозможность уйти</h4>
+                <h3>Невозможность уйти</h3>
                 <p>Вы знаете, что вам плохо. Но уйти страшнее, чем остаться. Страх одиночества и потери держит крепче замка.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128557;</div>
-                <h4>Постоянное спасательство</h4>
+                <h3>Постоянное спасательство</h3>
                 <p>Вы берёте на себя его проблемы, его ответственность, его жизнь. И чувствуете себя нужным только в роли спасителя.</p>
             </div>
         </div>
@@ -607,27 +641,27 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Признать паттерн</h4>
+                <h3>Признать паттерн</h3>
                 <p>Первый шаг — осознать, что вы в созависимых отношениях. Без стыда и самообвинения. Просто — увидеть.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Восстановить самоценность</h4>
+                <h3>Восстановить самоценность</h3>
                 <p>Начать замечать: что я чувствую? Что хочу? Что мне нравится? Это может казаться странным — если привык жить чужой жизнью.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Выстроить границы</h4>
+                <h3>Выстроить границы</h3>
                 <p>Граница — это не стена. Это ответ на вопрос "что для меня приемлемо, а что нет?" Учиться говорить "нет" — это навык.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Проработать детские паттерны</h4>
+                <h3>Проработать детские паттерны</h3>
                 <p>Без понимания, откуда это пришло, созависимость воспроизводится снова и снова. Работа с корнями — это работа с психологом.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Дать себе право на потребности</h4>
+                <h3>Дать себе право на потребности</h3>
                 <p>Ваши потребности имеют такое же право на существование, как и потребности партнёра. Это не эгоизм — это базовое самоуважение.</p>
             </div>
         </div>

@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Одиночество: причины, виды и как справиться | Психолог онлайн">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Одиночество в эмиграции особенно острое. Психолог Любовь Лукащук о том, почему мы чувствуем себя одинокими даже среди людей — и как это изменить.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/odinochestvo">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Одиночество: как жить с ним и найти связь с собой и людьми",
-        "description": "Одиночество в эмиграции особенно острое. О том, почему мы чувствуем себя одинокими даже среди людей — и как это изменить.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-12-23",
-        "dateModified": "2025-11-25",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/odinochestvo"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Одиночество: как жить с ним и найти связь с собой и людьми",
+    "description": "Одиночество в эмиграции особенно острое. О том, почему мы чувствуем себя одинокими даже среди людей — и как это изменить.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-12-23",
+    "dateModified": "2025-11-25",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/odinochestvo",
+    "@id": "https://lyubovpsy.com/ru/odinochestvo#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Одиночество: как жить с ним и найти связь с собой и людьми | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/odinochestvo",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Одиночество: как жить с ним и найти связь с собой и людьми | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/odinochestvo",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/odinochestvo#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -717,7 +745,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -950,6 +983,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1021,7 +1055,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое одиночество на самом деле?</h2>
@@ -1054,22 +1088,22 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128064;</div>
-                <h4>Одиночество в толпе</h4>
+                <h3>Одиночество в толпе</h3>
                 <p>Вы среди людей, но никто не видит вас по-настоящему. Поверхностные разговоры, роли, маски. Настоящего контакта нет.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128149;</div>
-                <h4>Одиночество в отношениях</h4>
+                <h3>Одиночество в отношениях</h3>
                 <p>Партнёр рядом, но между вами — стена. Это особый вид одиночества: когда вроде бы не один, но глубоко одинок.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#127758;</div>
-                <h4>Одиночество эмигранта</h4>
+                <h3>Одиночество эмигранта</h3>
                 <p>Новая страна, новые люди — и ощущение, что никто не знает, откуда вы, кем вы были, что для вас важно.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128171;</div>
-                <h4>Экзистенциальное одиночество</h4>
+                <h3>Экзистенциальное одиночество</h3>
                 <p>Ощущение, что в глубине своего существования каждый человек — один. Это философское измерение одиночества.</p>
             </div>
         </div>
@@ -1187,27 +1221,27 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Признайте одиночество</h4>
+                <h3>Признайте одиночество</h3>
                 <p>Перестаньте делать вид, что всё нормально. Одиночество — не слабость. Это сигнал, который заслуживает внимания.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Исследуйте внутри</h4>
+                <h3>Исследуйте внутри</h3>
                 <p>Спросите себя: что именно мне не хватает? Понимания? Принятия? Общей истории? Это уточнит направление.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Выстраивайте настоящие связи</h4>
+                <h3>Выстраивайте настоящие связи</h3>
                 <p>Не количество, а качество. Один человек, с которым можно быть собой, ценнее двадцати поверхностных знакомых.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Развивайте отношения с собой</h4>
+                <h3>Развивайте отношения с собой</h3>
                 <p>Дневник, медитация, творчество, прогулки в тишине — это не инфантилизм. Это фундамент внутренней жизни.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Работайте с психологом</h4>
+                <h3>Работайте с психологом</h3>
                 <p>Если одиночество хроническое — есть внутренние барьеры для близости. Их можно найти и проработать.</p>
             </div>
         </div>

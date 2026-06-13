@@ -148,54 +148,71 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Деньги в Отношениях: Как Разговаривать о Финансах в Паре",
-        "description": "Полное руководство по финансовой гармонии в отношениях: типы партнёров, правила бюджета, техники разговоров без конфликтов.",
-        "image": "https://lyubovpsy.com/images/luba-hero.webp",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Деньги в Отношениях: Как Разговаривать о Финансах в Паре",
+    "description": "Полное руководство по финансовой гармонии в отношениях: типы партнёров, правила бюджета, техники разговоров без конфликтов.",
+    "image": "https://lyubovpsy.com/images/luba-hero.webp",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://lyubovpsy.com/images/luba-hero.webp"
-            }
-        },
-        "datePublished": "2025-09-21",
-        "dateModified": "2025-11-07",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://lyubovpsy.com/ru/dengi-v-otnosheniyah"
-        }
-    }
-    </script>
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ]
+    },
+    "datePublished": "2025-09-21",
+    "dateModified": "2025-11-07",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyubovpsy.com/ru/dengi-v-otnosheniyah"
+    },
+    "@id": "https://lyubovpsy.com/ru/dengi-v-otnosheniyah#article"
+}
+</script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Деньги в Отношениях: Как Разговаривать о Финансах в Паре | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/dengi-v-otnosheniyah",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Деньги в Отношениях: Как Разговаривать о Финансах в Паре | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/dengi-v-otnosheniyah",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/dengi-v-otnosheniyah#webpage"
+}
+</script>
 
 
     <style>
@@ -1090,7 +1107,12 @@
                 flex-direction: column;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1331,6 +1353,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1409,7 +1432,7 @@
         <span class="byline-date">Опубликовано: 21 сентября 2025 · Обновлено: 7 ноября 2025</span>
     </div>
 
-        <main>
+        <main id="main">
             <!-- Stats -->
             <section class="section">
                 <h2 class="section-title">Статистика: деньги и отношения</h2>
@@ -1445,7 +1468,7 @@
                 <div class="types-grid">
                     <div class="type-card saver">
                         <div class="type-icon">🐿️</div>
-                        <h4>Накопитель</h4>
+                        <h3>Накопитель</h3>
                         <p>Деньги = безопасность. Главная цель — отложить как можно больше. Тратить — почти физически больно.</p>
 
     <div class="related-articles" style="background: linear-gradient(135deg, rgba(255,215,0,0.08) 0%, rgba(255,215,0,0.03) 100%); border-left: 4px solid #d4a017; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 30px 0; font-family: inherit;">
@@ -1459,7 +1482,7 @@
       </ul>
     </div>
                         <div class="type-traits">
-                            <h5>Характерные черты:</h5>
+                            <h4>Характерные черты:</h4>
                             <ul>
                                 <li>Всегда знает сумму на счетах</li>
                                 <li>Испытывает вину за траты</li>
@@ -1592,7 +1615,7 @@
 
                 <div class="conflicts-grid">
                     <div class="conflict-card" data-number="1">
-                        <h4>Разный уровень дохода</h4>
+                        <h3>Разный уровень дохода</h3>
                         <p>Когда один зарабатывает значительно больше — возникает дисбаланс власти и чувство вины/неполноценности.</p>
                         <div class="conflict-solution">
                             <strong>Решение:</strong> Вклад измеряется не только деньгами. Создайте справедливую систему с учётом всех вкладов.
@@ -1600,7 +1623,7 @@
                     </div>
 
                     <div class="conflict-card" data-number="2">
-                        <h4>Секретные траты</h4>
+                        <h3>Секретные траты</h3>
                         <p>"Финансовая измена" — скрытые покупки, тайные счета, ложь о ценах. Разрушает доверие.</p>
                         <div class="conflict-solution">
                             <strong>Решение:</strong> Договоритесь о "свободной сумме", которую можно тратить без отчёта.
@@ -1608,7 +1631,7 @@
                     </div>
 
                     <div class="conflict-card" data-number="3">
-                        <h4>Долги партнёра</h4>
+                        <h3>Долги партнёра</h3>
                         <p>Узнать о долгах после свадьбы — частая проблема. Вопрос: чей это долг теперь?</p>
                         <div class="conflict-solution">
                             <strong>Решение:</strong> Обсудите финансы ДО серьёзных шагов. Составьте план погашения вместе.
@@ -1616,7 +1639,7 @@
                     </div>
 
                     <div class="conflict-card" data-number="4">
-                        <h4>Крупные покупки</h4>
+                        <h3>Крупные покупки</h3>
                         <p>Один хочет машину, другой — отпуск. Приоритеты не совпадают.</p>
                         <div class="conflict-solution">
                             <strong>Решение:</strong> Установите порог суммы, выше которой решение принимается вместе.
@@ -1624,7 +1647,7 @@
                     </div>
 
                     <div class="conflict-card" data-number="5">
-                        <h4>Помощь родственникам</h4>
+                        <h3>Помощь родственникам</h3>
                         <p>Деньги родителям, братьям, сёстрам — горячая тема. Где граница?</p>
                         <div class="conflict-solution">
                             <strong>Решение:</strong> Установите фиксированную сумму/процент на помощь родным.
@@ -1632,7 +1655,7 @@
                     </div>
 
                     <div class="conflict-card" data-number="6">
-                        <h4>Разное отношение к риску</h4>
+                        <h3>Разное отношение к риску</h3>
                         <p>Один хочет инвестировать, другой боится потерять. Один копит, другой живёт сегодняшним днём.</p>
                         <div class="conflict-solution">
                             <strong>Решение:</strong> Компромисс: часть средств в безопасности, часть можно инвестировать.
@@ -1640,7 +1663,7 @@
                     </div>
 
                     <div class="conflict-card" data-number="7">
-                        <h4>Дети и деньги</h4>
+                        <h3>Дети и деньги</h3>
                         <p>Сколько тратить на детей? Карманные деньги? Платить за оценки? Мнения расходятся.</p>
                         <div class="conflict-solution">
                             <strong>Решение:</strong> Обсудите заранее и выработайте единую стратегию воспитания.
@@ -1648,7 +1671,7 @@
                     </div>
 
                     <div class="conflict-card" data-number="8">
-                        <h4>Разный образ жизни</h4>
+                        <h3>Разный образ жизни</h3>
                         <p>Один хочет в ресторан, другой — готовить дома. Один покупает брендовое, другой экономит.</p>
                         <div class="conflict-solution">
                             <strong>Решение:</strong> Личные деньги на личные желания + совместный бюджет на общее.
@@ -1663,11 +1686,11 @@
 
                 <div class="budget-models">
                     <div class="budget-model">
-                        <h4>💯 Полностью общий</h4>
+                        <h3>💯 Полностью общий</h3>
                         <p>Все доходы в общий котёл. Все расходы — совместные решения.</p>
                         <div class="model-pros-cons">
                             <div class="pros">
-                                <h5>Плюсы</h5>
+                                <h4>Плюсы</h4>
                                 <ul>
                                     <li>Полная прозрачность</li>
                                     <li>Ощущение команды</li>
@@ -1675,7 +1698,7 @@
                                 </ul>
                             </div>
                             <div class="cons">
-                                <h5>Минусы</h5>
+                                <h4>Минусы</h4>
                                 <ul>
                                     <li>Нет личной свободы</li>
                                     <li>Нужно отчитываться</li>
@@ -1740,49 +1763,49 @@
                 <div class="rules-grid">
                     <div class="rule-card">
                         <div class="rule-number">1</div>
-                        <h4>Регулярные "денежные свидания"</h4>
+                        <h3>Регулярные "денежные свидания"</h3>
                         <p>Выделите 15-30 минут в неделю на обсуждение финансов в спокойной обстановке, не во время конфликта.</p>
                         <div class="rule-tip">💡 Совет: Сделайте это приятным — с чаем, без отвлечений, с позитивным настроем.</div>
                     </div>
 
                     <div class="rule-card">
                         <div class="rule-number">2</div>
-                        <h4>Общие цели, не только бюджет</h4>
+                        <h3>Общие цели, не только бюджет</h3>
                         <p>Мечтайте вместе: на что вы копите? Отпуск, дом, образование детей? Общие цели объединяют.</p>
                         <div class="rule-tip">💡 Совет: Визуализируйте цели — создайте совместный "борд желаний".</div>
                     </div>
 
                     <div class="rule-card">
                         <div class="rule-number">3</div>
-                        <h4>Порог совместных решений</h4>
+                        <h3>Порог совместных решений</h3>
                         <p>Договоритесь о сумме, выше которой покупка обсуждается вместе. Например, 5000 рублей / 50 долларов.</p>
                         <div class="rule-tip">💡 Совет: Это не контроль, а уважение. Относится к обоим партнёрам одинаково.</div>
                     </div>
 
                     <div class="rule-card">
                         <div class="rule-number">4</div>
-                        <h4>Личные деньги — святое</h4>
+                        <h3>Личные деньги — святое</h3>
                         <p>У каждого должна быть сумма, которую можно потратить без отчёта. Это свобода и уважение.</p>
                         <div class="rule-tip">💡 Совет: Не спрашивайте и не критикуйте, как партнёр тратит личные деньги.</div>
                     </div>
 
                     <div class="rule-card">
                         <div class="rule-number">5</div>
-                        <h4>Понять историю партнёра</h4>
+                        <h3>Понять историю партнёра</h3>
                         <p>Как партнёр вырос? Были ли деньги в семье? Какие установки он впитал? Это объясняет поведение.</p>
                         <div class="rule-tip">💡 Совет: Поделитесь своими денежными историями. Это сближает.</div>
                     </div>
 
                     <div class="rule-card">
                         <div class="rule-number">6</div>
-                        <h4>Не обвинять, а решать</h4>
+                        <h3>Не обвинять, а решать</h3>
                         <p>Вместо "Ты опять потратил!" — "Давай посмотрим, как нам скорректировать бюджет".</p>
                         <div class="rule-tip">💡 Совет: Используйте "мы" вместо "ты": "Как мы можем решить эту ситуацию?"</div>
                     </div>
 
                     <div class="rule-card">
                         <div class="rule-number">7</div>
-                        <h4>Планируйте на кризисы</h4>
+                        <h3>Планируйте на кризисы</h3>
                         <p>Что если один потеряет работу? Заболеет? Обсудите сценарии заранее, не в момент паники.</p>
                         <div class="rule-tip">💡 Совет: Создайте совместную финансовую подушку на 3-6 месяцев расходов.</div>
                     </div>

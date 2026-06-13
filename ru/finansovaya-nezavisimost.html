@@ -73,36 +73,56 @@
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://lyubovpsy.com/ru/finansovaya-nezavisimost"
-        },
-        "headline": "Финансовая Независимость: Психологические Барьеры и Путь к Свободе",
-        "description": "Что такое финансовая независимость? 10 психологических блоков, мешающих финансовой свободе. Как преодолеть внутренние барьеры.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-09-30",
-        "dateModified": "2025-12-06"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyubovpsy.com/ru/finansovaya-nezavisimost"
+    },
+    "headline": "Финансовая Независимость: Психологические Барьеры и Путь к Свободе",
+    "description": "Что такое финансовая независимость? 10 психологических блоков, мешающих финансовой свободе. Как преодолеть внутренние барьеры.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-09-30",
+    "dateModified": "2025-12-06",
+    "@id": "https://lyubovpsy.com/ru/finansovaya-nezavisimost#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- FAQPage Schema -->
     <script type="application/ld+json">
@@ -255,18 +275,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Финансовая Независимость: Психологические Барьеры и Путь к Свободе | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/finansovaya-nezavisimost",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Финансовая Независимость: Психологические Барьеры и Путь к Свободе | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/finansovaya-nezavisimost",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/finansovaya-nezavisimost#webpage"
+}
+</script>
 
 
     <style>
@@ -988,7 +1015,12 @@
                 font-size: 1.3rem;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1229,6 +1261,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1335,7 +1368,7 @@
     </div>
 
     <!-- Main Content -->
-    <main>
+    <main id="main">
         <div class="container">
 
             <!-- 5 Levels of Financial Independence -->
@@ -1513,52 +1546,52 @@
 
                 <div class="blocks-grid">
                     <div class="block-card">
-                        <h4>1. Блок "Не для таких как я"</h4>
+                        <h3>1. Блок "Не для таких как я"</h3>
                         <p>Убеждение, что финансовая независимость доступна только избранным: богатым от рождения, гениям, везунчикам. Результат: вы даже не пытаетесь.</p>
                     </div>
 
                     <div class="block-card">
-                        <h4>2. Блок "Деньги — зло"</h4>
+                        <h3>2. Блок "Деньги — зло"</h3>
                         <p>Глубинное убеждение, что богатство портит людей. Подсознание защищает вас от "порчи", не давая разбогатеть.</p>
                     </div>
 
                     <div class="block-card">
-                        <h4>3. Страх потери</h4>
+                        <h3>3. Страх потери</h3>
                         <p>"А вдруг потеряю все?" Парализует и не даёт инвестировать, рисковать, действовать. Храните деньги "под матрасом".</p>
                     </div>
 
                     <div class="block-card">
-                        <h4>4. Синдром жертвы</h4>
+                        <h3>4. Синдром жертвы</h3>
                         <p>"Моя ситуация особенная", "Мне не повезло", "В нашей стране невозможно". Перекладывание ответственности на внешние факторы.</p>
                     </div>
 
                     <div class="block-card">
-                        <h4>5. Страх успеха</h4>
+                        <h3>5. Страх успеха</h3>
                         <p>Боязнь того, что будет ПОСЛЕ достижения цели: зависть окружающих, ответственность, одиночество, потеря "себя настоящего".</p>
                     </div>
 
                     <div class="block-card">
-                        <h4>6. Финансовая прокрастинация</h4>
+                        <h3>6. Финансовая прокрастинация</h3>
                         <p>"Начну с понедельника/Нового года/когда больше заработаю". Бесконечное откладывание важных финансовых решений.</p>
                     </div>
 
                     <div class="block-card">
-                        <h4>7. Денежный стыд</h4>
+                        <h3>7. Денежный стыд</h3>
                         <p>Неловко говорить о деньгах, просить повышения, называть цену. Корни — в убеждении "хвастаться нехорошо".</p>
                     </div>
 
                     <div class="block-card">
-                        <h4>8. Синдром самозванца</h4>
+                        <h3>8. Синдром самозванца</h3>
                         <p>"Я не достоин(а) больших денег", "Разоблачат, что я ничего не стою". Обесценивание своих достижений и способностей.</p>
                     </div>
 
                     <div class="block-card">
-                        <h4>9. Лояльность к бедности</h4>
+                        <h3>9. Лояльность к бедности</h3>
                         <p>Подсознательное нежелание "предать" бедных родственников. "Если разбогатею — стану чужим для семьи".</p>
                     </div>
 
                     <div class="block-card">
-                        <h4>10. Блок "Должен заслужить"</h4>
+                        <h3>10. Блок "Должен заслужить"</h3>
                         <p>Убеждение, что деньги должны даваться только тяжким трудом. Лёгкие деньги — "нечестные". Результат: работаете на износ.</p>
                     </div>
                 </div>

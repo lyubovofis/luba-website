@@ -11,6 +11,7 @@
     <meta name="author" content="Любовь Лукащук">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Карма Денег | Денежный Водопад | Любовь Лукащук">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Карма денег — это паттерны из прошлого. Как они влияют на финансы и как изменить судьбу. Психолог 10+ лет, 1000+ клиентов. Консультация — бесплатно.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/karma-deneg">
@@ -98,39 +99,55 @@
 
     <!-- Schema.org разметка -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Карма Денег: Психологический Подход",
-        "description": "Как прошлое влияет на финансы? Закон причины и следствия в денежных отношениях.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Карма Денег: Психологический Подход",
+    "description": "Как прошлое влияет на финансы? Закон причины и следствия в денежных отношениях.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://lyubovpsy.com/images/luba-hero.webp"
-            }
-        },
-        "datePublished": "2025-10-14",
-        "dateModified": "2025-12-18",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://lyubovpsy.com/ru/karma-deneg"
-        }
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ]
+    },
+    "datePublished": "2025-10-14",
+    "dateModified": "2025-12-18",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyubovpsy.com/ru/karma-deneg"
+    },
+    "@id": "https://lyubovpsy.com/ru/karma-deneg#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <script type="application/ld+json">
     {
@@ -182,18 +199,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Карма Денег | Денежный Водопад | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/karma-deneg",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Карма Денег | Денежный Водопад | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/karma-deneg",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/karma-deneg#webpage"
+}
+</script>
 
 
     <style>
@@ -1169,7 +1193,12 @@
                 text-align: center;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1410,6 +1439,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1543,7 +1573,7 @@
                         <div class="section-content">
                             <div class="section-icon">👨‍👩‍👧</div>
                             <div class="section-text">
-                                <h4>"Деньги — зло"</h4>
+                                <h3>"Деньги — зло"</h3>
                                 <p>Родительская установка: богатые — плохие люди</p>
                             </div>
                         </div>
@@ -1554,7 +1584,7 @@
                         <div class="section-content">
                             <div class="section-icon">💸</div>
                             <div class="section-text">
-                                <h4>Саботаж успеха</h4>
+                                <h3>Саботаж успеха</h3>
                                 <p>Подсознательно избегаете денег, чтобы "остаться хорошим человеком"</p>
                             </div>
                         </div>
@@ -1567,7 +1597,7 @@
                         <div class="section-content">
                             <div class="section-icon">😰</div>
                             <div class="section-text">
-                                <h4>Финансовые травмы</h4>
+                                <h3>Финансовые травмы</h3>
                                 <p>Банкротство в семье, потеря дохода, кризисы</p>
                             </div>
                         </div>
@@ -1578,7 +1608,7 @@
                         <div class="section-content">
                             <div class="section-icon">😱</div>
                             <div class="section-text">
-                                <h4>Финансовая тревога</h4>
+                                <h3>Финансовая тревога</h3>
                                 <p>Страх денег, избегание финансовых решений</p>
                             </div>
                         </div>
@@ -1591,7 +1621,7 @@
                         <div class="section-content">
                             <div class="section-icon">🏚️</div>
                             <div class="section-text">
-                                <h4>Постоянная нехватка</h4>
+                                <h3>Постоянная нехватка</h3>
                                 <p>Детство в условиях дефицита и ограничений</p>
                             </div>
                         </div>
@@ -1602,7 +1632,7 @@
                         <div class="section-content">
                             <div class="section-icon">🛒</div>
                             <div class="section-text">
-                                <h4>Компенсаторные траты</h4>
+                                <h3>Компенсаторные траты</h3>
                                 <p>Чрезмерные покупки, чтобы "наверстать" упущенное</p>
                             </div>
                         </div>
@@ -1615,7 +1645,7 @@
                         <div class="section-content">
                             <div class="section-icon">🎁</div>
                             <div class="section-text">
-                                <h4>"Деньги — любовь"</h4>
+                                <h3>"Деньги — любовь"</h3>
                                 <p>Деньгами выражали заботу вместо эмоций</p>
                             </div>
                         </div>
@@ -1626,7 +1656,7 @@
                         <div class="section-content">
                             <div class="section-icon">💔</div>
                             <div class="section-text">
-                                <h4>Смешение денег и чувств</h4>
+                                <h3>Смешение денег и чувств</h3>
                                 <p>Покупки ради любви, неумение принимать без материального</p>
                             </div>
                         </div>

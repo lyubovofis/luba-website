@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Эмоциональные покупки: причины и как остановиться">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Почему вы покупаете, когда грустно или радостно? Разберём механизм эмоциональных покупок и найдём выход.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/emocionalnye-pokupki">
@@ -147,44 +148,71 @@
     </script>
 
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Эмоциональные Покупки: Почему Мы Покупаем Не То и Не Тогда",
-        "description": "Полный разбор механизма эмоциональных покупок: почему мы покупаем на эмоциях, какие эмоции запускают шопинг, и как вернуть контроль",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад"
-        },
-        "datePublished": "2025-09-25"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Эмоциональные Покупки: Почему Мы Покупаем Не То и Не Тогда",
+    "description": "Полный разбор механизма эмоциональных покупок: почему мы покупаем на эмоциях, какие эмоции запускают шопинг, и как вернуть контроль",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-09-25",
+    "@id": "https://lyubovpsy.com/ru/emocionalnye-pokupki#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Эмоциональные Покупки: Почему Мы Покупаем Не То и Не Тогда | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/emocionalnye-pokupki",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Эмоциональные Покупки: Почему Мы Покупаем Не То и Не Тогда | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/emocionalnye-pokupki",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/emocionalnye-pokupki#webpage"
+}
+</script>
 
 
     <style>
@@ -851,7 +879,12 @@
                 transform: rotate(90deg);
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1094,6 +1127,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1409,35 +1443,35 @@
 
             <div class="solutions-grid">
                 <div class="solution-card">
-                    <h4>Ведите дневник покупок</h4>
+                    <h3>Ведите дневник покупок</h3>
                     <p>Записывайте не только что купили, но и какую эмоцию испытывали. Через неделю увидите паттерны.</p>
                 </div>
                 <div class="solution-card">
-                    <h4>Правило 24 часов</h4>
+                    <h3>Правило 24 часов</h3>
                     <p>Всё, что не является необходимостью - в список "подумать". Если через сутки всё ещё хотите - покупайте.</p>
                 </div>
                 <div class="solution-card">
-                    <h4>Найдите свои триггеры</h4>
+                    <h3>Найдите свои триггеры</h3>
                     <p>Определите, какие эмоции чаще всего запускают покупки. Подготовьте альтернативные действия для каждой.</p>
                 </div>
                 <div class="solution-card">
-                    <h4>Альтернативные способы</h4>
+                    <h3>Альтернативные способы</h3>
                     <p>Составьте список того, что ещё может помочь с эмоцией: прогулка, звонок другу, спорт, творчество.</p>
                 </div>
                 <div class="solution-card">
-                    <h4>Удалите приложения магазинов</h4>
+                    <h3>Удалите приложения магазинов</h3>
                     <p>Чем больше шагов до покупки - тем меньше импульсных трат. Усложните себе доступ.</p>
                 </div>
                 <div class="solution-card">
-                    <h4>Отпишитесь от рассылок</h4>
+                    <h3>Отпишитесь от рассылок</h3>
                     <p>Маркетинг специально создаёт эмоциональные триггеры. Меньше видите - меньше соблазнов.</p>
                 </div>
                 <div class="solution-card">
-                    <h4>Бюджет на "радость"</h4>
+                    <h3>Бюджет на "радость"</h3>
                     <p>Выделите сумму на эмоциональные покупки. Когда она закончилась - ищите другие способы.</p>
                 </div>
                 <div class="solution-card">
-                    <h4>Проработайте причины</h4>
+                    <h3>Проработайте причины</h3>
                     <p>Если эмоциональные покупки - единственный способ справляться, нужна работа с психологом.</p>
                 </div>
             </div>

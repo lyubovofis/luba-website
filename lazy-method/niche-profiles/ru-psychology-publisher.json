@@ -1,0 +1,74 @@
+{
+  "_comment": "Custom niche for lyubovpsy.com — Russian psychology / money-mindset coaching articles. Based on 'publisher' but tuned for: Article (not BlogPosting) schema, Russian language, personal expert brand (Любовь Лукащук). is_local:false so LocalBusiness/map/phone-NAP page checks are skipped. E-E-A-T comes from author bio + credentials + dates.",
+  "niche": "ru-psychology-publisher",
+  "schema_type": "Person",
+  "is_local": false,
+  "language": "ru",
+  "required_schemas": [
+    "Article",
+    "FAQPage",
+    "Person",
+    "Organization",
+    "BreadcrumbList"
+  ],
+  "thresholds_override": {
+    "word_count": [1000, 5000],
+    "word_count_blog": [1000, 5000],
+    "internal_links_min": 5,
+    "external_links_max": 12,
+    "reading_level": [6, 14]
+  },
+  "required_cta_types": [
+    "consultation_book",
+    "whatsapp",
+    "telegram"
+  ],
+  "required_trust_signals": [
+    "author_bio",
+    "publish_date",
+    "modified_date",
+    "credentials"
+  ],
+  "psychology_focus": [
+    "expertise",
+    "authority",
+    "empathy",
+    "trust"
+  ],
+  "forbidden_psychology": [
+    "clickbait",
+    "fake_scarcity",
+    "false_urgency",
+    "high_pressure_tactics"
+  ],
+  "_na_comment": "Params describing a sales/landing/local page, not a Russian informational article. Excluded from the score (not auto-passed). A psychology article legitimately has no lead form, demo CTA, testimonials block, team/founder block, case studies, pricing table, map, or service-area block — its trust comes from author bio + credentials + dates + sources.",
+  "na_params": [
+    "contact_or_lead_form_present",
+    "form_present",
+    "trial_or_demo_cta",
+    "mobile_sticky_or_floating_cta",
+    "mobile_tap_targets_styled",
+    "content_sectioned",
+    "semantic_sections_used",
+    "testimonials_present",
+    "named_team_or_founder",
+    "desire_benefits_focused",
+    "case_studies_or_portfolio_referenced",
+    "process_or_methodology_documented",
+    "howto_numbered_list",
+    "howto_schema_present",
+    "section_services_or_offerings",
+    "section_contact",
+    "section_social_proof",
+    "urgency_or_timeliness_present",
+    "client_logos_or_named_brands",
+    "form_minimal_fields",
+    "privacy_assurance_near_form",
+    "intent_signal_speed",
+    "pricing_transparency",
+    "pricing_in_body_text",
+    "local_specificity",
+    "cta_above_fold",
+    "founded_year_consistent"
+  ]
+}

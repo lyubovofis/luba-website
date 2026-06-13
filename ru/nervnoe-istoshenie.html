@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Нервное истощение: симптомы, причины и как восстановиться">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Нервное истощение — серьёзное состояние, требующее внимания. Раздражительность, апатия, слёзы без причины. Узнайте как восстановиться с помощью психолога онлайн.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/nervnoe-istoshenie">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Нервное истощение: когда силы на нуле",
-        "description": "Нервное истощение — серьёзное состояние, требующее внимания. Симптомы, причины, отличие от депрессии и выгорания, методы восстановления с психологом.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-03-07",
-        "dateModified": "2026-03-07",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/nervnoe-istoshenie"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Нервное истощение: когда силы на нуле",
+    "description": "Нервное истощение — серьёзное состояние, требующее внимания. Симптомы, причины, отличие от депрессии и выгорания, методы восстановления с психологом.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-03-07",
+    "dateModified": "2026-03-07",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/nervnoe-istoshenie",
+    "@id": "https://lyubovpsy.com/ru/nervnoe-istoshenie#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Нервное истощение: симптомы, причины и как восстановиться | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/nervnoe-istoshenie",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Нервное истощение: симптомы, причины и как восстановиться | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/nervnoe-istoshenie",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/nervnoe-istoshenie#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -717,7 +745,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -950,6 +983,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1022,7 +1056,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое нервное истощение?</h2>
@@ -1060,37 +1094,37 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128564;</div>
-                <h4>Хроническая усталость</h4>
+                <h3>Хроническая усталость</h3>
                 <p>Просыпаетесь уже уставшим. Никакое количество сна не даёт ощущения отдыха. Тело как будто всегда «на последнем заряде».</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128546;</div>
-                <h4>Слёзы без причины</h4>
+                <h3>Слёзы без причины</h3>
                 <p>Слёзы подступают неожиданно — от рекламы, от музыки, просто так. Эмоциональный контроль снижается, реакции становятся непропорциональными.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128544;</div>
-                <h4>Раздражительность и вспышки гнева</h4>
+                <h3>Раздражительность и вспышки гнева</h3>
                 <p>Мелкие вещи выводят из себя. Близкие кажутся невыносимыми. Вы срываетесь — и потом чувствуете вину, но снова срываетесь.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#129505;</div>
-                <h4>Апатия и безразличие</h4>
+                <h3>Апатия и безразличие</h3>
                 <p>То, что раньше приносило радость, больше не интересует. Хобби заброшены. Общение с людьми кажется бременем.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128565;</div>
-                <h4>Снижение концентрации</h4>
+                <h3>Снижение концентрации</h3>
                 <p>Трудно удерживать внимание, принимать решения, помнить простые вещи. «Туман в голове» — классический признак истощения нервной системы.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128127;</div>
-                <h4>Физические симптомы</h4>
+                <h3>Физические симптомы</h3>
                 <p>Головные боли, мышечное напряжение, тяжесть в груди, нарушения сна, снижение иммунитета. Тело сигнализирует о том, что психика кричит молча.</p>
             </div>
         </div>
@@ -1258,37 +1292,37 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Снизить нагрузку — не ждать «подходящего момента»</h4>
+                <h3>Снизить нагрузку — не ждать «подходящего момента»</h3>
                 <p>Первый шаг — убрать из жизни хотя бы часть энергозатратных обязательств. Это не слабость. Это медицинская необходимость. Нельзя восстановиться, продолжая работать в том же режиме.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Восстановить режим сна</h4>
+                <h3>Восстановить режим сна</h3>
                 <p>Нервная система восстанавливается ночью. Не менее 8 часов сна, в одно и то же время, без экранов за час до сна — это не рекомендация, это лечение.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Мягкая физическая активность</h4>
+                <h3>Мягкая физическая активность</h3>
                 <p>Прогулки на свежем воздухе, йога, плавание. Не интенсивные тренировки — они дополнительно нагружают нервную систему. Именно мягкое движение помогает сбросить накопленное напряжение.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Ограничить информационный поток</h4>
+                <h3>Ограничить информационный поток</h3>
                 <p>Новости, социальные сети, мессенджеры — всё это создаёт постоянный фоновый стресс. Временно ограничить или убрать. Нервная система нуждается в тишине.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Научиться говорить «нет»</h4>
+                <h3>Научиться говорить «нет»</h3>
                 <p>Восстановление невозможно без изменения паттернов, которые привели к истощению. Учиться отказывать — это не эгоизм, это гигиена нервной системы.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">6</div>
-                <h4>Работа с психологом</h4>
+                <h3>Работа с психологом</h3>
                 <p>Нервное истощение часто имеет глубокие психологические корни. Психолог помогает найти и устранить причины, а не только снять симптомы. Это ускоряет восстановление в разы.</p>
             </div>
         </div>

@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Синдром отличника: перфекционизм и страх ошибки | Любовь Лукащук">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Синдром отличника — постоянный страх не соответствовать ожиданиям. Как перестать быть «хорошим для всех» и найти себя. Консультация психолога онлайн.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/sindrom-otlichnika">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Синдром отличника: когда «хорошо» никогда не бывает достаточно",
-        "description": "Синдром отличника — постоянный страх не соответствовать ожиданиям, перфекционизм и зависимость от чужого одобрения. Причины, проявления и путь к свободе.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-03-03",
-        "dateModified": "2026-03-03",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/sindrom-otlichnika"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Синдром отличника: когда «хорошо» никогда не бывает достаточно",
+    "description": "Синдром отличника — постоянный страх не соответствовать ожиданиям, перфекционизм и зависимость от чужого одобрения. Причины, проявления и путь к свободе.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-03-03",
+    "dateModified": "2026-03-03",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/sindrom-otlichnika",
+    "@id": "https://lyubovpsy.com/ru/sindrom-otlichnika#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Синдром отличника: когда «хорошо» никогда не бывает достаточно | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/sindrom-otlichnika",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Синдром отличника: когда «хорошо» никогда не бывает достаточно | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/sindrom-otlichnika",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/sindrom-otlichnika#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -717,7 +745,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -950,6 +983,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1022,7 +1056,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое синдром отличника?</h2>
@@ -1050,37 +1084,37 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128218;</div>
-                <h4>Невозможность сказать «хорошо»</h4>
+                <h3>Невозможность сказать «хорошо»</h3>
                 <p>Любая работа кажется недостаточно хорошей. Вы переделываете одно и то же, откладываете завершение, потому что «ещё не готово».</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128565;</div>
-                <h4>Катастрофизация ошибок</h4>
+                <h3>Катастрофизация ошибок</h3>
                 <p>Любая оплошность воспринимается как катастрофа. Вы прокручиваете её снова и снова, хотя окружающие давно забыли.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128064;</div>
-                <h4>Зависимость от оценок</h4>
+                <h3>Зависимость от оценок</h3>
                 <p>Хорошее настроение — только когда вас похвалили. Одна критика перечёркивает десять комплиментов.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#9995;</div>
-                <h4>Неумение делегировать</h4>
+                <h3>Неумение делегировать</h3>
                 <p>«Лучше сделаю сам — другие всё равно сделают хуже». В результате вы перегружены, а команда не развивается.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128552;</div>
-                <h4>Страх начинать новое</h4>
+                <h3>Страх начинать новое</h3>
                 <p>Вы откладываете запуск, потому что проект «ещё не идеален». Новое дело не начинается, пока не будет гарантии успеха.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128580;</div>
-                <h4>Хроническое выгорание</h4>
+                <h3>Хроническое выгорание</h3>
                 <p>Невозможно расслабиться — всегда есть что улучшить. Отдых ощущается как потеря времени или даже вина.</p>
             </div>
         </div>
@@ -1217,31 +1251,31 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Осознайте корни</h4>
+                <h3>Осознайте корни</h3>
                 <p>Вспомните: когда впервые почувствовали, что «хорошо» недостаточно? Кто транслировал эту идею? Это не про обвинение родителей — это про понимание, откуда программа.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Отделите ценность от результата</h4>
+                <h3>Отделите ценность от результата</h3>
                 <p>Вы ценны не потому, что достигаете. Вы ценны просто потому, что вы — живой человек. Это не банальность — это то, что нужно проживать снова и снова.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Практикуйте «достаточно хорошо»</h4>
+                <h3>Практикуйте «достаточно хорошо»</h3>
                 <p>Сознательно завершайте задачи на «достаточно хорошем» уровне. Отправьте письмо без пятого редактирования. Выпустите продукт раньше «идеала». Это развивает терпимость к несовершенству.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Работайте с внутренним критиком</h4>
+                <h3>Работайте с внутренним критиком</h3>
                 <p>Внутренний критик — это усвоенный голос тех, кто когда-то предъявлял требования. Научитесь его замечать, называть и отвечать ему, как мудрый взрослый.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Глубинная работа с психологом</h4>
+                <h3>Глубинная работа с психологом</h3>
                 <p>Синдром отличника — это про условную любовь в детстве. Настоящие изменения происходят, когда мы работаем с этим на глубинном уровне: с болью, с нуждой в одобрении, с детскими ранами.</p>
             </div>
         </div>

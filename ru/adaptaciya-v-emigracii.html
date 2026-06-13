@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Адаптация в эмиграции: как пережить переезд и найти себя">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Адаптация в эмиграции — сложный психологический процесс. Стадии адаптации, типичные трудности переезда и как психолог онлайн помогает русскоязычной диаспоре найти себя в новой стране.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/adaptaciya-v-emigracii">
@@ -121,33 +122,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Адаптация в эмиграции: как пережить переезд и найти себя",
-        "description": "Адаптация в эмиграции — сложный психологический процесс. Стадии адаптации, типичные трудности переезда и как психолог онлайн помогает русскоязычной диаспоре найти себя в новой стране.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-03-31",
-        "dateModified": "2026-03-31",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/adaptaciya-v-emigracii"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Адаптация в эмиграции: как пережить переезд и найти себя",
+    "description": "Адаптация в эмиграции — сложный психологический процесс. Стадии адаптации, типичные трудности переезда и как психолог онлайн помогает русскоязычной диаспоре найти себя в новой стране.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-03-31",
+    "dateModified": "2026-03-31",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/adaptaciya-v-emigracii",
+    "@id": "https://lyubovpsy.com/ru/adaptaciya-v-emigracii#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -190,18 +211,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Адаптация в эмиграции: как пережить переезд и найти себя | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/adaptaciya-v-emigracii",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Адаптация в эмиграции: как пережить переезд и найти себя | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/adaptaciya-v-emigracii",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/adaptaciya-v-emigracii#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -725,7 +753,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -958,6 +991,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1030,7 +1064,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Адаптация в эмиграции — это нормально, не слабость</h2>
@@ -1059,25 +1093,25 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#127774;</div>
-                <h4>Стадия 1: Медовый месяц</h4>
+                <h3>Стадия 1: Медовый месяц</h3>
                 <p>Первые недели или месяцы после переезда. Всё новое кажется захватывающим: другая архитектура, другой ритм жизни, другая еда. Вы полны энергии и оптимизма. Трудности воспринимаются как приключения. Это нормальная реакция на новизну — мозг в режиме исследования.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#127783;</div>
-                <h4>Стадия 2: Культурный шок</h4>
+                <h3>Стадия 2: Культурный шок</h3>
                 <p>Наступает через несколько месяцев, когда новизна стирается. Всё, что раньше казалось экзотикой, начинает раздражать. Вы остро чувствуете разницу в культурных кодах, скучаете по привычному, ощущаете себя чужим. Это самая тяжёлая стадия — именно здесь большинство людей чувствуют желание всё бросить и вернуться.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#127780;</div>
-                <h4>Стадия 3: Адаптация</h4>
+                <h3>Стадия 3: Адаптация</h3>
                 <p>Постепенно вы начинаете ориентироваться в новой реальности. Язык становится менее пугающим. Появляются первые знакомые, свои маршруты, любимые места. Негативные эмоции не исчезают, но становятся менее острыми. Вы учитесь жить «двумя мирами» — сохраняя своё и осваивая новое.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#127881;</div>
-                <h4>Стадия 4: Интеграция</h4>
+                <h3>Стадия 4: Интеграция</h3>
                 <p>Новая страна начинает ощущаться «своей». Вы не теряете связь с прошлым, но чувствуете себя частью нового места. Появляется ощущение устойчивости и принадлежности. Вы можете замечать и ценить лучшее в обеих культурах. Многие описывают это как обретение «второго дома».</p>
             </div>
         </div>
@@ -1091,55 +1125,55 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128483;</div>
-                <h4>Язык</h4>
+                <h3>Язык</h3>
                 <p>Вы теряете не просто средство общения, но инструмент самовыражения. На чужом языке вы звучите проще, примитивнее — и это глубоко ранит людей с богатым внутренним миром. Юмор, нюансы, тонкие смыслы — всё это требует другого уровня владения языком.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#127941;</div>
-                <h4>Статус</h4>
+                <h3>Статус</h3>
                 <p>Дипломированный специалист, руководитель, уважаемый человек в своём городе — и вдруг снова «никто», которому нужно доказывать квалификацию. Потеря профессионального и социального статуса — одна из самых болезненных утрат в эмиграции.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128101;</div>
-                <h4>Дружеский круг</h4>
+                <h3>Дружеский круг</h3>
                 <p>Годами выстраивавшиеся отношения — люди, которые знали вас, понимали с полуслова, разделяли общую историю. В новой стране всё нужно строить с нуля, взрослым, без той «органической» почвы, которая есть у знакомых с детства.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128188;</div>
-                <h4>Профессиональная идентичность</h4>
+                <h3>Профессиональная идентичность</h3>
                 <p>Особенно болезненно для тех, чья профессия требует языка: психологи, юристы, журналисты, педагоги. Когда невозможно работать по специальности, рушится важная часть «кто я». Ощущение профессиональной деградации бывает очень острым.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#127759;</div>
-                <h4>Культурный код</h4>
+                <h3>Культурный код</h3>
                 <p>Общие референции, «понятки», смыслы без объяснений. В новой культуре вы постоянно что-то не понимаете или вас не понимают — не из-за незнания языка, а из-за разного культурного контекста. Это изматывает и рождает глубокое одиночество.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128106;</div>
-                <h4>Семья рядом</h4>
+                <h3>Семья рядом</h3>
                 <p>Родители стареют вдалеке. Дети растут без бабушек. Помочь в трудную минуту — 4 часа на самолёте. Это хроническая боль многих эмигрантов, которая усиливается в кризисные моменты и праздники.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128336;</div>
-                <h4>Ритм жизни</h4>
+                <h3>Ритм жизни</h3>
                 <p>Привычный темп, распорядок, сезонность, праздники, запахи. В новой стране тело долго «помнит» старый ритм и не может перестроиться. Это создаёт ощущение хронической усталости и дезориентации.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128205;</div>
-                <h4>Ощущение «своего»</h4>
+                <h3>Ощущение «своего»</h3>
                 <p>«Здесь» вы — иностранец. «Там» — эмигрант. Между двумя мирами возникает ощущение «нигде». Это экзистенциальное одиночество — одно из самых глубоких переживаний в эмиграции, которое редко обсуждается открыто.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128270;</div>
-                <h4>Понимание правил игры</h4>
+                <h3>Понимание правил игры</h3>
                 <p>В родной стране вы интуитивно понимали, как устроена система: как общаться с чиновниками, как ведут себя в очереди, что считается нормой. В новой стране нужно заново учить «правила» — и ошибки очень дороги психологически.</p>
             </div>
         </div>
@@ -1268,37 +1302,37 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Признайте горе</h4>
+                <h3>Признайте горе</h3>
                 <p>Разрешите себе горевать о том, что оставили. Переезд — это потеря, и отрицание этого факта не помогает. Назовите потери вслух или запишите их.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Не изолируйтесь</h4>
+                <h3>Не изолируйтесь</h3>
                 <p>Одиночество в эмиграции — враг адаптации. Ищите сообщества: русскоязычные группы, профессиональные нетворки, клубы по интересам. Даже одно регулярное социальное событие имеет значение.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Изучайте язык активно</h4>
+                <h3>Изучайте язык активно</h3>
                 <p>Язык — ключ к принадлежности. Не ждите совершенства. Говорите, ошибайтесь, смейтесь над собой. Каждый шаг в языке — шаг в адаптацию.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Создайте ритуалы</h4>
+                <h3>Создайте ритуалы</h3>
                 <p>Стабильность создаёт ритуалы: утренний кофе, еженедельная прогулка, любимый рынок. Эти маленькие «якоря» дают ощущение дома в новом месте.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Сохраняйте связь с корнями</h4>
+                <h3>Сохраняйте связь с корнями</h3>
                 <p>Интеграция не означает отказ от себя. Готовьте любимые блюда, читайте на родном языке, общайтесь с близкими. Обе части вашей идентичности важны.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">6</div>
-                <h4>Работайте с психологом</h4>
+                <h3>Работайте с психологом</h3>
                 <p>Профессиональная поддержка на родном языке значительно ускоряет адаптацию и помогает избежать хронических психологических последствий. Это не слабость — это инвестиция в себя.</p>
             </div>
         </div>

@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Ревность: что это такое, причины и как справиться">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Ревность разрушает отношения. Причины ревности, её связь с самооценкой и как перестать ревновать — психолог объясняет.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/revnost">
@@ -121,33 +122,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Ревность: что это такое, причины и как справиться навсегда",
-        "description": "Полное руководство по пониманию ревности. Причины, виды, связь с самооценкой и практические техники преодоления.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-12-17",
-        "dateModified": "2025-11-13",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/revnost"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Ревность: что это такое, причины и как справиться навсегда",
+    "description": "Полное руководство по пониманию ревности. Причины, виды, связь с самооценкой и практические техники преодоления.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-12-17",
+    "dateModified": "2025-11-13",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/revnost",
+    "@id": "https://lyubovpsy.com/ru/revnost#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -190,18 +211,25 @@
 
     <!-- Schema.org Speakable -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Ревность: что это такое, причины и как справиться | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/revnost",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Ревность: что это такое, причины и как справиться | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/revnost",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/revnost#webpage"
+}
+</script>
 
     <script type="application/ld+json">
 {
@@ -310,7 +338,12 @@
         .mid-cta-btn-wa, .mid-cta-btn-tg { padding: 11px 22px; border-radius: 25px; text-decoration: none !important; font-weight: 600; font-size: 0.92rem; display: inline-block; transition: opacity 0.2s; }
         .mid-cta-btn-wa { background: #1a7a3e; color: white !important; }
         .mid-cta-btn-tg { background: #006ba6; color: white !important; }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
     <!-- Pixels deferred to load event (improves LCP/TBT) -->
     <script>
@@ -339,6 +372,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 
 <!-- Site Navigation -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
@@ -430,19 +464,19 @@
         <h2 id="vidy">Виды ревности</h2>
         <div class="types-grid">
             <div class="type-card">
-                <h4>Романтическая ревность</h4>
+                <h3>Романтическая ревность</h3>
                 <p>Страх потерять партнёра в пользу соперника. Самый распространённый вид. От лёгкого дискомфорта до патологической слежки.</p>
             </div>
             <div class="type-card">
-                <h4>Братская/сестринская ревность</h4>
+                <h3>Братская/сестринская ревность</h3>
                 <p>Ребёнок боится, что родители будут любить брата или сестру больше. Формирует паттерны, которые потом воспроизводятся во взрослых отношениях.</p>
             </div>
             <div class="type-card">
-                <h4>Профессиональная ревность</h4>
+                <h3>Профессиональная ревность</h3>
                 <p>Зависть к успехам коллег. "Ей повезло", "У него связи" — нежелание признавать чужой труд и сравнение не в свою пользу.</p>
             </div>
             <div class="type-card">
-                <h4>Социальная ревность к чужому успеху</h4>
+                <h3>Социальная ревность к чужому успеху</h3>
                 <p>Острая боль от чужих достижений: путешествий, богатства, счастливых отношений. Сигнализирует о неудовлетворённых собственных желаниях.</p>
             </div>
         </div>

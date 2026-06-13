@@ -13,6 +13,7 @@
     <meta name="keywords" content="женщина и деньги, женские денежные блоки, финансовая независимость женщины, женщина и финансы, деньги для женщин">
 
     <meta property="og:title" content="Женщина и деньги: как выстроить отношения [Тест]">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Психология женских отношений с деньгами. Как преодолеть страхи, выйти из зависимости и обрести финансовую свободу.">
     <meta property="og:image" content="https://lyubovpsy.com/images/luba-hero.webp">
     <meta property="og:type" content="article">
@@ -133,45 +134,72 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Женщина и деньги: как построить здоровые отношения с финансами",
-        "description": "Психология женских отношений с деньгами. Как преодолеть страхи, денежные блоки и обрести финансовую независимость.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад"
-        },
-        "datePublished": "2025-12-09",
-        "dateModified": "2025-12-16"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Женщина и деньги: как построить здоровые отношения с финансами",
+    "description": "Психология женских отношений с деньгами. Как преодолеть страхи, денежные блоки и обрести финансовую независимость.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-12-09",
+    "dateModified": "2025-12-16",
+    "@id": "https://lyubovpsy.com/ru/zhenshina-i-dengi#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Женщина и деньги: как построить здоровые отношения с финансами | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/zhenshina-i-dengi",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Женщина и деньги: как построить здоровые отношения с финансами | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/zhenshina-i-dengi",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/zhenshina-i-dengi#webpage"
+}
+</script>
 
 
     <style>
@@ -674,7 +702,12 @@
                 justify-content: center;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -927,6 +960,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1051,27 +1085,27 @@
 
             <div class="blocks-grid">
                 <div class="block-card">
-                    <h4>"Меня должен обеспечивать мужчина"</h4>
+                    <h3>"Меня должен обеспечивать мужчина"</h3>
                     <p>Этот блок создаёт зависимость и страх остаться одной. Женщина теряет уверенность в своих силах.</p>
                 </div>
                 <div class="block-card">
-                    <h4>"Успешная женщина — одинокая"</h4>
+                    <h3>"Успешная женщина — одинокая"</h3>
                     <p>Страх, что финансовый успех отпугнёт партнёра или разрушит отношения.</p>
                 </div>
                 <div class="block-card">
-                    <h4>"Хорошие девочки не торгуются"</h4>
+                    <h3>"Хорошие девочки не торгуются"</h3>
                     <p>Запрет просить достойную оплату, обесценивание своего труда и навыков.</p>
                 </div>
                 <div class="block-card">
-                    <h4>"Деньги портят людей"</h4>
+                    <h3>"Деньги портят людей"</h3>
                     <p>Страх потерять себя, стать «плохой» или «жадной» при увеличении дохода.</p>
                 </div>
                 <div class="block-card">
-                    <h4>"Я не достойна больших денег"</h4>
+                    <h3>"Я не достойна больших денег"</h3>
                     <p>Глубинное чувство собственной неценности, часто из детства.</p>
                 </div>
                 <div class="block-card">
-                    <h4>"Женщине не нужна карьера"</h4>
+                    <h3>"Женщине не нужна карьера"</h3>
                     <p>Установка, что реализация женщины — только семья, а карьера «мужское дело».</p>
                 </div>
             </div>
@@ -1083,44 +1117,44 @@
 
             <div class="myth-item">
                 <div class="myth">
-                    <h5>МИФ</h5>
+                    <h3>МИФ</h3>
                     <p>Финансовый успех делает женщину менее женственной</p>
                 </div>
                 <div class="reality">
-                    <h5>РЕАЛЬНОСТЬ</h5>
+                    <h3>РЕАЛЬНОСТЬ</h3>
                     <p>Финансовая стабильность даёт уверенность и внутреннюю силу — это усиливает женственность</p>
                 </div>
             </div>
 
             <div class="myth-item">
                 <div class="myth">
-                    <h5>МИФ</h5>
+                    <h3>МИФ</h3>
                     <p>Мужчины не любят успешных женщин</p>
                 </div>
                 <div class="reality">
-                    <h5>РЕАЛЬНОСТЬ</h5>
+                    <h3>РЕАЛЬНОСТЬ</h3>
                     <p>Зрелые мужчины ценят самодостаточность. Отталкивает неуверенность, а не успех</p>
                 </div>
             </div>
 
             <div class="myth-item">
                 <div class="myth">
-                    <h5>МИФ</h5>
+                    <h3>МИФ</h3>
                     <p>Женщины плохо понимают финансы</p>
                 </div>
                 <div class="reality">
-                    <h5>РЕАЛЬНОСТЬ</h5>
+                    <h3>РЕАЛЬНОСТЬ</h3>
                     <p>Исследования показывают: женщины-инвесторы часто превосходят мужчин в долгосрочных результатах</p>
                 </div>
             </div>
 
             <div class="myth-item">
                 <div class="myth">
-                    <h5>МИФ</h5>
+                    <h3>МИФ</h3>
                     <p>Нужно выбирать: семья или карьера</p>
                 </div>
                 <div class="reality">
-                    <h5>РЕАЛЬНОСТЬ</h5>
+                    <h3>РЕАЛЬНОСТЬ</h3>
                     <p>Финансовая независимость даёт ресурсы для качественной семейной жизни</p>
                 </div>
             </div>
@@ -1144,7 +1178,7 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h4>Осознайте свои блоки</h4>
+                        <h3>Осознайте свои блоки</h3>
                         <p>Запишите все убеждения о деньгах, которые вы слышали в детстве. Какие из них до сих пор влияют на вас? Это первый шаг к освобождению.</p>
                     </div>
                 </div>
@@ -1152,7 +1186,7 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h4>Разрешите себе желать</h4>
+                        <h3>Разрешите себе желать</h3>
                         <p>Женщинам часто стыдно признаться даже себе, что они хотят денег. Разрешите себе желать финансового успеха — это нормально и здорово.</p>
                     </div>
                 </div>
@@ -1160,7 +1194,7 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h4>Научитесь говорить о деньгах</h4>
+                        <h3>Научитесь говорить о деньгах</h3>
                         <p>Начните обсуждать финансовые вопросы открыто: с партнёром, на работе, с друзьями. Деньги — не табу, а часть жизни.</p>
                     </div>
                 </div>
@@ -1168,7 +1202,7 @@
                 <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h4>Определите свою ценность</h4>
+                        <h3>Определите свою ценность</h3>
                         <p>Сколько стоит ваше время, знания, опыт? Перестаньте работать за «спасибо». Ваш труд имеет цену, и это нормально её называть.</p>
                     </div>
                 </div>
@@ -1176,7 +1210,7 @@
                 <div class="step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h4>Создайте финансовую подушку</h4>
+                        <h3>Создайте финансовую подушку</h3>
                         <p>Начните откладывать даже маленькие суммы. Финансовая подушка — это не про деньги, это про ощущение безопасности и свободы выбора.</p>
                     </div>
                 </div>

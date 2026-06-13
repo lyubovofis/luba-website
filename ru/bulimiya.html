@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Булимия: признаки, причины и как избавиться | Психолог онлайн">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Булимия — цикл переедания и очищения. За ней всегда стоит психологическая боль. Психолог о причинах булимии и работе с РПП.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/bulimiya">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Булимия: психологические причины и путь к исцелению",
-        "description": "Булимия — цикл переедания и очищения. За ней всегда стоит психологическая боль. Психолог о причинах булимии и работе с расстройством пищевого поведения.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-02-25",
-        "dateModified": "2026-02-25",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/bulimiya"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Булимия: психологические причины и путь к исцелению",
+    "description": "Булимия — цикл переедания и очищения. За ней всегда стоит психологическая боль. Психолог о причинах булимии и работе с расстройством пищевого поведения.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-02-25",
+    "dateModified": "2026-02-25",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/bulimiya",
+    "@id": "https://lyubovpsy.com/ru/bulimiya#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Булимия: психологические причины и путь к исцелению | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/bulimiya",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Булимия: психологические причины и путь к исцелению | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/bulimiya",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/bulimiya#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -266,7 +294,12 @@
         .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--white); padding: 1rem; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 99; }
         .sticky-cta .btn { width: 100%; justify-content: center; }
         @media (max-width: 768px) { h1 { font-size: 1.8rem; } .expert-section { grid-template-columns: 1fr; text-align: center; } .expert-photo { margin: 0 auto; } .expert-stats { justify-content: center; } .header-cta { display: none; } .sticky-cta { display: block; } .content { padding-bottom: 100px; } .cycle-steps { flex-direction: column; align-items: flex-start; } .cycle-arrow { transform: rotate(90deg); margin: 4px 0; } }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 @media (max-width: 768px) { #site-nav .nav-content { flex-wrap: wrap; gap: 10px; padding: 0 10px; } #site-nav ul { display: none !important; } }
@@ -359,6 +392,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
         <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none; flex-shrink: 0;">Денежный Водопад</a>
@@ -425,7 +459,7 @@
         <span class="byline-date">Опубликовано: 25 февраля 2026 · Обновлено: 25 февраля 2026</span>
     </div>
 
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="disclaimer-box">
             <p><strong>Важно:</strong> Булимия — серьёзное расстройство. При наличии симптомов — пожалуйста, обратитесь к специалисту. Психолог работает в комплексе с врачом. Эта статья носит информационный характер и не заменяет профессиональную помощь.</p>
@@ -456,32 +490,32 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#127857;</div>
-                <h4>Эпизоды переедания</h4>
+                <h3>Эпизоды переедания</h3>
                 <p>Человек съедает значительно больше, чем планировал, за короткое время. Часто — тайно, в одиночестве, до ощущения физического дискомфорта.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128064;</div>
-                <h4>Скрытное поведение</h4>
+                <h3>Скрытное поведение</h3>
                 <p>Частые походы в туалет сразу после еды. Прятать еду. Есть только в одиночестве. Скрывать «запасы» продуктов.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128248;</div>
-                <h4>Колебания веса</h4>
+                <h3>Колебания веса</h3>
                 <p>Вес может колебаться, но при булимии он нередко остаётся в нормальных пределах — что затрудняет распознавание расстройства.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128531;</div>
-                <h4>Стыд и вина</h4>
+                <h3>Стыд и вина</h3>
                 <p>После срыва — острое чувство вины, стыда, отвращения к себе. Обещания «начать заново». Жёсткие ограничения, которые снова ведут к срыву.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#129657;</div>
-                <h4>Поглощённость едой</h4>
+                <h3>Поглощённость едой</h3>
                 <p>Мысли о еде занимают большую часть времени. Планирование срывов, планирование «очищений». Еда — центр эмоциональной жизни.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128291;</div>
-                <h4>Физические признаки</h4>
+                <h3>Физические признаки</h3>
                 <p>Повреждения на костяшках пальцев. Проблемы с зубами (кислота от рвоты). Частые боли в горле. Набухание желёз на лице.</p>
             </div>
         </div>

@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Тоска и хандра: причины и как справиться | Психолог Любовь">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Тоска — тяжёлое, гнетущее чувство, которое лишает радости. Особенно острая в эмиграции. Узнайте причины тоски и как с ней работать.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/toska">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Тоска: как справиться с хандрой и меланхолией",
-        "description": "Тоска — тяжёлое, гнетущее чувство, которое лишает радости. Особенно острая в эмиграции. Причины тоски и как с ней работать.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-12-11",
-        "dateModified": "2025-12-24",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/toska"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Тоска: как справиться с хандрой и меланхолией",
+    "description": "Тоска — тяжёлое, гнетущее чувство, которое лишает радости. Особенно острая в эмиграции. Причины тоски и как с ней работать.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-12-11",
+    "dateModified": "2025-12-24",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/toska",
+    "@id": "https://lyubovpsy.com/ru/toska#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Тоска: как справиться с хандрой и меланхолией | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/toska",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Тоска: как справиться с хандрой и меланхолией | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/toska",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/toska#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -717,7 +745,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -963,6 +996,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1034,7 +1068,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое тоска?</h2>
@@ -1066,17 +1100,17 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128557;</div>
-                <h4>Тяжёлая грусть</h4>
+                <h3>Тяжёлая грусть</h3>
                 <p>Тоска — это не лёгкая печаль, а гнетущее состояние, которое сложно стряхнуть. Она давит, сжимает, не отпускает.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128142;</div>
-                <h4>Тяга к утраченному</h4>
+                <h3>Тяга к утраченному</h3>
                 <p>Тоска всегда направлена на что-то ценное: человека, место, образ жизни. В ней есть любовь и желание вернуть.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#127777;</div>
-                <h4>Томление без выхода</h4>
+                <h3>Томление без выхода</h3>
                 <p>Невозможность достичь того, по чему тоскуешь — вот что делает тоску особенно болезненной. Желание есть, а пути нет.</p>
             </div>
         </div>
@@ -1113,32 +1147,32 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128149;</div>
-                <h4>Потеря смысла</h4>
+                <h3>Потеря смысла</h3>
                 <p>Когда прежняя жизнь рассыпалась, а новой ещё нет. Тоска часто указывает на незаполненную пустоту смысла.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128532;</div>
-                <h4>Нереализованные потребности</h4>
+                <h3>Нереализованные потребности</h3>
                 <p>Потребность в близости, принадлежности, понятности — когда они не удовлетворены, рождается тоска.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128480;</div>
-                <h4>Непрожитое горе</h4>
+                <h3>Непрожитое горе</h3>
                 <p>Расставания, потери, уходы — если их не прожить полностью, тоска остаётся как незакрытая рана.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#127757;</div>
-                <h4>Одиночество</h4>
+                <h3>Одиночество</h3>
                 <p>Физическое или экзистенциальное одиночество — ощущение, что тебя никто не знает по-настоящему.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128196;</div>
-                <h4>Расставание</h4>
+                <h3>Расставание</h3>
                 <p>После разрыва отношений, развода, смерти близкого. Тоска — это форма горевания по человеку.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128336;</div>
-                <h4>Тоска по прошлому</h4>
+                <h3>Тоска по прошлому</h3>
                 <p>По лучшему времени, по молодости, по тому, что «было и прошло». Ностальгия как особый вид тоски.</p>
             </div>
         </div>
@@ -1189,27 +1223,27 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Примите тоску</h4>
+                <h3>Примите тоску</h3>
                 <p>Не подавляйте и не бегите от неё. Скажите себе: «Да, я тоскую. Это означает, что мне дорого то, чего нет рядом».</p>
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Проговорите вслух</h4>
+                <h3>Проговорите вслух</h3>
                 <p>Словами психологу, близкому или даже в дневнике. Тоска, которую называют, становится легче. Невысказанная — растёт.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Ритуалы связи</h4>
+                <h3>Ритуалы связи</h3>
                 <p>Готовьте любимые блюда с родины. Слушайте знакомую музыку. Звоните близким. Ритуалы создают мосты между «там» и «здесь».</p>
             </div>
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Сохраняйте культуру</h4>
+                <h3>Сохраняйте культуру</h3>
                 <p>Книги, фильмы, встречи с земляками — это не бегство от новой страны. Это поддержание живой связи с частью себя.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Работа с психологом</h4>
+                <h3>Работа с психологом</h3>
                 <p>Психолог помогает прожить горе потери, найти новый смысл и интегрировать прошлое в настоящее — не отрезая, а соединяя.</p>
             </div>
         </div>

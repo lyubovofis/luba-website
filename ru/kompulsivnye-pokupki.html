@@ -13,6 +13,7 @@
     <meta name="keywords" content="компульсивные покупки, как избавиться от компульсивных покупок, шопоголизм, зависимость от покупок, ониомания, эмоциональные покупки">
 
     <meta property="og:title" content="Компульсивные Покупки | Как Избавиться | Денежный Водопад">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Компульсивные покупки разрушают бюджет? Узнайте как избавиться от зависимости от шопинга и обрести контроль над финансами.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/kompulsivnye-pokupki">
@@ -107,32 +108,52 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Компульсивные Покупки: Как Распознать и Преодолеть Зависимость",
-        "description": "Узнайте о причинах компульсивных покупок и эффективных методах лечения. Психолог Любовь Лукащук помогает избавиться от шопоголизма онлайн.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-10-15",
-        "dateModified": "2025-12-13"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Компульсивные Покупки: Как Распознать и Преодолеть Зависимость",
+    "description": "Узнайте о причинах компульсивных покупок и эффективных методах лечения. Психолог Любовь Лукащук помогает избавиться от шопоголизма онлайн.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-10-15",
+    "dateModified": "2025-12-13",
+    "@id": "https://lyubovpsy.com/ru/kompulsivnye-pokupki#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFLSQ07PGM"></script>
@@ -155,18 +176,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Компульсивные Покупки | Как Избавиться | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/kompulsivnye-pokupki",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Компульсивные Покупки | Как Избавиться | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/kompulsivnye-pokupki",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/kompulsivnye-pokupki#webpage"
+}
+</script>
 
 
     <style>
@@ -861,7 +889,12 @@
                 display: none;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1114,6 +1147,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1183,7 +1217,7 @@
 
         <!-- Signs Section -->
         <section class="section">
-            <div class="container">
+            <div class="container" id="main" role="main">
                 <h2 class="section-title">Признаки <span>компульсивных покупок</span></h2>
                 <div class="signs-grid">
                     <div class="sign-card">
@@ -1240,27 +1274,27 @@
                     <div class="cycle-visual">
                         <div class="cycle-item">
                             <div class="emoji">😰</div>
-                            <h4>Негативные эмоции</h4>
+                            <h3>Негативные эмоции</h3>
                         </div>
                         <div class="cycle-arrow">→</div>
                         <div class="cycle-item">
                             <div class="emoji">🛍️</div>
-                            <h4>Желание купить</h4>
+                            <h3>Желание купить</h3>
                         </div>
                         <div class="cycle-arrow">→</div>
                         <div class="cycle-item">
                             <div class="emoji">✨</div>
-                            <h4>Эйфория покупки</h4>
+                            <h3>Эйфория покупки</h3>
                         </div>
                         <div class="cycle-arrow">→</div>
                         <div class="cycle-item">
                             <div class="emoji">😞</div>
-                            <h4>Вина и стыд</h4>
+                            <h3>Вина и стыд</h3>
                         </div>
                         <div class="cycle-arrow">→</div>
                         <div class="cycle-item">
                             <div class="emoji">😰</div>
-                            <h4>И снова...</h4>
+                            <h3>И снова...</h3>
                         </div>
                     </div>
                     <p class="cycle-text">Этот цикл повторяется снова и снова, но его можно разорвать!</p>

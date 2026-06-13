@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Родовые травмы и деньги: как история семьи влияет">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Как история семьи влияет на ваши финансы? Война, голод, репрессии в роду = блоки дохода. Тест + разбор. Психолог 10+ лет. Консультация — бесплатно.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/rodovye-travmy">
@@ -121,33 +122,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Родовые Травмы и Деньги: Психологический Взгляд",
-        "description": "Как травмы предков — война, голод, репрессии — влияют на ваше отношение к деньгам сегодня. Психологический разбор и тест на семейные финансовые паттерны.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-11-13",
-        "dateModified": "2025-12-24",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/rodovye-travmy"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Родовые Травмы и Деньги: Психологический Взгляд",
+    "description": "Как травмы предков — война, голод, репрессии — влияют на ваше отношение к деньгам сегодня. Психологический разбор и тест на семейные финансовые паттерны.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-11-13",
+    "dateModified": "2025-12-24",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/rodovye-travmy",
+    "@id": "https://lyubovpsy.com/ru/rodovye-travmy#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -189,18 +210,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Родовые Травмы и Деньги: Психологический Взгляд | Как История Семьи Влияет на Финансы | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/rodovye-travmy",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Родовые Травмы и Деньги: Психологический Взгляд | Как История Семьи Влияет на Финансы | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/rodovye-travmy",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/rodovye-travmy#webpage"
+}
+</script>
 
 
     <style>
@@ -912,7 +940,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1145,6 +1178,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1217,10 +1251,10 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="clarification-box">
-            <h3>Важное уточнение</h3>
+            <h2>Важное уточнение</h2>
             <p>Когда мы говорим о «родовых травмах» в психологическом контексте, мы имеем в виду <strong>не физические повреждения при рождении</strong>, а травматический опыт, передающийся через поколения семьи.</p>
             <p>Это переживания ваших предков — войны, голода, репрессий, потери имущества — которые влияют на ВАШ образ жизни и отношение к деньгам, даже если вы родились через много лет после этих событий.</p>
             <div class="note">
@@ -1271,7 +1305,7 @@
         <div class="trauma-timeline">
             <div class="timeline-item">
                 <div class="timeline-era">1917-1930-е</div>
-                <h4>Революция и раскулачивание</h4>
+                <h3>Революция и раскулачивание</h3>
                 <p>Конфискация имущества, ссылки, расстрелы за «буржуазность». Миллионы семей потеряли всё за ночь.</p>
                 <div class="timeline-effect">
                     <strong>Программа потомкам:</strong> «Нельзя иметь много. Нельзя выделяться. Богатство = опасность»
@@ -1280,7 +1314,7 @@
 
             <div class="timeline-item">
                 <div class="timeline-era">1930-е — 1950-е</div>
-                <h4>Репрессии и ГУЛАГ</h4>
+                <h3>Репрессии и ГУЛАГ</h3>
                 <p>Аресты за «неправильные» слова, доносы соседей, разрушенные семьи. Страх говорить и действовать.</p>
                 <div class="timeline-effect">
                     <strong>Программа потомкам:</strong> «Молчи. Не высовывайся. За успех накажут»
@@ -1289,7 +1323,7 @@
 
             <div class="timeline-item">
                 <div class="timeline-era">1941-1945</div>
-                <h4>Великая Отечественная война</h4>
+                <h3>Великая Отечественная война</h3>
                 <p>Голод, потеря близких, эвакуация, разруха. Выживание любой ценой.</p>
                 <div class="timeline-effect">
                     <strong>Программа потомкам:</strong> «Главное — выжить. Трать сейчас, завтра может не быть»
@@ -1298,7 +1332,7 @@
 
             <div class="timeline-item">
                 <div class="timeline-era">1990-е</div>
-                <h4>Развал СССР и 90-е</h4>
+                <h3>Развал СССР и 90-е</h3>
                 <p>Потеря сбережений, гиперинфляция, закрытие предприятий, бандитизм.</p>
                 <div class="timeline-effect">
                     <strong>Программа потомкам:</strong> «Деньги обесценятся. Государство обманет. Доверять нельзя»
@@ -1322,7 +1356,7 @@
             <div class="trauma-card">
                 <div class="trauma-icon">🏠</div>
                 <div class="trauma-content">
-                    <h4>Травма #1: Потеря имущества</h4>
+                    <h3>Травма #1: Потеря имущества</h3>
                     <p>Раскулачивание, война, рейдерство. Семья потеряла всё — дом, бизнес, землю. Возможно, не один раз.</p>
                     <span class="trauma-pattern">Страх накапливать</span>
                     <div class="trauma-money-effect">
@@ -1334,7 +1368,7 @@
             <div class="trauma-card">
                 <div class="trauma-icon">🍞</div>
                 <div class="trauma-content">
-                    <h4>Травма #2: Голод и нехватка</h4>
+                    <h3>Травма #2: Голод и нехватка</h3>
                     <p>Голодомор, блокада, послевоенные годы. Недоедание, борьба за кусок хлеба.</p>
                     <span class="trauma-pattern">Страх нехватки</span>
                     <div class="trauma-money-effect">
@@ -1346,7 +1380,7 @@
             <div class="trauma-card">
                 <div class="trauma-icon">🔒</div>
                 <div class="trauma-content">
-                    <h4>Травма #3: Репрессии и наказание</h4>
+                    <h3>Травма #3: Репрессии и наказание</h3>
                     <p>Аресты, ссылки, доносы. За инициативу, успех, «неправильное» происхождение — наказывали.</p>
                     <span class="trauma-pattern">Страх выделяться</span>
                     <div class="trauma-money-effect">
@@ -1358,7 +1392,7 @@
             <div class="trauma-card">
                 <div class="trauma-icon">💔</div>
                 <div class="trauma-content">
-                    <h4>Травма #4: Предательство и потеря близких</h4>
+                    <h3>Травма #4: Предательство и потеря близких</h3>
                     <p>Доносы родственников, партнёры, которые «кинули», смерть кормильца.</p>
                     <span class="trauma-pattern">Недоверие к людям</span>
                     <div class="trauma-money-effect">
@@ -1370,7 +1404,7 @@
             <div class="trauma-card">
                 <div class="trauma-icon">✈️</div>
                 <div class="trauma-content">
-                    <h4>Травма #5: Эмиграция и потеря родины</h4>
+                    <h3>Травма #5: Эмиграция и потеря родины</h3>
                     <p>Вынужденный отъезд, статус беженца, жизнь «между мирами».</p>
                     <span class="trauma-pattern">Ощущение «нигде не свой»</span>
                     <div class="trauma-money-effect">
@@ -1533,25 +1567,25 @@
         <div class="healing-steps">
             <div class="healing-step">
                 <div class="step-number">1</div>
-                <h4>Узнайте историю</h4>
+                <h3>Узнайте историю</h3>
                 <p>Исследуйте, что пережили ваши предки. Спросите старших, изучите документы. Понимание — первый шаг.</p>
             </div>
 
             <div class="healing-step">
                 <div class="step-number">2</div>
-                <h4>Признайте боль</h4>
+                <h3>Признайте боль</h3>
                 <p>Не обесценивайте: «Это было давно». Травма реальна и влияет на вас. Признание освобождает.</p>
             </div>
 
             <div class="healing-step">
                 <div class="step-number">3</div>
-                <h4>Отделитесь</h4>
+                <h3>Отделитесь</h3>
                 <p>Вы — не ваши предки. Их опыт не обязан быть вашим. Вы можете выбрать другой путь.</p>
             </div>
 
             <div class="healing-step">
                 <div class="step-number">4</div>
-                <h4>Создайте новое</h4>
+                <h3>Создайте новое</h3>
                 <p>Сформируйте свои убеждения о деньгах, основанные на вашей реальности, а не на страхах прошлого.</p>
             </div>
         </div>

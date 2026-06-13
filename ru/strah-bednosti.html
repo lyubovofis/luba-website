@@ -8,11 +8,12 @@
     <link rel="preconnect" href="https://www.clarity.ms">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Страх бедности: как избавиться навсегда [Тест]</title>
+    <title>Страх бедности: как избавиться навсегда [Тест] | Денежный Водопад</title>
     <meta name="description" content="Страх бедности мешает жить и зарабатывать. Узнайте причины этого страха и 7 способов его преодолеть. Тест + психология финансовых страхов.">
     <meta name="keywords" content="страх бедности, страх остаться без денег, боязнь бедности, страх нищеты, как избавиться от страха бедности">
 
     <meta property="og:title" content="Страх бедности: как избавиться навсегда [Тест]">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Психология страха бедности. Откуда он берётся и как его преодолеть раз и навсегда.">
     <meta property="og:image" content="https://lyubovpsy.com/images/luba-hero.webp">
     <meta property="og:type" content="article">
@@ -133,45 +134,72 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Страх бедности: как избавиться от страха остаться без денег",
-        "description": "Психология страха бедности. Причины, последствия и способы преодоления этого разрушительного страха.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад"
-        },
-        "datePublished": "2025-11-21",
-        "dateModified": "2025-11-07"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Страх бедности: как избавиться от страха остаться без денег",
+    "description": "Психология страха бедности. Причины, последствия и способы преодоления этого разрушительного страха.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-11-21",
+    "dateModified": "2025-11-07",
+    "@id": "https://lyubovpsy.com/ru/strah-bednosti#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Страх бедности: как избавиться от страха остаться без денег | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/strah-bednosti",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Страх бедности: как избавиться от страха остаться без денег | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/strah-bednosti",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/strah-bednosti#webpage"
+}
+</script>
 
 
     <style>
@@ -725,7 +753,12 @@
             font-size: 0.9em;
             color: #666;
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -978,6 +1011,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1067,7 +1101,7 @@
 
             <div class="symptoms-grid">
                 <div class="symptom-card">
-                    <h4>Постоянная тревога</h4>
+                    <h3>Постоянная тревога</h3>
                     <p>Даже когда деньги есть, вы постоянно думаете: "А вдруг закончатся?" Мысли о финансах не отпускают.</p>
 
     <div class="related-articles" style="background: linear-gradient(135deg, rgba(255,215,0,0.08) 0%, rgba(255,215,0,0.03) 100%); border-left: 4px solid #d4a017; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 30px 0; font-family: inherit;">
@@ -1082,23 +1116,23 @@
     </div>
                 </div>
                 <div class="symptom-card">
-                    <h4>Невозможность тратить</h4>
+                    <h3>Невозможность тратить</h3>
                     <p>Вам физически сложно потратить деньги на себя. Каждая покупка вызывает чувство вины.</p>
                 </div>
                 <div class="symptom-card">
-                    <h4>Накопительство</h4>
+                    <h3>Накопительство</h3>
                     <p>Вы копите деньги, но не можете их использовать. "Подушка безопасности" никогда не кажется достаточной.</p>
                 </div>
                 <div class="symptom-card">
-                    <h4>Страх потерять работу</h4>
+                    <h3>Страх потерять работу</h3>
                     <p>Боитесь увольнения, даже если работаете отлично. Терпите плохие условия, потому что "а вдруг не найду другую".</p>
                 </div>
                 <div class="symptom-card">
-                    <h4>Избегание рисков</h4>
+                    <h3>Избегание рисков</h3>
                     <p>Отказываетесь от возможностей, которые требуют вложений. Лучше синица в руках, чем журавль в небе.</p>
                 </div>
                 <div class="symptom-card">
-                    <h4>Физические симптомы</h4>
+                    <h3>Физические симптомы</h3>
                     <p>Бессонница, головные боли, проблемы с желудком — когда думаете о деньгах или расходах.</p>
                 </div>
             </div>
@@ -1111,7 +1145,7 @@
             <div class="cause-item">
                 <div class="cause-icon">1</div>
                 <div class="cause-content">
-                    <h4>Детский опыт</h4>
+                    <h3>Детский опыт</h3>
                     <p>Если в детстве вы видели, как родители переживали из-за денег, слышали фразы "денег нет", "не проси" — страх записался на подсознание.</p>
                 </div>
             </div>
@@ -1119,7 +1153,7 @@
             <div class="cause-item">
                 <div class="cause-icon">2</div>
                 <div class="cause-content">
-                    <h4>Родовые травмы</h4>
+                    <h3>Родовые травмы</h3>
                     <p>Истории о голоде, войне, потере всего — передаются через поколения. Вы можете бояться бедности, которую не пережили лично.</p>
                 </div>
             </div>
@@ -1127,7 +1161,7 @@
             <div class="cause-item">
                 <div class="cause-icon">3</div>
                 <div class="cause-content">
-                    <h4>Травматический опыт</h4>
+                    <h3>Травматический опыт</h3>
                     <p>Если вы сами пережили финансовый кризис, увольнение, банкротство — страх может закрепиться надолго.</p>
                 </div>
             </div>
@@ -1135,7 +1169,7 @@
             <div class="cause-item">
                 <div class="cause-icon">4</div>
                 <div class="cause-content">
-                    <h4>Культурные установки</h4>
+                    <h3>Культурные установки</h3>
                     <p>Фразы типа "От сумы и от тюрьмы не зарекайся", "Деньги — зло" создают фоновую тревогу о финансах.</p>
                 </div>
             </div>
@@ -1143,7 +1177,7 @@
             <div class="cause-item">
                 <div class="cause-icon">5</div>
                 <div class="cause-content">
-                    <h4>Внешняя нестабильность</h4>
+                    <h3>Внешняя нестабильность</h3>
                     <p>Эмиграция, смена страны, экономические кризисы усиливают страх — особенно если уже был опыт потерь.</p>
                 </div>
             </div>
@@ -1205,43 +1239,43 @@
             <div class="solutions-grid">
                 <div class="solution-card">
                     <div class="number">1</div>
-                    <h4>Осознайте корни страха</h4>
+                    <h3>Осознайте корни страха</h3>
                     <p>Вспомните: когда появился этот страх? Чей голос вы слышите, когда тревожитесь о деньгах? Осознание — первый шаг к свободе.</p>
                 </div>
 
                 <div class="solution-card">
                     <div class="number">2</div>
-                    <h4>Создайте реальную подушку</h4>
+                    <h3>Создайте реальную подушку</h3>
                     <p>Определите конкретную сумму (3-6 месяцев расходов) и накопите её. Реальная безопасность снижает тревогу лучше, чем бесконечное накопление.</p>
                 </div>
 
                 <div class="solution-card">
                     <div class="number">3</div>
-                    <h4>Отделите прошлое от настоящего</h4>
+                    <h3>Отделите прошлое от настоящего</h3>
                     <p>То, что было с родителями или в вашем прошлом — не обязательно повторится. Вы другой человек в другое время.</p>
                 </div>
 
                 <div class="solution-card">
                     <div class="number">4</div>
-                    <h4>Тренируйте "мышцу траты"</h4>
+                    <h3>Тренируйте "мышцу траты"</h3>
                     <p>Начните с маленьких сумм: позвольте себе кофе, небольшой подарок. Учитесь тратить без вины.</p>
                 </div>
 
                 <div class="solution-card">
                     <div class="number">5</div>
-                    <h4>Фокусируйтесь на возможностях</h4>
+                    <h3>Фокусируйтесь на возможностях</h3>
                     <p>Вместо "что я потеряю" думайте "что я могу приобрести". Смените фокус с потерь на возможности.</p>
                 </div>
 
                 <div class="solution-card">
                     <div class="number">6</div>
-                    <h4>Работайте с телом</h4>
+                    <h3>Работайте с телом</h3>
                     <p>Страх живёт в теле. Дыхательные практики, медитация, физическая активность помогают снизить тревогу.</p>
                 </div>
 
                 <div class="solution-card">
                     <div class="number">7</div>
-                    <h4>Обратитесь к специалисту</h4>
+                    <h3>Обратитесь к специалисту</h3>
                     <p>Глубинный страх часто требует профессиональной проработки. Это не слабость — это мудрое решение.</p>
                 </div>
             </div>

@@ -11,6 +11,7 @@
     <meta name="author" content="Любовь Лукащук">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Работа с Родом — Исцеление Родовых Программ Бедности">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Освободите род от паттернов бедности и откройте поток финансового изобилия для себя и потомков.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/rabota-s-rodom">
@@ -93,36 +94,56 @@
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Работа с Родом — Исцеление Родовых Программ Бедности",
-        "description": "Освободите род от паттернов бедности и откройте поток финансового изобилия для себя и потомков.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://lyubovpsy.com/ru/rabota-s-rodom"
-        },
-        "datePublished": "2025-11-10",
-        "dateModified": "2025-11-15"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Работа с Родом — Исцеление Родовых Программ Бедности",
+    "description": "Освободите род от паттернов бедности и откройте поток финансового изобилия для себя и потомков.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyubovpsy.com/ru/rabota-s-rodom"
+    },
+    "datePublished": "2025-11-10",
+    "dateModified": "2025-11-15",
+    "@id": "https://lyubovpsy.com/ru/rabota-s-rodom#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <script type="application/ld+json">
     {
@@ -193,18 +214,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Работа с Родом — Исцеление Родовых Программ | Психолог Онлайн",
-        "url": "https://lyubovpsy.com/ru/rabota-s-rodom",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Работа с Родом — Исцеление Родовых Программ | Психолог Онлайн",
+    "url": "https://lyubovpsy.com/ru/rabota-s-rodom",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/rabota-s-rodom#webpage"
+}
+</script>
 
 
     <style>
@@ -1049,7 +1077,12 @@
                 display: none;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1272,6 +1305,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1451,7 +1485,7 @@
                 <div class="sign-card">
                     <div class="sign-icon">📊</div>
                     <div class="sign-content">
-                        <h4>Финансовый потолок</h4>
+                        <h3>Финансовый потолок</h3>
                         <p>Доход не растёт выше определённой суммы, несмотря на все усилия</p>
                     </div>
                 </div>
@@ -1459,7 +1493,7 @@
                 <div class="sign-card">
                     <div class="sign-icon">🔄</div>
                     <div class="sign-content">
-                        <h4>Повторяющиеся кризисы</h4>
+                        <h3>Повторяющиеся кризисы</h3>
                         <p>Деньги приходят — и сразу исчезают на «срочные» нужды</p>
                     </div>
                 </div>
@@ -1467,7 +1501,7 @@
                 <div class="sign-card">
                     <div class="sign-icon">😰</div>
                     <div class="sign-content">
-                        <h4>Страх больших денег</h4>
+                        <h3>Страх больших денег</h3>
                         <p>Тревога при мысли о крупных суммах, страх «не удержать»</p>
                     </div>
                 </div>
@@ -1475,7 +1509,7 @@
                 <div class="sign-card">
                     <div class="sign-icon">🙈</div>
                     <div class="sign-content">
-                        <h4>Избегание темы денег</h4>
+                        <h3>Избегание темы денег</h3>
                         <p>Неприятно говорить о деньгах, считать их, планировать</p>
                     </div>
                 </div>
@@ -1483,7 +1517,7 @@
                 <div class="sign-card">
                     <div class="sign-icon">🎁</div>
                     <div class="sign-content">
-                        <h4>Сложно принимать</h4>
+                        <h3>Сложно принимать</h3>
                         <p>Неловко получать подарки, помощь, повышение зарплаты</p>
                     </div>
                 </div>
@@ -1491,7 +1525,7 @@
                 <div class="sign-card">
                     <div class="sign-icon">💸</div>
                     <div class="sign-content">
-                        <h4>Саботаж успеха</h4>
+                        <h3>Саботаж успеха</h3>
                         <p>Срываете сделки, упускаете возможности «на ровном месте»</p>
                     </div>
                 </div>
@@ -1499,7 +1533,7 @@
                 <div class="sign-card">
                     <div class="sign-icon">👨‍👩‍👧</div>
                     <div class="sign-content">
-                        <h4>Повторение судьбы</h4>
+                        <h3>Повторение судьбы</h3>
                         <p>Финансовая ситуация похожа на родительскую</p>
                     </div>
                 </div>
@@ -1507,7 +1541,7 @@
                 <div class="sign-card">
                     <div class="sign-icon">💭</div>
                     <div class="sign-content">
-                        <h4>Голоса в голове</h4>
+                        <h3>Голоса в голове</h3>
                         <p>«Это слишком дорого», «Не жили богато — нечего начинать»</p>
                     </div>
                 </div>

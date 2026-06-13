@@ -34,3 +34,6 @@ github_token.txt
 # Terminal Paste Image folder
 .cp-images/
 .playwright-mcp/
+lazy-method/reports/*.json
+lazy-method/__pycache__/
+lazy-method/checkers/__pycache__/

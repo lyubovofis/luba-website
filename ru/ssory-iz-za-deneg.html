@@ -52,6 +52,7 @@
     <link rel="alternate" hreflang="x-default" href="https://lyubovpsy.com/ru/ssory-iz-za-deneg">
     <!-- Open Graph -->
     <meta property="og:title" content="Ссоры из-за денег: причины и как прекратить [Тест]">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Ссоры из-за денег в семье: почему возникают и как их прекратить. 5 типов денежных конфликтов и пошаговые решения для гармонии в отношениях.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/ssory-iz-za-deneg">
@@ -101,31 +102,51 @@
 
     <!-- Schema.org FAQPage + Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Ссоры Из-за Денег: Почему Возникают и Как Прекратить",
-        "description": "Полное руководство по преодолению денежных конфликтов в отношениях. 5 типов ссор и практические решения для гармонии в паре.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Pair of Harmony"
-        },
-        "datePublished": "2025-11-20",
-        "dateModified": "2025-12-27"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Ссоры Из-за Денег: Почему Возникают и Как Прекратить",
+    "description": "Полное руководство по преодолению денежных конфликтов в отношениях. 5 типов ссор и практические решения для гармонии в паре.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Pair of Harmony",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-11-20",
+    "dateModified": "2025-12-27",
+    "@id": "https://lyubovpsy.com/ru/ssory-iz-za-deneg#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -160,18 +181,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Ссоры Из-за Денег: Почему Возникают и Как Прекратить | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/ssory-iz-za-deneg",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Ссоры Из-за Денег: Почему Возникают и Как Прекратить | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/ssory-iz-za-deneg",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/ssory-iz-za-deneg#webpage"
+}
+</script>
 
 
     <style>
@@ -923,7 +951,12 @@
             font-size: 0.9em;
             color: #666;
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1164,6 +1197,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1229,7 +1263,7 @@
             <a href="#faq">FAQ</a>
         </nav>
 
-        <main>
+        <main id="main">
             <section id="why">
                 
         <!-- Table of Contents -->
@@ -1319,7 +1353,7 @@
 
                 <div class="conflict-types">
                     <div class="conflict-card">
-                        <h4>💸 1. «Ты слишком много тратишь!»</h4>
+                        <h3>💸 1. «Ты слишком много тратишь!»</h3>
                         <p>Классический конфликт: один партнёр считает траты другого неразумными, а тот чувствует себя контролируемым.</p>
                         <div class="example">«Опять купила туфли! У тебя их 50 пар!»<br>«А ты на свой спорт тратишь больше!»</div>
                         <div class="solution">
@@ -1328,7 +1362,7 @@
                     </div>
 
                     <div class="conflict-card">
-                        <h4>🔐 2. «Ты от меня скрываешь!»</h4>
+                        <h3>🔐 2. «Ты от меня скрываешь!»</h3>
                         <p>Финансовые секреты: тайные покупки, скрытые долги, зарплата «в конверте». Обнаружение = взрыв доверия.</p>
                         <div class="example">«Почему ты не сказал о кредите?!»<br>«Потому что ты бы устроила скандал!»</div>
                         <div class="solution">
@@ -1337,7 +1371,7 @@
                     </div>
 
                     <div class="conflict-card">
-                        <h4>👑 3. «Я зарабатываю, я решаю!»</h4>
+                        <h3>👑 3. «Я зарабатываю, я решаю!»</h3>
                         <p>Тот, кто больше зарабатывает, претендует на бóльшую власть в решениях. Второй чувствует себя неравным.</p>
                         <div class="example">«Я приношу деньги в дом, поэтому решаю, на что их тратить»<br>«А моя работа по дому ничего не стоит?»</div>
                         <div class="solution">
@@ -1346,7 +1380,7 @@
                     </div>
 
                     <div class="conflict-card">
-                        <h4>🎯 4. «Куда идём?»</h4>
+                        <h3>🎯 4. «Куда идём?»</h3>
                         <p>Разные приоритеты: один хочет копить, другой — жить сейчас. Один инвестирует в бизнес, другой хочет стабильности.</p>
                         <div class="example">«Давай купим квартиру!»<br>«Нет, я хочу вложить в свой проект»</div>
                         <div class="solution">
@@ -1355,7 +1389,7 @@
                     </div>
 
                     <div class="conflict-card">
-                        <h4>👨‍👩‍👧 5. «Твоя семья опять просит!»</h4>
+                        <h3>👨‍👩‍👧 5. «Твоя семья опять просит!»</h3>
                         <p>Помощь родственникам, подарки родителям, финансовая поддержка «своих» — источник конфликтов между партнёрами.</p>
                         <div class="example">«Опять маме отправил? А мы на отпуск копим!»<br>«Это моя мама, я обязан помогать!»</div>
                         <div class="solution">
@@ -1453,7 +1487,7 @@
 
                 <div class="rules-grid">
                     <div class="rule-card do">
-                        <h4>✅ Делайте</h4>
+                        <h3>✅ Делайте</h3>
                         <ul>
                             <li>Выбирайте спокойное время для разговора</li>
                             <li>Говорите о своих чувствах и потребностях</li>
@@ -1465,7 +1499,7 @@
                         </ul>
                     </div>
                     <div class="rule-card dont">
-                        <h4>❌ Не делайте</h4>
+                        <h3>❌ Не делайте</h3>
                         <ul>
                             <li>Не начинайте разговор в гневе</li>
                             <li>Не обвиняйте и не критикуйте</li>

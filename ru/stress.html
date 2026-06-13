@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Стресс: как управлять им и не дать ему управлять вами">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Хронический стресс разрушает здоровье и отношения. Узнайте как справляться со стрессом, какие методы работают и когда нужна помощь психолога онлайн.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/stress">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Стресс: когда напряжение становится хроническим",
-        "description": "Хронический стресс разрушает здоровье и отношения. Физиология стресса, его проявления, методы управления и роль психолога.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-03-21",
-        "dateModified": "2026-03-21",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/stress"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Стресс: когда напряжение становится хроническим",
+    "description": "Хронический стресс разрушает здоровье и отношения. Физиология стресса, его проявления, методы управления и роль психолога.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-03-21",
+    "dateModified": "2026-03-21",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/stress",
+    "@id": "https://lyubovpsy.com/ru/stress#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Стресс: как управлять им и не дать ему управлять вами | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/stress",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Стресс: как управлять им и не дать ему управлять вами | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/stress",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/stress#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -717,7 +745,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -950,6 +983,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1022,7 +1056,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое хронический стресс?</h2>
@@ -1051,19 +1085,19 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#9889;</div>
-                <h4>Острый стресс</h4>
+                <h3>Острый стресс</h3>
                 <p>Возникает в ответ на конкретную угрозу или событие — экзамен, конфликт, авария. Кратковременный, интенсивный. После разрешения ситуации организм восстанавливается. Может быть даже полезен: мобилизует ресурсы.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128167;</div>
-                <h4>Хронический стресс</h4>
+                <h3>Хронический стресс</h3>
                 <p>Длится неделями, месяцами, годами. Нервная система не успевает восстановиться. Уровень кортизола постоянно повышен. Человек привыкает к этому состоянию и перестаёт замечать, что что-то не так.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128260;</div>
-                <h4>Накопленный стресс</h4>
+                <h3>Накопленный стресс</h3>
                 <p>Множество мелких стрессоров складываются в один большой. Каждый по отдельности — терпимо. Вместе — непереносимо. Особенно характерен для периодов больших перемен: переезда, смены работы, развода.</p>
             </div>
         </div>
@@ -1173,37 +1207,37 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#127757;</div>
-                <h4>Языковой стресс</h4>
+                <h3>Языковой стресс</h3>
                 <p>Каждый поход в магазин, звонок в госучреждение, разговор с врачом — на чужом языке. Постоянное когнитивное напряжение от необходимости думать и говорить на неродном языке истощает даже без осознания этого.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128196;</div>
-                <h4>Документы и бюрократия</h4>
+                <h3>Документы и бюрократия</h3>
                 <p>Виза, вид на жительство, налоги, страховка, разрешение на работу — каждый документ несёт неопределённость и угрозу. Постоянное ощущение «что-то может пойти не так» держит нервную систему в напряжении.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128188;</div>
-                <h4>Профессиональная адаптация</h4>
+                <h3>Профессиональная адаптация</h3>
                 <p>Диплом не признан, опыт обесценен, нужно начинать сначала или соглашаться на работу ниже квалификации. Удар по идентичности и самооценке — мощнейший источник стресса.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128106;</div>
-                <h4>Потеря социальной сети</h4>
+                <h3>Потеря социальной сети</h3>
                 <p>Друзья, семья, привычный круг общения — всё осталось «там». Одиночество и отсутствие поддержки многократно усиливают воздействие стрессоров. Новые связи строятся медленно и требуют сил — которых уже нет.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#127968;</div>
-                <h4>Культурный шок</h4>
+                <h3>Культурный шок</h3>
                 <p>Непривычные правила, другие ценности, непонятный юмор, иная деловая культура. Постоянная необходимость «читать» новую среду расходует огромное количество психической энергии.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128147;</div>
-                <h4>Вина перед оставшимися</h4>
+                <h3>Вина перед оставшимися</h3>
                 <p>«Предал родину», «бросил родителей», «дети растут без бабушки» — эти мысли создают хронический эмоциональный стресс, особенно у тех, кто уехал из-за войны или политической ситуации.</p>
             </div>
         </div>
@@ -1217,37 +1251,37 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Работа с телом</h4>
+                <h3>Работа с телом</h3>
                 <p>Диафрагмальное дыхание, регулярная физическая активность, достаточный сон. Тело — первый уровень регуляции стресса. Без работы с физиологией психологические техники работают хуже.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Управление мыслями</h4>
+                <h3>Управление мыслями</h3>
                 <p>Навязчивые «стрессовые» мысли усиливают физиологическую реакцию. Техники когнитивного переструктурирования помогают менять интерпретацию событий — и снижать интенсивность реакции.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Устранение стрессоров</h4>
+                <h3>Устранение стрессоров</h3>
                 <p>Некоторые источники стресса можно убрать. Разграничение рабочего и личного времени, делегирование задач, отказ от ненужных обязательств — всё это снижает нагрузку.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Социальная поддержка</h4>
+                <h3>Социальная поддержка</h3>
                 <p>Разговор с близким человеком снижает уровень кортизола физиологически. Изоляция — один из главных усилителей стресса. Найдите своё сообщество — очное или онлайн.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Восстановление ресурсов</h4>
+                <h3>Восстановление ресурсов</h3>
                 <p>Стресс истощает — значит, нужно целенаправленно восполнять. Найдите то, что действительно восстанавливает именно вас: природа, творчество, музыка, одиночество или общение.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">6</div>
-                <h4>Работа с психологом</h4>
+                <h3>Работа с психологом</h3>
                 <p>При хроническом стрессе самостоятельных техник часто недостаточно. Психолог помогает найти корни стресса, изменить неадаптивные реакции и восстановить психологическую устойчивость.</p>
             </div>
         </div>

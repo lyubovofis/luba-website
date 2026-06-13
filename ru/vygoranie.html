@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Выгорание: причины, симптомы и как восстановиться">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Эмоциональное выгорание — это не лень. Как распознать выгорание на работе и в жизни, чем оно отличается от усталости, и как восстановиться с помощью психолога онлайн.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/vygoranie">
@@ -121,33 +122,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Выгорание: когда сил больше нет",
-        "description": "Эмоциональное выгорание — это не лень. Как распознать выгорание на работе и в жизни, чем оно отличается от усталости, и как восстановиться с помощью психолога онлайн.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-03-24",
-        "dateModified": "2026-03-24",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/vygoranie"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Выгорание: когда сил больше нет",
+    "description": "Эмоциональное выгорание — это не лень. Как распознать выгорание на работе и в жизни, чем оно отличается от усталости, и как восстановиться с помощью психолога онлайн.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-03-24",
+    "dateModified": "2026-03-24",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/vygoranie",
+    "@id": "https://lyubovpsy.com/ru/vygoranie#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -190,18 +211,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Выгорание: причины, симптомы и как восстановиться | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/vygoranie",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Выгорание: причины, симптомы и как восстановиться | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/vygoranie",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/vygoranie#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -725,7 +753,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -958,6 +991,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1030,7 +1064,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое выгорание?</h2>
@@ -1334,37 +1368,37 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Признать состояние</h4>
+                <h3>Признать состояние</h3>
                 <p>Скажите себе: «Я выгорела». Без осуждения. Признание — это не слабость, это первый шаг к изменениям. Пока вы называете это «просто усталостью» — изменений не будет.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Убрать одно</h4>
+                <h3>Убрать одно</h3>
                 <p>Не всё и сразу — просто одно. Одно обязательство, одна встреча, одна задача из списка. Создайте хотя бы немного пространства для дыхания.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Восстановить сон</h4>
+                <h3>Восстановить сон</h3>
                 <p>При выгорании сон критически важен. Ложитесь в одно время, уберите экраны за час до сна, создайте ритуал отхода ко сну. Без нормального сна восстановление невозможно.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Поговорить с кем-то</h4>
+                <h3>Поговорить с кем-то</h3>
                 <p>Не носите это в одиночку. Поговорите с подругой, партнёром, родственником — с кем-то, кому доверяете. Простое «мне плохо» уже облегчает нагрузку.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Вернуть одно удовольствие</h4>
+                <h3>Вернуть одно удовольствие</h3>
                 <p>Что вас раньше радовало — до того, как всё стало серым? Прогулка, готовка, музыка, рисование. Верните это в расписание — не как роскошь, а как необходимость.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">6</div>
-                <h4>Обратиться к психологу</h4>
+                <h3>Обратиться к психологу</h3>
                 <p>Самостоятельные шаги важны, но при выгорании они редко достаточны. Психолог поможет разобраться в причинах и построить путь восстановления — быстрее и надёжнее, чем в одиночку.</p>
             </div>
         </div>

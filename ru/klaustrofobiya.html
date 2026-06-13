@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Клаустрофобия: причины, симптомы и как избавиться | Психолог">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Клаустрофобия мешает пользоваться лифтом, метро, МРТ. Психолог о причинах клаустрофобии и методах работы со страхом замкнутых пространств.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/klaustrofobiya">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Клаустрофобия: страх замкнутых пространств и как его преодолеть",
-        "description": "Клаустрофобия мешает пользоваться лифтом, метро, МРТ. Психолог о причинах и методах работы со страхом замкнутых пространств.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-02-18",
-        "dateModified": "2026-02-18",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/klaustrofobiya"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Клаустрофобия: страх замкнутых пространств и как его преодолеть",
+    "description": "Клаустрофобия мешает пользоваться лифтом, метро, МРТ. Психолог о причинах и методах работы со страхом замкнутых пространств.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-02-18",
+    "dateModified": "2026-02-18",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/klaustrofobiya",
+    "@id": "https://lyubovpsy.com/ru/klaustrofobiya#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -182,18 +203,25 @@
 
     <!-- Schema.org Speakable -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Клаустрофобия: страх замкнутых пространств и как его преодолеть | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/klaustrofobiya",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Клаустрофобия: страх замкнутых пространств и как его преодолеть | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/klaustrofobiya",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/klaustrofobiya#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -280,7 +308,12 @@
             .sticky-cta { display: block; }
             .content { padding-bottom: 100px; }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 @media (max-width: 768px) { #site-nav .nav-content { flex-wrap: wrap; gap: 10px; padding: 0 10px; } #site-nav ul { display: none !important; } }
@@ -374,6 +407,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
         <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none; flex-shrink: 0;">Денежный Водопад</a>
@@ -440,7 +474,7 @@
         <span class="byline-date">Опубликовано: 18 февраля 2026 · Обновлено: 18 февраля 2026</span>
     </div>
 
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое клаустрофобия?</h2>
@@ -466,22 +500,22 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#128153;</div>
-                <h4>Физические симптомы</h4>
+                <h3>Физические симптомы</h3>
                 <p>Учащённое сердцебиение, потливость, затруднённое дыхание, дрожь, головокружение, ощущение удушья.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128165;</div>
-                <h4>Паника</h4>
+                <h3>Паника</h3>
                 <p>Острое желание немедленно выбраться. Ощущение, что воздуха не хватает, стены «сжимаются», что «что-то случится».</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128683;</div>
-                <h4>Избегание</h4>
+                <h3>Избегание</h3>
                 <p>Человек заранее планирует жизнь так, чтобы не сталкиваться с триггерными ситуациями. Выбирает лестницу вместо лифта, избегает МРТ.</p>
             </div>
             <div class="fear-card">
                 <div class="fear-icon">&#128173;</div>
-                <h4>Тревога ожидания</h4>
+                <h3>Тревога ожидания</h3>
                 <p>Страх возникает ещё до попадания в замкнутое пространство — при одной мысли о нём. Тревога нарастает заранее.</p>
             </div>
         </div>

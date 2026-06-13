@@ -51,6 +51,7 @@
     <link rel="alternate" hreflang="x-default" href="https://lyubovpsy.com/ru/pochemu-ne-hvataet-deneg">
     <!-- Open Graph -->
     <meta property="og:title" content="Почему Не Хватает Денег: Психология Дефицита | Денежный Водопад">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Почему всегда не хватает денег? Ментальность дефицита, скрытые траты и «дыры». Психолог 10+ лет разберёт вашу ситуацию. Консультация — бесплатно.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/pochemu-ne-hvataet-deneg">
@@ -96,32 +97,52 @@
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Почему Не Хватает Денег: Психология Дефицита",
-        "description": "Узнайте психологические причины, почему денег всегда не хватает. Разберем ментальность дефицита, бессознательные траты и денежные дыры.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-10-31",
-        "dateModified": "2025-12-10"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Почему Не Хватает Денег: Психология Дефицита",
+    "description": "Узнайте психологические причины, почему денег всегда не хватает. Разберем ментальность дефицита, бессознательные траты и денежные дыры.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-10-31",
+    "dateModified": "2025-12-10",
+    "@id": "https://lyubovpsy.com/ru/pochemu-ne-hvataet-deneg#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <script type="application/ld+json">
     {
@@ -173,18 +194,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Почему Не Хватает Денег: Психология Дефицита | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/pochemu-ne-hvataet-deneg",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Почему Не Хватает Денег: Психология Дефицита | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/pochemu-ne-hvataet-deneg",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/pochemu-ne-hvataet-deneg#webpage"
+}
+</script>
 
 
     <style>
@@ -935,7 +963,12 @@
                 text-align: center;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1188,6 +1221,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1271,7 +1305,7 @@
         <!-- Warning Section -->
         <section class="content-section">
             <div class="scarcity-warning">
-                <h3>⚠️ Тревожный сигнал</h3>
+                <h2>⚠️ Тревожный сигнал</h2>
                 <p>Если вы зарабатываете больше, чем год назад, но чувствуете, что денег стало меньше — это не про дисциплину и не про инфляцию. Это про психологические паттерны, которые превращают ваш кошелек в "дырявое ведро". Чем больше наливаете, тем быстрее вытекает.</p>
             </div>
 
@@ -1326,7 +1360,7 @@
                 <div class="leak-item">
                     <div class="leak-number">1</div>
                     <div class="leak-content">
-                        <h4>Компенсаторные Покупки</h4>
+                        <h3>Компенсаторные Покупки</h3>
                         <p>Вы устали на работе → покупаете "что-то приятное". Поссорились с партнером → шопинг терапия. Скучно → заказываете доставку. Это не про удовольствие, а про заполнение эмоциональной пустоты деньгами. Самая дорогая дыра.</p>
                     </div>
                 </div>
@@ -1334,7 +1368,7 @@
                 <div class="leak-item">
                     <div class="leak-number">2</div>
                     <div class="leak-content">
-                        <h4>Траты "Чтобы Не Обидеть"</h4>
+                        <h3>Траты "Чтобы Не Обидеть"</h3>
                         <p>Дорогие подарки, которые вам не по карману. Оплата за всех в ресторане. Займы друзьям, которые не вернут. Вы покупаете отношения за деньги, потому что боитесь отказать. Это про границы, не про щедрость.</p>
                     </div>
                 </div>
@@ -1342,7 +1376,7 @@
                 <div class="leak-item">
                     <div class="leak-number">3</div>
                     <div class="leak-content">
-                        <h4>Покупки "На Всякий Случай"</h4>
+                        <h3>Покупки "На Всякий Случай"</h3>
                         <p>Акция — надо взять! Скидка — упущу возможность! Запасы — вдруг не будет! Это ментальность дефицита в действии: вы покупаете не то, что нужно, а то, что "может пригодиться". Потом оно лежит мертвым грузом.</p>
                     </div>
                 </div>
@@ -1350,7 +1384,7 @@
                 <div class="leak-item">
                     <div class="leak-number">4</div>
                     <div class="leak-content">
-                        <h4>Подписки и Регулярные Платежи</h4>
+                        <h3>Подписки и Регулярные Платежи</h3>
                         <p>Стриминги, которые не смотрите. Спортзал, куда не ходите. Приложения, которыми не пользуетесь. Эти "мелочи" по 5-10-20 евро в месяц за год превращаются в сотни. Вы их не замечаете — именно в этом проблема.</p>
                     </div>
                 </div>
@@ -1358,7 +1392,7 @@
                 <div class="leak-item">
                     <div class="leak-number">5</div>
                     <div class="leak-content">
-                        <h4>Траты "На Автопилоте"</h4>
+                        <h3>Траты "На Автопилоте"</h3>
                         <p>Ежедневный кофе в кафе. Такси вместо метро "потому что устал". Доставка еды вместо готовки. Эти траты стали привычкой — вы их не осознаете. 10 евро в день = 3650 евро в год. Просто испарились.</p>
                     </div>
                 </div>

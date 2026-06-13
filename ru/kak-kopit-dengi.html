@@ -13,6 +13,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Как копить деньги: 7 психологических блоков [Тест]">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Все знают КАК копить. Но почему тогда у большинства не получается? Разбираем скрытые психологические блоки накоплений и как их убрать.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/kak-kopit-dengi">
@@ -121,31 +122,51 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Как Копить Деньги: Почему Не Получается и 7 Психологических Блоков",
-        "description": "Разбираем психологические причины, почему не получается копить деньги. 7 скрытых блоков накоплений и способы их преодоления.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад"
-        },
-        "datePublished": "2025-10-06",
-        "dateModified": "2025-11-05"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Как Копить Деньги: Почему Не Получается и 7 Психологических Блоков",
+    "description": "Разбираем психологические причины, почему не получается копить деньги. 7 скрытых блоков накоплений и способы их преодоления.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-10-06",
+    "dateModified": "2025-11-05",
+    "@id": "https://lyubovpsy.com/ru/kak-kopit-dengi#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFLSQ07PGM"></script>
@@ -168,18 +189,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Как Копить Деньги: Почему Не Получается + 7 Психологических Блоков | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/kak-kopit-dengi",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Как Копить Деньги: Почему Не Получается + 7 Психологических Блоков | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/kak-kopit-dengi",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/kak-kopit-dengi#webpage"
+}
+</script>
 
 
     <style>
@@ -915,7 +943,12 @@
                 display: none;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1168,6 +1201,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1251,7 +1285,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="container" id="main" role="main">
         <!-- Intro Section -->
         <section class="intro-section">
             <p>В интернете тысячи статей про то, как копить деньги. «Метод 365 дней», «Правило 50/30/20», «Платите сначала себе». Вы уже всё это знаете. Вопрос в другом: <strong>почему, зная всё это, вы до сих пор не копите?</strong></p>
@@ -1303,7 +1337,7 @@
       </ul>
     </div>
                     <div class="block-signs">
-                        <h5>Признаки:</h5>
+                        <h3>Признаки:</h3>
                         <ul>
                             <li>Тревога при виде накопленной суммы</li>
                             <li>Желание срочно потратить, когда накопили</li>
@@ -1311,7 +1345,7 @@
                         </ul>
                     </div>
                     <div class="block-solution">
-                        <h5>Решение:</h5>
+                        <h3>Решение:</h3>
                         <p>Работа с родовыми программами — осознание и перепрограммирование унаследованного страха. Создание нового опыта: безопасные накопления без потери.</p>
                     </div>
                 </div>
@@ -1325,7 +1359,7 @@
                 <div class="block-content">
                     <p>Глубинное ощущение: «Я не заслуживаю запасов, безопасности, изобилия». Накопления — это забота о будущем себя. Если вы не чувствуете, что заслуживаете — подсознание не даст накопить.</p>
                     <div class="block-signs">
-                        <h5>Признаки:</h5>
+                        <h3>Признаки:</h3>
                         <ul>
                             <li>Легко тратите на других, но не на себя</li>
                             <li>Чувство вины при покупках для себя</li>
@@ -1333,7 +1367,7 @@
                         </ul>
                     </div>
                     <div class="block-solution">
-                        <h5>Решение:</h5>
+                        <h3>Решение:</h3>
                         <p>Работа с самооценкой и самоценностью. Осознание, что забота о финансовом будущем — это норма, а не роскошь или эгоизм.</p>
                     </div>
                 </div>
@@ -1347,7 +1381,7 @@
                 <div class="block-content">
                     <p>Шопинг как способ справиться со стрессом, скукой, тревогой, одиночеством. Траты дают краткосрочное облегчение, но не решают эмоциональную проблему. Пока эмоции заедаются покупками — накопить невозможно.</p>
                     <div class="block-signs">
-                        <h5>Признаки:</h5>
+                        <h3>Признаки:</h3>
                         <ul>
                             <li>Покупки после стресса или плохого дня</li>
                             <li>Покупаете вещи, которые не используете</li>
@@ -1355,7 +1389,7 @@
                         </ul>
                     </div>
                     <div class="block-solution">
-                        <h5>Решение:</h5>
+                        <h3>Решение:</h3>
                         <p>Научиться отличать реальную потребность от эмоциональной. Найти здоровые способы справляться с эмоциями. Работа с корневыми причинами.</p>
                     </div>
                 </div>
@@ -1369,7 +1403,7 @@
                 <div class="block-content">
                     <p>Установка «деньги портят людей», «богатые — нечестные», «духовность и деньги несовместимы». Если накопления = что-то плохое, подсознание защищает вас от «превращения в плохого человека».</p>
                     <div class="block-signs">
-                        <h5>Признаки:</h5>
+                        <h3>Признаки:</h3>
                         <ul>
                             <li>Неловкость при разговорах о деньгах</li>
                             <li>Осуждение богатых людей</li>
@@ -1377,7 +1411,7 @@
                         </ul>
                     </div>
                     <div class="block-solution">
-                        <h5>Решение:</h5>
+                        <h3>Решение:</h3>
                         <p>Переосмысление отношения к деньгам. Деньги — инструмент. Накопления — это безопасность и возможности, а не жадность.</p>
                     </div>
                 </div>
@@ -1391,7 +1425,7 @@
                 <div class="block-content">
                     <p>Отсутствие веры в будущее. «Зачем откладывать, если всё равно что-то случится». Это может быть связано с травмой потери, тревожным расстройством или выученной беспомощностью.</p>
                     <div class="block-signs">
-                        <h5>Признаки:</h5>
+                        <h3>Признаки:</h3>
                         <ul>
                             <li>Тревога о будущем, но без действий</li>
                             <li>Установка «живи сегодня, завтра неизвестно»</li>
@@ -1399,7 +1433,7 @@
                         </ul>
                     </div>
                     <div class="block-solution">
-                        <h5>Решение:</h5>
+                        <h3>Решение:</h3>
                         <p>Работа со страхом будущего. Создание ощущения безопасности и контроля. Маленькие накопления как способ вернуть власть над жизнью.</p>
                     </div>
                 </div>
@@ -1413,7 +1447,7 @@
                 <div class="block-content">
                     <p>Траты на поддержание статуса: машина, одежда, отпуск, рестораны. Страх выглядеть «бедным» или «не успешным». Социальные сети усиливают этот блок — все показывают красивую жизнь.</p>
                     <div class="block-signs">
-                        <h5>Признаки:</h5>
+                        <h3>Признаки:</h3>
                         <ul>
                             <li>Покупки «чтобы не хуже других»</li>
                             <li>Дискомфорт от экономии на глазах у других</li>
@@ -1421,7 +1455,7 @@
                         </ul>
                     </div>
                     <div class="block-solution">
-                        <h5>Решение:</h5>
+                        <h3>Решение:</h3>
                         <p>Работа с самоценностью. Осознание разницы между реальными и навязанными потребностями. Выход из гонки потребления.</p>
                     </div>
                 </div>
@@ -1435,7 +1469,7 @@
                 <div class="block-content">
                     <p>Убеждённость, что «копить — это не для меня», «у меня не получается», «я не тот человек». Много неудачных попыток создали веру в свою неспособность. Это самосбывающееся пророчество.</p>
                     <div class="block-signs">
-                        <h5>Признаки:</h5>
+                        <h3>Признаки:</h3>
                         <ul>
                             <li>Фразы: «Я такой», «У меня никогда не получалось»</li>
                             <li>Отказ от попыток заранее</li>
@@ -1443,7 +1477,7 @@
                         </ul>
                     </div>
                     <div class="block-solution">
-                        <h5>Решение:</h5>
+                        <h3>Решение:</h3>
                         <p>Создание маленьких успешных опытов. Перепрограммирование идентичности: «Я — человек, который копит». Работа с прошлыми неудачами.</p>
                     </div>
                 </div>
@@ -1459,31 +1493,31 @@
             </div>
 
             <div class="method-card">
-                <h4>💰 Платите сначала себе</h4>
+                <h3>💰 Платите сначала себе</h3>
                 <p>Сразу после получения дохода отложите 10% (или хотя бы 5%) на отдельный счёт. Не «что останется», а «сначала себе». Это базовый принцип любых накоплений.</p>
                 <div class="method-psychology">🧠 Психология: Меняет установку с «если останется» на «это моё по праву»</div>
             </div>
 
             <div class="method-card">
-                <h4>📅 Метод 365 дней</h4>
+                <h3>📅 Метод 365 дней</h3>
                 <p>В первый день — 1 рубль, во второй — 2, и так далее. К концу года накопите 66,795 рублей. Суммы маленькие, но привычка формируется.</p>
                 <div class="method-psychology">🧠 Психология: Маленькие шаги обходят сопротивление подсознания</div>
             </div>
 
             <div class="method-card">
-                <h4>🔒 Недоступный счёт</h4>
+                <h3>🔒 Недоступный счёт</h3>
                 <p>Откройте вклад с ограничениями на снятие или счёт в другом банке без мобильного приложения. Сложность доступа = меньше соблазна потратить.</p>
                 <div class="method-psychology">🧠 Психология: Создаёт барьер между импульсом и действием</div>
             </div>
 
             <div class="method-card">
-                <h4>🎯 Конкретная цель</h4>
+                <h3>🎯 Конкретная цель</h3>
                 <p>«Накопить» — абстрактно. «Накопить 300,000 на первый взнос квартиры» — конкретно. Визуализируйте цель, считайте прогресс.</p>
                 <div class="method-psychology">🧠 Психология: Конкретная цель активирует мотивационные центры мозга</div>
             </div>
 
             <div class="method-card">
-                <h4>⚡ Автоматизация</h4>
+                <h3>⚡ Автоматизация</h3>
                 <p>Настройте автоматический перевод в день зарплаты. Не полагайтесь на силу воли — она ограниченный ресурс. Пусть система работает за вас.</p>
                 <div class="method-psychology">🧠 Психология: Убирает необходимость принимать решение каждый раз</div>
             </div>
@@ -1506,7 +1540,7 @@
 
             <form id="savingsTest">
                 <div class="test-question">
-                    <h4>1. Когда на счёте накапливается сумма, вы чувствуете:</h4>
+                    <h3>1. Когда на счёте накапливается сумма, вы чувствуете:</h3>
                     <div class="test-options">
                         <div class="test-option">
                             <input type="radio" name="q1" id="q1a" value="fear">
@@ -1524,7 +1558,7 @@
                 </div>
 
                 <div class="test-question">
-                    <h4>2. Почему чаще всего вы тратите незапланированно?</h4>
+                    <h3>2. Почему чаще всего вы тратите незапланированно?</h3>
                     <div class="test-options">
                         <div class="test-option">
                             <input type="radio" name="q2" id="q2a" value="emotional">
@@ -1542,7 +1576,7 @@
                 </div>
 
                 <div class="test-question">
-                    <h4>3. Когда слышите о чужих накоплениях, думаете:</h4>
+                    <h3>3. Когда слышите о чужих накоплениях, думаете:</h3>
                     <div class="test-options">
                         <div class="test-option">
                             <input type="radio" name="q3" id="q3a" value="negative">
@@ -1560,7 +1594,7 @@
                 </div>
 
                 <div class="test-question">
-                    <h4>4. Фраза, которая ближе всего к вашему ощущению:</h4>
+                    <h3>4. Фраза, которая ближе всего к вашему ощущению:</h3>
                     <div class="test-options">
                         <div class="test-option">
                             <input type="radio" name="q4" id="q4a" value="deserve">

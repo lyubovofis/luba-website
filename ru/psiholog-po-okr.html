@@ -49,6 +49,7 @@
     <link rel="alternate" hreflang="x-default" href="https://lyubovpsy.com/ru/psiholog-po-okr">
 
     <meta property="og:title" content="Психолог по ОКР онлайн — обсессивно-компульсивное расстройство">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Работаю с навязчивыми ритуалами и мыслями у русскоязычных. Первая консультация бесплатно.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/psiholog-po-okr">
@@ -110,29 +111,53 @@
     </script>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Психолог по ОКР онлайн — обсессивно-компульсивное расстройство",
-      "description": "Психолог по ОКР онлайн. Работаю с навязчивыми ритуалами и мыслями у русскоязычных в эмиграции.",
-      "author": {
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Психолог по ОКР онлайн — обсессивно-компульсивное расстройство",
+    "description": "Психолог по ОКР онлайн. Работаю с навязчивыми ритуалами и мыслями у русскоязычных в эмиграции.",
+    "author": {
         "@type": "Person",
         "name": "Любовь Лукащук",
         "jobTitle": "Мастер трансформации сознания, психолог-практик",
         "url": "https://lyubovpsy.com/ru/ob-avtore",
         "sameAs": [
-          "https://www.instagram.com/lyubov_psy_/",
-          "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-          "https://www.facebook.com/lyubov.lukaschuk",
-          "https://t.me/LyubovUA"
-        ]
-      },
-      "publisher": {"@type": "Organization", "name": "Денежный Водопад", "url": "https://lyubovpsy.com"},
-      "datePublished": "2026-05-04",
-      "dateModified": "2026-05-18",
-      "mainEntityOfPage": "https://lyubovpsy.com/ru/psiholog-po-okr"
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-05-04",
+    "dateModified": "2026-05-18",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/psiholog-po-okr",
+    "@id": "https://lyubovpsy.com/ru/psiholog-po-okr#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <script type="application/ld+json">
     {
@@ -147,15 +172,25 @@
     </script>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Психолог по ОКР онлайн — обсессивно-компульсивное расстройство",
-      "url": "https://lyubovpsy.com/ru/psiholog-po-okr",
-      "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]},
-      "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Психолог по ОКР онлайн — обсессивно-компульсивное расстройство",
+    "url": "https://lyubovpsy.com/ru/psiholog-po-okr",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/psiholog-po-okr#webpage"
+}
+</script>
 
     <script type="application/ld+json">
     {
@@ -231,9 +266,15 @@
     .site-footer-brand{color:var(--gold);font-size:1.1rem;font-weight:600;margin-bottom:12px}
     .site-footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:16px}
     .site-footer-links a{color:#9f7aea;text-decoration:none;font-size:0.9rem}
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <div class="wrapper">
 
 <nav id="site-nav" style="background:white;box-shadow:0 2px 10px rgba(0,0,0,0.1);position:sticky;top:0;z-index:1000;">
@@ -264,7 +305,7 @@
 </nav>
 
 <section class="hero">
-    <div class="container">
+    <div class="container" id="main" role="main">
         <h1>Психолог по ОКР онлайн</h1>
         <p class="hero-subtitle">Мысли приходят снова и снова, а ритуалы дают лишь временное облегчение — и цикл повторяется. ОКР не делает вас «странным» — это тревожное расстройство, с которым можно работать. Я помогаю русскоязычным людям по всему миру выйти из этого замкнутого круга.</p>
         <div class="hero-stats">

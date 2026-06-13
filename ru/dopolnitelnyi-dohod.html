@@ -127,32 +127,52 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Дополнительный Доход: Почему Вы Знаете Как Заработать, Но Не Делаете",
-        "description": "5 психологических блоков, которые мешают вам начать зарабатывать больше.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-09-24",
-        "dateModified": "2025-12-19"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Дополнительный Доход: Почему Вы Знаете Как Заработать, Но Не Делаете",
+    "description": "5 психологических блоков, которые мешают вам начать зарабатывать больше.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-09-24",
+    "dateModified": "2025-12-19",
+    "@id": "https://lyubovpsy.com/ru/dopolnitelnyi-dohod#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFLSQ07PGM"></script>
@@ -175,18 +195,25 @@
     </script>
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Дополнительный Доход: Почему Вы Знаете Как Заработать, Но Не Делаете | Денежный Водопад",
-        "url": "https://lyubovpsy.com/ru/dopolnitelnyi-dohod",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Дополнительный Доход: Почему Вы Знаете Как Заработать, Но Не Делаете | Денежный Водопад",
+    "url": "https://lyubovpsy.com/ru/dopolnitelnyi-dohod",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/dopolnitelnyi-dohod#webpage"
+}
+</script>
 
 
     <style>
@@ -1000,7 +1027,12 @@
                 display: none;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1260,6 +1292,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1298,7 +1331,7 @@
 
     <!-- Header -->
     <header>
-        <div class="container">
+        <div class="container" id="main" role="main">
             <div class="header-content">
                 <a href="/" class="logo">Денежный Водопад</a>
                 <div class="header-cta">
@@ -1487,25 +1520,25 @@
                 <div class="formula-steps">
                     <div class="formula-step">
                         <div class="formula-icon">1️⃣</div>
-                        <h4>Признать блок</h4>
+                        <h3>Признать блок</h3>
                         <p>Перестать говорить «нет времени» и честно сказать: «Я боюсь» или «Я откладываю»</p>
                     </div>
 
                     <div class="formula-step">
                         <div class="formula-icon">2️⃣</div>
-                        <h4>Найти источник</h4>
+                        <h3>Найти источник</h3>
                         <p>Откуда этот страх? Чей голос говорит «не высовывайся»? Когда это началось?</p>
                     </div>
 
                     <div class="formula-step">
                         <div class="formula-icon">3️⃣</div>
-                        <h4>Минимальный шаг</h4>
+                        <h3>Минимальный шаг</h3>
                         <p>Сделать самое маленькое действие. Не «запустить бизнес», а «написать одному человеку»</p>
                     </div>
 
                     <div class="formula-step">
                         <div class="formula-icon">4️⃣</div>
-                        <h4>Действие = лекарство</h4>
+                        <h3>Действие = лекарство</h3>
                         <p>Страх уменьшается только когда вы делаете. Не до, а во время. Начните, и станет легче</p>
                     </div>
                 </div>

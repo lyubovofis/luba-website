@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Стадии принятия горя (Кюблер-Росс): как пережить потерю |">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="5 стадий горя Кюблер-Росс: отрицание, гнев, торг, депрессия, принятие. Как пройти через потерю с поддержкой психолога.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/stadii-prinyatiya">
@@ -113,33 +114,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Стадии принятия: как мы переживаем потерю и горе",
-        "description": "5 стадий горя Кюблер-Росс: отрицание, гнев, торг, депрессия, принятие. Как применять модель к разным потерям и как психолог помогает пройти через горе.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-02-04",
-        "dateModified": "2026-02-04",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/stadii-prinyatiya"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Стадии принятия: как мы переживаем потерю и горе",
+    "description": "5 стадий горя Кюблер-Росс: отрицание, гнев, торг, депрессия, принятие. Как применять модель к разным потерям и как психолог помогает пройти через горе.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-02-04",
+    "dateModified": "2026-02-04",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/stadii-prinyatiya",
+    "@id": "https://lyubovpsy.com/ru/stadii-prinyatiya#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -162,18 +183,25 @@
 
     <!-- Schema.org WebPage / Speakable -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Стадии принятия: как мы переживаем потерю и горе | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/stadii-prinyatiya",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Стадии принятия: как мы переживаем потерю и горе | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/stadii-prinyatiya",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/stadii-prinyatiya#webpage"
+}
+</script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFLSQ07PGM"></script>
@@ -301,7 +329,12 @@
             .content { padding-bottom: 100px; }
             .stage-card { flex-direction: column; }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
     <style>
 @media (max-width: 768px) { #site-nav .nav-content { flex-wrap: wrap; gap: 10px; padding: 0 10px; } #site-nav ul { display: none !important; } }
@@ -365,6 +398,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
         <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #6b46c1; text-decoration: none; flex-shrink: 0;">Денежный Водопад</a>
@@ -432,7 +466,7 @@
         <span class="byline-date">Опубликовано: 4 февраля 2026 · Обновлено: 4 февраля 2026</span>
     </div>
 
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое стадии принятия?</h2>
@@ -474,7 +508,7 @@
             <div class="stage-card">
                 <div class="stage-number">1</div>
                 <div class="stage-content">
-                    <h4>Отрицание — «Этого не может быть»</h4>
+                    <h3>Отрицание — «Этого не может быть»</h3>
                     <p>Первая реакция на потерю — шок и оцепенение. Психика защищает себя, отказываясь принимать реальность. «Этого не может быть», «Наверное, ошибка», «Всё ещё образуется». Человек может механически продолжать привычные действия, не ощущая происходящего в полной мере. Отрицание — это не слабость. Это буфер, который даёт психике время адаптироваться.</p>
                 </div>
             </div>
@@ -482,7 +516,7 @@
             <div class="stage-card">
                 <div class="stage-number">2</div>
                 <div class="stage-content">
-                    <h4>Гнев — «Почему я? Это несправедливо»</h4>
+                    <h3>Гнев — «Почему я? Это несправедливо»</h3>
                     <p>По мере того как реальность потери становится ощутимее, появляется злость. На судьбу, на Бога, на других людей, на себя. Гнев может быть направлен в неожиданные стороны — на врачей, родственников, даже на того, кто умер. Это нормально. Гнев — это энергия, которая ищет выход. Важно не подавлять его и не обрушивать на окружающих, а найти безопасный способ прожить.</p>
                 </div>
             </div>
@@ -490,7 +524,7 @@
             <div class="stage-card">
                 <div class="stage-number">3</div>
                 <div class="stage-content">
-                    <h4>Торг — «Если только... А вдруг можно изменить...»</h4>
+                    <h3>Торг — «Если только... А вдруг можно изменить...»</h3>
                     <p>На этой стадии человек пытается найти способ вернуть контроль и отмотать время назад. «Если я буду лучше вести себя, всё вернётся». «Если я сделаю то-то, она придёт обратно». Торг — это попытка психики найти лазейку из невыносимой реальности. Иногда это беседы с Богом, иногда — бесконечный анализ «что было бы, если».</p>
                 </div>
             </div>
@@ -498,7 +532,7 @@
             <div class="stage-card">
                 <div class="stage-number">4</div>
                 <div class="stage-content">
-                    <h4>Депрессия — «Я потерял(а) это навсегда»</h4>
+                    <h3>Депрессия — «Я потерял(а) это навсегда»</h3>
                     <p>Это стадия, когда реальность потери полностью осознаётся. Глубокая печаль, плач, апатия, нежелание делать что-либо. Человек начинает по-настоящему скорбеть. Это не патологическая депрессия — это нормальная реакция горюющего человека. Попытки «взбодриться» или «взять себя в руки» могут прервать этот необходимый процесс.</p>
                 </div>
             </div>
@@ -506,7 +540,7 @@
             <div class="stage-card">
                 <div class="stage-number">5</div>
                 <div class="stage-content">
-                    <h4>Принятие — «Я могу жить с этим»</h4>
+                    <h3>Принятие — «Я могу жить с этим»</h3>
                     <p>Принятие — это не «всё хорошо» и не «я рад(а), что это случилось». Это не счастье. Это тихое «я могу продолжать жить с тем, что произошло». Человек начинает строить новую реальность, не забывая утраченное, но и не отрицая необходимость двигаться вперёд. Это не конечная точка — это новое начало.</p>
                 </div>
             </div>

@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Прокрастинация: почему мы откладываем и как перестать">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Прокрастинация — это не лень. Это психологический механизм избегания. Почему мы откладываем важное на потом и как победить прокрастинацию с помощью психолога онлайн.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/prokrastinaciya">
@@ -121,33 +122,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Прокрастинация: почему мы саботируем себя",
-        "description": "Прокрастинация — это не лень. Это психологический механизм избегания неприятных эмоций. Почему мы откладываем важное на потом, как это влияет на доход, и как победить прокрастинацию с помощью психолога.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2026-03-28",
-        "dateModified": "2026-03-28",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/prokrastinaciya"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Прокрастинация: почему мы саботируем себя",
+    "description": "Прокрастинация — это не лень. Это психологический механизм избегания неприятных эмоций. Почему мы откладываем важное на потом, как это влияет на доход, и как победить прокрастинацию с помощью психолога.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2026-03-28",
+    "dateModified": "2026-03-28",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/prokrastinaciya",
+    "@id": "https://lyubovpsy.com/ru/prokrastinaciya#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -190,18 +211,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Прокрастинация: почему мы откладываем и как перестать | Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/prokrastinaciya",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Прокрастинация: почему мы откладываем и как перестать | Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/prokrastinaciya",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/prokrastinaciya#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -725,7 +753,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -958,6 +991,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1030,7 +1064,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое прокрастинация?</h2>
@@ -1077,55 +1111,55 @@
         <div class="fear-cards">
             <div class="fear-card">
                 <div class="fear-icon">&#127775;</div>
-                <h4>Перфекционистская</h4>
+                <h3>Перфекционистская</h3>
                 <p>«Сделаю, когда буду готова на 100%». Задача откладывается, потому что любой результат кажется недостаточно хорошим. Страх несовершенства сильнее желания завершить.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128553;</div>
-                <h4>Тревожная</h4>
+                <h3>Тревожная</h3>
                 <p>«А вдруг не получится?». Задача вызывает тревогу о возможном провале, критике или последствиях. Мозг блокирует начало, чтобы защитить от гипотетической угрозы.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128546;</div>
-                <h4>Депрессивная</h4>
+                <h3>Депрессивная</h3>
                 <p>«Всё равно ничего не выйдет». Апатия, отсутствие энергии и ощущение бессмысленности. Часто сигнал депрессии, а не лени — здесь нужна особая работа.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128563;</div>
-                <h4>От перегрузки</h4>
+                <h3>От перегрузки</h3>
                 <p>«Не знаю, с чего начать». Когда задач слишком много или задача слишком большая, мозг замирает. Откладывание — попытка справиться с подавляющим объёмом.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128564;</div>
-                <h4>От скуки</h4>
+                <h3>От скуки</h3>
                 <p>«Это неинтересно». Задача не вызывает никакого отклика — ни страха, ни радости, ни смысла. Характерна для рутинных дел, откладываемых бесконечно.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#9878;</div>
-                <h4>Прокрастинация решений</h4>
+                <h3>Прокрастинация решений</h3>
                 <p>«Ещё подумаю». Избегание выбора из страха принять неправильное решение. Часто маскируется под «сбор информации» или «ожидание нужного момента».</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#127912;</div>
-                <h4>Творческая</h4>
+                <h3>Творческая</h3>
                 <p>«Вдохновение не пришло». Откладывание творческих задач из-за страха перед пустым листом или ощущения, что идея «ещё не созрела». Может длиться годами.</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#127758;</div>
-                <h4>В эмиграции</h4>
+                <h3>В эмиграции</h3>
                 <p>«Разберусь, когда устроюсь». Откладывание важных шагов — документов, работы, интеграции — из-за усталости от адаптации и синдрома «временности».</p>
             </div>
 
             <div class="fear-card">
                 <div class="fear-icon">&#128081;</div>
-                <h4>При СДВГ</h4>
+                <h3>При СДВГ</h3>
                 <p>«Не могу заставить себя начать». Нейробиологически обусловленная прокрастинация, связанная с дефицитом дофамина. Требует особого подхода, часто — медицинской поддержки.</p>
             </div>
         </div>
@@ -1276,43 +1310,43 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Метод 2 минут</h4>
+                <h3>Метод 2 минут</h3>
                 <p>Если задача займёт меньше 2 минут — сделайте её прямо сейчас. Для больших задач: начните с 2-минутного действия. Часто запуск — это самое сложное, а дальше идёт легче.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Техника Помодоро</h4>
+                <h3>Техника Помодоро</h3>
                 <p>25 минут сосредоточенной работы, затем 5 минут отдыха. Мозгу легче согласиться на «всего 25 минут», чем на «весь день». После 4 помидоров — длинный перерыв 15-30 минут.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Микрошаги</h4>
+                <h3>Микрошаги</h3>
                 <p>Разбейте задачу на шаги настолько маленькие, что каждый из них занимает 5-10 минут. «Написать отчёт» → «Открыть документ» → «Написать заголовок». Маленький шаг снижает сопротивление.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Самосострадание</h4>
+                <h3>Самосострадание</h3>
                 <p>Когда снова откладываете — остановитесь. Вместо «я безнадёжна» скажите себе: «Мне сейчас трудно. Это нормально. Что я могу сделать прямо сейчас, даже маленькое?». Самокритика усиливает прокрастинацию.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Метод «план Б»</h4>
+                <h3>Метод «план Б»</h3>
                 <p>Спросите себя: «Что самое плохое случится, если я сделаю это несовершенно?». Напишите конкретный ответ. Часто катастрофа оказывается вполне управляемой — и это снижает страх.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">6</div>
-                <h4>Внешние дедлайны</h4>
+                <h3>Внешние дедлайны</h3>
                 <p>Создайте реальную подотчётность: договоритесь с коллегой, другом или коучем о дедлайне. «Я пришлю тебе черновик в пятницу». Внешний дедлайн активирует то, что внутренний не запускает.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">7</div>
-                <h4>Работа с телом</h4>
+                <h3>Работа с телом</h3>
                 <p>Перед сложной задачей: 5 глубоких вдохов, короткая прогулка, несколько прыжков. Физическая активация снижает тревогу и помогает переключить нервную систему из режима избегания в режим действия.</p>
             </div>
         </div>

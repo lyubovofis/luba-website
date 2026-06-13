@@ -1,0 +1,100 @@
+{
+  "boomy": {
+    "pages": 299,
+    "avg_pct": 79.7,
+    "min_pct": 73.2,
+    "max_pct": 82.5,
+    "full_pass": 0,
+    "above_75": 297,
+    "cat_pass": {
+      "brand": 95,
+      "niche_compliance": 3
+    },
+    "cat_avg": {
+      "seo": 90.9,
+      "seo_advanced": 70.9,
+      "keyword_strategy": 43.4,
+      "content_strategy": 54.6,
+      "responsive": 88.4,
+      "cross_browser": 89.3,
+      "visual": 89.7,
+      "accessibility": 92.8,
+      "content": 79.0,
+      "cro": 84.7,
+      "psychology": 71.3,
+      "data_consistency": 73.8,
+      "conversion_design": 89.7,
+      "eeat": 69.0,
+      "geo_ai": 56.9,
+      "schema": 79.5,
+      "brand": 93.2,
+      "internal_linking": 76.8,
+      "niche_compliance": 83.1
+    }
+  },
+  "lumo": {
+    "pages": 299,
+    "avg_pct": 79.6,
+    "min_pct": 72.4,
+    "max_pct": 81.1,
+    "full_pass": 0,
+    "above_75": 294,
+    "cat_pass": {
+      "visual": 2,
+      "niche_compliance": 3
+    },
+    "cat_avg": {
+      "seo": 87.9,
+      "seo_advanced": 67.3,
+      "keyword_strategy": 39.6,
+      "content_strategy": 54.6,
+      "responsive": 94.5,
+      "cross_browser": 89.3,
+      "visual": 88.6,
+      "accessibility": 84.6,
+      "content": 82.2,
+      "cro": 78.1,
+      "psychology": 75.5,
+      "data_consistency": 73.3,
+      "conversion_design": 87.1,
+      "eeat": 66.4,
+      "geo_ai": 63.1,
+      "schema": 73.7,
+      "brand": 82.0,
+      "internal_linking": 84.0,
+      "niche_compliance": 78.1
+    }
+  },
+  "vora": {
+    "pages": 298,
+    "avg_pct": 77.9,
+    "min_pct": 70.0,
+    "max_pct": 79.1,
+    "full_pass": 0,
+    "above_75": 297,
+    "cat_pass": {
+      "niche_compliance": 1
+    },
+    "cat_avg": {
+      "seo": 91.7,
+      "seo_advanced": 68.1,
+      "keyword_strategy": 42.8,
+      "content_strategy": 54.5,
+      "responsive": 95.0,
+      "cross_browser": 89.3,
+      "visual": 80.0,
+      "accessibility": 84.4,
+      "content": 78.6,
+      "cro": 84.1,
+      "psychology": 63.5,
+      "data_consistency": 67.9,
+      "conversion_design": 76.5,
+      "eeat": 70.1,
+      "geo_ai": 61.8,
+      "schema": 57.9,
+      "brand": 60.0,
+      "internal_linking": 82.7,
+      "niche_compliance": 82.7
+    }
+  }
+}

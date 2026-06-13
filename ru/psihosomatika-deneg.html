@@ -52,6 +52,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Психосоматика денег: как финансовые блоки проявляются в теле">
+    <meta property="og:site_name" content="Денежный Водопад">
     <meta property="og:description" content="Телесные симптомы денежных блоков: ком в горле, напряжение в животе, боль в спине. 5 соматических техник освобождения.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lyubovpsy.com/ru/psihosomatika-deneg">
@@ -121,33 +122,53 @@
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Психосоматика денег: как финансовые блоки проявляются в теле",
-        "description": "Телесные симптомы денежных блоков и 5 соматических техник для их освобождения. Как горло, живот, спина и челюсть хранят финансовую травму.",
-        "author": {
-            "@type": "Person",
-            "name": "Любовь Лукащук",
-            "jobTitle": "Мастер трансформации сознания, психолог-практик",
-            "url": "https://lyubovpsy.com/ru/ob-avtore",
-            "sameAs": [
-                "https://www.instagram.com/lyubov_psy_/",
-                "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
-                "https://www.facebook.com/lyubov.lukaschuk",
-                "https://t.me/LyubovUA"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Денежный Водопад",
-            "url": "https://lyubovpsy.com"
-        },
-        "datePublished": "2025-09-08",
-        "dateModified": "2025-12-06",
-        "mainEntityOfPage": "https://lyubovpsy.com/ru/psihosomatika-deneg"
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Психосоматика денег: как финансовые блоки проявляются в теле",
+    "description": "Телесные симптомы денежных блоков и 5 соматических техник для их освобождения. Как горло, живот, спина и челюсть хранят финансовую травму.",
+    "author": {
+        "@type": "Person",
+        "name": "Любовь Лукащук",
+        "jobTitle": "Мастер трансформации сознания, психолог-практик",
+        "url": "https://lyubovpsy.com/ru/ob-avtore",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA"
+        ],
+        "@id": "https://lyubovpsy.com/ru/ob-avtore#person"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Денежный Водопад",
+        "url": "https://lyubovpsy.com",
+        "@id": "https://lyubovpsy.com/#organization",
+        "sameAs": [
+            "https://www.instagram.com/lyubov_psy_/",
+            "https://www.youtube.com/@ЛюбовьЛукащукПсихолог",
+            "https://www.facebook.com/lyubov.lukaschuk",
+            "https://t.me/LyubovUA",
+            "https://x.com/LyubovUA"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyubovpsy.com/images/luba-hero.webp"
+        }
+    },
+    "datePublished": "2025-09-08",
+    "dateModified": "2025-12-06",
+    "mainEntityOfPage": "https://lyubovpsy.com/ru/psihosomatika-deneg",
+    "@id": "https://lyubovpsy.com/ru/psihosomatika-deneg#article",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyubovpsy.com/images/luba-hero.webp",
+        "width": 1200,
+        "height": 630
     }
-    </script>
+}
+</script>
 
     <!-- Schema.org Service -->
     <script type="application/ld+json">
@@ -190,18 +211,25 @@
 
     <!-- Schema.org Speakable for Voice Search -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Психосоматика денег: как финансовые блоки проявляются в теле | Психолог Любовь Лукащук",
-        "url": "https://lyubovpsy.com/ru/psihosomatika-deneg",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero-subtitle", "h2", ".faq-question", ".faq-answer"]
-        },
-        "inLanguage": "ru"
-    }
-    </script>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Психосоматика денег: как финансовые блоки проявляются в теле | Психолог Любовь Лукащук",
+    "url": "https://lyubovpsy.com/ru/psihosomatika-deneg",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            "h1",
+            ".hero-subtitle",
+            "h2",
+            ".faq-question",
+            ".faq-answer"
+        ]
+    },
+    "inLanguage": "ru",
+    "@id": "https://lyubovpsy.com/ru/psihosomatika-deneg#webpage"
+}
+</script>
 
     <style>
         :root {
@@ -777,7 +805,12 @@
                 padding-bottom: 100px;
             }
         }
-    </style>
+    
+/* a11y: skip link + visible focus (added by lazy-method apply_fixes) */
+.skip-link{position:absolute;left:-9999px;top:0;background:#6b46c1;color:#fff;padding:10px 16px;z-index:10000;border-radius:0 0 6px 0;font-weight:600}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+</style>
 
 <style>
 
@@ -1010,6 +1043,7 @@
     <link rel="alternate" type="application/rss+xml" title="Денежный Водопад — Статьи" href="https://lyubovpsy.com/feed.xml">
 </head>
 <body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <!-- Site Navigation - Standardized -->
 <nav id="site-nav" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
     <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px;">
@@ -1082,7 +1116,7 @@
     </div>
 
     <!-- Content -->
-    <main class="content">
+    <main id="main" class="content">
 
         <div class="answer-box">
             <h2>Что такое психосоматика денег?</h2>
@@ -1120,31 +1154,31 @@
         <div class="body-cards">
             <div class="body-card">
                 <div class="body-icon">&#128488;</div>
-                <h4>Ком в горле и сдавленность</h4>
+                <h3>Ком в горле и сдавленность</h3>
                 <p><strong>Что это говорит:</strong> блок на просьбу, голос о деньгах буквально "застревает". Трудно назвать цену, попросить повышение, сказать "заплатите мне". Горло — зона выражения своей ценности. Когда она заблокирована, тело физически перекрывает голос.</p>
             </div>
 
             <div class="body-card">
                 <div class="body-icon">&#129296;</div>
-                <h4>Напряжение в животе при тратах</h4>
+                <h3>Напряжение в животе при тратах</h3>
                 <p><strong>Что это говорит:</strong> <a href="/ru/strah-tratit-dengi" style="color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary-light);">страх тратить деньги</a> живёт в солнечном сплетении. Покупка вызывает спазм, тошноту, "неприятный осадок в животе". Тело сигнализирует: "опасно". Хотя реальной угрозы нет — есть только старый страх дефицита.</p>
             </div>
 
             <div class="body-card">
                 <div class="body-icon">&#129498;</div>
-                <h4>Боль и тяжесть в спине</h4>
+                <h3>Боль и тяжесть в спине</h3>
                 <p><strong>Что это говорит:</strong> хроническое ощущение, что несёшь финансовое бремя в одиночку. Поясница и плечи буквально "несут" вес ответственности за деньги. Особенно ярко проявляется у тех, кто содержит семью или несёт долги.</p>
             </div>
 
             <div class="body-card">
                 <div class="body-icon">&#128528;</div>
-                <h4>Сжатая челюсть и скрежет зубами</h4>
+                <h3>Сжатая челюсть и скрежет зубами</h3>
                 <p><strong>Что это говорит:</strong> бессознательное удержание, контроль над каждой копейкой. Бруксизм (скрежет зубами во сне) часто связан с финансовой тревогой. Челюсть сжимается, когда психика хочет "не выпустить" то, что с трудом держит — в том числе деньги.</p>
             </div>
 
             <div class="body-card">
                 <div class="body-icon">&#128168;</div>
-                <h4>Поверхностное дыхание</h4>
+                <h3>Поверхностное дыхание</h3>
                 <p><strong>Что это говорит:</strong> установки нехватки и дефицита буквально сжимают грудную клетку. Человек "не позволяет себе дышать полной грудью" — и так же не позволяет деньгам приходить в полном объёме. <a href="/ru/energeticheskie-bloki" style="color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary-light);">Энергетические блоки</a> часто начинаются с дыхания.</p>
             </div>
         </div>
@@ -1278,31 +1312,31 @@
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h4>Симптомы интенсивны</h4>
+                <h3>Симптомы интенсивны</h3>
                 <p>Если при разговоре о деньгах возникает паническая атака, сильная тошнота или онемение — это сигнал для профессиональной помощи.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Блок существует годами</h4>
+                <h3>Блок существует годами</h3>
                 <p>Если вы пробовали разные подходы, но ситуация не меняется — блок лежит глубже, чем сознательные усилия могут достать.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h4>Есть явная травма</h4>
+                <h3>Есть явная травма</h3>
                 <p>Банкротство, потеря всего, финансовое насилие в отношениях — эти травмы требуют профессиональной проработки, а не просто техник.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <h4>Паттерн передаётся</h4>
+                <h3>Паттерн передаётся</h3>
                 <p>Если в семье несколько поколений жили в финансовой нехватке — это родовой сценарий. Работа с ним требует специальных методов.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">5</div>
-                <h4>Хотите быстрее</h4>
+                <h3>Хотите быстрее</h3>
                 <p>Профессиональная работа сокращает путь от понимания проблемы до реального изменения в разы. Не нужно идти в одиночку.</p>
             </div>
         </div>
