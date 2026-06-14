@@ -37,3 +37,8 @@ github_token.txt
 lazy-method/reports/*.json
 lazy-method/__pycache__/
 lazy-method/checkers/__pycache__/
+footer-check.jpeg
+blog-badges-check.jpeg
+quiz-check.jpeg
+quiz-after-click.jpeg
+.playwright-mcp/
