@@ -36,6 +36,41 @@
       "source": "/ru/strah-byt-bogatoy",
       "destination": "/ru/strah-bolshih-deneg",
       "permanent": true
+    },
+    {
+      "source": "/ru/apatiia",
+      "destination": "/ru/apatiya",
+      "permanent": true
+    },
+    {
+      "source": "/ru/stres",
+      "destination": "/ru/stress",
+      "permanent": true
+    },
+    {
+      "source": "/ru/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/ru/psiholog-po-trevoge",
+      "destination": "/ru/psiholog-po-trevozhnosti",
+      "permanent": true
+    },
+    {
+      "source": "/ru/psihologiya-emigracii",
+      "destination": "/ru/psihologiya-deneg-v-emigracii",
+      "permanent": true
+    },
+    {
+      "source": "/ru/trevoga",
+      "destination": "/ru/postoyannaya-trevoga",
+      "permanent": true
+    },
+    {
+      "source": "/ru/strah-oshibki",
+      "destination": "/ru/perfekcionizm",
+      "permanent": true
     }
   ],
   "rewrites": [
