@@ -3,6 +3,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/ru",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/quiz",
+      "destination": "/quiz",
+      "permanent": true
+    },
+    {
       "source": "/pages",
       "destination": "/ru/blog",
       "permanent": true
@@ -74,6 +84,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/images/luba-photo.webp",
+      "destination": "/images/luba-hero.webp"
+    },
     {
       "source": "/crm",
       "destination": "/crm/login.html"
