@@ -63,9 +63,7 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "tmyxczr5sn");
     </script>
-    <!-- Supabase -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="/js/supabase-integration.js"></script>
+
     
     <style>
         * {
@@ -100,6 +98,7 @@
             border-radius: 20px;
             max-width: 700px;
             width: 100%;
+            min-width: 0;
             padding: 40px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
@@ -609,7 +608,7 @@
     <link rel="canonical" href="https://lyubovpsy.com/quiz">
 </head>
 <body>
-    <div class="quiz-container">
+    <main class="quiz-container" id="main">
         <!-- Progress -->
         <div class="progress-container">
             <div class="progress-bar">
@@ -631,10 +630,9 @@
         <!-- Step 1: Income situation -->
         <div class="quiz-step active" id="step1">
             <div class="question-number">1</div>
-            <h2 style="font-size: 28px; margin-bottom: 8px; line-height: 1.3;">84% людей застряли на одном уровне дохода</h2>
+            <h2 style="font-size: 28px; margin-bottom: 8px; line-height: 1.3;">Вам предложили проект за €5000. Первая мысль?</h2>
             <div class="question-subtitle" style="font-size: 18px; margin-bottom: 24px; color: #667eea; font-weight: 600;">А вы? Узнайте свой денежный блок за 2 минуты</div>
             
-            <div style="margin-bottom: 20px; font-size: 16px; font-weight: 600;">Вам предложили проект за €5000. Первая мысль?</div>
             <div class="question-subtitle">Выберите самую честную реакцию</div>
             
             <div class="options-grid">
@@ -898,36 +896,22 @@
             </div>
         </div>
         
-        <!-- Step 8: Contact form BEFORE results -->
+        <!-- Step 8: Local result preview; no contact data is submitted. -->
         <div class="quiz-step" id="step8">
             <div class="question-number">✨</div>
-            <h2>Последний шаг до вашего денежного кода</h2>
-            <div class="question-subtitle">Куда отправить ваш персональный план на 7 дней?</div>
-            
+            <h2>Ваш результат готов</h2>
+            <p class="question-subtitle">Посмотрите результат и выберите WhatsApp или Telegram, чтобы обсудить его с Любовью.</p>
             <div class="form-group">
-                <label>Ваше имя</label>
-                <input type="text" id="name" placeholder="Как к вам обращаться">
-                <div class="error-message" id="nameError"></div>
+                <label for="name">Ваше имя (необязательно)</label>
+                <input type="text" id="name" name="name" autocomplete="given-name" maxlength="80" placeholder="Как к вам обращаться">
             </div>
-            
-            <div class="form-group">
-                <label>WhatsApp для связи</label>
-                <input type="tel" id="whatsapp" placeholder="+380501234567" pattern="^\+[1-9][0-9]{9,14}$">
-                <div class="error-message" id="whatsappError"></div>
-            </div>
-            
-            <div class="form-group">
-                <label>Email (необязательно)</label>
-                <input type="email" id="email" placeholder="your@email.com">
-                <div class="error-message" id="emailError"></div>
-            </div>
-            
+            <p>Ничего не отправляется автоматически. Вы сможете проверить текст и отправить его сами в выбранном мессенджере.</p>
             <div class="buttons-row">
-                <button class="btn btn-secondary" onclick="prevStep(8)">← Назад</button>
-                <button class="btn" onclick="validateAndShowResult()">Получить мой денежный код →</button>
+                <button class="btn btn-secondary" type="button" onclick="prevStep(8)">← Назад</button>
+                <button class="btn" type="button" onclick="validateAndShowResult()">Посмотреть результат →</button>
             </div>
         </div>
-        
+
         <!-- Step 9: Results -->
         <div class="quiz-step" id="step9">
             <div class="result-card">
@@ -998,21 +982,27 @@
                     <p style="color: white; font-size: 24px; font-weight: bold; margin: 10px 0;">Бесплатная 15-минутная диагностика</p>
                 </div>
                 
+                <div class="form-group">
+                    <label for="quizMessage">Текст для Любови</label>
+                    <textarea id="quizMessage" rows="10" readonly aria-describedby="messengerHelp" style="width:100%; box-sizing:border-box; padding:12px; font:inherit; font-size:16px; resize:vertical;"></textarea>
+                    <p id="messengerHelp">Кнопка откроет чат Любови с готовым текстом. Проверьте его и нажмите «Отправить» в мессенджере. Если приложение не подставит текст, скопируйте его из поля выше.</p>
+                </div>
+
                 <!-- Action buttons -->
                 <div class="messenger-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 15px;">
-                    <button class="messenger-btn whatsapp-btn" onclick="goToWhatsApp()" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #25D366; color: white; padding: 18px 12px; border-radius: 12px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; min-height: 80px;">
+                    <a id="quizWhatsApp" class="messenger-btn whatsapp-btn" href="https://wa.me/34654420334" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #25D366; color: white; padding: 18px 12px; border-radius: 12px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; min-height: 80px; text-decoration: none;">
                         <span style="font-size: 28px; margin-bottom: 8px;">💬</span>
                         <span style="text-align: center; line-height: 1.3;">WhatsApp</span>
-                    </button>
+                    </a>
                     
-                    <button class="messenger-btn telegram-btn" onclick="goToTelegram()" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0088cc; color: white; padding: 18px 12px; border-radius: 12px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; min-height: 80px;">
+                    <a id="quizTelegram" class="messenger-btn telegram-btn" href="https://t.me/LyubovUA" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0088cc; color: white; padding: 18px 12px; border-radius: 12px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; min-height: 80px; text-decoration: none;">
                         <span style="font-size: 28px; margin-bottom: 8px;">✈️</span>
                         <span style="text-align: center; line-height: 1.3;">Telegram</span>
-                    </button>
+                    </a>
                 </div>
                 
                 <p style="text-align: center; color: #6b7280; font-size: 14px; margin-bottom: 15px;">
-                    Выберите удобный мессенджер для консультации
+                    Выберите мессенджер. Сообщение отправляете только вы.
                 </p>
                 
                 <div style="display: flex; flex-direction: column; gap: 12px;">
@@ -1030,7 +1020,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </main>
     
     <script>
         // Quiz state
@@ -1215,11 +1205,6 @@
             setupEventListeners();
             updateProgress();
             
-            // Track start
-            if (window.SupabaseIntegration) {
-                window.SupabaseIntegration.updateAnalytics('quiz_start');
-            }
-            
             // Track with pixels
             if (typeof fbq !== 'undefined') {
                 try {
@@ -1271,7 +1256,6 @@
             const step = card.closest('.quiz-step');
             const stepNum = parseInt(step.id.replace('step', ''));
             const value = card.dataset.value;
-            const block = card.dataset.block;
             
             // Track time for this question
             const timeSpent = Date.now() - quizState.questionStartTime;
@@ -1288,12 +1272,13 @@
             // Store answer
             quizState.answers[`q${stepNum}`] = value;
             
-            // Count blocks
-            if (!quizState.blocks[block]) {
-                quizState.blocks[block] = 0;
-            }
-            quizState.blocks[block]++;
-            
+            // Count each current selection once, including after Back/reselection.
+            quizState.blocks = {};
+            document.querySelectorAll('.option-card.selected').forEach(selected => {
+                const selectedBlock = selected.dataset.block;
+                quizState.blocks[selectedBlock] = (quizState.blocks[selectedBlock] || 0) + 1;
+            });
+
             // Enable button
             const btn = document.getElementById(`btn${stepNum}`);
             if (btn) btn.disabled = false;
@@ -1334,61 +1319,14 @@
             });
         }
         
-        // Validate and show result
-        async function validateAndShowResult() {
-            const name = document.getElementById('name').value.trim();
-            const whatsapp = document.getElementById('whatsapp').value.trim();
-            const email = document.getElementById('email').value.trim();
-            
-            // Reset errors
-            document.querySelectorAll('.error-message').forEach(err => {
-                err.style.display = 'none';
-            });
-            
-            let valid = true;
-            
-            // Validate name
-            const fakenames = ['test', 'asdf', 'qwerty', 'aaaa', 'bbbb', 'qqqq', 'wwww', 'eeee'];
-            if (!name || name.length < 2) {
-                document.getElementById('nameError').textContent = 'Введите ваше имя (минимум 2 буквы)';
-                document.getElementById('nameError').style.display = 'block';
-                valid = false;
-            } else if (fakenames.includes(name.toLowerCase()) || /^\d+$/.test(name)) {
-                document.getElementById('nameError').textContent = 'Пожалуйста, введите настоящее имя';
-                document.getElementById('nameError').style.display = 'block';
-                valid = false;
-            }
-            
-            // Validate phone - УПРОЩЕННАЯ ВАЛИДАЦИЯ
-            const cleanPhone = whatsapp.replace(/\D/g, '');
-            if (!whatsapp || cleanPhone.length < 9) {
-                document.getElementById('whatsappError').textContent = 'Введите номер телефона';
-                document.getElementById('whatsappError').style.display = 'block';
-                valid = false;
-            }
-            
-            if (!valid) return;
-            
-            // Store contact info
-            quizState.answers.name = name;
-            quizState.answers.whatsapp = whatsapp;
-            if (email) quizState.answers.email = email;
-            
-            // Calculate results
+        // Results stay on this page until the visitor chooses a messenger.
+        function validateAndShowResult() {
+            quizState.answers.name = document.getElementById('name').value.trim().slice(0, 80);
             calculateResults();
-            
-            // Submit to database
-            try {
-                await submitQuiz();
-            } catch (error) {
-                console.error('Error submitting quiz:', error);
-                // Continue anyway - don't block user
-            }
-            
-            // Show results
+            updateMessengerLinks();
             nextStep(8);
         }
-        
+
         // Calculate results
         function calculateResults() {
             // Sort blocks by count
@@ -1456,171 +1394,30 @@
             quizState.blockName = primaryInfo.name;
         }
         
-        // Submit quiz
-        async function submitQuiz() {
-            try {
-                const totalTime = Math.floor((Date.now() - quizState.startTime) / 1000);
-                
-                const formData = {
-                    name: quizState.answers.name,
-                    phone: quizState.answers.whatsapp,
-                    email: quizState.answers.email || null,
-                    quiz_type: 'money_code_v2',
-                    quiz_answers: quizState.answers,
-                    main_block: quizState.blockName,
-                    blocks_analysis: quizState.blocks,
-                    completion_time: totalTime
-                };
-                
-                // Submit to Supabase
-                if (window.SupabaseIntegration) {
-                    await window.SupabaseIntegration.submitQuizLead(formData);
-                    window.SupabaseIntegration.updateAnalytics('quiz_complete');
-                    window.SupabaseIntegration.trackConversion('Lead', {
-                        value: 0,
-                        currency: 'EUR',
-                        content_name: 'Money Code Quiz V2'
-                    });
-                }
-                
-                // Track with pixels
-                if (typeof fbq !== 'undefined') {
-                    try {
-                        fbq('track', 'Lead', {
-                            content_name: 'Money Code Quiz',
-                            value: 0,
-                            currency: 'EUR'
-                        });
-                    } catch (e) {
-                        console.log('FB pixel error:', e);
-                    }
-                }
-                
-                if (typeof window.ttq !== 'undefined') {
-                    try {
-                        window.ttq.track('CompleteRegistration');
-                    } catch (e) {
-                        console.log('TikTok pixel error:', e);
-                    }
-                }
-                
-            } catch (error) {
-                console.error('Submit error:', error);
-                // Continue anyway - don't block user
+        // Read the selected labels so drafts contain answers, not internal IDs.
+        function buildQuizMessage() {
+            const lines = ['Здравствуйте, Любовь! Я прошла тест «Денежный код».'];
+            if (quizState.answers.name) lines.push(`Меня зовут ${quizState.answers.name}.`);
+            lines.push(`Мой результат: ${quizState.blockName}.`, '', 'Мои ответы:');
+            for (let step = 1; step <= 7; step++) {
+                const section = document.getElementById(`step${step}`);
+                const question = section.querySelector('h2').textContent.trim();
+                const answer = step === 5
+                    ? `Сейчас: €${quizState.answers.currentIncome} в месяц; цель: €${quizState.answers.desiredIncome} в месяц.`
+                    : section.querySelector('.option-card.selected .option-text')?.textContent.trim();
+                if (answer) lines.push(`${step}. ${question} — ${answer}`);
             }
+            lines.push('', 'Хочу записаться на бесплатную 15-минутную консультацию.');
+            return lines.join('\n');
         }
-        
-        // Go to WhatsApp
-        function goToWhatsApp() {
-            const message = `Здравствуйте! Я прошёл(ла) тест "Денежный код". Мой результат: ${quizState.blockName} (${quizState.primaryBlock}). Хочу записаться на бесплатную консультацию.`;
-            const whatsappUrl = `https://wa.me/34654420334?text=${encodeURIComponent(message)}`;
-            
-            // Track BEFORE opening WhatsApp
-            if (typeof fbq !== 'undefined') {
-                try {
-                    fbq('track', 'Contact');
-                } catch (e) {
-                    console.log('FB pixel error:', e);
-                }
-            }
-            if (typeof window.ttq !== 'undefined') {
-                try {
-                    window.ttq.track('Contact', {
-                        content_type: 'whatsapp_message',
-                        content_name: 'Quiz Result WhatsApp',
-                        description: quizState.blockName
-                    });
-                } catch (e) {
-                    console.log('TikTok pixel error:', e);
-                }
-            }
-            if (typeof gtag !== 'undefined') {
-                try {
-                    gtag('event', 'contact', {
-                        'event_category': 'WhatsApp',
-                        'event_label': 'Quiz Result'
-                    });
-                } catch (e) {
-                    console.log('GA error:', e);
-                }
-            }
-            
-            // Track if WhatsApp was actually opened (user returned)
-            const startTime = Date.now();
-            window.addEventListener('blur', function() {
-                setTimeout(() => {
-                    if (Date.now() - startTime > 3000) {
-                        // User was away for 3+ seconds = likely opened WhatsApp
-                        if (typeof window.ttq !== 'undefined') {
-                            try {
-                                window.ttq.track('Contact', {
-                                    content_type: 'whatsapp_opened',
-                                    content_name: 'WhatsApp Actually Opened'
-                                });
-                            } catch (e) {}
-                        }
-                    }
-                }, 100);
-            }, { once: true });
-            
-            window.location.href = whatsappUrl;
+
+        function updateMessengerLinks() {
+            const message = buildQuizMessage();
+            document.getElementById('quizMessage').value = message;
+            document.getElementById('quizWhatsApp').href = `https://wa.me/34654420334?text=${encodeURIComponent(message)}`;
+            document.getElementById('quizTelegram').href = `https://t.me/LyubovUA?text=${encodeURIComponent(message)}`;
         }
-        
-        // Go to Telegram
-        function goToTelegram() {
-            const message = `Здравствуйте! Я прошёл тест "Денежный код". Мой результат: ${quizState.blockName} (${quizState.primaryBlock}). Хочу записаться на бесплатную консультацию.`;
-            const telegramUrl = `https://t.me/LyubovUA?text=${encodeURIComponent(message)}`;
-            
-            // Track BEFORE opening Telegram
-            if (typeof fbq !== 'undefined') {
-                try {
-                    fbq('track', 'Contact', {
-                        messenger: 'Telegram'
-                    });
-                } catch (e) {
-                    console.log('FB pixel error:', e);
-                }
-            }
-            if (typeof window.ttq !== 'undefined') {
-                try {
-                    window.ttq.track('Contact', {
-                        content_type: 'telegram_message',
-                        content_name: 'Quiz Result Telegram',
-                        description: quizState.blockName
-                    });
-                } catch (e) {
-                    console.log('TikTok pixel error:', e);
-                }
-            }
-            if (typeof gtag !== 'undefined') {
-                try {
-                    gtag('event', 'contact', {
-                        'event_category': 'Telegram',
-                        'event_label': 'Quiz Result'
-                    });
-                } catch (e) {
-                    console.log('GA error:', e);
-                }
-            }
-            
-            window.location.href = telegramUrl;
-        }
-        
-        // Save results to email
-        function saveResults() {
-            const email = quizState.answers.email;
-            if (!email) {
-                alert('Email не был указан. Пройдите тест заново и укажите email.');
-                return;
-            }
-            
-            // Here you would normally send to backend
-            alert(`Результаты отправлены на ${email}! Проверьте почту.`);
-            
-            // Track conversion
-            if (typeof fbq !== 'undefined') fbq('track', 'Subscribe');
-        }
-        
+
         // Retake quiz
         function retakeQuiz() {
             if (confirm('Вы уверены, что хотите пройти тест заново?')) {
@@ -1651,8 +1448,8 @@
             <p style="margin: 0; font-size: 14px; line-height: 1.6;">
                 🍪 Мы используем файлы cookie для улучшения вашего опыта на сайте, аналитики и персонализации контента. 
                 Продолжая использовать сайт, вы соглашаетесь с нашей 
-                <a href="/privacy.html" style="color: #667eea; text-decoration: underline;">Политикой конфиденциальности</a> и 
-                <a href="/cookie-policy.html" style="color: #667eea; text-decoration: underline;">Политикой Cookie</a>.
+                <a href="/privacy" style="color: #667eea; text-decoration: underline;">Политикой конфиденциальности</a> и
+                <a href="/cookie-policy" style="color: #667eea; text-decoration: underline;">Политикой Cookie</a>.
             </p>
         </div>
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">

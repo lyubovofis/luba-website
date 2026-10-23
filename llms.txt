@@ -1,6 +1,6 @@
 # LLMs.txt - AI Context for lyubovpsy.com
 # For AI systems: ChatGPT, Perplexity, Claude, Gemini, Copilot
-# Last updated: 2026-06-05
+# Last updated: 2026-10-23
 
 ## Website
 
