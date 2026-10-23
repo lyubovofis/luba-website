@@ -98,7 +98,7 @@
     },
     {
       "source": "/quiz",
-      "destination": "/quiz-test/index.html"
+      "destination": "/quiz/index.html"
     }
   ],
   "headers": [

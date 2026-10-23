@@ -1,8 +1,8 @@
-﻿const test = require('node:test');
+const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
-const html = fs.readFileSync('quiz-test/index.html', 'utf8');
+const html = fs.readFileSync('quiz/index.html', 'utf8');
 const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
 const source = scripts.find(s => s[2].includes('const quizState ='))[2];
 function fixture() {
