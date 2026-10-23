@@ -2336,8 +2336,9 @@ window.addEventListener('scroll', function() {
 <style>
 @media (max-width: 768px) {
   #gdpr-banner { padding: 12px 14px !important; max-height: 45vh; overflow: auto; }
-  #gdpr-banner > div { flex-wrap: wrap !important; gap: 10px !important; }
-  #gdpr-banner > div > div:first-child { min-width: 0 !important; flex-basis: 100%; }
+  #gdpr-banner > div { flex-direction: column !important; align-items: stretch !important; gap: 10px !important; }
+  #gdpr-banner > div > div:first-child { min-width: 0 !important; flex: 0 0 auto !important; width: 100%; }
+  #gdpr-banner > div > div:last-child { order: -1; }
   #gdpr-banner p { font-size: 14px !important; line-height: 1.4 !important; }
   #gdpr-banner button { min-height: 44px; padding: 10px 16px !important; font-size: 14px !important; }
   #gdpr-banner a { display: inline-block; min-height: 24px; }
