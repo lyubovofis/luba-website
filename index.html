@@ -54,7 +54,20 @@
     <link rel="author" href="/humans.txt">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWF15D45V8"></script>
+    <script>
+      // Keep analytics queues ready while the first screen paints before SDK work.
+      function afterFirstPaint(callback) {
+        window.addEventListener('load', function() {
+          requestAnimationFrame(function() { requestAnimationFrame(callback); });
+        }, { once: true });
+      }
+      afterFirstPaint(function() {
+        const analytics = document.createElement('script');
+        analytics.async = true;
+        analytics.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZWF15D45V8';
+        document.head.appendChild(analytics);
+      });
+    </script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -79,7 +92,7 @@
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
     n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    afterFirstPaint(function() { s.parentNode.insertBefore(t,s); })}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '2067039850492790');
     fbq('track', 'PageView');
@@ -92,7 +105,7 @@
     <!-- TikTok Pixel Code Start -->
     <script>
     !function (w, d, t) {
-        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];afterFirstPaint(function() { e.parentNode.insertBefore(n,e); })};
         ttq.load('D3460MRC77U1O98E3OGG');
         ttq.page();
     }(window, document, 'ttq');
@@ -1152,7 +1165,7 @@
 
     <!-- Hotjar Tracking Code for https://lyubovpsy.com/ (deferred) -->
     <script>
-    window.addEventListener('load', function() {
+    afterFirstPaint(function() {
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
         h._hjSettings={hjid:6520317,hjsv:6};
@@ -1172,7 +1185,7 @@
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            y=l.getElementsByTagName(r)[0];afterFirstPaint(function() { y.parentNode.insertBefore(t,y); });
         })(window, document, "clarity", "script", "tmyxczr5sn");
     </script>
 </head>
@@ -2322,33 +2335,12 @@ window.addEventListener('scroll', function() {
 
 <style>
 @media (max-width: 768px) {
-  #gdpr-banner {
-    padding: 10px 14px !important;
-    max-height: 80px;
-    overflow: hidden;
-  }
-  #gdpr-banner > div {
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    align-items: center !important;
-  }
-  #gdpr-banner p {
-    font-size: 11px !important;
-    line-height: 1.3 !important;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  #gdpr-banner button {
-    padding: 7px 14px !important;
-    font-size: 12px !important;
-    white-space: nowrap !important;
-  }
-  #gdpr-banner .gdpr-settings-btn {
-    display: none !important;
-  }
+  #gdpr-banner { padding: 12px 14px !important; max-height: 45vh; overflow: auto; }
+  #gdpr-banner > div { flex-wrap: wrap !important; gap: 10px !important; }
+  #gdpr-banner > div > div:first-child { min-width: 0 !important; flex-basis: 100%; }
+  #gdpr-banner p { font-size: 14px !important; line-height: 1.4 !important; }
+  #gdpr-banner button { min-height: 44px; padding: 10px 16px !important; font-size: 14px !important; }
+  #gdpr-banner a { display: inline-block; min-height: 24px; }
 }
 </style>
 <!-- GDPR Cookie Banner - INLINE VERSION -->
