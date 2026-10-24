@@ -78,4 +78,6 @@ test('homepage retains core trackers without scripts that fabricate lead or orde
     assert.ok(tag, 'contact intent script is loaded');
     assert.ok(/\bdefer\b/.test(tag[0]), 'contact intent waits for parsed HTML');
     assert.match(html, /G-ZWF15D45V8/);
+    assert.ok(!html.includes('static.hotjar.com'), 'temporary duplicate recorder is removed');
+    assert.match(html, /tmyxczr5sn/, 'existing Clarity destination is retained');
 });
