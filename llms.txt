@@ -1,6 +1,6 @@
 # LLMs.txt - AI Context for lyubovpsy.com
 # For AI systems: ChatGPT, Perplexity, Claude, Gemini, Copilot
-# Last updated: 2026-10-23
+# Last updated: 2026-10-24
 
 ## Website
 
@@ -27,7 +27,7 @@ about_page: https://lyubovpsy.com/ru/ob-avtore
 name: Денежный Водопад (8-week transformation)
 description: Deep subconscious work to remove financial blocks and limiting beliefs about money
 method: 4 levels — mental (beliefs), emotional (feelings), energetic (body), physical (habits)
-results: clients report 3-10x income growth, financial independence, debt freedom
+scope: Psychological support for money-related concerns and decisions. No income, investment, or medical outcome guarantees.
 free_consultation: Available via WhatsApp or Telegram (15 min)
 
 ## Content Overview
